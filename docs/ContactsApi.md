@@ -355,7 +355,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupIds = new List<string>(); // List<string> | Group id string in uuid format. (optional) 
+            var groupIds = new List<string>(); // List<string> | Optional one or many group id strings in uuid format. For example: \"/contacts?groupIds=group_id_one&groupIds=group_id_two\"  (optional) 
 
             try
             {
@@ -376,7 +376,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupIds** | [**List&lt;string&gt;**](string.md)| Group id string in uuid format. | [optional] 
+ **groupIds** | [**List&lt;string&gt;**](string.md)| Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  | [optional] 
 
 ### Return type
 
