@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**FetchContact**](ContactsApi.md#fetchcontact) | **GET** /contacts/{phone} | Lists a contact.
 [**FetchContactGroups**](ContactsApi.md#fetchcontactgroups) | **GET** /contacts/{phone}/groups | Lists groups of a contact.
 [**FetchContacts**](ContactsApi.md#fetchcontacts) | **GET** /contacts | Returns all contacts.
-[**RemoveContactFromGroup**](ContactsApi.md#removecontactfromgroup) | **DELETE** /groups/{groupId}/contacts/{phone} | Remove a contact from a group.
+[**RemoveContactFromGroup**](ContactsApi.md#removecontactfromgroup) | **DELETE** /groups/{groupId}/contacts/{phone} | Removes a contact from a group.
 [**UpdateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{phone} | Updates a contact.
 
 
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 # **RemoveContactFromGroup**
 > void RemoveContactFromGroup (string groupId, string phone)
 
-Remove a contact from a group.
+Removes a contact from a group.
 
 ### Example
 ```csharp
@@ -423,7 +423,7 @@ namespace Example
 
             try
             {
-                // Remove a contact from a group.
+                // Removes a contact from a group.
                 apiInstance.RemoveContactFromGroup(groupId, phone);
             }
             catch (Exception e)

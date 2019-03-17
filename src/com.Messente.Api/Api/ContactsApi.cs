@@ -153,7 +153,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of ContactListEnvelope</returns>
         ApiResponse<ContactListEnvelope> FetchContactsWithHttpInfo (List<string> groupIds = null);
         /// <summary>
-        /// Remove a contact from a group.
+        /// Removes a contact from a group.
         /// </summary>
         /// <remarks>
         /// 
@@ -165,7 +165,7 @@ namespace com.Messente.Api.Api
         void RemoveContactFromGroup (string groupId, string phone);
 
         /// <summary>
-        /// Remove a contact from a group.
+        /// Removes a contact from a group.
         /// </summary>
         /// <remarks>
         /// 
@@ -329,7 +329,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (ContactListEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContactListEnvelope>> FetchContactsAsyncWithHttpInfo (List<string> groupIds = null);
         /// <summary>
-        /// Remove a contact from a group.
+        /// Removes a contact from a group.
         /// </summary>
         /// <remarks>
         /// 
@@ -341,7 +341,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task RemoveContactFromGroupAsync (string groupId, string phone);
 
         /// <summary>
-        /// Remove a contact from a group.
+        /// Removes a contact from a group.
         /// </summary>
         /// <remarks>
         /// 
@@ -1376,7 +1376,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Remove a contact from a group. 
+        /// Removes a contact from a group. 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1388,7 +1388,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Remove a contact from a group. 
+        /// Removes a contact from a group. 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1453,7 +1453,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Remove a contact from a group. 
+        /// Removes a contact from a group. 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1466,7 +1466,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Remove a contact from a group. 
+        /// Removes a contact from a group. 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
