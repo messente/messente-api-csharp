@@ -29,7 +29,7 @@ namespace Example
 {
     public class CreateGroupExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -92,7 +92,7 @@ namespace Example
 {
     public class DeleteGroupExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -154,7 +154,7 @@ namespace Example
 {
     public class FetchGroupExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -217,7 +217,7 @@ namespace Example
 {
     public class FetchGroupsExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -276,7 +276,7 @@ namespace Example
 {
     public class UpdateGroupExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";

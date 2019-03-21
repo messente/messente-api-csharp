@@ -28,7 +28,7 @@ namespace Example
 {
     public class AddToBlacklistExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -90,7 +90,7 @@ namespace Example
 {
     public class DeleteFromBlacklistExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -152,7 +152,7 @@ namespace Example
 {
     public class FetchBlacklistExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -211,7 +211,7 @@ namespace Example
 {
     public class IsBlacklistedExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";

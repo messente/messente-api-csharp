@@ -32,7 +32,7 @@ namespace Example
 {
     public class AddContactToGroupExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -97,7 +97,7 @@ namespace Example
 {
     public class CreateContactExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -160,7 +160,7 @@ namespace Example
 {
     public class DeleteContactExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -222,7 +222,7 @@ namespace Example
 {
     public class FetchContactExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -285,7 +285,7 @@ namespace Example
 {
     public class FetchContactGroupsExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -348,7 +348,7 @@ namespace Example
 {
     public class FetchContactsExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -411,7 +411,7 @@ namespace Example
 {
     public class RemoveContactFromGroupExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
@@ -475,7 +475,7 @@ namespace Example
 {
     public class UpdateContactExample
     {
-        public void main()
+        public static void Main()
         {
             // Configure HTTP basic authorization: basicAuth
             Configuration.Default.Username = "YOUR_USERNAME";
