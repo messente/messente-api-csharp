@@ -71,19 +71,48 @@ Read the [external getting-started article](https://messente.com/documentation/g
 
 ```cs
 using System;
-namespace HelloWorld
+using System.Diagnostics;
+using System.Collections.Generic;
+using com.Messente.Api.Api;
+using com.Messente.Api.Client;
+using com.Messente.Api.Model;
+
+namespace Example
 {
-    class Hello
+    public class SendOmniMessageExample
     {
-        static void Main()
+        public static void Main()
         {
-            Console.WriteLine("Hello!");
-            Console.ReadKey();
+            // Configure HTTP basic authorization: basicAuth
+            Configuration.Default.Username = "<MESSENTE_API_USERNAME>";
+            Configuration.Default.Password = "<MESSENTE_API_PASSWORD>";
+
+            List<object> messages = new List<object>();
+            var sms = new SMS(sender: "<sender number or name>", text: "Hello SMS!");
+            var viber = new Viber(text: "Hello viber!");
+            var whatsapp = new WhatsApp(text: new WhatsAppText(body: "Hello WhatsApp!"));
+            messages.Add(viber);
+            messages.Add(whatsapp);
+            messages.Add(sms);
+
+            var apiInstance = new OmnimessageApi();
+            var omnimessage = new Omnimessage(to: "<phone_number>", messages: messages);
+
+            try
+            {
+                // Sends an Omnimessage
+                OmniMessageCreateSuccessResponse result = apiInstance.SendOmnimessage(omnimessage);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SendOmnimessage: " + e.Message);
+
+            }
+
         }
     }
 }
-
-// TODO
 
 ```
 
