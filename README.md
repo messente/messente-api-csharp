@@ -7,7 +7,15 @@
 
 ## Installation
 
-Install Messente API library with `TODO`.
+Install Messente API library via NuGet Package Manager or .NET CLI.
+
+### Package Manager
+
+`Install-Package com.Messente.Api -Version 0.0.1`
+
+### .NET CLI
+
+`dotnet add package com.Messente.Api --version 0.0.1`
 
 ## Features
 
