@@ -37,7 +37,7 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="WhatsAppText" /> class.
         /// </summary>
         /// <param name="previewUrl">Whether to display link preview if the message contains a hyperlink. (default to true).</param>
-        /// <param name="body">Plaintext content for WhatsApp, can contains URLs, emojis and formatting (required).</param>
+        /// <param name="body">Plaintext content for WhatsApp, can contain URLs, emojis and formatting (required).</param>
         public WhatsAppText(bool? previewUrl = true, string body = default(string))
         {
             // to ensure "body" is required (not null)
@@ -68,9 +68,9 @@ namespace com.Messente.Api.Model
         public bool? PreviewUrl { get; set; }
 
         /// <summary>
-        /// Plaintext content for WhatsApp, can contains URLs, emojis and formatting
+        /// Plaintext content for WhatsApp, can contain URLs, emojis and formatting
         /// </summary>
-        /// <value>Plaintext content for WhatsApp, can contains URLs, emojis and formatting</value>
+        /// <value>Plaintext content for WhatsApp, can contain URLs, emojis and formatting</value>
         [DataMember(Name="body", EmitDefaultValue=false)]
         public string Body { get; set; }
 
