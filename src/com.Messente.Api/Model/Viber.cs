@@ -35,7 +35,7 @@ namespace com.Messente.Api.Model
         /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
         /// <param name="text">Plaintext content for Viber.</param>
         /// <param name="imageUrl">URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
-        /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39;  and &#39;&#39;image_url&#39;&#39; (optional).</param>
+        /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="channel">channel (default to &quot;viber&quot;).</param>
         public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), string channel = "viber")
@@ -86,9 +86,9 @@ namespace com.Messente.Api.Model
         public string ImageUrl { get; set; }
 
         /// <summary>
-        /// URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39;  and &#39;&#39;image_url&#39;&#39; (optional)
+        /// URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional)
         /// </summary>
-        /// <value>URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39;  and &#39;&#39;image_url&#39;&#39; (optional)</value>
+        /// <value>URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional)</value>
         [DataMember(Name="button_url", EmitDefaultValue=false)]
         public string ButtonUrl { get; set; }
 
