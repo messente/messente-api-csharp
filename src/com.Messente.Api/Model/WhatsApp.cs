@@ -46,7 +46,12 @@ namespace com.Messente.Api.Model
         /// Gets or Sets Channel
         /// </summary>
         [DataMember(Name="channel", EmitDefaultValue=false)]
-        public ChannelEnum? Channel { get; set; }
+        public ChannelEnum Channel { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhatsApp" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected WhatsApp() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsApp" /> class.
         /// </summary>
@@ -56,24 +61,24 @@ namespace com.Messente.Api.Model
         /// <param name="image">image.</param>
         /// <param name="document">document.</param>
         /// <param name="audio">audio.</param>
-        /// <param name="channel">channel (default to ChannelEnum.Whatsapp).</param>
-        public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum? channel = ChannelEnum.Whatsapp)
+        /// <param name="channel">channel (required) (default to ChannelEnum.Whatsapp).</param>
+        public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum channel = ChannelEnum.Whatsapp)
         {
+            // to ensure "channel" is required (not null)
+            if (channel == null)
+            {
+                throw new InvalidDataException("channel is a required property for WhatsApp and cannot be null");
+            }
+            else
+            {
+                this.Channel = channel;
+            }
             this.Sender = sender;
             this.Validity = validity;
             this.Text = text;
             this.Image = image;
             this.Document = document;
             this.Audio = audio;
-            // use default value if no "channel" provided
-            if (channel == null)
-            {
-                this.Channel = ChannelEnum.Whatsapp;
-            }
-            else
-            {
-                this.Channel = channel;
-            }
         }
         
         /// <summary>
