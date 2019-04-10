@@ -79,7 +79,7 @@ namespace com.Messente.Api.Model
         /// Gets or Sets Channel
         /// </summary>
         [DataMember(Name="channel", EmitDefaultValue=false)]
-        public ChannelEnum Channel { get; set; }
+        public ChannelEnum? Channel { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SMS" /> class.
         /// </summary>
@@ -93,8 +93,8 @@ namespace com.Messente.Api.Model
         /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
         /// <param name="autoconvert">Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace)(default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way.</param>
         /// <param name="udh">hex-encoded string containing SMS UDH.</param>
-        /// <param name="channel">channel (required) (default to ChannelEnum.Sms).</param>
-        public SMS(string text = default(string), string sender = default(string), int? validity = default(int?), AutoconvertEnum? autoconvert = default(AutoconvertEnum?), string udh = default(string), ChannelEnum channel = ChannelEnum.Sms)
+        /// <param name="channel">channel (default to ChannelEnum.Sms).</param>
+        public SMS(string text = default(string), string sender = default(string), int? validity = default(int?), AutoconvertEnum? autoconvert = default(AutoconvertEnum?), string udh = default(string), ChannelEnum? channel = ChannelEnum.Sms)
         {
             // to ensure "text" is required (not null)
             if (text == null)
@@ -105,19 +105,19 @@ namespace com.Messente.Api.Model
             {
                 this.Text = text;
             }
-            // to ensure "channel" is required (not null)
+            this.Sender = sender;
+            this.Validity = validity;
+            this.Autoconvert = autoconvert;
+            this.Udh = udh;
+            // use default value if no "channel" provided
             if (channel == null)
             {
-                throw new InvalidDataException("channel is a required property for SMS and cannot be null");
+                this.Channel = ChannelEnum.Sms;
             }
             else
             {
                 this.Channel = channel;
             }
-            this.Sender = sender;
-            this.Validity = validity;
-            this.Autoconvert = autoconvert;
-            this.Udh = udh;
         }
         
         /// <summary>

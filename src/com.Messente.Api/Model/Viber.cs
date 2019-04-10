@@ -46,12 +46,7 @@ namespace com.Messente.Api.Model
         /// Gets or Sets Channel
         /// </summary>
         [DataMember(Name="channel", EmitDefaultValue=false)]
-        public ChannelEnum Channel { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Viber" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected Viber() { }
+        public ChannelEnum? Channel { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Viber" /> class.
         /// </summary>
@@ -61,24 +56,24 @@ namespace com.Messente.Api.Model
         /// <param name="imageUrl">URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
         /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
-        /// <param name="channel">channel (required) (default to ChannelEnum.Viber).</param>
-        public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum channel = ChannelEnum.Viber)
+        /// <param name="channel">channel (default to ChannelEnum.Viber).</param>
+        public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = ChannelEnum.Viber)
         {
-            // to ensure "channel" is required (not null)
-            if (channel == null)
-            {
-                throw new InvalidDataException("channel is a required property for Viber and cannot be null");
-            }
-            else
-            {
-                this.Channel = channel;
-            }
             this.Sender = sender;
             this.Validity = validity;
             this.Text = text;
             this.ImageUrl = imageUrl;
             this.ButtonUrl = buttonUrl;
             this.ButtonText = buttonText;
+            // use default value if no "channel" provided
+            if (channel == null)
+            {
+                this.Channel = ChannelEnum.Viber;
+            }
+            else
+            {
+                this.Channel = channel;
+            }
         }
         
         /// <summary>
