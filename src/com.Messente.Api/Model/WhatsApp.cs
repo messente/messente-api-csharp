@@ -56,8 +56,8 @@ namespace com.Messente.Api.Model
         /// <param name="image">image.</param>
         /// <param name="document">document.</param>
         /// <param name="audio">audio.</param>
-        /// <param name="channel">channel.</param>
-        public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum? channel = default(ChannelEnum?))
+        /// <param name="channel">channel (default to ChannelEnum.Whatsapp).</param>
+        public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum? channel = ChannelEnum.Whatsapp)
         {
             this.Sender = sender;
             this.Validity = validity;
@@ -65,7 +65,15 @@ namespace com.Messente.Api.Model
             this.Image = image;
             this.Document = document;
             this.Audio = audio;
-            this.Channel = channel;
+            // use default value if no "channel" provided
+            if (channel == null)
+            {
+                this.Channel = ChannelEnum.Whatsapp;
+            }
+            else
+            {
+                this.Channel = channel;
+            }
         }
         
         /// <summary>
