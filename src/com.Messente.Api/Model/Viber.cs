@@ -29,6 +29,25 @@ namespace com.Messente.Api.Model
     public partial class Viber :  IEquatable<Viber>
     {
         /// <summary>
+        /// Defines Channel
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ChannelEnum
+        {
+            /// <summary>
+            /// Enum Viber for value: viber
+            /// </summary>
+            [EnumMember(Value = "viber")]
+            Viber = 1
+
+        }
+
+        /// <summary>
+        /// Gets or Sets Channel
+        /// </summary>
+        [DataMember(Name="channel", EmitDefaultValue=false)]
+        public ChannelEnum? Channel { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Viber" /> class.
         /// </summary>
         /// <param name="sender">Phone number or alphanumeric sender name.</param>
@@ -37,8 +56,8 @@ namespace com.Messente.Api.Model
         /// <param name="imageUrl">URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
         /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
-        /// <param name="channel">channel (default to &quot;viber&quot;).</param>
-        public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), string channel = "viber")
+        /// <param name="channel">channel.</param>
+        public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = default(ChannelEnum?))
         {
             this.Sender = sender;
             this.Validity = validity;
@@ -46,15 +65,7 @@ namespace com.Messente.Api.Model
             this.ImageUrl = imageUrl;
             this.ButtonUrl = buttonUrl;
             this.ButtonText = buttonText;
-            // use default value if no "channel" provided
-            if (channel == null)
-            {
-                this.Channel = "viber";
-            }
-            else
-            {
-                this.Channel = channel;
-            }
+            this.Channel = channel;
         }
         
         /// <summary>
@@ -99,11 +110,6 @@ namespace com.Messente.Api.Model
         [DataMember(Name="button_text", EmitDefaultValue=false)]
         public string ButtonText { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Channel
-        /// </summary>
-        [DataMember(Name="channel", EmitDefaultValue=false)]
-        public string Channel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -29,6 +29,25 @@ namespace com.Messente.Api.Model
     public partial class WhatsApp :  IEquatable<WhatsApp>
     {
         /// <summary>
+        /// Defines Channel
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ChannelEnum
+        {
+            /// <summary>
+            /// Enum Whatsapp for value: whatsapp
+            /// </summary>
+            [EnumMember(Value = "whatsapp")]
+            Whatsapp = 1
+
+        }
+
+        /// <summary>
+        /// Gets or Sets Channel
+        /// </summary>
+        [DataMember(Name="channel", EmitDefaultValue=false)]
+        public ChannelEnum? Channel { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="WhatsApp" /> class.
         /// </summary>
         /// <param name="sender">Phone number or alphanumeric sender name.</param>
@@ -37,8 +56,8 @@ namespace com.Messente.Api.Model
         /// <param name="image">image.</param>
         /// <param name="document">document.</param>
         /// <param name="audio">audio.</param>
-        /// <param name="channel">channel (default to &quot;whatsapp&quot;).</param>
-        public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), string channel = "whatsapp")
+        /// <param name="channel">channel.</param>
+        public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum? channel = default(ChannelEnum?))
         {
             this.Sender = sender;
             this.Validity = validity;
@@ -46,15 +65,7 @@ namespace com.Messente.Api.Model
             this.Image = image;
             this.Document = document;
             this.Audio = audio;
-            // use default value if no "channel" provided
-            if (channel == null)
-            {
-                this.Channel = "whatsapp";
-            }
-            else
-            {
-                this.Channel = channel;
-            }
+            this.Channel = channel;
         }
         
         /// <summary>
@@ -95,11 +106,6 @@ namespace com.Messente.Api.Model
         [DataMember(Name="audio", EmitDefaultValue=false)]
         public WhatsAppAudio Audio { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Channel
-        /// </summary>
-        [DataMember(Name="channel", EmitDefaultValue=false)]
-        public string Channel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

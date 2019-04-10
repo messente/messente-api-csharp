@@ -62,6 +62,25 @@ namespace com.Messente.Api.Model
         [DataMember(Name="autoconvert", EmitDefaultValue=false)]
         public AutoconvertEnum? Autoconvert { get; set; }
         /// <summary>
+        /// Defines Channel
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ChannelEnum
+        {
+            /// <summary>
+            /// Enum Sms for value: sms
+            /// </summary>
+            [EnumMember(Value = "sms")]
+            Sms = 1
+
+        }
+
+        /// <summary>
+        /// Gets or Sets Channel
+        /// </summary>
+        [DataMember(Name="channel", EmitDefaultValue=false)]
+        public ChannelEnum? Channel { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SMS" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -74,8 +93,8 @@ namespace com.Messente.Api.Model
         /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
         /// <param name="autoconvert">Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace)(default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way.</param>
         /// <param name="udh">hex-encoded string containing SMS UDH.</param>
-        /// <param name="channel">channel (default to &quot;sms&quot;).</param>
-        public SMS(string text = default(string), string sender = default(string), int? validity = default(int?), AutoconvertEnum? autoconvert = default(AutoconvertEnum?), string udh = default(string), string channel = "sms")
+        /// <param name="channel">channel.</param>
+        public SMS(string text = default(string), string sender = default(string), int? validity = default(int?), AutoconvertEnum? autoconvert = default(AutoconvertEnum?), string udh = default(string), ChannelEnum? channel = default(ChannelEnum?))
         {
             // to ensure "text" is required (not null)
             if (text == null)
@@ -90,15 +109,7 @@ namespace com.Messente.Api.Model
             this.Validity = validity;
             this.Autoconvert = autoconvert;
             this.Udh = udh;
-            // use default value if no "channel" provided
-            if (channel == null)
-            {
-                this.Channel = "sms";
-            }
-            else
-            {
-                this.Channel = channel;
-            }
+            this.Channel = channel;
         }
         
         /// <summary>
@@ -130,11 +141,6 @@ namespace com.Messente.Api.Model
         [DataMember(Name="udh", EmitDefaultValue=false)]
         public string Udh { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Channel
-        /// </summary>
-        [DataMember(Name="channel", EmitDefaultValue=false)]
-        public string Channel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
