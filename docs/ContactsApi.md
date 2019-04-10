@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="addcontacttogroup"></a>
 # **AddContactToGroup**
-> Object AddContactToGroup (string groupId, string phone)
+> EmptyObject AddContactToGroup (string groupId, string phone)
 
 Adds a contact to a group.
 
@@ -45,7 +45,7 @@ namespace Example
             try
             {
                 // Adds a contact to a group.
-                Object result = apiInstance.AddContactToGroup(groupId, phone);
+                EmptyObject result = apiInstance.AddContactToGroup(groupId, phone);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**EmptyObject**](EmptyObject.md)
 
 ### Authorization
 

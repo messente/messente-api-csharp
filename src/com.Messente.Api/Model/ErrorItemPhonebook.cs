@@ -29,6 +29,16 @@ namespace com.Messente.Api.Model
     public partial class ErrorItemPhonebook :  IEquatable<ErrorItemPhonebook>
     {
         /// <summary>
+        /// Gets or Sets Title
+        /// </summary>
+        [DataMember(Name="title", EmitDefaultValue=false)]
+        public ErrorTitlePhonebook Title { get; set; }
+        /// <summary>
+        /// Gets or Sets Code
+        /// </summary>
+        [DataMember(Name="code", EmitDefaultValue=false)]
+        public ErrorCodePhonebook Code { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="ErrorItemPhonebook" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -70,11 +80,6 @@ namespace com.Messente.Api.Model
             }
         }
         
-        /// <summary>
-        /// Gets or Sets Title
-        /// </summary>
-        [DataMember(Name="title", EmitDefaultValue=false)]
-        public ErrorTitlePhonebook Title { get; set; }
 
         /// <summary>
         /// Free form more detailed description of the error.
@@ -83,11 +88,6 @@ namespace com.Messente.Api.Model
         [DataMember(Name="detail", EmitDefaultValue=false)]
         public string Detail { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Code
-        /// </summary>
-        [DataMember(Name="code", EmitDefaultValue=false)]
-        public ErrorCodePhonebook Code { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

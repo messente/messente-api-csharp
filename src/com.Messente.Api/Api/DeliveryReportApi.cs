@@ -247,7 +247,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<DeliveryReportResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (DeliveryReportResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeliveryReportResponse)));
         }
 
@@ -320,7 +320,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<DeliveryReportResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (DeliveryReportResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeliveryReportResponse)));
         }
 

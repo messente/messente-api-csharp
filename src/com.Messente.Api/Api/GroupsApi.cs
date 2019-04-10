@@ -423,7 +423,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupEnvelope)));
         }
 
@@ -504,7 +504,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupEnvelope)));
         }
 
@@ -575,7 +575,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -647,7 +647,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -719,7 +719,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupEnvelope)));
         }
 
@@ -792,7 +792,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupEnvelope)));
         }
 
@@ -858,7 +858,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupListEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupListEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupListEnvelope)));
         }
 
@@ -925,7 +925,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupListEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupListEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupListEnvelope)));
         }
 
@@ -1011,7 +1011,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupEnvelope)));
         }
 
@@ -1098,7 +1098,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupEnvelope)));
         }
 

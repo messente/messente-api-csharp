@@ -288,7 +288,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -360,7 +360,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -440,7 +440,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<OmniMessageCreateSuccessResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (OmniMessageCreateSuccessResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OmniMessageCreateSuccessResponse)));
         }
 
@@ -521,7 +521,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<OmniMessageCreateSuccessResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (OmniMessageCreateSuccessResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(OmniMessageCreateSuccessResponse)));
         }
 

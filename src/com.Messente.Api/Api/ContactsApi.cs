@@ -33,8 +33,8 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>Object</returns>
-        Object AddContactToGroup (string groupId, string phone);
+        /// <returns>EmptyObject</returns>
+        EmptyObject AddContactToGroup (string groupId, string phone);
 
         /// <summary>
         /// Adds a contact to a group.
@@ -45,8 +45,8 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> AddContactToGroupWithHttpInfo (string groupId, string phone);
+        /// <returns>ApiResponse of EmptyObject</returns>
+        ApiResponse<EmptyObject> AddContactToGroupWithHttpInfo (string groupId, string phone);
         /// <summary>
         /// Creates a new contact.
         /// </summary>
@@ -209,8 +209,8 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> AddContactToGroupAsync (string groupId, string phone);
+        /// <returns>Task of EmptyObject</returns>
+        System.Threading.Tasks.Task<EmptyObject> AddContactToGroupAsync (string groupId, string phone);
 
         /// <summary>
         /// Adds a contact to a group.
@@ -221,8 +221,8 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddContactToGroupAsyncWithHttpInfo (string groupId, string phone);
+        /// <returns>Task of ApiResponse (EmptyObject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EmptyObject>> AddContactToGroupAsyncWithHttpInfo (string groupId, string phone);
         /// <summary>
         /// Creates a new contact.
         /// </summary>
@@ -491,10 +491,10 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>Object</returns>
-        public Object AddContactToGroup (string groupId, string phone)
+        /// <returns>EmptyObject</returns>
+        public EmptyObject AddContactToGroup (string groupId, string phone)
         {
-             ApiResponse<Object> localVarResponse = AddContactToGroupWithHttpInfo(groupId, phone);
+             ApiResponse<EmptyObject> localVarResponse = AddContactToGroupWithHttpInfo(groupId, phone);
              return localVarResponse.Data;
         }
 
@@ -504,8 +504,8 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > AddContactToGroupWithHttpInfo (string groupId, string phone)
+        /// <returns>ApiResponse of EmptyObject</returns>
+        public ApiResponse< EmptyObject > AddContactToGroupWithHttpInfo (string groupId, string phone)
         {
             // verify the required parameter 'groupId' is set
             if (groupId == null)
@@ -558,9 +558,9 @@ namespace com.Messente.Api.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+            return new ApiResponse<EmptyObject>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (EmptyObject) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmptyObject)));
         }
 
         /// <summary>
@@ -569,10 +569,10 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> AddContactToGroupAsync (string groupId, string phone)
+        /// <returns>Task of EmptyObject</returns>
+        public async System.Threading.Tasks.Task<EmptyObject> AddContactToGroupAsync (string groupId, string phone)
         {
-             ApiResponse<Object> localVarResponse = await AddContactToGroupAsyncWithHttpInfo(groupId, phone);
+             ApiResponse<EmptyObject> localVarResponse = await AddContactToGroupAsyncWithHttpInfo(groupId, phone);
              return localVarResponse.Data;
 
         }
@@ -583,8 +583,8 @@ namespace com.Messente.Api.Api
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
         /// <param name="phone">A phone number</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> AddContactToGroupAsyncWithHttpInfo (string groupId, string phone)
+        /// <returns>Task of ApiResponse (EmptyObject)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EmptyObject>> AddContactToGroupAsyncWithHttpInfo (string groupId, string phone)
         {
             // verify the required parameter 'groupId' is set
             if (groupId == null)
@@ -637,9 +637,9 @@ namespace com.Messente.Api.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
-                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+            return new ApiResponse<EmptyObject>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (EmptyObject) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmptyObject)));
         }
 
         /// <summary>
@@ -718,7 +718,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactEnvelope)));
         }
 
@@ -799,7 +799,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactEnvelope)));
         }
 
@@ -870,7 +870,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -942,7 +942,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -1014,7 +1014,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactEnvelope)));
         }
 
@@ -1087,7 +1087,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactEnvelope)));
         }
 
@@ -1159,7 +1159,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupListEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupListEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupListEnvelope)));
         }
 
@@ -1232,7 +1232,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<GroupListEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GroupListEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GroupListEnvelope)));
         }
 
@@ -1301,7 +1301,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactListEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactListEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListEnvelope)));
         }
 
@@ -1371,7 +1371,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactListEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactListEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactListEnvelope)));
         }
 
@@ -1448,7 +1448,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -1526,7 +1526,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
         }
 
@@ -1612,7 +1612,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactEnvelope)));
         }
 
@@ -1699,7 +1699,7 @@ namespace com.Messente.Api.Api
             }
 
             return new ApiResponse<ContactEnvelope>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ContactEnvelope) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ContactEnvelope)));
         }
 
