@@ -23,31 +23,31 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Defines the delivery channel
+    /// Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore).
     /// </summary>
-    /// <value>Defines the delivery channel</value>
+    /// <value>Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore).</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum Channel
+    public enum TextStore
     {
         /// <summary>
-        /// Enum Sms for value: sms
+        /// Enum Nostore for value: nostore
         /// </summary>
-        [EnumMember(Value = "sms")]
-        Sms = 1,
+        [EnumMember(Value = "nostore")]
+        Nostore = 1,
 
         /// <summary>
-        /// Enum Viber for value: viber
+        /// Enum Plaintext for value: plaintext
         /// </summary>
-        [EnumMember(Value = "viber")]
-        Viber = 2,
+        [EnumMember(Value = "plaintext")]
+        Plaintext = 2,
 
         /// <summary>
-        /// Enum Whatsapp for value: whatsapp
+        /// Enum Sha256 for value: sha256
         /// </summary>
-        [EnumMember(Value = "whatsapp")]
-        Whatsapp = 3
+        [EnumMember(Value = "sha256")]
+        Sha256 = 3
 
     }
 
