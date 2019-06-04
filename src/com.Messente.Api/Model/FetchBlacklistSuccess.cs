@@ -31,15 +31,16 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FetchBlacklistSuccess" /> class.
         /// </summary>
-        /// <param name="phoneNumbers">phoneNumbers.</param>
+        /// <param name="phoneNumbers">Array of unique phone numbers.</param>
         public FetchBlacklistSuccess(List<string> phoneNumbers = default(List<string>))
         {
             this.PhoneNumbers = phoneNumbers;
         }
         
         /// <summary>
-        /// Gets or Sets PhoneNumbers
+        /// Array of unique phone numbers
         /// </summary>
+        /// <value>Array of unique phone numbers</value>
         [DataMember(Name="phoneNumbers", EmitDefaultValue=false)]
         public List<string> PhoneNumbers { get; set; }
 
