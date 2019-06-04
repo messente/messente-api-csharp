@@ -25,7 +25,7 @@ namespace com.Messente.Api.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Adds a phone number to the blacklist.
+        /// Adds a phone number to the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Api
         void AddToBlacklist (NumberToBlacklist numberToBlacklist);
 
         /// <summary>
-        /// Adds a phone number to the blacklist.
+        /// Adds a phone number to the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -46,7 +46,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AddToBlacklistWithHttpInfo (NumberToBlacklist numberToBlacklist);
         /// <summary>
-        /// Deletes a phone number from the blacklist.
+        /// Deletes a phone number from the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -57,7 +57,7 @@ namespace com.Messente.Api.Api
         void DeleteFromBlacklist (string phone);
 
         /// <summary>
-        /// Deletes a phone number from the blacklist.
+        /// Deletes a phone number from the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -67,7 +67,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteFromBlacklistWithHttpInfo (string phone);
         /// <summary>
-        /// Returns all blacklisted phone numbers.
+        /// Returns all blacklisted phone numbers
         /// </summary>
         /// <remarks>
         /// 
@@ -77,7 +77,7 @@ namespace com.Messente.Api.Api
         FetchBlacklistSuccess FetchBlacklist ();
 
         /// <summary>
-        /// Returns all blacklisted phone numbers.
+        /// Returns all blacklisted phone numbers
         /// </summary>
         /// <remarks>
         /// 
@@ -86,7 +86,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of FetchBlacklistSuccess</returns>
         ApiResponse<FetchBlacklistSuccess> FetchBlacklistWithHttpInfo ();
         /// <summary>
-        /// Checks if a phone number is blacklisted.
+        /// Checks if a phone number is blacklisted
         /// </summary>
         /// <remarks>
         /// 
@@ -97,7 +97,7 @@ namespace com.Messente.Api.Api
         void IsBlacklisted (string phone);
 
         /// <summary>
-        /// Checks if a phone number is blacklisted.
+        /// Checks if a phone number is blacklisted
         /// </summary>
         /// <remarks>
         /// 
@@ -109,7 +109,7 @@ namespace com.Messente.Api.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Adds a phone number to the blacklist.
+        /// Adds a phone number to the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -120,7 +120,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task AddToBlacklistAsync (NumberToBlacklist numberToBlacklist);
 
         /// <summary>
-        /// Adds a phone number to the blacklist.
+        /// Adds a phone number to the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -130,7 +130,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AddToBlacklistAsyncWithHttpInfo (NumberToBlacklist numberToBlacklist);
         /// <summary>
-        /// Deletes a phone number from the blacklist.
+        /// Deletes a phone number from the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -141,7 +141,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task DeleteFromBlacklistAsync (string phone);
 
         /// <summary>
-        /// Deletes a phone number from the blacklist.
+        /// Deletes a phone number from the blacklist
         /// </summary>
         /// <remarks>
         /// 
@@ -151,7 +151,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFromBlacklistAsyncWithHttpInfo (string phone);
         /// <summary>
-        /// Returns all blacklisted phone numbers.
+        /// Returns all blacklisted phone numbers
         /// </summary>
         /// <remarks>
         /// 
@@ -161,7 +161,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<FetchBlacklistSuccess> FetchBlacklistAsync ();
 
         /// <summary>
-        /// Returns all blacklisted phone numbers.
+        /// Returns all blacklisted phone numbers
         /// </summary>
         /// <remarks>
         /// 
@@ -170,7 +170,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (FetchBlacklistSuccess)</returns>
         System.Threading.Tasks.Task<ApiResponse<FetchBlacklistSuccess>> FetchBlacklistAsyncWithHttpInfo ();
         /// <summary>
-        /// Checks if a phone number is blacklisted.
+        /// Checks if a phone number is blacklisted
         /// </summary>
         /// <remarks>
         /// 
@@ -181,7 +181,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task IsBlacklistedAsync (string phone);
 
         /// <summary>
-        /// Checks if a phone number is blacklisted.
+        /// Checks if a phone number is blacklisted
         /// </summary>
         /// <remarks>
         /// 
@@ -302,7 +302,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a phone number to the blacklist. 
+        /// Adds a phone number to the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="numberToBlacklist">Phone number to be blacklisted</param>
@@ -313,7 +313,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a phone number to the blacklist. 
+        /// Adds a phone number to the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="numberToBlacklist">Phone number to be blacklisted</param>
@@ -381,7 +381,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a phone number to the blacklist. 
+        /// Adds a phone number to the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="numberToBlacklist">Phone number to be blacklisted</param>
@@ -393,7 +393,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a phone number to the blacklist. 
+        /// Adds a phone number to the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="numberToBlacklist">Phone number to be blacklisted</param>
@@ -461,7 +461,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a phone number from the blacklist. 
+        /// Deletes a phone number from the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -472,7 +472,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a phone number from the blacklist. 
+        /// Deletes a phone number from the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -532,7 +532,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a phone number from the blacklist. 
+        /// Deletes a phone number from the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -544,7 +544,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a phone number from the blacklist. 
+        /// Deletes a phone number from the blacklist 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -604,7 +604,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all blacklisted phone numbers. 
+        /// Returns all blacklisted phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>FetchBlacklistSuccess</returns>
@@ -615,7 +615,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all blacklisted phone numbers. 
+        /// Returns all blacklisted phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of FetchBlacklistSuccess</returns>
@@ -670,7 +670,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all blacklisted phone numbers. 
+        /// Returns all blacklisted phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of FetchBlacklistSuccess</returns>
@@ -682,7 +682,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all blacklisted phone numbers. 
+        /// Returns all blacklisted phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (FetchBlacklistSuccess)</returns>
@@ -737,7 +737,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Checks if a phone number is blacklisted. 
+        /// Checks if a phone number is blacklisted 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -748,7 +748,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Checks if a phone number is blacklisted. 
+        /// Checks if a phone number is blacklisted 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -808,7 +808,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Checks if a phone number is blacklisted. 
+        /// Checks if a phone number is blacklisted 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -820,7 +820,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Checks if a phone number is blacklisted. 
+        /// Checks if a phone number is blacklisted 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>

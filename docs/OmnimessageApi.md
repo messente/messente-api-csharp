@@ -4,15 +4,15 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelScheduledMessage**](OmnimessageApi.md#cancelscheduledmessage) | **DELETE** /omnimessage/{omnimessageId} | Cancels a scheduled Omnimessage.
-[**SendOmnimessage**](OmnimessageApi.md#sendomnimessage) | **POST** /omnimessage | Sends an Omnimessage.
+[**CancelScheduledMessage**](OmnimessageApi.md#cancelscheduledmessage) | **DELETE** /omnimessage/{omnimessageId} | Cancels a scheduled Omnimessage
+[**SendOmnimessage**](OmnimessageApi.md#sendomnimessage) | **POST** /omnimessage | Sends an Omnimessage
 
 
 <a name="cancelscheduledmessage"></a>
 # **CancelScheduledMessage**
 > void CancelScheduledMessage (Guid? omnimessageId)
 
-Cancels a scheduled Omnimessage.
+Cancels a scheduled Omnimessage
 
 ### Example
 ```csharp
@@ -37,7 +37,7 @@ namespace Example
 
             try
             {
-                // Cancels a scheduled Omnimessage.
+                // Cancels a scheduled Omnimessage
                 apiInstance.CancelScheduledMessage(omnimessageId);
             }
             catch (Exception e)
@@ -74,7 +74,7 @@ void (empty response body)
 # **SendOmnimessage**
 > OmniMessageCreateSuccessResponse SendOmnimessage (Omnimessage omnimessage)
 
-Sends an Omnimessage.
+Sends an Omnimessage
 
 ### Example
 ```csharp
@@ -99,7 +99,7 @@ namespace Example
 
             try
             {
-                // Sends an Omnimessage.
+                // Sends an Omnimessage
                 OmniMessageCreateSuccessResponse result = apiInstance.SendOmnimessage(omnimessage);
                 Debug.WriteLine(result);
             }

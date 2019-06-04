@@ -25,7 +25,7 @@ namespace com.Messente.Api.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Adds a contact to a group.
+        /// Adds a contact to a group
         /// </summary>
         /// <remarks>
         /// 
@@ -37,7 +37,7 @@ namespace com.Messente.Api.Api
         EmptyObject AddContactToGroup (string groupId, string phone);
 
         /// <summary>
-        /// Adds a contact to a group.
+        /// Adds a contact to a group
         /// </summary>
         /// <remarks>
         /// 
@@ -48,7 +48,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of EmptyObject</returns>
         ApiResponse<EmptyObject> AddContactToGroupWithHttpInfo (string groupId, string phone);
         /// <summary>
-        /// Creates a new contact.
+        /// Creates a new contact
         /// </summary>
         /// <remarks>
         /// 
@@ -59,7 +59,7 @@ namespace com.Messente.Api.Api
         ContactEnvelope CreateContact (ContactFields contactFields);
 
         /// <summary>
-        /// Creates a new contact.
+        /// Creates a new contact
         /// </summary>
         /// <remarks>
         /// 
@@ -69,7 +69,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of ContactEnvelope</returns>
         ApiResponse<ContactEnvelope> CreateContactWithHttpInfo (ContactFields contactFields);
         /// <summary>
-        /// Deletes a contact.
+        /// Deletes a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -80,7 +80,7 @@ namespace com.Messente.Api.Api
         void DeleteContact (string phone);
 
         /// <summary>
-        /// Deletes a contact.
+        /// Deletes a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -90,7 +90,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteContactWithHttpInfo (string phone);
         /// <summary>
-        /// Lists a contact.
+        /// Lists a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -101,7 +101,7 @@ namespace com.Messente.Api.Api
         ContactEnvelope FetchContact (string phone);
 
         /// <summary>
-        /// Lists a contact.
+        /// Lists a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -111,7 +111,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of ContactEnvelope</returns>
         ApiResponse<ContactEnvelope> FetchContactWithHttpInfo (string phone);
         /// <summary>
-        /// Lists groups of a contact.
+        /// Lists groups of a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -122,7 +122,7 @@ namespace com.Messente.Api.Api
         GroupListEnvelope FetchContactGroups (string phone);
 
         /// <summary>
-        /// Lists groups of a contact.
+        /// Lists groups of a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -132,7 +132,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of GroupListEnvelope</returns>
         ApiResponse<GroupListEnvelope> FetchContactGroupsWithHttpInfo (string phone);
         /// <summary>
-        /// Returns all contacts.
+        /// Returns all contacts
         /// </summary>
         /// <remarks>
         /// 
@@ -143,7 +143,7 @@ namespace com.Messente.Api.Api
         ContactListEnvelope FetchContacts (List<string> groupIds = null);
 
         /// <summary>
-        /// Returns all contacts.
+        /// Returns all contacts
         /// </summary>
         /// <remarks>
         /// 
@@ -153,7 +153,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of ContactListEnvelope</returns>
         ApiResponse<ContactListEnvelope> FetchContactsWithHttpInfo (List<string> groupIds = null);
         /// <summary>
-        /// Removes a contact from a group.
+        /// Removes a contact from a group
         /// </summary>
         /// <remarks>
         /// 
@@ -165,7 +165,7 @@ namespace com.Messente.Api.Api
         void RemoveContactFromGroup (string groupId, string phone);
 
         /// <summary>
-        /// Removes a contact from a group.
+        /// Removes a contact from a group
         /// </summary>
         /// <remarks>
         /// 
@@ -176,7 +176,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveContactFromGroupWithHttpInfo (string groupId, string phone);
         /// <summary>
-        /// Updates a contact.
+        /// Updates a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -188,7 +188,7 @@ namespace com.Messente.Api.Api
         ContactEnvelope UpdateContact (string phone, ContactUpdateFields contactUpdateFields);
 
         /// <summary>
-        /// Updates a contact.
+        /// Updates a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -201,7 +201,7 @@ namespace com.Messente.Api.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Adds a contact to a group.
+        /// Adds a contact to a group
         /// </summary>
         /// <remarks>
         /// 
@@ -213,7 +213,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<EmptyObject> AddContactToGroupAsync (string groupId, string phone);
 
         /// <summary>
-        /// Adds a contact to a group.
+        /// Adds a contact to a group
         /// </summary>
         /// <remarks>
         /// 
@@ -224,7 +224,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (EmptyObject)</returns>
         System.Threading.Tasks.Task<ApiResponse<EmptyObject>> AddContactToGroupAsyncWithHttpInfo (string groupId, string phone);
         /// <summary>
-        /// Creates a new contact.
+        /// Creates a new contact
         /// </summary>
         /// <remarks>
         /// 
@@ -235,7 +235,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<ContactEnvelope> CreateContactAsync (ContactFields contactFields);
 
         /// <summary>
-        /// Creates a new contact.
+        /// Creates a new contact
         /// </summary>
         /// <remarks>
         /// 
@@ -245,7 +245,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> CreateContactAsyncWithHttpInfo (ContactFields contactFields);
         /// <summary>
-        /// Deletes a contact.
+        /// Deletes a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -256,7 +256,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task DeleteContactAsync (string phone);
 
         /// <summary>
-        /// Deletes a contact.
+        /// Deletes a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -266,7 +266,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteContactAsyncWithHttpInfo (string phone);
         /// <summary>
-        /// Lists a contact.
+        /// Lists a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -277,7 +277,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<ContactEnvelope> FetchContactAsync (string phone);
 
         /// <summary>
-        /// Lists a contact.
+        /// Lists a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -287,7 +287,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> FetchContactAsyncWithHttpInfo (string phone);
         /// <summary>
-        /// Lists groups of a contact.
+        /// Lists groups of a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -298,7 +298,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<GroupListEnvelope> FetchContactGroupsAsync (string phone);
 
         /// <summary>
-        /// Lists groups of a contact.
+        /// Lists groups of a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -308,7 +308,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (GroupListEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<GroupListEnvelope>> FetchContactGroupsAsyncWithHttpInfo (string phone);
         /// <summary>
-        /// Returns all contacts.
+        /// Returns all contacts
         /// </summary>
         /// <remarks>
         /// 
@@ -319,7 +319,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<ContactListEnvelope> FetchContactsAsync (List<string> groupIds = null);
 
         /// <summary>
-        /// Returns all contacts.
+        /// Returns all contacts
         /// </summary>
         /// <remarks>
         /// 
@@ -329,7 +329,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (ContactListEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContactListEnvelope>> FetchContactsAsyncWithHttpInfo (List<string> groupIds = null);
         /// <summary>
-        /// Removes a contact from a group.
+        /// Removes a contact from a group
         /// </summary>
         /// <remarks>
         /// 
@@ -341,7 +341,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task RemoveContactFromGroupAsync (string groupId, string phone);
 
         /// <summary>
-        /// Removes a contact from a group.
+        /// Removes a contact from a group
         /// </summary>
         /// <remarks>
         /// 
@@ -352,7 +352,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveContactFromGroupAsyncWithHttpInfo (string groupId, string phone);
         /// <summary>
-        /// Updates a contact.
+        /// Updates a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -364,7 +364,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<ContactEnvelope> UpdateContactAsync (string phone, ContactUpdateFields contactUpdateFields);
 
         /// <summary>
-        /// Updates a contact.
+        /// Updates a contact
         /// </summary>
         /// <remarks>
         /// 
@@ -486,7 +486,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a contact to a group. 
+        /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -499,7 +499,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a contact to a group. 
+        /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -564,7 +564,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a contact to a group. 
+        /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -578,7 +578,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Adds a contact to a group. 
+        /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -643,7 +643,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new contact. 
+        /// Creates a new contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactFields"></param>
@@ -655,7 +655,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new contact. 
+        /// Creates a new contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactFields"></param>
@@ -723,7 +723,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new contact. 
+        /// Creates a new contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactFields"></param>
@@ -736,7 +736,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new contact. 
+        /// Creates a new contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactFields"></param>
@@ -804,7 +804,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a contact. 
+        /// Deletes a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -815,7 +815,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a contact. 
+        /// Deletes a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -875,7 +875,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a contact. 
+        /// Deletes a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -887,7 +887,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a contact. 
+        /// Deletes a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -947,7 +947,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a contact. 
+        /// Lists a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -959,7 +959,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a contact. 
+        /// Lists a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1019,7 +1019,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a contact. 
+        /// Lists a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1032,7 +1032,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a contact. 
+        /// Lists a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1092,7 +1092,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists groups of a contact. 
+        /// Lists groups of a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1104,7 +1104,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists groups of a contact. 
+        /// Lists groups of a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1164,7 +1164,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists groups of a contact. 
+        /// Lists groups of a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1177,7 +1177,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists groups of a contact. 
+        /// Lists groups of a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1237,7 +1237,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all contacts. 
+        /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
@@ -1249,7 +1249,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all contacts. 
+        /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
@@ -1306,7 +1306,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all contacts. 
+        /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
@@ -1319,7 +1319,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all contacts. 
+        /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
@@ -1376,7 +1376,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Removes a contact from a group. 
+        /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1388,7 +1388,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Removes a contact from a group. 
+        /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1453,7 +1453,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Removes a contact from a group. 
+        /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1466,7 +1466,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Removes a contact from a group. 
+        /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1531,7 +1531,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a contact. 
+        /// Updates a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1544,7 +1544,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a contact. 
+        /// Updates a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1617,7 +1617,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a contact. 
+        /// Updates a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>
@@ -1631,7 +1631,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a contact. 
+        /// Updates a contact 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="phone">A phone number</param>

@@ -4,14 +4,14 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**RetrieveDeliveryReport**](DeliveryReportApi.md#retrievedeliveryreport) | **GET** /omnimessage/{omnimessageId}/status | Retrieves the delivery report for the Omnimessage.
+[**RetrieveDeliveryReport**](DeliveryReportApi.md#retrievedeliveryreport) | **GET** /omnimessage/{omnimessageId}/status | Retrieves the delivery report for the Omnimessage
 
 
 <a name="retrievedeliveryreport"></a>
 # **RetrieveDeliveryReport**
 > DeliveryReportResponse RetrieveDeliveryReport (Guid? omnimessageId)
 
-Retrieves the delivery report for the Omnimessage.
+Retrieves the delivery report for the Omnimessage
 
 ### Example
 ```csharp
@@ -36,7 +36,7 @@ namespace Example
 
             try
             {
-                // Retrieves the delivery report for the Omnimessage.
+                // Retrieves the delivery report for the Omnimessage
                 DeliveryReportResponse result = apiInstance.RetrieveDeliveryReport(omnimessageId);
                 Debug.WriteLine(result);
             }

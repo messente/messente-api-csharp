@@ -4,21 +4,21 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddContactToGroup**](ContactsApi.md#addcontacttogroup) | **POST** /groups/{groupId}/contacts/{phone} | Adds a contact to a group.
-[**CreateContact**](ContactsApi.md#createcontact) | **POST** /contacts | Creates a new contact.
-[**DeleteContact**](ContactsApi.md#deletecontact) | **DELETE** /contacts/{phone} | Deletes a contact.
-[**FetchContact**](ContactsApi.md#fetchcontact) | **GET** /contacts/{phone} | Lists a contact.
-[**FetchContactGroups**](ContactsApi.md#fetchcontactgroups) | **GET** /contacts/{phone}/groups | Lists groups of a contact.
-[**FetchContacts**](ContactsApi.md#fetchcontacts) | **GET** /contacts | Returns all contacts.
-[**RemoveContactFromGroup**](ContactsApi.md#removecontactfromgroup) | **DELETE** /groups/{groupId}/contacts/{phone} | Removes a contact from a group.
-[**UpdateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{phone} | Updates a contact.
+[**AddContactToGroup**](ContactsApi.md#addcontacttogroup) | **POST** /groups/{groupId}/contacts/{phone} | Adds a contact to a group
+[**CreateContact**](ContactsApi.md#createcontact) | **POST** /contacts | Creates a new contact
+[**DeleteContact**](ContactsApi.md#deletecontact) | **DELETE** /contacts/{phone} | Deletes a contact
+[**FetchContact**](ContactsApi.md#fetchcontact) | **GET** /contacts/{phone} | Lists a contact
+[**FetchContactGroups**](ContactsApi.md#fetchcontactgroups) | **GET** /contacts/{phone}/groups | Lists groups of a contact
+[**FetchContacts**](ContactsApi.md#fetchcontacts) | **GET** /contacts | Returns all contacts
+[**RemoveContactFromGroup**](ContactsApi.md#removecontactfromgroup) | **DELETE** /groups/{groupId}/contacts/{phone} | Removes a contact from a group
+[**UpdateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{phone} | Updates a contact
 
 
 <a name="addcontacttogroup"></a>
 # **AddContactToGroup**
 > EmptyObject AddContactToGroup (string groupId, string phone)
 
-Adds a contact to a group.
+Adds a contact to a group
 
 ### Example
 ```csharp
@@ -44,7 +44,7 @@ namespace Example
 
             try
             {
-                // Adds a contact to a group.
+                // Adds a contact to a group
                 EmptyObject result = apiInstance.AddContactToGroup(groupId, phone);
                 Debug.WriteLine(result);
             }
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 # **CreateContact**
 > ContactEnvelope CreateContact (ContactFields contactFields)
 
-Creates a new contact.
+Creates a new contact
 
 ### Example
 ```csharp
@@ -108,7 +108,7 @@ namespace Example
 
             try
             {
-                // Creates a new contact.
+                // Creates a new contact
                 ContactEnvelope result = apiInstance.CreateContact(contactFields);
                 Debug.WriteLine(result);
             }
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 # **DeleteContact**
 > void DeleteContact (string phone)
 
-Deletes a contact.
+Deletes a contact
 
 ### Example
 ```csharp
@@ -171,7 +171,7 @@ namespace Example
 
             try
             {
-                // Deletes a contact.
+                // Deletes a contact
                 apiInstance.DeleteContact(phone);
             }
             catch (Exception e)
@@ -208,7 +208,7 @@ void (empty response body)
 # **FetchContact**
 > ContactEnvelope FetchContact (string phone)
 
-Lists a contact.
+Lists a contact
 
 ### Example
 ```csharp
@@ -233,7 +233,7 @@ namespace Example
 
             try
             {
-                // Lists a contact.
+                // Lists a contact
                 ContactEnvelope result = apiInstance.FetchContact(phone);
                 Debug.WriteLine(result);
             }
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 # **FetchContactGroups**
 > GroupListEnvelope FetchContactGroups (string phone)
 
-Lists groups of a contact.
+Lists groups of a contact
 
 ### Example
 ```csharp
@@ -296,7 +296,7 @@ namespace Example
 
             try
             {
-                // Lists groups of a contact.
+                // Lists groups of a contact
                 GroupListEnvelope result = apiInstance.FetchContactGroups(phone);
                 Debug.WriteLine(result);
             }
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 # **FetchContacts**
 > ContactListEnvelope FetchContacts (List<string> groupIds = null)
 
-Returns all contacts.
+Returns all contacts
 
 ### Example
 ```csharp
@@ -359,7 +359,7 @@ namespace Example
 
             try
             {
-                // Returns all contacts.
+                // Returns all contacts
                 ContactListEnvelope result = apiInstance.FetchContacts(groupIds);
                 Debug.WriteLine(result);
             }
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 # **RemoveContactFromGroup**
 > void RemoveContactFromGroup (string groupId, string phone)
 
-Removes a contact from a group.
+Removes a contact from a group
 
 ### Example
 ```csharp
@@ -423,7 +423,7 @@ namespace Example
 
             try
             {
-                // Removes a contact from a group.
+                // Removes a contact from a group
                 apiInstance.RemoveContactFromGroup(groupId, phone);
             }
             catch (Exception e)
@@ -461,7 +461,7 @@ void (empty response body)
 # **UpdateContact**
 > ContactEnvelope UpdateContact (string phone, ContactUpdateFields contactUpdateFields)
 
-Updates a contact.
+Updates a contact
 
 ### Example
 ```csharp
@@ -487,7 +487,7 @@ namespace Example
 
             try
             {
-                // Updates a contact.
+                // Updates a contact
                 ContactEnvelope result = apiInstance.UpdateContact(phone, contactUpdateFields);
                 Debug.WriteLine(result);
             }

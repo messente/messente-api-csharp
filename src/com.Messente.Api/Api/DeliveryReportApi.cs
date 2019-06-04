@@ -25,7 +25,7 @@ namespace com.Messente.Api.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage.
+        /// Retrieves the delivery report for the Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Api
         DeliveryReportResponse RetrieveDeliveryReport (Guid? omnimessageId);
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage.
+        /// Retrieves the delivery report for the Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -48,7 +48,7 @@ namespace com.Messente.Api.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage.
+        /// Retrieves the delivery report for the Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -59,7 +59,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync (Guid? omnimessageId);
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage.
+        /// Retrieves the delivery report for the Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -180,7 +180,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage. 
+        /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
@@ -192,7 +192,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage. 
+        /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
@@ -252,7 +252,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage. 
+        /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
@@ -265,7 +265,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage. 
+        /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>

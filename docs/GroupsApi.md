@@ -4,18 +4,18 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateGroup**](GroupsApi.md#creategroup) | **POST** /groups | Creates a new group with the provided name.
-[**DeleteGroup**](GroupsApi.md#deletegroup) | **DELETE** /groups/{groupId} | Deletes a group.
-[**FetchGroup**](GroupsApi.md#fetchgroup) | **GET** /groups/{groupId} | Lists a group.
-[**FetchGroups**](GroupsApi.md#fetchgroups) | **GET** /groups | Returns all groups.
-[**UpdateGroup**](GroupsApi.md#updategroup) | **PUT** /groups/{groupId} | Updates a group with the provided name.
+[**CreateGroup**](GroupsApi.md#creategroup) | **POST** /groups | Creates a new group with the provided name
+[**DeleteGroup**](GroupsApi.md#deletegroup) | **DELETE** /groups/{groupId} | Deletes a group
+[**FetchGroup**](GroupsApi.md#fetchgroup) | **GET** /groups/{groupId} | Lists a group
+[**FetchGroups**](GroupsApi.md#fetchgroups) | **GET** /groups | Returns all groups
+[**UpdateGroup**](GroupsApi.md#updategroup) | **PUT** /groups/{groupId} | Updates a group with the provided name
 
 
 <a name="creategroup"></a>
 # **CreateGroup**
 > GroupEnvelope CreateGroup (GroupName groupName)
 
-Creates a new group with the provided name.
+Creates a new group with the provided name
 
 ### Example
 ```csharp
@@ -40,7 +40,7 @@ namespace Example
 
             try
             {
-                // Creates a new group with the provided name.
+                // Creates a new group with the provided name
                 GroupEnvelope result = apiInstance.CreateGroup(groupName);
                 Debug.WriteLine(result);
             }
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 # **DeleteGroup**
 > void DeleteGroup (string groupId)
 
-Deletes a group.
+Deletes a group
 
 ### Example
 ```csharp
@@ -103,7 +103,7 @@ namespace Example
 
             try
             {
-                // Deletes a group.
+                // Deletes a group
                 apiInstance.DeleteGroup(groupId);
             }
             catch (Exception e)
@@ -140,7 +140,7 @@ void (empty response body)
 # **FetchGroup**
 > GroupEnvelope FetchGroup (string groupId)
 
-Lists a group.
+Lists a group
 
 ### Example
 ```csharp
@@ -165,7 +165,7 @@ namespace Example
 
             try
             {
-                // Lists a group.
+                // Lists a group
                 GroupEnvelope result = apiInstance.FetchGroup(groupId);
                 Debug.WriteLine(result);
             }
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 # **FetchGroups**
 > GroupListEnvelope FetchGroups ()
 
-Returns all groups.
+Returns all groups
 
 ### Example
 ```csharp
@@ -227,7 +227,7 @@ namespace Example
 
             try
             {
-                // Returns all groups.
+                // Returns all groups
                 GroupListEnvelope result = apiInstance.FetchGroups();
                 Debug.WriteLine(result);
             }
@@ -262,7 +262,7 @@ This endpoint does not need any parameter.
 # **UpdateGroup**
 > GroupEnvelope UpdateGroup (string groupId, GroupName groupName)
 
-Updates a group with the provided name.
+Updates a group with the provided name
 
 ### Example
 ```csharp
@@ -288,7 +288,7 @@ namespace Example
 
             try
             {
-                // Updates a group with the provided name.
+                // Updates a group with the provided name
                 GroupEnvelope result = apiInstance.UpdateGroup(groupId, groupName);
                 Debug.WriteLine(result);
             }

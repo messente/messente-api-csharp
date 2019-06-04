@@ -25,7 +25,7 @@ namespace com.Messente.Api.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Creates a new group with the provided name.
+        /// Creates a new group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Api
         GroupEnvelope CreateGroup (GroupName groupName);
 
         /// <summary>
-        /// Creates a new group with the provided name.
+        /// Creates a new group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -46,7 +46,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of GroupEnvelope</returns>
         ApiResponse<GroupEnvelope> CreateGroupWithHttpInfo (GroupName groupName);
         /// <summary>
-        /// Deletes a group.
+        /// Deletes a group
         /// </summary>
         /// <remarks>
         /// 
@@ -57,7 +57,7 @@ namespace com.Messente.Api.Api
         void DeleteGroup (string groupId);
 
         /// <summary>
-        /// Deletes a group.
+        /// Deletes a group
         /// </summary>
         /// <remarks>
         /// 
@@ -67,7 +67,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteGroupWithHttpInfo (string groupId);
         /// <summary>
-        /// Lists a group.
+        /// Lists a group
         /// </summary>
         /// <remarks>
         /// 
@@ -78,7 +78,7 @@ namespace com.Messente.Api.Api
         GroupEnvelope FetchGroup (string groupId);
 
         /// <summary>
-        /// Lists a group.
+        /// Lists a group
         /// </summary>
         /// <remarks>
         /// 
@@ -88,7 +88,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of GroupEnvelope</returns>
         ApiResponse<GroupEnvelope> FetchGroupWithHttpInfo (string groupId);
         /// <summary>
-        /// Returns all groups.
+        /// Returns all groups
         /// </summary>
         /// <remarks>
         /// 
@@ -98,7 +98,7 @@ namespace com.Messente.Api.Api
         GroupListEnvelope FetchGroups ();
 
         /// <summary>
-        /// Returns all groups.
+        /// Returns all groups
         /// </summary>
         /// <remarks>
         /// 
@@ -107,7 +107,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of GroupListEnvelope</returns>
         ApiResponse<GroupListEnvelope> FetchGroupsWithHttpInfo ();
         /// <summary>
-        /// Updates a group with the provided name.
+        /// Updates a group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -119,7 +119,7 @@ namespace com.Messente.Api.Api
         GroupEnvelope UpdateGroup (string groupId, GroupName groupName);
 
         /// <summary>
-        /// Updates a group with the provided name.
+        /// Updates a group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -132,7 +132,7 @@ namespace com.Messente.Api.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Creates a new group with the provided name.
+        /// Creates a new group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -143,7 +143,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<GroupEnvelope> CreateGroupAsync (GroupName groupName);
 
         /// <summary>
-        /// Creates a new group with the provided name.
+        /// Creates a new group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -153,7 +153,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> CreateGroupAsyncWithHttpInfo (GroupName groupName);
         /// <summary>
-        /// Deletes a group.
+        /// Deletes a group
         /// </summary>
         /// <remarks>
         /// 
@@ -164,7 +164,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task DeleteGroupAsync (string groupId);
 
         /// <summary>
-        /// Deletes a group.
+        /// Deletes a group
         /// </summary>
         /// <remarks>
         /// 
@@ -174,7 +174,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteGroupAsyncWithHttpInfo (string groupId);
         /// <summary>
-        /// Lists a group.
+        /// Lists a group
         /// </summary>
         /// <remarks>
         /// 
@@ -185,7 +185,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<GroupEnvelope> FetchGroupAsync (string groupId);
 
         /// <summary>
-        /// Lists a group.
+        /// Lists a group
         /// </summary>
         /// <remarks>
         /// 
@@ -195,7 +195,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> FetchGroupAsyncWithHttpInfo (string groupId);
         /// <summary>
-        /// Returns all groups.
+        /// Returns all groups
         /// </summary>
         /// <remarks>
         /// 
@@ -205,7 +205,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<GroupListEnvelope> FetchGroupsAsync ();
 
         /// <summary>
-        /// Returns all groups.
+        /// Returns all groups
         /// </summary>
         /// <remarks>
         /// 
@@ -214,7 +214,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse (GroupListEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<GroupListEnvelope>> FetchGroupsAsyncWithHttpInfo ();
         /// <summary>
-        /// Updates a group with the provided name.
+        /// Updates a group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -226,7 +226,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<GroupEnvelope> UpdateGroupAsync (string groupId, GroupName groupName);
 
         /// <summary>
-        /// Updates a group with the provided name.
+        /// Updates a group with the provided name
         /// </summary>
         /// <remarks>
         /// 
@@ -348,7 +348,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new group with the provided name. 
+        /// Creates a new group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupName"></param>
@@ -360,7 +360,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new group with the provided name. 
+        /// Creates a new group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupName"></param>
@@ -428,7 +428,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new group with the provided name. 
+        /// Creates a new group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupName"></param>
@@ -441,7 +441,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Creates a new group with the provided name. 
+        /// Creates a new group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupName"></param>
@@ -509,7 +509,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a group. 
+        /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -520,7 +520,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a group. 
+        /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -580,7 +580,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a group. 
+        /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -592,7 +592,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Deletes a group. 
+        /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -652,7 +652,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a group. 
+        /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -664,7 +664,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a group. 
+        /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -724,7 +724,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a group. 
+        /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -737,7 +737,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Lists a group. 
+        /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -797,7 +797,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all groups. 
+        /// Returns all groups 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>GroupListEnvelope</returns>
@@ -808,7 +808,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all groups. 
+        /// Returns all groups 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of GroupListEnvelope</returns>
@@ -863,7 +863,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all groups. 
+        /// Returns all groups 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of GroupListEnvelope</returns>
@@ -875,7 +875,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Returns all groups. 
+        /// Returns all groups 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (GroupListEnvelope)</returns>
@@ -930,7 +930,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a group with the provided name. 
+        /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -943,7 +943,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a group with the provided name. 
+        /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1016,7 +1016,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a group with the provided name. 
+        /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>
@@ -1030,7 +1030,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Updates a group with the provided name. 
+        /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId">String in uuid format.</param>

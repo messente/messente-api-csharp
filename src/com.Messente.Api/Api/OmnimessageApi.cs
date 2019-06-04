@@ -25,7 +25,7 @@ namespace com.Messente.Api.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Cancels a scheduled Omnimessage.
+        /// Cancels a scheduled Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Api
         void CancelScheduledMessage (Guid? omnimessageId);
 
         /// <summary>
-        /// Cancels a scheduled Omnimessage.
+        /// Cancels a scheduled Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -46,7 +46,7 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CancelScheduledMessageWithHttpInfo (Guid? omnimessageId);
         /// <summary>
-        /// Sends an Omnimessage.
+        /// Sends an Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -57,7 +57,7 @@ namespace com.Messente.Api.Api
         OmniMessageCreateSuccessResponse SendOmnimessage (Omnimessage omnimessage);
 
         /// <summary>
-        /// Sends an Omnimessage.
+        /// Sends an Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -69,7 +69,7 @@ namespace com.Messente.Api.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Cancels a scheduled Omnimessage.
+        /// Cancels a scheduled Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -80,7 +80,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task CancelScheduledMessageAsync (Guid? omnimessageId);
 
         /// <summary>
-        /// Cancels a scheduled Omnimessage.
+        /// Cancels a scheduled Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -90,7 +90,7 @@ namespace com.Messente.Api.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CancelScheduledMessageAsyncWithHttpInfo (Guid? omnimessageId);
         /// <summary>
-        /// Sends an Omnimessage.
+        /// Sends an Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -101,7 +101,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<OmniMessageCreateSuccessResponse> SendOmnimessageAsync (Omnimessage omnimessage);
 
         /// <summary>
-        /// Sends an Omnimessage.
+        /// Sends an Omnimessage
         /// </summary>
         /// <remarks>
         /// 
@@ -222,7 +222,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Cancels a scheduled Omnimessage. 
+        /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
@@ -233,7 +233,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Cancels a scheduled Omnimessage. 
+        /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
@@ -293,7 +293,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Cancels a scheduled Omnimessage. 
+        /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
@@ -305,7 +305,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Cancels a scheduled Omnimessage. 
+        /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
@@ -365,7 +365,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Sends an Omnimessage. 
+        /// Sends an Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessage">Omnimessage to be sent</param>
@@ -377,7 +377,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Sends an Omnimessage. 
+        /// Sends an Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessage">Omnimessage to be sent</param>
@@ -445,7 +445,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Sends an Omnimessage. 
+        /// Sends an Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessage">Omnimessage to be sent</param>
@@ -458,7 +458,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Sends an Omnimessage. 
+        /// Sends an Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="omnimessage">Omnimessage to be sent</param>
