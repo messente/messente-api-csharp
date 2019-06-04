@@ -39,7 +39,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupId = groupId_example;  // string | String in uuid format.
+            var groupId = groupId_example;  // string | String in UUID format.
             var phone = phone_example;  // string | A phone number
 
             try
@@ -61,7 +61,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **string**| String in uuid format. | 
+ **groupId** | **string**| String in UUID format. | 
  **phone** | **string**| A phone number | 
 
 ### Return type
@@ -355,7 +355,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupIds = new List<string>(); // List<string> | Optional one or many group id strings in uuid format. For example: \"/contacts?groupIds=group_id_one&groupIds=group_id_two\"  (optional) 
+            var groupIds = new List<string>(); // List<string> | Optional one or many group id strings in UUID format. For example: \"/contacts?groupIds=group_id_one&groupIds=group_id_two\"  (optional) 
 
             try
             {
@@ -376,7 +376,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupIds** | [**List&lt;string&gt;**](string.md)| Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  | [optional] 
+ **groupIds** | [**List&lt;string&gt;**](string.md)| Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  | [optional] 
 
 ### Return type
 
@@ -418,7 +418,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupId = groupId_example;  // string | String in uuid format.
+            var groupId = groupId_example;  // string | String in UUID format.
             var phone = phone_example;  // string | A phone number
 
             try
@@ -439,7 +439,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **string**| String in uuid format. | 
+ **groupId** | **string**| String in UUID format. | 
  **phone** | **string**| A phone number | 
 
 ### Return type

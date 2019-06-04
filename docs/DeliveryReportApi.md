@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="retrievedeliveryreport"></a>
 # **RetrieveDeliveryReport**
-> DeliveryReportResponse RetrieveDeliveryReport (Guid? omnimessageId)
+> DeliveryReportResponse RetrieveDeliveryReport (string omnimessageId)
 
 Retrieves the delivery report for the Omnimessage
 
@@ -32,7 +32,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DeliveryReportApi();
-            var omnimessageId = new Guid?(); // Guid? | UUID of the Omnimessage to for which the delivery report is to be retrieved
+            var omnimessageId = omnimessageId_example;  // string | UUID of the Omnimessage to for which the delivery report is to be retrieved
 
             try
             {
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**Guid?**](Guid?.md)| UUID of the Omnimessage to for which the delivery report is to be retrieved | 
+ **omnimessageId** | **string**| UUID of the Omnimessage to for which the delivery report is to be retrieved | 
 
 ### Return type
 

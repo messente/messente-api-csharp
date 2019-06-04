@@ -36,7 +36,7 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupResponseFields" /> class.
         /// </summary>
-        /// <param name="id">Id string in uuid format (required).</param>
+        /// <param name="id">Id string in UUID format (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="createdOn">format %Y-%m-%dT%H:%M:%S.%fZ.</param>
         /// <param name="contactsCount">contactsCount (required).</param>
@@ -73,9 +73,9 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// Id string in uuid format
+        /// Id string in UUID format
         /// </summary>
-        /// <value>Id string in uuid format</value>
+        /// <value>Id string in UUID format</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
 

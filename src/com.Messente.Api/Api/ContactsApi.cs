@@ -31,7 +31,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>EmptyObject</returns>
         EmptyObject AddContactToGroup (string groupId, string phone);
@@ -43,7 +43,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>ApiResponse of EmptyObject</returns>
         ApiResponse<EmptyObject> AddContactToGroupWithHttpInfo (string groupId, string phone);
@@ -138,7 +138,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>ContactListEnvelope</returns>
         ContactListEnvelope FetchContacts (List<string> groupIds = null);
 
@@ -149,7 +149,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>ApiResponse of ContactListEnvelope</returns>
         ApiResponse<ContactListEnvelope> FetchContactsWithHttpInfo (List<string> groupIds = null);
         /// <summary>
@@ -159,7 +159,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns></returns>
         void RemoveContactFromGroup (string groupId, string phone);
@@ -171,7 +171,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RemoveContactFromGroupWithHttpInfo (string groupId, string phone);
@@ -207,7 +207,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of EmptyObject</returns>
         System.Threading.Tasks.Task<EmptyObject> AddContactToGroupAsync (string groupId, string phone);
@@ -219,7 +219,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of ApiResponse (EmptyObject)</returns>
         System.Threading.Tasks.Task<ApiResponse<EmptyObject>> AddContactToGroupAsyncWithHttpInfo (string groupId, string phone);
@@ -314,7 +314,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>Task of ContactListEnvelope</returns>
         System.Threading.Tasks.Task<ContactListEnvelope> FetchContactsAsync (List<string> groupIds = null);
 
@@ -325,7 +325,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>Task of ApiResponse (ContactListEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<ContactListEnvelope>> FetchContactsAsyncWithHttpInfo (List<string> groupIds = null);
         /// <summary>
@@ -335,7 +335,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task RemoveContactFromGroupAsync (string groupId, string phone);
@@ -347,7 +347,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RemoveContactFromGroupAsyncWithHttpInfo (string groupId, string phone);
@@ -489,7 +489,7 @@ namespace com.Messente.Api.Api
         /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>EmptyObject</returns>
         public EmptyObject AddContactToGroup (string groupId, string phone)
@@ -502,7 +502,7 @@ namespace com.Messente.Api.Api
         /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>ApiResponse of EmptyObject</returns>
         public ApiResponse< EmptyObject > AddContactToGroupWithHttpInfo (string groupId, string phone)
@@ -567,7 +567,7 @@ namespace com.Messente.Api.Api
         /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of EmptyObject</returns>
         public async System.Threading.Tasks.Task<EmptyObject> AddContactToGroupAsync (string groupId, string phone)
@@ -581,7 +581,7 @@ namespace com.Messente.Api.Api
         /// Adds a contact to a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of ApiResponse (EmptyObject)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<EmptyObject>> AddContactToGroupAsyncWithHttpInfo (string groupId, string phone)
@@ -1240,7 +1240,7 @@ namespace com.Messente.Api.Api
         /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>ContactListEnvelope</returns>
         public ContactListEnvelope FetchContacts (List<string> groupIds = null)
         {
@@ -1252,7 +1252,7 @@ namespace com.Messente.Api.Api
         /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>ApiResponse of ContactListEnvelope</returns>
         public ApiResponse< ContactListEnvelope > FetchContactsWithHttpInfo (List<string> groupIds = null)
         {
@@ -1309,7 +1309,7 @@ namespace com.Messente.Api.Api
         /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>Task of ContactListEnvelope</returns>
         public async System.Threading.Tasks.Task<ContactListEnvelope> FetchContactsAsync (List<string> groupIds = null)
         {
@@ -1322,7 +1322,7 @@ namespace com.Messente.Api.Api
         /// Returns all contacts 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupIds">Optional one or many group id strings in uuid format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
+        /// <param name="groupIds">Optional one or many group id strings in UUID format. For example: \&quot;/contacts?groupIds&#x3D;group_id_one&amp;groupIds&#x3D;group_id_two\&quot;  (optional)</param>
         /// <returns>Task of ApiResponse (ContactListEnvelope)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ContactListEnvelope>> FetchContactsAsyncWithHttpInfo (List<string> groupIds = null)
         {
@@ -1379,7 +1379,7 @@ namespace com.Messente.Api.Api
         /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns></returns>
         public void RemoveContactFromGroup (string groupId, string phone)
@@ -1391,7 +1391,7 @@ namespace com.Messente.Api.Api
         /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> RemoveContactFromGroupWithHttpInfo (string groupId, string phone)
@@ -1456,7 +1456,7 @@ namespace com.Messente.Api.Api
         /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task RemoveContactFromGroupAsync (string groupId, string phone)
@@ -1469,7 +1469,7 @@ namespace com.Messente.Api.Api
         /// Removes a contact from a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in uuid format.</param>
+        /// <param name="groupId">String in UUID format.</param>
         /// <param name="phone">A phone number</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveContactFromGroupAsyncWithHttpInfo (string groupId, string phone)

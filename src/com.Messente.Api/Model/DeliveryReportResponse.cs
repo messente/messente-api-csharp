@@ -39,7 +39,7 @@ namespace com.Messente.Api.Model
         /// <param name="statuses">Contains the delivery reports for each channnel, ordered by send order (required).</param>
         /// <param name="to">Phone number in e.164 format (required).</param>
         /// <param name="omnimessageId">Unique identifier for the Omnimessage (required).</param>
-        public DeliveryReportResponse(List<DeliveryResult> statuses = default(List<DeliveryResult>), string to = default(string), Guid? omnimessageId = default(Guid?))
+        public DeliveryReportResponse(List<DeliveryResult> statuses = default(List<DeliveryResult>), string to = default(string), string omnimessageId = default(string))
         {
             // to ensure "statuses" is required (not null)
             if (statuses == null)
@@ -89,7 +89,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>Unique identifier for the Omnimessage</value>
         [DataMember(Name="omnimessage_id", EmitDefaultValue=false)]
-        public Guid? OmnimessageId { get; set; }
+        public string OmnimessageId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

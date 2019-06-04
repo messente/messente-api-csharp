@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="cancelscheduledmessage"></a>
 # **CancelScheduledMessage**
-> void CancelScheduledMessage (Guid? omnimessageId)
+> void CancelScheduledMessage (string omnimessageId)
 
 Cancels a scheduled Omnimessage
 
@@ -33,7 +33,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new OmnimessageApi();
-            var omnimessageId = new Guid?(); // Guid? | UUID of the scheduled Omnimessage to be cancelled
+            var omnimessageId = omnimessageId_example;  // string | UUID of the scheduled Omnimessage to be cancelled
 
             try
             {
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**Guid?**](Guid?.md)| UUID of the scheduled Omnimessage to be cancelled | 
+ **omnimessageId** | **string**| UUID of the scheduled Omnimessage to be cancelled | 
 
 ### Return type
 

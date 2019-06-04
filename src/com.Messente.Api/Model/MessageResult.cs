@@ -44,7 +44,7 @@ namespace com.Messente.Api.Model
         /// <param name="messageId">Unique identifier for the message (required).</param>
         /// <param name="channel">channel (required).</param>
         /// <param name="sender">Sender that was used for the message (required).</param>
-        public MessageResult(Guid? messageId = default(Guid?), Channel channel = default(Channel), string sender = default(string))
+        public MessageResult(string messageId = default(string), Channel channel = default(Channel), string sender = default(string))
         {
             // to ensure "messageId" is required (not null)
             if (messageId == null)
@@ -80,7 +80,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>Unique identifier for the message</value>
         [DataMember(Name="message_id", EmitDefaultValue=false)]
-        public Guid? MessageId { get; set; }
+        public string MessageId { get; set; }
 
 
         /// <summary>
