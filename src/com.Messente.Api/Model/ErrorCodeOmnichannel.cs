@@ -23,9 +23,9 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Matches the following ErrorTitleOmnichannel.   This field is a constant.    * 101 - Not found   * 102 - Forbidden   * 103 - Unauthorized   * 104 - Invalid data   * 105 - Internal Server Error   * 106 - Missing data   * 107 - Method not allowed
+    /// Matches the following error title.   This field is a constant.    * 101 - Not found   * 102 - Forbidden   * 103 - Unauthorized   * 104 - Invalid data   * 105 - Internal Server Error   * 106 - Missing data   * 107 - Method not allowed
     /// </summary>
-    /// <value>Matches the following ErrorTitleOmnichannel.   This field is a constant.    * 101 - Not found   * 102 - Forbidden   * 103 - Unauthorized   * 104 - Invalid data   * 105 - Internal Server Error   * 106 - Missing data   * 107 - Method not allowed</value>
+    /// <value>Matches the following error title.   This field is a constant.    * 101 - Not found   * 102 - Forbidden   * 103 - Unauthorized   * 104 - Invalid data   * 105 - Internal Server Error   * 106 - Missing data   * 107 - Method not allowed</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

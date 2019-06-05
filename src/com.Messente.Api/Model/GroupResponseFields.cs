@@ -38,7 +38,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="id">Id string in UUID format (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="createdOn">format %Y-%m-%dT%H:%M:%S.%fZ.</param>
+        /// <param name="createdOn">Format %Y-%m-%dT%H:%M:%S.%fZ.</param>
         /// <param name="contactsCount">contactsCount (required).</param>
         public GroupResponseFields(string id = default(string), string name = default(string), string createdOn = default(string), int? contactsCount = default(int?))
         {
@@ -86,9 +86,9 @@ namespace com.Messente.Api.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// format %Y-%m-%dT%H:%M:%S.%fZ
+        /// Format %Y-%m-%dT%H:%M:%S.%fZ
         /// </summary>
-        /// <value>format %Y-%m-%dT%H:%M:%S.%fZ</value>
+        /// <value>Format %Y-%m-%dT%H:%M:%S.%fZ</value>
         [DataMember(Name="createdOn", EmitDefaultValue=false)]
         public string CreatedOn { get; set; }
 

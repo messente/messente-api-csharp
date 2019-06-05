@@ -32,7 +32,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DeliveryReportApi();
-            var omnimessageId = omnimessageId_example;  // string | UUID of the Omnimessage to for which the delivery report is to be retrieved
+            var omnimessageId = omnimessageId_example;  // string | UUID of the omnimessage to for which the delivery report is to be retrieved
 
             try
             {
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | **string**| UUID of the Omnimessage to for which the delivery report is to be retrieved | 
+ **omnimessageId** | **string**| UUID of the omnimessage to for which the delivery report is to be retrieved | 
 
 ### Return type
 

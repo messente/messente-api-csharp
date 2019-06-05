@@ -33,7 +33,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new OmnimessageApi();
-            var omnimessageId = omnimessageId_example;  // string | UUID of the scheduled Omnimessage to be cancelled
+            var omnimessageId = omnimessageId_example;  // string | UUID of the scheduled omnimessage to be cancelled
 
             try
             {
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | **string**| UUID of the scheduled Omnimessage to be cancelled | 
+ **omnimessageId** | **string**| UUID of the scheduled omnimessage to be cancelled | 
 
 ### Return type
 

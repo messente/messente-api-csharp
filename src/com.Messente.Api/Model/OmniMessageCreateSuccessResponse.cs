@@ -36,9 +36,9 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OmniMessageCreateSuccessResponse" /> class.
         /// </summary>
-        /// <param name="messages">List of messages that compose the Omnimessage (required).</param>
+        /// <param name="messages">List of messages that compose the omnimessage (required).</param>
         /// <param name="to">Phone number in e.164 format (required).</param>
-        /// <param name="omnimessageId">Unique identifier for the Omnimessage (required).</param>
+        /// <param name="omnimessageId">Unique identifier for the omnimessage (required).</param>
         public OmniMessageCreateSuccessResponse(List<MessageResult> messages = default(List<MessageResult>), string to = default(string), string omnimessageId = default(string))
         {
             // to ensure "messages" is required (not null)
@@ -71,9 +71,9 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// List of messages that compose the Omnimessage
+        /// List of messages that compose the omnimessage
         /// </summary>
-        /// <value>List of messages that compose the Omnimessage</value>
+        /// <value>List of messages that compose the omnimessage</value>
         [DataMember(Name="messages", EmitDefaultValue=false)]
         public List<MessageResult> Messages { get; set; }
 
@@ -85,9 +85,9 @@ namespace com.Messente.Api.Model
         public string To { get; set; }
 
         /// <summary>
-        /// Unique identifier for the Omnimessage
+        /// Unique identifier for the omnimessage
         /// </summary>
-        /// <value>Unique identifier for the Omnimessage</value>
+        /// <value>Unique identifier for the omnimessage</value>
         [DataMember(Name="omnimessage_id", EmitDefaultValue=false)]
         public string OmnimessageId { get; set; }
 

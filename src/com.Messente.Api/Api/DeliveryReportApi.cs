@@ -31,7 +31,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>DeliveryReportResponse</returns>
         DeliveryReportResponse RetrieveDeliveryReport (string omnimessageId);
 
@@ -42,7 +42,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>ApiResponse of DeliveryReportResponse</returns>
         ApiResponse<DeliveryReportResponse> RetrieveDeliveryReportWithHttpInfo (string omnimessageId);
         #endregion Synchronous Operations
@@ -54,7 +54,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>Task of DeliveryReportResponse</returns>
         System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync (string omnimessageId);
 
@@ -65,7 +65,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>Task of ApiResponse (DeliveryReportResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportAsyncWithHttpInfo (string omnimessageId);
         #endregion Asynchronous Operations
@@ -183,7 +183,7 @@ namespace com.Messente.Api.Api
         /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>DeliveryReportResponse</returns>
         public DeliveryReportResponse RetrieveDeliveryReport (string omnimessageId)
         {
@@ -195,7 +195,7 @@ namespace com.Messente.Api.Api
         /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>ApiResponse of DeliveryReportResponse</returns>
         public ApiResponse< DeliveryReportResponse > RetrieveDeliveryReportWithHttpInfo (string omnimessageId)
         {
@@ -255,7 +255,7 @@ namespace com.Messente.Api.Api
         /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>Task of DeliveryReportResponse</returns>
         public async System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync (string omnimessageId)
         {
@@ -268,7 +268,7 @@ namespace com.Messente.Api.Api
         /// Retrieves the delivery report for the Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the Omnimessage to for which the delivery report is to be retrieved</param>
+        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
         /// <returns>Task of ApiResponse (DeliveryReportResponse)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportAsyncWithHttpInfo (string omnimessageId)
         {

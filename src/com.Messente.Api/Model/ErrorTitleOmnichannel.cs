@@ -23,9 +23,9 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Textual value which corresponds to ErrorCodeOmnichannel
+    /// Textual value which corresponds to an error code
     /// </summary>
-    /// <value>Textual value which corresponds to ErrorCodeOmnichannel</value>
+    /// <value>Textual value which corresponds to an error code</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

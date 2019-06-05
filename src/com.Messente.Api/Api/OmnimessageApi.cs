@@ -31,7 +31,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns></returns>
         void CancelScheduledMessage (string omnimessageId);
 
@@ -42,7 +42,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CancelScheduledMessageWithHttpInfo (string omnimessageId);
         /// <summary>
@@ -75,7 +75,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task CancelScheduledMessageAsync (string omnimessageId);
 
@@ -86,7 +86,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CancelScheduledMessageAsyncWithHttpInfo (string omnimessageId);
         /// <summary>
@@ -225,7 +225,7 @@ namespace com.Messente.Api.Api
         /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns></returns>
         public void CancelScheduledMessage (string omnimessageId)
         {
@@ -236,7 +236,7 @@ namespace com.Messente.Api.Api
         /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> CancelScheduledMessageWithHttpInfo (string omnimessageId)
         {
@@ -296,7 +296,7 @@ namespace com.Messente.Api.Api
         /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task CancelScheduledMessageAsync (string omnimessageId)
         {
@@ -308,7 +308,7 @@ namespace com.Messente.Api.Api
         /// Cancels a scheduled Omnimessage 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the scheduled Omnimessage to be cancelled</param>
+        /// <param name="omnimessageId">UUID of the scheduled omnimessage to be cancelled</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> CancelScheduledMessageAsyncWithHttpInfo (string omnimessageId)
         {

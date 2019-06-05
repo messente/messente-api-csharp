@@ -49,7 +49,7 @@ namespace com.Messente.Api.Model
         /// <param name="status">status.</param>
         /// <param name="channel">channel.</param>
         /// <param name="messageId">Unique identifier for the message.</param>
-        /// <param name="error">Human-readable description of what went wrong, *null* in case of success or if the messages has not been processed yet.</param>
+        /// <param name="error">Human-readable description of what went wrong, *null* in case of success or if the message has not been processed yet.</param>
         /// <param name="err">err.</param>
         /// <param name="timestamp">When this status was received by Omnichannel API.</param>
         public DeliveryResult(Status? status = default(Status?), Channel? channel = default(Channel?), string messageId = default(string), string error = default(string), ErrorCodeOmnichannelMachine? err = default(ErrorCodeOmnichannelMachine?), DateTime? timestamp = default(DateTime?))
@@ -72,9 +72,9 @@ namespace com.Messente.Api.Model
         public string MessageId { get; set; }
 
         /// <summary>
-        /// Human-readable description of what went wrong, *null* in case of success or if the messages has not been processed yet
+        /// Human-readable description of what went wrong, *null* in case of success or if the message has not been processed yet
         /// </summary>
-        /// <value>Human-readable description of what went wrong, *null* in case of success or if the messages has not been processed yet</value>
+        /// <value>Human-readable description of what went wrong, *null* in case of success or if the message has not been processed yet</value>
         [DataMember(Name="error", EmitDefaultValue=false)]
         public string Error { get; set; }
 
