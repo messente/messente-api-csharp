@@ -29,8 +29,9 @@ namespace com.Messente.Api.Model
     public partial class Viber :  IEquatable<Viber>
     {
         /// <summary>
-        /// Defines Channel
+        /// The channel used to deliver the message
         /// </summary>
+        /// <value>The channel used to deliver the message</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ChannelEnum
         {
@@ -43,8 +44,9 @@ namespace com.Messente.Api.Model
         }
 
         /// <summary>
-        /// Gets or Sets Channel
+        /// The channel used to deliver the message
         /// </summary>
+        /// <value>The channel used to deliver the message</value>
         [DataMember(Name="channel", EmitDefaultValue=false)]
         public ChannelEnum? Channel { get; set; }
         /// <summary>
@@ -56,7 +58,7 @@ namespace com.Messente.Api.Model
         /// <param name="imageUrl">URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
         /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
-        /// <param name="channel">channel (default to ChannelEnum.Viber).</param>
+        /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Viber).</param>
         public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = ChannelEnum.Viber)
         {
             this.Sender = sender;

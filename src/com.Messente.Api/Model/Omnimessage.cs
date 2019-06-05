@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Omnimessage
+    /// An omnimessage
     /// </summary>
     [DataContract]
     public partial class Omnimessage :  IEquatable<Omnimessage>
@@ -42,7 +42,7 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="Omnimessage" /> class.
         /// </summary>
         /// <param name="to">Phone number in e.164 format (required).</param>
-        /// <param name="messages">messages (required).</param>
+        /// <param name="messages">An array of messages (required).</param>
         /// <param name="dlrUrl">URL where the delivery report will be sent.</param>
         /// <param name="textStore">textStore.</param>
         /// <param name="timeToSend">Optional parameter for sending messages at some specific time in the future.   Time must be specified in the ISO-8601 format.   If no timezone is specified, then the timezone is assumed to be UTC.    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00).</param>
@@ -79,8 +79,9 @@ namespace com.Messente.Api.Model
         public string To { get; set; }
 
         /// <summary>
-        /// Gets or Sets Messages
+        /// An array of messages
         /// </summary>
+        /// <value>An array of messages</value>
         [DataMember(Name="messages", EmitDefaultValue=false)]
         public List<Object> Messages { get; set; }
 

@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// ContactListEnvelope
+    /// A container for contacts
     /// </summary>
     [DataContract]
     public partial class ContactListEnvelope :  IEquatable<ContactListEnvelope>
@@ -31,15 +31,16 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactListEnvelope" /> class.
         /// </summary>
-        /// <param name="contacts">contacts.</param>
+        /// <param name="contacts">An array of contacts.</param>
         public ContactListEnvelope(List<ContactFields> contacts = default(List<ContactFields>))
         {
             this.Contacts = contacts;
         }
         
         /// <summary>
-        /// Gets or Sets Contacts
+        /// An array of contacts
         /// </summary>
+        /// <value>An array of contacts</value>
         [DataMember(Name="contacts", EmitDefaultValue=false)]
         public List<ContactFields> Contacts { get; set; }
 

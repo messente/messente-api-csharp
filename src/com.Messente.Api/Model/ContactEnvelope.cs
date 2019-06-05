@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// ContactEnvelope
+    /// A container for a contact
     /// </summary>
     [DataContract]
     public partial class ContactEnvelope :  IEquatable<ContactEnvelope>

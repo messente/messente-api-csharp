@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// GroupResponseFields
+    /// A container for fields of a group
     /// </summary>
     [DataContract]
     public partial class GroupResponseFields :  IEquatable<GroupResponseFields>
@@ -37,9 +37,9 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="GroupResponseFields" /> class.
         /// </summary>
         /// <param name="id">Id string in UUID format (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="createdOn">Format %Y-%m-%dT%H:%M:%S.%fZ.</param>
-        /// <param name="contactsCount">contactsCount (required).</param>
+        /// <param name="name">The name of the group (required).</param>
+        /// <param name="createdOn">When the group was created.</param>
+        /// <param name="contactsCount">The count of contacts in the group (required).</param>
         public GroupResponseFields(string id = default(string), string name = default(string), string createdOn = default(string), int? contactsCount = default(int?))
         {
             // to ensure "id" is required (not null)
@@ -80,21 +80,23 @@ namespace com.Messente.Api.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the group
         /// </summary>
+        /// <value>The name of the group</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Format %Y-%m-%dT%H:%M:%S.%fZ
+        /// When the group was created
         /// </summary>
-        /// <value>Format %Y-%m-%dT%H:%M:%S.%fZ</value>
+        /// <value>When the group was created</value>
         [DataMember(Name="createdOn", EmitDefaultValue=false)]
         public string CreatedOn { get; set; }
 
         /// <summary>
-        /// Gets or Sets ContactsCount
+        /// The count of contacts in the group
         /// </summary>
+        /// <value>The count of contacts in the group</value>
         [DataMember(Name="contactsCount", EmitDefaultValue=false)]
         public int? ContactsCount { get; set; }
 

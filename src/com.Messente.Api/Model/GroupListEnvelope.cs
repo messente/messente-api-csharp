@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// GroupListEnvelope
+    /// A container for groups
     /// </summary>
     [DataContract]
     public partial class GroupListEnvelope :  IEquatable<GroupListEnvelope>
@@ -31,15 +31,16 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupListEnvelope" /> class.
         /// </summary>
-        /// <param name="groups">groups.</param>
+        /// <param name="groups">An array of groups.</param>
         public GroupListEnvelope(List<GroupResponseFields> groups = default(List<GroupResponseFields>))
         {
             this.Groups = groups;
         }
         
         /// <summary>
-        /// Gets or Sets Groups
+        /// An array of groups
         /// </summary>
+        /// <value>An array of groups</value>
         [DataMember(Name="groups", EmitDefaultValue=false)]
         public List<GroupResponseFields> Groups { get; set; }
 

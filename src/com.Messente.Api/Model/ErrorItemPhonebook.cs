@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// ErrorItemPhonebook
+    /// A container for Phonebook API error
     /// </summary>
     [DataContract]
     public partial class ErrorItemPhonebook :  IEquatable<ErrorItemPhonebook>

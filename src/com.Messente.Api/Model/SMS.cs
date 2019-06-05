@@ -62,8 +62,9 @@ namespace com.Messente.Api.Model
         [DataMember(Name="autoconvert", EmitDefaultValue=false)]
         public AutoconvertEnum? Autoconvert { get; set; }
         /// <summary>
-        /// Defines Channel
+        /// The channel used to deliver the message
         /// </summary>
+        /// <value>The channel used to deliver the message</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ChannelEnum
         {
@@ -76,8 +77,9 @@ namespace com.Messente.Api.Model
         }
 
         /// <summary>
-        /// Gets or Sets Channel
+        /// The channel used to deliver the message
         /// </summary>
+        /// <value>The channel used to deliver the message</value>
         [DataMember(Name="channel", EmitDefaultValue=false)]
         public ChannelEnum? Channel { get; set; }
         /// <summary>
@@ -93,7 +95,7 @@ namespace com.Messente.Api.Model
         /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
         /// <param name="autoconvert">Defines how non-GSM characters will be treated:    - \&quot;on\&quot; Use replacement settings from the account&#39;s [API Auto Replace settings page](https://dashboard.messente.com/api-settings/auto-replace) (default)   - \&quot;full\&quot; All non GSM 03.38 characters will be replaced with suitable alternatives   - \&quot;off\&quot; Message content is not modified in any way.</param>
         /// <param name="udh">hex-encoded string containing SMS UDH.</param>
-        /// <param name="channel">channel (default to ChannelEnum.Sms).</param>
+        /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Sms).</param>
         public SMS(string text = default(string), string sender = default(string), int? validity = default(int?), AutoconvertEnum? autoconvert = default(AutoconvertEnum?), string udh = default(string), ChannelEnum? channel = ChannelEnum.Sms)
         {
             // to ensure "text" is required (not null)

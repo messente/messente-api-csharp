@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// DeliveryReportResponse
+    /// A container for successful delivery report response
     /// </summary>
     [DataContract]
     public partial class DeliveryReportResponse :  IEquatable<DeliveryReportResponse>
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DeliveryReportResponse" /> class.
         /// </summary>
-        /// <param name="statuses">Contains the delivery reports for each channnel, ordered by send order (required).</param>
+        /// <param name="statuses">Contains the delivery reports for each channel, ordered by send order (required).</param>
         /// <param name="to">Phone number in e.164 format (required).</param>
         /// <param name="omnimessageId">Unique identifier for the omnimessage (required).</param>
         public DeliveryReportResponse(List<DeliveryResult> statuses = default(List<DeliveryResult>), string to = default(string), string omnimessageId = default(string))
@@ -71,9 +71,9 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// Contains the delivery reports for each channnel, ordered by send order
+        /// Contains the delivery reports for each channel, ordered by send order
         /// </summary>
-        /// <value>Contains the delivery reports for each channnel, ordered by send order</value>
+        /// <value>Contains the delivery reports for each channel, ordered by send order</value>
         [DataMember(Name="statuses", EmitDefaultValue=false)]
         public List<DeliveryResult> Statuses { get; set; }
 

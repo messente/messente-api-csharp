@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// ErrorItemOmnichannel
+    /// A container for Omnichannel API error
     /// </summary>
     [DataContract]
     public partial class ErrorItemOmnichannel :  IEquatable<ErrorItemOmnichannel>

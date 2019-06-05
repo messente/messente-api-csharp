@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// WhatsAppImage
+    /// An image
     /// </summary>
     [DataContract]
     public partial class WhatsAppImage :  IEquatable<WhatsAppImage>

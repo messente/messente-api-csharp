@@ -3,15 +3,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** |  | [optional] 
-**FirstName** | **string** |  | [optional] 
-**LastName** | **string** |  | [optional] 
-**Company** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
-**Custom** | **string** |  | [optional] 
-**Custom2** | **string** |  | [optional] 
-**Custom3** | **string** |  | [optional] 
-**Custom4** | **string** |  | [optional] 
+**Email** | **string** | The contact&#39;s email | [optional] 
+**FirstName** | **string** | The contact&#39;s first name | [optional] 
+**LastName** | **string** | The contact&#39;s last name | [optional] 
+**Company** | **string** | The contact&#39;s company | [optional] 
+**Title** | **string** | The contact&#39;s title | [optional] 
+**Custom** | **string** | The first custom field | [optional] 
+**Custom2** | **string** | The second custom field | [optional] 
+**Custom3** | **string** | The third custom field | [optional] 
+**Custom4** | **string** | The fourth custom field | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

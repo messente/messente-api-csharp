@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// FetchBlacklistSuccess
+    /// A container for blacklisted numbers
     /// </summary>
     [DataContract]
     public partial class FetchBlacklistSuccess :  IEquatable<FetchBlacklistSuccess>

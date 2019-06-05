@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// MessageResult
+    /// A message part of an omnimessage
     /// </summary>
     [DataContract]
     public partial class MessageResult :  IEquatable<MessageResult>

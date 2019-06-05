@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// ContactUpdateFields
+    /// A container for fields of a contact
     /// </summary>
     [DataContract]
     public partial class ContactUpdateFields :  IEquatable<ContactUpdateFields>
@@ -31,15 +31,15 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactUpdateFields" /> class.
         /// </summary>
-        /// <param name="email">email.</param>
-        /// <param name="firstName">firstName.</param>
-        /// <param name="lastName">lastName.</param>
-        /// <param name="company">company.</param>
-        /// <param name="title">title.</param>
-        /// <param name="custom">custom.</param>
-        /// <param name="custom2">custom2.</param>
-        /// <param name="custom3">custom3.</param>
-        /// <param name="custom4">custom4.</param>
+        /// <param name="email">The contact&#39;s email.</param>
+        /// <param name="firstName">The contact&#39;s first name.</param>
+        /// <param name="lastName">The contact&#39;s last name.</param>
+        /// <param name="company">The contact&#39;s company.</param>
+        /// <param name="title">The contact&#39;s title.</param>
+        /// <param name="custom">The first custom field.</param>
+        /// <param name="custom2">The second custom field.</param>
+        /// <param name="custom3">The third custom field.</param>
+        /// <param name="custom4">The fourth custom field.</param>
         public ContactUpdateFields(string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string))
         {
             this.Email = email;
@@ -54,56 +54,65 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// Gets or Sets Email
+        /// The contact&#39;s email
         /// </summary>
+        /// <value>The contact&#39;s email</value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or Sets FirstName
+        /// The contact&#39;s first name
         /// </summary>
+        /// <value>The contact&#39;s first name</value>
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastName
+        /// The contact&#39;s last name
         /// </summary>
+        /// <value>The contact&#39;s last name</value>
         [DataMember(Name="lastName", EmitDefaultValue=false)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Company
+        /// The contact&#39;s company
         /// </summary>
+        /// <value>The contact&#39;s company</value>
         [DataMember(Name="company", EmitDefaultValue=false)]
         public string Company { get; set; }
 
         /// <summary>
-        /// Gets or Sets Title
+        /// The contact&#39;s title
         /// </summary>
+        /// <value>The contact&#39;s title</value>
         [DataMember(Name="title", EmitDefaultValue=false)]
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets Custom
+        /// The first custom field
         /// </summary>
+        /// <value>The first custom field</value>
         [DataMember(Name="custom", EmitDefaultValue=false)]
         public string Custom { get; set; }
 
         /// <summary>
-        /// Gets or Sets Custom2
+        /// The second custom field
         /// </summary>
+        /// <value>The second custom field</value>
         [DataMember(Name="custom2", EmitDefaultValue=false)]
         public string Custom2 { get; set; }
 
         /// <summary>
-        /// Gets or Sets Custom3
+        /// The third custom field
         /// </summary>
+        /// <value>The third custom field</value>
         [DataMember(Name="custom3", EmitDefaultValue=false)]
         public string Custom3 { get; set; }
 
         /// <summary>
-        /// Gets or Sets Custom4
+        /// The fourth custom field
         /// </summary>
+        /// <value>The fourth custom field</value>
         [DataMember(Name="custom4", EmitDefaultValue=false)]
         public string Custom4 { get; set; }
 

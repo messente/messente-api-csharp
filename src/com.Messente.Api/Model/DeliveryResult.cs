@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// DeliveryResult
+    /// A delivery report
     /// </summary>
     [DataContract]
     public partial class DeliveryResult :  IEquatable<DeliveryResult>

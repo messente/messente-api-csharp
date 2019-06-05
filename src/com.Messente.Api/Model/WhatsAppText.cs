@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// WhatsAppText
+    /// A text
     /// </summary>
     [DataContract]
     public partial class WhatsAppText :  IEquatable<WhatsAppText>

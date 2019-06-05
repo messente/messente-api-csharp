@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// GroupName
+    /// A group name container
     /// </summary>
     [DataContract]
     public partial class GroupName :  IEquatable<GroupName>
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupName" /> class.
         /// </summary>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">The name of the group (required).</param>
         public GroupName(string name = default(string))
         {
             // to ensure "name" is required (not null)
@@ -51,8 +51,9 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// Gets or Sets Name
+        /// The name of the group
         /// </summary>
+        /// <value>The name of the group</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 

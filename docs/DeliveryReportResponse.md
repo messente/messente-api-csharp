@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Statuses** | [**List&lt;DeliveryResult&gt;**](DeliveryResult.md) | Contains the delivery reports for each channnel, ordered by send order | 
+**Statuses** | [**List&lt;DeliveryResult&gt;**](DeliveryResult.md) | Contains the delivery reports for each channel, ordered by send order | 
 **To** | **string** | Phone number in e.164 format | 
 **OmnimessageId** | **string** | Unique identifier for the omnimessage | 
 

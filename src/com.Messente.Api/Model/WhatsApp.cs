@@ -29,8 +29,9 @@ namespace com.Messente.Api.Model
     public partial class WhatsApp :  IEquatable<WhatsApp>
     {
         /// <summary>
-        /// Defines Channel
+        /// The channel used to deliver the message
         /// </summary>
+        /// <value>The channel used to deliver the message</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ChannelEnum
         {
@@ -43,8 +44,9 @@ namespace com.Messente.Api.Model
         }
 
         /// <summary>
-        /// Gets or Sets Channel
+        /// The channel used to deliver the message
         /// </summary>
+        /// <value>The channel used to deliver the message</value>
         [DataMember(Name="channel", EmitDefaultValue=false)]
         public ChannelEnum? Channel { get; set; }
         /// <summary>
@@ -56,7 +58,7 @@ namespace com.Messente.Api.Model
         /// <param name="image">image.</param>
         /// <param name="document">document.</param>
         /// <param name="audio">audio.</param>
-        /// <param name="channel">channel (default to ChannelEnum.Whatsapp).</param>
+        /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Whatsapp).</param>
         public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum? channel = ChannelEnum.Whatsapp)
         {
             this.Sender = sender;

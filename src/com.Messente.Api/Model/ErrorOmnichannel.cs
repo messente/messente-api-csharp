@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// ErrorOmnichannel
+    /// A container for errors
     /// </summary>
     [DataContract]
     public partial class ErrorOmnichannel :  IEquatable<ErrorOmnichannel>
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
         /// </summary>
-        /// <param name="errors">errors (required).</param>
+        /// <param name="errors">An array of errors (required).</param>
         public ErrorOmnichannel(List<ErrorItemOmnichannel> errors = default(List<ErrorItemOmnichannel>))
         {
             // to ensure "errors" is required (not null)
@@ -51,8 +51,9 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// Gets or Sets Errors
+        /// An array of errors
         /// </summary>
+        /// <value>An array of errors</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<ErrorItemOmnichannel> Errors { get; set; }
 

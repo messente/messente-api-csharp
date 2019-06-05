@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// ErrorPhonebook
+    /// A container for errors
     /// </summary>
     [DataContract]
     public partial class ErrorPhonebook :  IEquatable<ErrorPhonebook>
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorPhonebook" /> class.
         /// </summary>
-        /// <param name="errors">errors (required).</param>
+        /// <param name="errors">An array of errors (required).</param>
         public ErrorPhonebook(List<ErrorItemPhonebook> errors = default(List<ErrorItemPhonebook>))
         {
             // to ensure "errors" is required (not null)
@@ -51,8 +51,9 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// Gets or Sets Errors
+        /// An array of errors
         /// </summary>
+        /// <value>An array of errors</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
         public List<ErrorItemPhonebook> Errors { get; set; }
 
