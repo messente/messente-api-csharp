@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **FirstName** | **string** | The first name of the contact | [optional] 
 **LastName** | **string** | The last name of the contact | [optional] 
 **Company** | **string** | The company of the contact | [optional] 
+**Title** | **string** | The title of the contact | [optional] 
 **Custom** | **string** | The first custom field | [optional] 
 **Custom2** | **string** | The second custom field | [optional] 
 **Custom3** | **string** | The third custom field | [optional] 

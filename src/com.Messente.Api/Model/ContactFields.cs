@@ -41,11 +41,12 @@ namespace com.Messente.Api.Model
         /// <param name="firstName">The first name of the contact.</param>
         /// <param name="lastName">The last name of the contact.</param>
         /// <param name="company">The company of the contact.</param>
+        /// <param name="title">The title of the contact.</param>
         /// <param name="custom">The first custom field.</param>
         /// <param name="custom2">The second custom field.</param>
         /// <param name="custom3">The third custom field.</param>
         /// <param name="custom4">The fourth custom field.</param>
-        public ContactFields(string phoneNumber = default(string), string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string))
+        public ContactFields(string phoneNumber = default(string), string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string))
         {
             // to ensure "phoneNumber" is required (not null)
             if (phoneNumber == null)
@@ -60,6 +61,7 @@ namespace com.Messente.Api.Model
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Company = company;
+            this.Title = title;
             this.Custom = custom;
             this.Custom2 = custom2;
             this.Custom3 = custom3;
@@ -102,6 +104,13 @@ namespace com.Messente.Api.Model
         public string Company { get; set; }
 
         /// <summary>
+        /// The title of the contact
+        /// </summary>
+        /// <value>The title of the contact</value>
+        [DataMember(Name="title", EmitDefaultValue=false)]
+        public string Title { get; set; }
+
+        /// <summary>
         /// The first custom field
         /// </summary>
         /// <value>The first custom field</value>
@@ -142,6 +151,7 @@ namespace com.Messente.Api.Model
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
             sb.Append("  Custom2: ").Append(Custom2).Append("\n");
             sb.Append("  Custom3: ").Append(Custom3).Append("\n");
@@ -206,6 +216,11 @@ namespace com.Messente.Api.Model
                     this.Company.Equals(input.Company))
                 ) && 
                 (
+                    this.Title == input.Title ||
+                    (this.Title != null &&
+                    this.Title.Equals(input.Title))
+                ) && 
+                (
                     this.Custom == input.Custom ||
                     (this.Custom != null &&
                     this.Custom.Equals(input.Custom))
@@ -246,6 +261,8 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.LastName.GetHashCode();
                 if (this.Company != null)
                     hashCode = hashCode * 59 + this.Company.GetHashCode();
+                if (this.Title != null)
+                    hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Custom != null)
                     hashCode = hashCode * 59 + this.Custom.GetHashCode();
                 if (this.Custom2 != null)
