@@ -39,7 +39,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupId = groupId_example;  // string | String in UUID format.
+            var groupId = groupId_example;  // string | String in UUID format
             var phone = phone_example;  // string | A phone number
 
             try
@@ -61,7 +61,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **string**| String in UUID format. | 
+ **groupId** | **string**| String in UUID format | 
  **phone** | **string**| A phone number | 
 
 ### Return type
@@ -418,7 +418,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupId = groupId_example;  // string | String in UUID format.
+            var groupId = groupId_example;  // string | String in UUID format
             var phone = phone_example;  // string | A phone number
 
             try
@@ -439,7 +439,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **string**| String in UUID format. | 
+ **groupId** | **string**| String in UUID format | 
  **phone** | **string**| A phone number | 
 
 ### Return type

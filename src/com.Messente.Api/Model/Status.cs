@@ -23,9 +23,9 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// The human-readable equivalent for this field is contained in \&quot;error\&quot;.   This value is *null* if the message is still being processed.
+    /// The human-readable equivalent for this field is contained in \&quot;error\&quot;.   This value is *null* if the message is still being processed
     /// </summary>
-    /// <value>The human-readable equivalent for this field is contained in \&quot;error\&quot;.   This value is *null* if the message is still being processed.</value>
+    /// <value>The human-readable equivalent for this field is contained in \&quot;error\&quot;.   This value is *null* if the message is still being processed</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

@@ -99,7 +99,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new GroupsApi();
-            var groupId = groupId_example;  // string | String in UUID format.
+            var groupId = groupId_example;  // string | String in UUID format
 
             try
             {
@@ -119,7 +119,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **string**| String in UUID format. | 
+ **groupId** | **string**| String in UUID format | 
 
 ### Return type
 
@@ -161,7 +161,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new GroupsApi();
-            var groupId = groupId_example;  // string | String in UUID format.
+            var groupId = groupId_example;  // string | String in UUID format
 
             try
             {
@@ -182,7 +182,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **string**| String in UUID format. | 
+ **groupId** | **string**| String in UUID format | 
 
 ### Return type
 
@@ -283,7 +283,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new GroupsApi();
-            var groupId = groupId_example;  // string | String in UUID format.
+            var groupId = groupId_example;  // string | String in UUID format
             var groupName = new GroupName(); // GroupName | 
 
             try
@@ -305,7 +305,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupId** | **string**| String in UUID format. | 
+ **groupId** | **string**| String in UUID format | 
  **groupName** | [**GroupName**](GroupName.md)|  | 
 
 ### Return type

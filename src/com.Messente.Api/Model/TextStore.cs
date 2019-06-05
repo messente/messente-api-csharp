@@ -23,9 +23,9 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore).
+    /// Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore)
     /// </summary>
-    /// <value>Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore).</value>
+    /// <value>Whether to store message content as is (plaintext), as a hashed value (sha256) or not at all (nostore)</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     

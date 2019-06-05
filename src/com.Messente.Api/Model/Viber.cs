@@ -55,7 +55,7 @@ namespace com.Messente.Api.Model
         /// <param name="sender">Phone number or alphanumeric sender name.</param>
         /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
         /// <param name="text">Plaintext content for Viber.</param>
-        /// <param name="imageUrl">URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
+        /// <param name="imageUrl">URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
         /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Viber).</param>
@@ -100,9 +100,9 @@ namespace com.Messente.Api.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text
+        /// URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text
         /// </summary>
-        /// <value>URL for the embedded image.    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text</value>
+        /// <value>URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text</value>
         [DataMember(Name="image_url", EmitDefaultValue=false)]
         public string ImageUrl { get; set; }
 

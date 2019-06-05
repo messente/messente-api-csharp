@@ -47,7 +47,7 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ErrorItemPhonebook" /> class.
         /// </summary>
         /// <param name="title">title (required).</param>
-        /// <param name="detail">Free form more detailed description of the error. (required).</param>
+        /// <param name="detail">Free form more detailed description of the error (required).</param>
         /// <param name="code">code (required).</param>
         public ErrorItemPhonebook(ErrorTitlePhonebook title = default(ErrorTitlePhonebook), string detail = default(string), ErrorCodePhonebook code = default(ErrorCodePhonebook))
         {
@@ -82,9 +82,9 @@ namespace com.Messente.Api.Model
         
 
         /// <summary>
-        /// Free form more detailed description of the error.
+        /// Free form more detailed description of the error
         /// </summary>
-        /// <value>Free form more detailed description of the error.</value>
+        /// <value>Free form more detailed description of the error</value>
         [DataMember(Name="detail", EmitDefaultValue=false)]
         public string Detail { get; set; }
 

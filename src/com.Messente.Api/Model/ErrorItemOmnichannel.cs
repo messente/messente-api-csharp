@@ -47,7 +47,7 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ErrorItemOmnichannel" /> class.
         /// </summary>
         /// <param name="title">title (required).</param>
-        /// <param name="detail">Free form more detailed description of the error. (required).</param>
+        /// <param name="detail">Free form more detailed description of the error (required).</param>
         /// <param name="code">code (required).</param>
         /// <param name="source">Describes which field is causing the issue in the payload, null for non 400 status code responses (required).</param>
         public ErrorItemOmnichannel(ErrorTitleOmnichannel title = default(ErrorTitleOmnichannel), string detail = default(string), ErrorCodeOmnichannel code = default(ErrorCodeOmnichannel), string source = default(string))
@@ -92,9 +92,9 @@ namespace com.Messente.Api.Model
         
 
         /// <summary>
-        /// Free form more detailed description of the error.
+        /// Free form more detailed description of the error
         /// </summary>
-        /// <value>Free form more detailed description of the error.</value>
+        /// <value>Free form more detailed description of the error</value>
         [DataMember(Name="detail", EmitDefaultValue=false)]
         public string Detail { get; set; }
 

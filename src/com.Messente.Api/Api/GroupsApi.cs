@@ -52,7 +52,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns></returns>
         void DeleteGroup (string groupId);
 
@@ -63,7 +63,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteGroupWithHttpInfo (string groupId);
         /// <summary>
@@ -73,7 +73,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>GroupEnvelope</returns>
         GroupEnvelope FetchGroup (string groupId);
 
@@ -84,7 +84,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>ApiResponse of GroupEnvelope</returns>
         ApiResponse<GroupEnvelope> FetchGroupWithHttpInfo (string groupId);
         /// <summary>
@@ -113,7 +113,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>GroupEnvelope</returns>
         GroupEnvelope UpdateGroup (string groupId, GroupName groupName);
@@ -125,7 +125,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>ApiResponse of GroupEnvelope</returns>
         ApiResponse<GroupEnvelope> UpdateGroupWithHttpInfo (string groupId, GroupName groupName);
@@ -159,7 +159,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteGroupAsync (string groupId);
 
@@ -170,7 +170,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteGroupAsyncWithHttpInfo (string groupId);
         /// <summary>
@@ -180,7 +180,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of GroupEnvelope</returns>
         System.Threading.Tasks.Task<GroupEnvelope> FetchGroupAsync (string groupId);
 
@@ -191,7 +191,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> FetchGroupAsyncWithHttpInfo (string groupId);
         /// <summary>
@@ -220,7 +220,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>Task of GroupEnvelope</returns>
         System.Threading.Tasks.Task<GroupEnvelope> UpdateGroupAsync (string groupId, GroupName groupName);
@@ -232,7 +232,7 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
         System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> UpdateGroupAsyncWithHttpInfo (string groupId, GroupName groupName);
@@ -512,7 +512,7 @@ namespace com.Messente.Api.Api
         /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns></returns>
         public void DeleteGroup (string groupId)
         {
@@ -523,7 +523,7 @@ namespace com.Messente.Api.Api
         /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> DeleteGroupWithHttpInfo (string groupId)
         {
@@ -583,7 +583,7 @@ namespace com.Messente.Api.Api
         /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteGroupAsync (string groupId)
         {
@@ -595,7 +595,7 @@ namespace com.Messente.Api.Api
         /// Deletes a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteGroupAsyncWithHttpInfo (string groupId)
         {
@@ -655,7 +655,7 @@ namespace com.Messente.Api.Api
         /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>GroupEnvelope</returns>
         public GroupEnvelope FetchGroup (string groupId)
         {
@@ -667,7 +667,7 @@ namespace com.Messente.Api.Api
         /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>ApiResponse of GroupEnvelope</returns>
         public ApiResponse< GroupEnvelope > FetchGroupWithHttpInfo (string groupId)
         {
@@ -727,7 +727,7 @@ namespace com.Messente.Api.Api
         /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of GroupEnvelope</returns>
         public async System.Threading.Tasks.Task<GroupEnvelope> FetchGroupAsync (string groupId)
         {
@@ -740,7 +740,7 @@ namespace com.Messente.Api.Api
         /// Lists a group 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> FetchGroupAsyncWithHttpInfo (string groupId)
         {
@@ -933,7 +933,7 @@ namespace com.Messente.Api.Api
         /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>GroupEnvelope</returns>
         public GroupEnvelope UpdateGroup (string groupId, GroupName groupName)
@@ -946,7 +946,7 @@ namespace com.Messente.Api.Api
         /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>ApiResponse of GroupEnvelope</returns>
         public ApiResponse< GroupEnvelope > UpdateGroupWithHttpInfo (string groupId, GroupName groupName)
@@ -1019,7 +1019,7 @@ namespace com.Messente.Api.Api
         /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>Task of GroupEnvelope</returns>
         public async System.Threading.Tasks.Task<GroupEnvelope> UpdateGroupAsync (string groupId, GroupName groupName)
@@ -1033,7 +1033,7 @@ namespace com.Messente.Api.Api
         /// Updates a group with the provided name 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="groupId">String in UUID format.</param>
+        /// <param name="groupId">String in UUID format</param>
         /// <param name="groupName"></param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> UpdateGroupAsyncWithHttpInfo (string groupId, GroupName groupName)
