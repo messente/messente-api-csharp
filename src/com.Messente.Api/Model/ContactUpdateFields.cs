@@ -31,22 +31,20 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ContactUpdateFields" /> class.
         /// </summary>
-        /// <param name="email">The contact&#39;s email.</param>
-        /// <param name="firstName">The contact&#39;s first name.</param>
-        /// <param name="lastName">The contact&#39;s last name.</param>
-        /// <param name="company">The contact&#39;s company.</param>
-        /// <param name="title">The contact&#39;s title.</param>
+        /// <param name="email">The email of the contact.</param>
+        /// <param name="firstName">The first name of the contact.</param>
+        /// <param name="lastName">The last name of the contact.</param>
+        /// <param name="company">The company of the contact.</param>
         /// <param name="custom">The first custom field.</param>
         /// <param name="custom2">The second custom field.</param>
         /// <param name="custom3">The third custom field.</param>
         /// <param name="custom4">The fourth custom field.</param>
-        public ContactUpdateFields(string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string))
+        public ContactUpdateFields(string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string))
         {
             this.Email = email;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Company = company;
-            this.Title = title;
             this.Custom = custom;
             this.Custom2 = custom2;
             this.Custom3 = custom3;
@@ -54,39 +52,32 @@ namespace com.Messente.Api.Model
         }
         
         /// <summary>
-        /// The contact&#39;s email
+        /// The email of the contact
         /// </summary>
-        /// <value>The contact&#39;s email</value>
+        /// <value>The email of the contact</value>
         [DataMember(Name="email", EmitDefaultValue=false)]
         public string Email { get; set; }
 
         /// <summary>
-        /// The contact&#39;s first name
+        /// The first name of the contact
         /// </summary>
-        /// <value>The contact&#39;s first name</value>
+        /// <value>The first name of the contact</value>
         [DataMember(Name="firstName", EmitDefaultValue=false)]
         public string FirstName { get; set; }
 
         /// <summary>
-        /// The contact&#39;s last name
+        /// The last name of the contact
         /// </summary>
-        /// <value>The contact&#39;s last name</value>
+        /// <value>The last name of the contact</value>
         [DataMember(Name="lastName", EmitDefaultValue=false)]
         public string LastName { get; set; }
 
         /// <summary>
-        /// The contact&#39;s company
+        /// The company of the contact
         /// </summary>
-        /// <value>The contact&#39;s company</value>
+        /// <value>The company of the contact</value>
         [DataMember(Name="company", EmitDefaultValue=false)]
         public string Company { get; set; }
-
-        /// <summary>
-        /// The contact&#39;s title
-        /// </summary>
-        /// <value>The contact&#39;s title</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
-        public string Title { get; set; }
 
         /// <summary>
         /// The first custom field
@@ -128,7 +119,6 @@ namespace com.Messente.Api.Model
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Company: ").Append(Company).Append("\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
             sb.Append("  Custom2: ").Append(Custom2).Append("\n");
             sb.Append("  Custom3: ").Append(Custom3).Append("\n");
@@ -188,11 +178,6 @@ namespace com.Messente.Api.Model
                     this.Company.Equals(input.Company))
                 ) && 
                 (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
                     this.Custom == input.Custom ||
                     (this.Custom != null &&
                     this.Custom.Equals(input.Custom))
@@ -231,8 +216,6 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.LastName.GetHashCode();
                 if (this.Company != null)
                     hashCode = hashCode * 59 + this.Company.GetHashCode();
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
                 if (this.Custom != null)
                     hashCode = hashCode * 59 + this.Custom.GetHashCode();
                 if (this.Custom2 != null)

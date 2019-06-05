@@ -4,11 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PhoneNumber** | **string** | Phone number in e.164 format | 
-**Email** | **string** | The contact&#39;s email | [optional] 
-**FirstName** | **string** | The contact&#39;s first name | [optional] 
-**LastName** | **string** | The contact&#39;s last name | [optional] 
-**Company** | **string** | The contact&#39;s company | [optional] 
-**Title** | **string** | The contact&#39;s title | [optional] 
+**Email** | **string** | The email of the contact | [optional] 
+**FirstName** | **string** | The first name of the contact | [optional] 
+**LastName** | **string** | The last name of the contact | [optional] 
+**Company** | **string** | The company of the contact | [optional] 
 **Custom** | **string** | The first custom field | [optional] 
 **Custom2** | **string** | The second custom field | [optional] 
 **Custom3** | **string** | The third custom field | [optional] 
