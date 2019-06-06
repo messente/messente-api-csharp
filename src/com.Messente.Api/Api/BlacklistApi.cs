@@ -483,7 +483,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling BlacklistApi->DeleteFromBlacklist");
 
-            var localVarPath = "./blacklist/{phone}";
+            var localVarPath = "./phonebook/blacklist/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -555,7 +555,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling BlacklistApi->DeleteFromBlacklist");
 
-            var localVarPath = "./blacklist/{phone}";
+            var localVarPath = "./phonebook/blacklist/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -759,7 +759,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling BlacklistApi->IsBlacklisted");
 
-            var localVarPath = "./blacklist/{phone}";
+            var localVarPath = "./phonebook/blacklist/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -831,7 +831,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling BlacklistApi->IsBlacklisted");
 
-            var localVarPath = "./blacklist/{phone}";
+            var localVarPath = "./phonebook/blacklist/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);

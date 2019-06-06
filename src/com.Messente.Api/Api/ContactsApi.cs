@@ -514,7 +514,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->AddContactToGroup");
 
-            var localVarPath = "./groups/{groupId}/contacts/{phone}";
+            var localVarPath = "./phonebook/groups/{groupId}/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -593,7 +593,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->AddContactToGroup");
 
-            var localVarPath = "./groups/{groupId}/contacts/{phone}";
+            var localVarPath = "./phonebook/groups/{groupId}/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -666,7 +666,7 @@ namespace com.Messente.Api.Api
             if (contactFields == null)
                 throw new ApiException(400, "Missing required parameter 'contactFields' when calling ContactsApi->CreateContact");
 
-            var localVarPath = "./contacts";
+            var localVarPath = "./phonebook/contacts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -747,7 +747,7 @@ namespace com.Messente.Api.Api
             if (contactFields == null)
                 throw new ApiException(400, "Missing required parameter 'contactFields' when calling ContactsApi->CreateContact");
 
-            var localVarPath = "./contacts";
+            var localVarPath = "./phonebook/contacts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -826,7 +826,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->DeleteContact");
 
-            var localVarPath = "./contacts/{phone}";
+            var localVarPath = "./phonebook/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -898,7 +898,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->DeleteContact");
 
-            var localVarPath = "./contacts/{phone}";
+            var localVarPath = "./phonebook/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -970,7 +970,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->FetchContact");
 
-            var localVarPath = "./contacts/{phone}";
+            var localVarPath = "./phonebook/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1043,7 +1043,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->FetchContact");
 
-            var localVarPath = "./contacts/{phone}";
+            var localVarPath = "./phonebook/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1115,7 +1115,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->FetchContactGroups");
 
-            var localVarPath = "./contacts/{phone}/groups";
+            var localVarPath = "./phonebook/contacts/{phone}/groups";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1188,7 +1188,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->FetchContactGroups");
 
-            var localVarPath = "./contacts/{phone}/groups";
+            var localVarPath = "./phonebook/contacts/{phone}/groups";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1257,7 +1257,7 @@ namespace com.Messente.Api.Api
         public ApiResponse< ContactListEnvelope > FetchContactsWithHttpInfo (List<string> groupIds = null)
         {
 
-            var localVarPath = "./contacts";
+            var localVarPath = "./phonebook/contacts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1327,7 +1327,7 @@ namespace com.Messente.Api.Api
         public async System.Threading.Tasks.Task<ApiResponse<ContactListEnvelope>> FetchContactsAsyncWithHttpInfo (List<string> groupIds = null)
         {
 
-            var localVarPath = "./contacts";
+            var localVarPath = "./phonebook/contacts";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1403,7 +1403,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->RemoveContactFromGroup");
 
-            var localVarPath = "./groups/{groupId}/contacts/{phone}";
+            var localVarPath = "./phonebook/groups/{groupId}/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1481,7 +1481,7 @@ namespace com.Messente.Api.Api
             if (phone == null)
                 throw new ApiException(400, "Missing required parameter 'phone' when calling ContactsApi->RemoveContactFromGroup");
 
-            var localVarPath = "./groups/{groupId}/contacts/{phone}";
+            var localVarPath = "./phonebook/groups/{groupId}/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1559,7 +1559,7 @@ namespace com.Messente.Api.Api
             if (contactUpdateFields == null)
                 throw new ApiException(400, "Missing required parameter 'contactUpdateFields' when calling ContactsApi->UpdateContact");
 
-            var localVarPath = "./contacts/{phone}";
+            var localVarPath = "./phonebook/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1646,7 +1646,7 @@ namespace com.Messente.Api.Api
             if (contactUpdateFields == null)
                 throw new ApiException(400, "Missing required parameter 'contactUpdateFields' when calling ContactsApi->UpdateContact");
 
-            var localVarPath = "./contacts/{phone}";
+            var localVarPath = "./phonebook/contacts/{phone}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);

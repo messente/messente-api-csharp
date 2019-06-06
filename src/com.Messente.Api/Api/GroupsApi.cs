@@ -371,7 +371,7 @@ namespace com.Messente.Api.Api
             if (groupName == null)
                 throw new ApiException(400, "Missing required parameter 'groupName' when calling GroupsApi->CreateGroup");
 
-            var localVarPath = "./groups";
+            var localVarPath = "./phonebook/groups";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -452,7 +452,7 @@ namespace com.Messente.Api.Api
             if (groupName == null)
                 throw new ApiException(400, "Missing required parameter 'groupName' when calling GroupsApi->CreateGroup");
 
-            var localVarPath = "./groups";
+            var localVarPath = "./phonebook/groups";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -531,7 +531,7 @@ namespace com.Messente.Api.Api
             if (groupId == null)
                 throw new ApiException(400, "Missing required parameter 'groupId' when calling GroupsApi->DeleteGroup");
 
-            var localVarPath = "./groups/{groupId}";
+            var localVarPath = "./phonebook/groups/{groupId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -603,7 +603,7 @@ namespace com.Messente.Api.Api
             if (groupId == null)
                 throw new ApiException(400, "Missing required parameter 'groupId' when calling GroupsApi->DeleteGroup");
 
-            var localVarPath = "./groups/{groupId}";
+            var localVarPath = "./phonebook/groups/{groupId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -675,7 +675,7 @@ namespace com.Messente.Api.Api
             if (groupId == null)
                 throw new ApiException(400, "Missing required parameter 'groupId' when calling GroupsApi->FetchGroup");
 
-            var localVarPath = "./groups/{groupId}";
+            var localVarPath = "./phonebook/groups/{groupId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -748,7 +748,7 @@ namespace com.Messente.Api.Api
             if (groupId == null)
                 throw new ApiException(400, "Missing required parameter 'groupId' when calling GroupsApi->FetchGroup");
 
-            var localVarPath = "./groups/{groupId}";
+            var localVarPath = "./phonebook/groups/{groupId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -815,7 +815,7 @@ namespace com.Messente.Api.Api
         public ApiResponse< GroupListEnvelope > FetchGroupsWithHttpInfo ()
         {
 
-            var localVarPath = "./groups";
+            var localVarPath = "./phonebook/groups";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -882,7 +882,7 @@ namespace com.Messente.Api.Api
         public async System.Threading.Tasks.Task<ApiResponse<GroupListEnvelope>> FetchGroupsAsyncWithHttpInfo ()
         {
 
-            var localVarPath = "./groups";
+            var localVarPath = "./phonebook/groups";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -958,7 +958,7 @@ namespace com.Messente.Api.Api
             if (groupName == null)
                 throw new ApiException(400, "Missing required parameter 'groupName' when calling GroupsApi->UpdateGroup");
 
-            var localVarPath = "./groups/{groupId}";
+            var localVarPath = "./phonebook/groups/{groupId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1045,7 +1045,7 @@ namespace com.Messente.Api.Api
             if (groupName == null)
                 throw new ApiException(400, "Missing required parameter 'groupName' when calling GroupsApi->UpdateGroup");
 
-            var localVarPath = "./groups/{groupId}";
+            var localVarPath = "./phonebook/groups/{groupId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);

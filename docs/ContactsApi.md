@@ -4,14 +4,14 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddContactToGroup**](ContactsApi.md#addcontacttogroup) | **POST** /groups/{groupId}/contacts/{phone} | Adds a contact to a group
-[**CreateContact**](ContactsApi.md#createcontact) | **POST** /contacts | Creates a new contact
-[**DeleteContact**](ContactsApi.md#deletecontact) | **DELETE** /contacts/{phone} | Deletes a contact
-[**FetchContact**](ContactsApi.md#fetchcontact) | **GET** /contacts/{phone} | Lists a contact
-[**FetchContactGroups**](ContactsApi.md#fetchcontactgroups) | **GET** /contacts/{phone}/groups | Lists groups of a contact
-[**FetchContacts**](ContactsApi.md#fetchcontacts) | **GET** /contacts | Returns all contacts
-[**RemoveContactFromGroup**](ContactsApi.md#removecontactfromgroup) | **DELETE** /groups/{groupId}/contacts/{phone} | Removes a contact from a group
-[**UpdateContact**](ContactsApi.md#updatecontact) | **PATCH** /contacts/{phone} | Updates a contact
+[**AddContactToGroup**](ContactsApi.md#addcontacttogroup) | **POST** /phonebook/groups/{groupId}/contacts/{phone} | Adds a contact to a group
+[**CreateContact**](ContactsApi.md#createcontact) | **POST** /phonebook/contacts | Creates a new contact
+[**DeleteContact**](ContactsApi.md#deletecontact) | **DELETE** /phonebook/contacts/{phone} | Deletes a contact
+[**FetchContact**](ContactsApi.md#fetchcontact) | **GET** /phonebook/contacts/{phone} | Lists a contact
+[**FetchContactGroups**](ContactsApi.md#fetchcontactgroups) | **GET** /phonebook/contacts/{phone}/groups | Lists groups of a contact
+[**FetchContacts**](ContactsApi.md#fetchcontacts) | **GET** /phonebook/contacts | Returns all contacts
+[**RemoveContactFromGroup**](ContactsApi.md#removecontactfromgroup) | **DELETE** /phonebook/groups/{groupId}/contacts/{phone} | Removes a contact from a group
+[**UpdateContact**](ContactsApi.md#updatecontact) | **PATCH** /phonebook/contacts/{phone} | Updates a contact
 
 
 <a name="addcontacttogroup"></a>
