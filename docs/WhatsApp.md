@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Image** | [**WhatsAppImage**](WhatsAppImage.md) |  | [optional] 
 **Document** | [**WhatsAppDocument**](WhatsAppDocument.md) |  | [optional] 
 **Audio** | [**WhatsAppAudio**](WhatsAppAudio.md) |  | [optional] 
-**Channel** | **string** |  | [optional] [default to ChannelEnum.Whatsapp]
+**Channel** | **string** | The channel used to deliver the message | [optional] [default to ChannelEnum.Whatsapp]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

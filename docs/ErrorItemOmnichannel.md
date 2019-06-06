@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Title** | **ErrorTitleOmnichannel** |  | 
-**Detail** | **string** | Free form more detailed description of the error. | 
+**Detail** | **string** | Free form more detailed description of the error | 
 **Code** | **ErrorCodeOmnichannel** |  | 
 **Source** | **string** | Describes which field is causing the issue in the payload, null for non 400 status code responses | 
 

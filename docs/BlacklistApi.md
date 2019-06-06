@@ -4,17 +4,17 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddToBlacklist**](BlacklistApi.md#addtoblacklist) | **POST** /phonebook/blacklist | Adds a phone number to the blacklist.
-[**DeleteFromBlacklist**](BlacklistApi.md#deletefromblacklist) | **DELETE** /blacklist/{phone} | Deletes a phone number from the blacklist.
-[**FetchBlacklist**](BlacklistApi.md#fetchblacklist) | **GET** /phonebook/blacklist | Returns all blacklisted phone numbers.
-[**IsBlacklisted**](BlacklistApi.md#isblacklisted) | **GET** /blacklist/{phone} | Checks if a phone number is blacklisted.
+[**AddToBlacklist**](BlacklistApi.md#addtoblacklist) | **POST** /phonebook/blacklist | Adds a phone number to the blacklist
+[**DeleteFromBlacklist**](BlacklistApi.md#deletefromblacklist) | **DELETE** /phonebook/blacklist/{phone} | Deletes a phone number from the blacklist
+[**FetchBlacklist**](BlacklistApi.md#fetchblacklist) | **GET** /phonebook/blacklist | Returns all blacklisted phone numbers
+[**IsBlacklisted**](BlacklistApi.md#isblacklisted) | **GET** /phonebook/blacklist/{phone} | Checks if a phone number is blacklisted
 
 
 <a name="addtoblacklist"></a>
 # **AddToBlacklist**
 > void AddToBlacklist (NumberToBlacklist numberToBlacklist)
 
-Adds a phone number to the blacklist.
+Adds a phone number to the blacklist
 
 ### Example
 ```csharp
@@ -39,7 +39,7 @@ namespace Example
 
             try
             {
-                // Adds a phone number to the blacklist.
+                // Adds a phone number to the blacklist
                 apiInstance.AddToBlacklist(numberToBlacklist);
             }
             catch (Exception e)
@@ -76,7 +76,7 @@ void (empty response body)
 # **DeleteFromBlacklist**
 > void DeleteFromBlacklist (string phone)
 
-Deletes a phone number from the blacklist.
+Deletes a phone number from the blacklist
 
 ### Example
 ```csharp
@@ -101,7 +101,7 @@ namespace Example
 
             try
             {
-                // Deletes a phone number from the blacklist.
+                // Deletes a phone number from the blacklist
                 apiInstance.DeleteFromBlacklist(phone);
             }
             catch (Exception e)
@@ -138,7 +138,7 @@ void (empty response body)
 # **FetchBlacklist**
 > FetchBlacklistSuccess FetchBlacklist ()
 
-Returns all blacklisted phone numbers.
+Returns all blacklisted phone numbers
 
 ### Example
 ```csharp
@@ -162,7 +162,7 @@ namespace Example
 
             try
             {
-                // Returns all blacklisted phone numbers.
+                // Returns all blacklisted phone numbers
                 FetchBlacklistSuccess result = apiInstance.FetchBlacklist();
                 Debug.WriteLine(result);
             }
@@ -197,7 +197,7 @@ This endpoint does not need any parameter.
 # **IsBlacklisted**
 > void IsBlacklisted (string phone)
 
-Checks if a phone number is blacklisted.
+Checks if a phone number is blacklisted
 
 ### Example
 ```csharp
@@ -222,7 +222,7 @@ namespace Example
 
             try
             {
-                // Checks if a phone number is blacklisted.
+                // Checks if a phone number is blacklisted
                 apiInstance.IsBlacklisted(phone);
             }
             catch (Exception e)

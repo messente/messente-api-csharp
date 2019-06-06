@@ -4,14 +4,14 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**RetrieveDeliveryReport**](DeliveryReportApi.md#retrievedeliveryreport) | **GET** /omnimessage/{omnimessageId}/status | Retrieves the delivery report for the Omnimessage.
+[**RetrieveDeliveryReport**](DeliveryReportApi.md#retrievedeliveryreport) | **GET** /omnimessage/{omnimessageId}/status | Retrieves the delivery report for the Omnimessage
 
 
 <a name="retrievedeliveryreport"></a>
 # **RetrieveDeliveryReport**
-> DeliveryReportResponse RetrieveDeliveryReport (Guid? omnimessageId)
+> DeliveryReportResponse RetrieveDeliveryReport (string omnimessageId)
 
-Retrieves the delivery report for the Omnimessage.
+Retrieves the delivery report for the Omnimessage
 
 ### Example
 ```csharp
@@ -32,11 +32,11 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new DeliveryReportApi();
-            var omnimessageId = new Guid?(); // Guid? | UUID of the Omnimessage to for which the delivery report is to be retrieved
+            var omnimessageId = omnimessageId_example;  // string | UUID of the omnimessage to for which the delivery report is to be retrieved
 
             try
             {
-                // Retrieves the delivery report for the Omnimessage.
+                // Retrieves the delivery report for the Omnimessage
                 DeliveryReportResponse result = apiInstance.RetrieveDeliveryReport(omnimessageId);
                 Debug.WriteLine(result);
             }
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**Guid?**](Guid?.md)| UUID of the Omnimessage to for which the delivery report is to be retrieved | 
+ **omnimessageId** | **string**| UUID of the omnimessage to for which the delivery report is to be retrieved | 
 
 ### Return type
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: */*
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

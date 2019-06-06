@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | **Status** |  | [optional] 
 **Channel** | **Channel** |  | [optional] 
-**MessageId** | **Guid?** | Unique identifier for the message | [optional] 
-**Error** | **string** | Human-readable description of what went wrong, *null* in case of success or if the messages has not been processed yet | [optional] 
+**MessageId** | **string** | Unique identifier for the message | [optional] 
+**Error** | **string** | Human-readable description of what went wrong, *null* in case of success or if the message has not been processed yet | [optional] 
 **Err** | **ErrorCodeOmnichannelMachine** |  | [optional] 
 **Timestamp** | **DateTime?** | When this status was received by Omnichannel API | [optional] 
 

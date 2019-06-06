@@ -4,15 +4,15 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelScheduledMessage**](OmnimessageApi.md#cancelscheduledmessage) | **DELETE** /omnimessage/{omnimessageId} | Cancels a scheduled Omnimessage.
-[**SendOmnimessage**](OmnimessageApi.md#sendomnimessage) | **POST** /omnimessage | Sends an Omnimessage.
+[**CancelScheduledMessage**](OmnimessageApi.md#cancelscheduledmessage) | **DELETE** /omnimessage/{omnimessageId} | Cancels a scheduled Omnimessage
+[**SendOmnimessage**](OmnimessageApi.md#sendomnimessage) | **POST** /omnimessage | Sends an Omnimessage
 
 
 <a name="cancelscheduledmessage"></a>
 # **CancelScheduledMessage**
-> void CancelScheduledMessage (Guid? omnimessageId)
+> void CancelScheduledMessage (string omnimessageId)
 
-Cancels a scheduled Omnimessage.
+Cancels a scheduled Omnimessage
 
 ### Example
 ```csharp
@@ -33,11 +33,11 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new OmnimessageApi();
-            var omnimessageId = new Guid?(); // Guid? | UUID of the scheduled Omnimessage to be cancelled
+            var omnimessageId = omnimessageId_example;  // string | UUID of the scheduled omnimessage to be cancelled
 
             try
             {
-                // Cancels a scheduled Omnimessage.
+                // Cancels a scheduled Omnimessage
                 apiInstance.CancelScheduledMessage(omnimessageId);
             }
             catch (Exception e)
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **omnimessageId** | [**Guid?**](Guid?.md)| UUID of the scheduled Omnimessage to be cancelled | 
+ **omnimessageId** | **string**| UUID of the scheduled omnimessage to be cancelled | 
 
 ### Return type
 
@@ -74,7 +74,7 @@ void (empty response body)
 # **SendOmnimessage**
 > OmniMessageCreateSuccessResponse SendOmnimessage (Omnimessage omnimessage)
 
-Sends an Omnimessage.
+Sends an Omnimessage
 
 ### Example
 ```csharp
@@ -99,7 +99,7 @@ namespace Example
 
             try
             {
-                // Sends an Omnimessage.
+                // Sends an Omnimessage
                 OmniMessageCreateSuccessResponse result = apiInstance.SendOmnimessage(omnimessage);
                 Debug.WriteLine(result);
             }
