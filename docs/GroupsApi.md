@@ -99,7 +99,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new GroupsApi();
-            var groupId = groupId_example;  // string | String in UUID format
+            var groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663;  // string | String in UUID format
 
             try
             {
@@ -161,7 +161,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new GroupsApi();
-            var groupId = groupId_example;  // string | String in UUID format
+            var groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663;  // string | String in UUID format
 
             try
             {
@@ -283,7 +283,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new GroupsApi();
-            var groupId = groupId_example;  // string | String in UUID format
+            var groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663;  // string | String in UUID format
             var groupName = new GroupName(); // GroupName | 
 
             try
