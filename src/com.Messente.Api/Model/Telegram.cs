@@ -23,10 +23,10 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// WhatsApp message content.   Only one of \&quot;text\&quot;, \&quot;image\&quot;, \&quot;document\&quot; or \&quot;audio\&quot; can be provided
+    /// Telegram message content
     /// </summary>
     [DataContract]
-    public partial class WhatsApp :  IEquatable<WhatsApp>
+    public partial class Telegram :  IEquatable<Telegram>
     {
         /// <summary>
         /// The channel used to deliver the message
@@ -36,10 +36,10 @@ namespace com.Messente.Api.Model
         public enum ChannelEnum
         {
             /// <summary>
-            /// Enum Whatsapp for value: whatsapp
+            /// Enum Telegram for value: telegram
             /// </summary>
-            [EnumMember(Value = "whatsapp")]
-            Whatsapp = 1
+            [EnumMember(Value = "telegram")]
+            Telegram = 1
 
         }
 
@@ -50,27 +50,27 @@ namespace com.Messente.Api.Model
         [DataMember(Name="channel", EmitDefaultValue=false)]
         public ChannelEnum? Channel { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsApp" /> class.
+        /// Initializes a new instance of the <see cref="Telegram" /> class.
         /// </summary>
         /// <param name="sender">Phone number or alphanumeric sender name.</param>
-        /// <param name="validity">After how many minutes this channel is   considered as failed and the next channel is attempted.</param>
-        /// <param name="text">text.</param>
-        /// <param name="image">image.</param>
-        /// <param name="document">document.</param>
-        /// <param name="audio">audio.</param>
-        /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Whatsapp).</param>
-        public WhatsApp(string sender = default(string), int? validity = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum? channel = ChannelEnum.Whatsapp)
+        /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
+        /// <param name="text">Plaintext content for Telegram.</param>
+        /// <param name="imageUrl">URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;.</param>
+        /// <param name="documentUrl">URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;.</param>
+        /// <param name="audioUrl">URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;.</param>
+        /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Telegram).</param>
+        public Telegram(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string documentUrl = default(string), string audioUrl = default(string), ChannelEnum? channel = ChannelEnum.Telegram)
         {
             this.Sender = sender;
             this.Validity = validity;
             this.Text = text;
-            this.Image = image;
-            this.Document = document;
-            this.Audio = audio;
+            this.ImageUrl = imageUrl;
+            this.DocumentUrl = documentUrl;
+            this.AudioUrl = audioUrl;
             // use default value if no "channel" provided
             if (channel == null)
             {
-                this.Channel = ChannelEnum.Whatsapp;
+                this.Channel = ChannelEnum.Telegram;
             }
             else
             {
@@ -86,35 +86,39 @@ namespace com.Messente.Api.Model
         public string Sender { get; set; }
 
         /// <summary>
-        /// After how many minutes this channel is   considered as failed and the next channel is attempted
+        /// After how many minutes this channel is considered as failed and the next channel is attempted
         /// </summary>
-        /// <value>After how many minutes this channel is   considered as failed and the next channel is attempted</value>
+        /// <value>After how many minutes this channel is considered as failed and the next channel is attempted</value>
         [DataMember(Name="validity", EmitDefaultValue=false)]
         public int? Validity { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Plaintext content for Telegram
         /// </summary>
+        /// <value>Plaintext content for Telegram</value>
         [DataMember(Name="text", EmitDefaultValue=false)]
-        public WhatsAppText Text { get; set; }
+        public string Text { get; set; }
 
         /// <summary>
-        /// Gets or Sets Image
+        /// URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;
         /// </summary>
-        [DataMember(Name="image", EmitDefaultValue=false)]
-        public WhatsAppImage Image { get; set; }
+        /// <value>URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;</value>
+        [DataMember(Name="image_url", EmitDefaultValue=false)]
+        public string ImageUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets Document
+        /// URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;
         /// </summary>
-        [DataMember(Name="document", EmitDefaultValue=false)]
-        public WhatsAppDocument Document { get; set; }
+        /// <value>URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;</value>
+        [DataMember(Name="document_url", EmitDefaultValue=false)]
+        public string DocumentUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets Audio
+        /// URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;
         /// </summary>
-        [DataMember(Name="audio", EmitDefaultValue=false)]
-        public WhatsAppAudio Audio { get; set; }
+        /// <value>URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;</value>
+        [DataMember(Name="audio_url", EmitDefaultValue=false)]
+        public string AudioUrl { get; set; }
 
 
         /// <summary>
@@ -124,13 +128,13 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WhatsApp {\n");
+            sb.Append("class Telegram {\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  Validity: ").Append(Validity).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
-            sb.Append("  Image: ").Append(Image).Append("\n");
-            sb.Append("  Document: ").Append(Document).Append("\n");
-            sb.Append("  Audio: ").Append(Audio).Append("\n");
+            sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
+            sb.Append("  DocumentUrl: ").Append(DocumentUrl).Append("\n");
+            sb.Append("  AudioUrl: ").Append(AudioUrl).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -152,15 +156,15 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WhatsApp);
+            return this.Equals(input as Telegram);
         }
 
         /// <summary>
-        /// Returns true if WhatsApp instances are equal
+        /// Returns true if Telegram instances are equal
         /// </summary>
-        /// <param name="input">Instance of WhatsApp to be compared</param>
+        /// <param name="input">Instance of Telegram to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WhatsApp input)
+        public bool Equals(Telegram input)
         {
             if (input == null)
                 return false;
@@ -182,19 +186,19 @@ namespace com.Messente.Api.Model
                     this.Text.Equals(input.Text))
                 ) && 
                 (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
+                    this.ImageUrl == input.ImageUrl ||
+                    (this.ImageUrl != null &&
+                    this.ImageUrl.Equals(input.ImageUrl))
                 ) && 
                 (
-                    this.Document == input.Document ||
-                    (this.Document != null &&
-                    this.Document.Equals(input.Document))
+                    this.DocumentUrl == input.DocumentUrl ||
+                    (this.DocumentUrl != null &&
+                    this.DocumentUrl.Equals(input.DocumentUrl))
                 ) && 
                 (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
+                    this.AudioUrl == input.AudioUrl ||
+                    (this.AudioUrl != null &&
+                    this.AudioUrl.Equals(input.AudioUrl))
                 ) && 
                 (
                     this.Channel == input.Channel ||
@@ -218,12 +222,12 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.Validity.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Document != null)
-                    hashCode = hashCode * 59 + this.Document.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                if (this.ImageUrl != null)
+                    hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
+                if (this.DocumentUrl != null)
+                    hashCode = hashCode * 59 + this.DocumentUrl.GetHashCode();
+                if (this.AudioUrl != null)
+                    hashCode = hashCode * 59 + this.AudioUrl.GetHashCode();
                 if (this.Channel != null)
                     hashCode = hashCode * 59 + this.Channel.GetHashCode();
                 return hashCode;

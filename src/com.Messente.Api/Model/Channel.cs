@@ -1,7 +1,7 @@
 /* 
  * Messente API
  *
- * [Messente](https://messente.com) is a global provider of messaging and user verification services. Use Messente API library to send and receive SMS, Viber and WhatsApp messages, blacklist phone numbers to make sure you're not sending any unwanted messages, manage contacts and groups.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
+ * [Messente](https://messente.com) is a global provider of messaging and user verification services. Use Messente API library to send and receive SMS, Viber, WhatsApp and Telegram messages, blacklist phone numbers to make sure you're not sending any unwanted messages, manage contacts and groups.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
  *
  * OpenAPI spec version: 1.0.2
  * Contact: messente@messente.com
@@ -47,7 +47,13 @@ namespace com.Messente.Api.Model
         /// Enum Whatsapp for value: whatsapp
         /// </summary>
         [EnumMember(Value = "whatsapp")]
-        Whatsapp = 3
+        Whatsapp = 3,
+
+        /// <summary>
+        /// Enum Telegram for value: telegram
+        /// </summary>
+        [EnumMember(Value = "telegram")]
+        Telegram = 4
 
     }
 
