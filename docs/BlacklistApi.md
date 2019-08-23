@@ -97,7 +97,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new BlacklistApi();
-            var phone = phone_example;  // string | A phone number
+            var phone = +37251000000;  // string | A phone number
 
             try
             {
@@ -218,7 +218,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new BlacklistApi();
-            var phone = phone_example;  // string | A phone number
+            var phone = +37251000000;  // string | A phone number
 
             try
             {

@@ -39,8 +39,8 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupId = groupId_example;  // string | String in UUID format
-            var phone = phone_example;  // string | A phone number
+            var groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663;  // string | String in UUID format
+            var phone = +37251000000;  // string | A phone number
 
             try
             {
@@ -167,7 +167,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var phone = phone_example;  // string | A phone number
+            var phone = +37251000000;  // string | A phone number
 
             try
             {
@@ -229,7 +229,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var phone = phone_example;  // string | A phone number
+            var phone = +37251000000;  // string | A phone number
 
             try
             {
@@ -292,7 +292,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var phone = phone_example;  // string | A phone number
+            var phone = +37251000000;  // string | A phone number
 
             try
             {
@@ -418,8 +418,8 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var groupId = groupId_example;  // string | String in UUID format
-            var phone = phone_example;  // string | A phone number
+            var groupId = 5792a02a-e5c2-422b-a0a0-0ae65d814663;  // string | String in UUID format
+            var phone = +37251000000;  // string | A phone number
 
             try
             {
@@ -482,7 +482,7 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new ContactsApi();
-            var phone = phone_example;  // string | A phone number
+            var phone = +37251000000;  // string | A phone number
             var contactUpdateFields = new ContactUpdateFields(); // ContactUpdateFields | 
 
             try

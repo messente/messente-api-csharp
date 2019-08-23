@@ -23,10 +23,10 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Viber message content
+    /// Telegram message content
     /// </summary>
     [DataContract]
-    public partial class Viber :  IEquatable<Viber>
+    public partial class Telegram :  IEquatable<Telegram>
     {
         /// <summary>
         /// The channel used to deliver the message
@@ -36,10 +36,10 @@ namespace com.Messente.Api.Model
         public enum ChannelEnum
         {
             /// <summary>
-            /// Enum Viber for value: viber
+            /// Enum Telegram for value: telegram
             /// </summary>
-            [EnumMember(Value = "viber")]
-            Viber = 1
+            [EnumMember(Value = "telegram")]
+            Telegram = 1
 
         }
 
@@ -50,27 +50,27 @@ namespace com.Messente.Api.Model
         [DataMember(Name="channel", EmitDefaultValue=false)]
         public ChannelEnum? Channel { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Viber" /> class.
+        /// Initializes a new instance of the <see cref="Telegram" /> class.
         /// </summary>
         /// <param name="sender">Phone number or alphanumeric sender name.</param>
         /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
-        /// <param name="text">Plaintext content for Viber.</param>
-        /// <param name="imageUrl">URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
-        /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
-        /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
-        /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Viber).</param>
-        public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = ChannelEnum.Viber)
+        /// <param name="text">Plaintext content for Telegram.</param>
+        /// <param name="imageUrl">URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;.</param>
+        /// <param name="documentUrl">URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;.</param>
+        /// <param name="audioUrl">URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;.</param>
+        /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Telegram).</param>
+        public Telegram(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string documentUrl = default(string), string audioUrl = default(string), ChannelEnum? channel = ChannelEnum.Telegram)
         {
             this.Sender = sender;
             this.Validity = validity;
             this.Text = text;
             this.ImageUrl = imageUrl;
-            this.ButtonUrl = buttonUrl;
-            this.ButtonText = buttonText;
+            this.DocumentUrl = documentUrl;
+            this.AudioUrl = audioUrl;
             // use default value if no "channel" provided
             if (channel == null)
             {
-                this.Channel = ChannelEnum.Viber;
+                this.Channel = ChannelEnum.Telegram;
             }
             else
             {
@@ -93,32 +93,32 @@ namespace com.Messente.Api.Model
         public int? Validity { get; set; }
 
         /// <summary>
-        /// Plaintext content for Viber
+        /// Plaintext content for Telegram
         /// </summary>
-        /// <value>Plaintext content for Viber</value>
+        /// <value>Plaintext content for Telegram</value>
         [DataMember(Name="text", EmitDefaultValue=false)]
         public string Text { get; set; }
 
         /// <summary>
-        /// URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text
+        /// URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;
         /// </summary>
-        /// <value>URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text</value>
+        /// <value>URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;audio_url\&quot;</value>
         [DataMember(Name="image_url", EmitDefaultValue=false)]
         public string ImageUrl { get; set; }
 
         /// <summary>
-        /// URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional)
+        /// URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;
         /// </summary>
-        /// <value>URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional)</value>
-        [DataMember(Name="button_url", EmitDefaultValue=false)]
-        public string ButtonUrl { get; set; }
+        /// <value>URL for the embedded image. Mutually exclusive with \&quot;audio_url\&quot; and \&quot;image_url\&quot;</value>
+        [DataMember(Name="document_url", EmitDefaultValue=false)]
+        public string DocumentUrl { get; set; }
 
         /// <summary>
-        /// Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional)
+        /// URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;
         /// </summary>
-        /// <value>Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional)</value>
-        [DataMember(Name="button_text", EmitDefaultValue=false)]
-        public string ButtonText { get; set; }
+        /// <value>URL for the embedded image. Mutually exclusive with \&quot;document_url\&quot; and \&quot;image_url\&quot;</value>
+        [DataMember(Name="audio_url", EmitDefaultValue=false)]
+        public string AudioUrl { get; set; }
 
 
         /// <summary>
@@ -128,13 +128,13 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Viber {\n");
+            sb.Append("class Telegram {\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  Validity: ").Append(Validity).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
-            sb.Append("  ButtonUrl: ").Append(ButtonUrl).Append("\n");
-            sb.Append("  ButtonText: ").Append(ButtonText).Append("\n");
+            sb.Append("  DocumentUrl: ").Append(DocumentUrl).Append("\n");
+            sb.Append("  AudioUrl: ").Append(AudioUrl).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -156,15 +156,15 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Viber);
+            return this.Equals(input as Telegram);
         }
 
         /// <summary>
-        /// Returns true if Viber instances are equal
+        /// Returns true if Telegram instances are equal
         /// </summary>
-        /// <param name="input">Instance of Viber to be compared</param>
+        /// <param name="input">Instance of Telegram to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Viber input)
+        public bool Equals(Telegram input)
         {
             if (input == null)
                 return false;
@@ -191,14 +191,14 @@ namespace com.Messente.Api.Model
                     this.ImageUrl.Equals(input.ImageUrl))
                 ) && 
                 (
-                    this.ButtonUrl == input.ButtonUrl ||
-                    (this.ButtonUrl != null &&
-                    this.ButtonUrl.Equals(input.ButtonUrl))
+                    this.DocumentUrl == input.DocumentUrl ||
+                    (this.DocumentUrl != null &&
+                    this.DocumentUrl.Equals(input.DocumentUrl))
                 ) && 
                 (
-                    this.ButtonText == input.ButtonText ||
-                    (this.ButtonText != null &&
-                    this.ButtonText.Equals(input.ButtonText))
+                    this.AudioUrl == input.AudioUrl ||
+                    (this.AudioUrl != null &&
+                    this.AudioUrl.Equals(input.AudioUrl))
                 ) && 
                 (
                     this.Channel == input.Channel ||
@@ -224,10 +224,10 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
                 if (this.ImageUrl != null)
                     hashCode = hashCode * 59 + this.ImageUrl.GetHashCode();
-                if (this.ButtonUrl != null)
-                    hashCode = hashCode * 59 + this.ButtonUrl.GetHashCode();
-                if (this.ButtonText != null)
-                    hashCode = hashCode * 59 + this.ButtonText.GetHashCode();
+                if (this.DocumentUrl != null)
+                    hashCode = hashCode * 59 + this.DocumentUrl.GetHashCode();
+                if (this.AudioUrl != null)
+                    hashCode = hashCode * 59 + this.AudioUrl.GetHashCode();
                 if (this.Channel != null)
                     hashCode = hashCode * 59 + this.Channel.GetHashCode();
                 return hashCode;
