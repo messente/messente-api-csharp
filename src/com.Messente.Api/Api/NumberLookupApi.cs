@@ -25,47 +25,47 @@ namespace com.Messente.Api.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Requests info about a phone number
+        /// Requests info about phone numbers
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>SyncNumberLookupSuccess</returns>
         SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup);
 
         /// <summary>
-        /// Requests info about a phone number
+        /// Requests info about phone numbers
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>ApiResponse of SyncNumberLookupSuccess</returns>
         ApiResponse<SyncNumberLookupSuccess> SyncNumberLookupWithHttpInfo (SyncNumberLookup syncNumberLookup);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Requests info about a phone number
+        /// Requests info about phone numbers
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>Task of SyncNumberLookupSuccess</returns>
         System.Threading.Tasks.Task<SyncNumberLookupSuccess> SyncNumberLookupAsync (SyncNumberLookup syncNumberLookup);
 
         /// <summary>
-        /// Requests info about a phone number
+        /// Requests info about phone numbers
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>Task of ApiResponse (SyncNumberLookupSuccess)</returns>
         System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> SyncNumberLookupAsyncWithHttpInfo (SyncNumberLookup syncNumberLookup);
         #endregion Asynchronous Operations
@@ -180,10 +180,10 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests info about a phone number 
+        /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>SyncNumberLookupSuccess</returns>
         public SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup)
         {
@@ -192,10 +192,10 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests info about a phone number 
+        /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>ApiResponse of SyncNumberLookupSuccess</returns>
         public ApiResponse< SyncNumberLookupSuccess > SyncNumberLookupWithHttpInfo (SyncNumberLookup syncNumberLookup)
         {
@@ -260,10 +260,10 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests info about a phone number 
+        /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>Task of SyncNumberLookupSuccess</returns>
         public async System.Threading.Tasks.Task<SyncNumberLookupSuccess> SyncNumberLookupAsync (SyncNumberLookup syncNumberLookup)
         {
@@ -273,10 +273,10 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests info about a phone number 
+        /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <param name="syncNumberLookup">Numbers for lookup</param>
         /// <returns>Task of ApiResponse (SyncNumberLookupSuccess)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> SyncNumberLookupAsyncWithHttpInfo (SyncNumberLookup syncNumberLookup)
         {

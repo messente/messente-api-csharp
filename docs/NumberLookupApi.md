@@ -4,14 +4,14 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SyncNumberLookup**](NumberLookupApi.md#syncnumberlookup) | **POST** /hlr/sync | Requests info about a phone number
+[**SyncNumberLookup**](NumberLookupApi.md#syncnumberlookup) | **POST** /hlr/sync | Requests info about phone numbers
 
 
 <a name="syncnumberlookup"></a>
 # **SyncNumberLookup**
 > SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup)
 
-Requests info about a phone number
+Requests info about phone numbers
 
 ### Example
 ```csharp
@@ -32,11 +32,11 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new NumberLookupApi();
-            var syncNumberLookup = new SyncNumberLookup(); // SyncNumberLookup | Numbers to lookup
+            var syncNumberLookup = new SyncNumberLookup(); // SyncNumberLookup | Numbers for lookup
 
             try
             {
-                // Requests info about a phone number
+                // Requests info about phone numbers
                 SyncNumberLookupSuccess result = apiInstance.SyncNumberLookup(syncNumberLookup);
                 Debug.WriteLine(result);
             }
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **syncNumberLookup** | [**SyncNumberLookup**](SyncNumberLookup.md)| Numbers to lookup | 
+ **syncNumberLookup** | [**SyncNumberLookup**](SyncNumberLookup.md)| Numbers for lookup | 
 
 ### Return type
 
