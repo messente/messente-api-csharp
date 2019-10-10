@@ -23,39 +23,39 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for errors
+    /// A container for phone numbers
     /// </summary>
     [DataContract]
-    public partial class ErrorPhonebook :  IEquatable<ErrorPhonebook>
+    public partial class SyncNumberLookup :  IEquatable<SyncNumberLookup>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorPhonebook" /> class.
+        /// Initializes a new instance of the <see cref="SyncNumberLookup" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorPhonebook() { }
+        protected SyncNumberLookup() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorPhonebook" /> class.
+        /// Initializes a new instance of the <see cref="SyncNumberLookup" /> class.
         /// </summary>
-        /// <param name="errors">An array of errors (required).</param>
-        public ErrorPhonebook(List<ErrorItemPhonebook> errors = default(List<ErrorItemPhonebook>))
+        /// <param name="numbers">Array of phone numbers (required).</param>
+        public SyncNumberLookup(List<string> numbers = default(List<string>))
         {
-            // to ensure "errors" is required (not null)
-            if (errors == null)
+            // to ensure "numbers" is required (not null)
+            if (numbers == null)
             {
-                throw new InvalidDataException("errors is a required property for ErrorPhonebook and cannot be null");
+                throw new InvalidDataException("numbers is a required property for SyncNumberLookup and cannot be null");
             }
             else
             {
-                this.Errors = errors;
+                this.Numbers = numbers;
             }
         }
         
         /// <summary>
-        /// An array of errors
+        /// Array of phone numbers
         /// </summary>
-        /// <value>An array of errors</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<ErrorItemPhonebook> Errors { get; set; }
+        /// <value>Array of phone numbers</value>
+        [DataMember(Name="numbers", EmitDefaultValue=false)]
+        public List<string> Numbers { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +64,8 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorPhonebook {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("class SyncNumberLookup {\n");
+            sb.Append("  Numbers: ").Append(Numbers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,24 +86,24 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorPhonebook);
+            return this.Equals(input as SyncNumberLookup);
         }
 
         /// <summary>
-        /// Returns true if ErrorPhonebook instances are equal
+        /// Returns true if SyncNumberLookup instances are equal
         /// </summary>
-        /// <param name="input">Instance of ErrorPhonebook to be compared</param>
+        /// <param name="input">Instance of SyncNumberLookup to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ErrorPhonebook input)
+        public bool Equals(SyncNumberLookup input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Errors == input.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(input.Errors)
+                    this.Numbers == input.Numbers ||
+                    this.Numbers != null &&
+                    this.Numbers.SequenceEqual(input.Numbers)
                 );
         }
 
@@ -116,8 +116,8 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Errors != null)
-                    hashCode = hashCode * 59 + this.Errors.GetHashCode();
+                if (this.Numbers != null)
+                    hashCode = hashCode * 59 + this.Numbers.GetHashCode();
                 return hashCode;
             }
         }

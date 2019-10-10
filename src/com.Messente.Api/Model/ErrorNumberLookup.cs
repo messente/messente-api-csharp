@@ -26,23 +26,23 @@ namespace com.Messente.Api.Model
     /// A container for errors
     /// </summary>
     [DataContract]
-    public partial class ErrorPhonebook :  IEquatable<ErrorPhonebook>
+    public partial class ErrorNumberLookup :  IEquatable<ErrorNumberLookup>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorPhonebook" /> class.
+        /// Initializes a new instance of the <see cref="ErrorNumberLookup" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorPhonebook() { }
+        protected ErrorNumberLookup() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorPhonebook" /> class.
+        /// Initializes a new instance of the <see cref="ErrorNumberLookup" /> class.
         /// </summary>
         /// <param name="errors">An array of errors (required).</param>
-        public ErrorPhonebook(List<ErrorItemPhonebook> errors = default(List<ErrorItemPhonebook>))
+        public ErrorNumberLookup(List<ErrorItemNumberLookup> errors = default(List<ErrorItemNumberLookup>))
         {
             // to ensure "errors" is required (not null)
             if (errors == null)
             {
-                throw new InvalidDataException("errors is a required property for ErrorPhonebook and cannot be null");
+                throw new InvalidDataException("errors is a required property for ErrorNumberLookup and cannot be null");
             }
             else
             {
@@ -55,7 +55,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>An array of errors</value>
         [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<ErrorItemPhonebook> Errors { get; set; }
+        public List<ErrorItemNumberLookup> Errors { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,7 +64,7 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorPhonebook {\n");
+            sb.Append("class ErrorNumberLookup {\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -86,15 +86,15 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorPhonebook);
+            return this.Equals(input as ErrorNumberLookup);
         }
 
         /// <summary>
-        /// Returns true if ErrorPhonebook instances are equal
+        /// Returns true if ErrorNumberLookup instances are equal
         /// </summary>
-        /// <param name="input">Instance of ErrorPhonebook to be compared</param>
+        /// <param name="input">Instance of ErrorNumberLookup to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ErrorPhonebook input)
+        public bool Equals(ErrorNumberLookup input)
         {
             if (input == null)
                 return false;

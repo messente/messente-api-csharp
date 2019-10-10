@@ -23,48 +23,56 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// An image
+    /// A container for number lookup response
     /// </summary>
     [DataContract]
-    public partial class WhatsAppImage :  IEquatable<WhatsAppImage>
+    public partial class SyncNumberLookupSuccess :  IEquatable<SyncNumberLookupSuccess>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppImage" /> class.
+        /// Initializes a new instance of the <see cref="SyncNumberLookupSuccess" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppImage() { }
+        protected SyncNumberLookupSuccess() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppImage" /> class.
+        /// Initializes a new instance of the <see cref="SyncNumberLookupSuccess" /> class.
         /// </summary>
-        /// <param name="caption">Description for the image.</param>
-        /// <param name="content">Base64-encoded image (required).</param>
-        public WhatsAppImage(string caption = default(string), string content = default(string))
+        /// <param name="requestId">ID of the request (required).</param>
+        /// <param name="result">A container for phone number info objects (required).</param>
+        public SyncNumberLookupSuccess(string requestId = default(string), List<SyncNumberLookupResult> result = default(List<SyncNumberLookupResult>))
         {
-            // to ensure "content" is required (not null)
-            if (content == null)
+            // to ensure "requestId" is required (not null)
+            if (requestId == null)
             {
-                throw new InvalidDataException("content is a required property for WhatsAppImage and cannot be null");
+                throw new InvalidDataException("requestId is a required property for SyncNumberLookupSuccess and cannot be null");
             }
             else
             {
-                this.Content = content;
+                this.RequestId = requestId;
             }
-            this.Caption = caption;
+            // to ensure "result" is required (not null)
+            if (result == null)
+            {
+                throw new InvalidDataException("result is a required property for SyncNumberLookupSuccess and cannot be null");
+            }
+            else
+            {
+                this.Result = result;
+            }
         }
         
         /// <summary>
-        /// Description for the image
+        /// ID of the request
         /// </summary>
-        /// <value>Description for the image</value>
-        [DataMember(Name="caption", EmitDefaultValue=false)]
-        public string Caption { get; set; }
+        /// <value>ID of the request</value>
+        [DataMember(Name="request_id", EmitDefaultValue=false)]
+        public string RequestId { get; set; }
 
         /// <summary>
-        /// Base64-encoded image
+        /// A container for phone number info objects
         /// </summary>
-        /// <value>Base64-encoded image</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
-        public string Content { get; set; }
+        /// <value>A container for phone number info objects</value>
+        [DataMember(Name="result", EmitDefaultValue=false)]
+        public List<SyncNumberLookupResult> Result { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -73,9 +81,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WhatsAppImage {\n");
-            sb.Append("  Caption: ").Append(Caption).Append("\n");
-            sb.Append("  Content: ").Append(Content).Append("\n");
+            sb.Append("class SyncNumberLookupSuccess {\n");
+            sb.Append("  RequestId: ").Append(RequestId).Append("\n");
+            sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,29 +104,29 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WhatsAppImage);
+            return this.Equals(input as SyncNumberLookupSuccess);
         }
 
         /// <summary>
-        /// Returns true if WhatsAppImage instances are equal
+        /// Returns true if SyncNumberLookupSuccess instances are equal
         /// </summary>
-        /// <param name="input">Instance of WhatsAppImage to be compared</param>
+        /// <param name="input">Instance of SyncNumberLookupSuccess to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WhatsAppImage input)
+        public bool Equals(SyncNumberLookupSuccess input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Caption == input.Caption ||
-                    (this.Caption != null &&
-                    this.Caption.Equals(input.Caption))
+                    this.RequestId == input.RequestId ||
+                    (this.RequestId != null &&
+                    this.RequestId.Equals(input.RequestId))
                 ) && 
                 (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
+                    this.Result == input.Result ||
+                    this.Result != null &&
+                    this.Result.SequenceEqual(input.Result)
                 );
         }
 
@@ -131,10 +139,10 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Caption != null)
-                    hashCode = hashCode * 59 + this.Caption.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.RequestId != null)
+                    hashCode = hashCode * 59 + this.RequestId.GetHashCode();
+                if (this.Result != null)
+                    hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;
             }
         }

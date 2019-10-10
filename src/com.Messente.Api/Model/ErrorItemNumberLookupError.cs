@@ -23,56 +23,36 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for Phonebook API error
+    /// Error fields container
     /// </summary>
     [DataContract]
-    public partial class ErrorItemPhonebook :  IEquatable<ErrorItemPhonebook>
+    public partial class ErrorItemNumberLookupError :  IEquatable<ErrorItemNumberLookupError>
     {
         /// <summary>
-        /// Gets or Sets Title
-        /// </summary>
-        [DataMember(Name="title", EmitDefaultValue=false)]
-        public ErrorTitlePhonebook Title { get; set; }
-        /// <summary>
-        /// Gets or Sets Code
-        /// </summary>
-        [DataMember(Name="code", EmitDefaultValue=false)]
-        public ErrorCodePhonebook Code { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorItemPhonebook" /> class.
+        /// Initializes a new instance of the <see cref="ErrorItemNumberLookupError" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorItemPhonebook() { }
+        protected ErrorItemNumberLookupError() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorItemPhonebook" /> class.
+        /// Initializes a new instance of the <see cref="ErrorItemNumberLookupError" /> class.
         /// </summary>
-        /// <param name="title">title (required).</param>
-        /// <param name="detail">Free form more detailed description of the error (required).</param>
-        /// <param name="code">code (required).</param>
-        public ErrorItemPhonebook(ErrorTitlePhonebook title = default(ErrorTitlePhonebook), string detail = default(string), ErrorCodePhonebook code = default(ErrorCodePhonebook))
+        /// <param name="description">Error description (required).</param>
+        /// <param name="code">Matches the following error title.   This field is a constant  * 101 - Unauthorized * 102 - Invalid arguments or parameters * 103 - Server error * 104 - Crediting error #1 * 105 - Crediting error #2 * 106 - Client error (required).</param>
+        public ErrorItemNumberLookupError(string description = default(string), int? code = default(int?))
         {
-            // to ensure "title" is required (not null)
-            if (title == null)
+            // to ensure "description" is required (not null)
+            if (description == null)
             {
-                throw new InvalidDataException("title is a required property for ErrorItemPhonebook and cannot be null");
+                throw new InvalidDataException("description is a required property for ErrorItemNumberLookupError and cannot be null");
             }
             else
             {
-                this.Title = title;
-            }
-            // to ensure "detail" is required (not null)
-            if (detail == null)
-            {
-                throw new InvalidDataException("detail is a required property for ErrorItemPhonebook and cannot be null");
-            }
-            else
-            {
-                this.Detail = detail;
+                this.Description = description;
             }
             // to ensure "code" is required (not null)
             if (code == null)
             {
-                throw new InvalidDataException("code is a required property for ErrorItemPhonebook and cannot be null");
+                throw new InvalidDataException("code is a required property for ErrorItemNumberLookupError and cannot be null");
             }
             else
             {
@@ -80,14 +60,19 @@ namespace com.Messente.Api.Model
             }
         }
         
+        /// <summary>
+        /// Error description
+        /// </summary>
+        /// <value>Error description</value>
+        [DataMember(Name="description", EmitDefaultValue=false)]
+        public string Description { get; set; }
 
         /// <summary>
-        /// Free form more detailed description of the error
+        /// Matches the following error title.   This field is a constant  * 101 - Unauthorized * 102 - Invalid arguments or parameters * 103 - Server error * 104 - Crediting error #1 * 105 - Crediting error #2 * 106 - Client error
         /// </summary>
-        /// <value>Free form more detailed description of the error</value>
-        [DataMember(Name="detail", EmitDefaultValue=false)]
-        public string Detail { get; set; }
-
+        /// <value>Matches the following error title.   This field is a constant  * 101 - Unauthorized * 102 - Invalid arguments or parameters * 103 - Server error * 104 - Crediting error #1 * 105 - Crediting error #2 * 106 - Client error</value>
+        [DataMember(Name="code", EmitDefaultValue=false)]
+        public int? Code { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,9 +81,8 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorItemPhonebook {\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
-            sb.Append("  Detail: ").Append(Detail).Append("\n");
+            sb.Append("class ErrorItemNumberLookupError {\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -120,29 +104,24 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorItemPhonebook);
+            return this.Equals(input as ErrorItemNumberLookupError);
         }
 
         /// <summary>
-        /// Returns true if ErrorItemPhonebook instances are equal
+        /// Returns true if ErrorItemNumberLookupError instances are equal
         /// </summary>
-        /// <param name="input">Instance of ErrorItemPhonebook to be compared</param>
+        /// <param name="input">Instance of ErrorItemNumberLookupError to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ErrorItemPhonebook input)
+        public bool Equals(ErrorItemNumberLookupError input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Title == input.Title ||
-                    (this.Title != null &&
-                    this.Title.Equals(input.Title))
-                ) && 
-                (
-                    this.Detail == input.Detail ||
-                    (this.Detail != null &&
-                    this.Detail.Equals(input.Detail))
+                    this.Description == input.Description ||
+                    (this.Description != null &&
+                    this.Description.Equals(input.Description))
                 ) && 
                 (
                     this.Code == input.Code ||
@@ -160,10 +139,8 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Title != null)
-                    hashCode = hashCode * 59 + this.Title.GetHashCode();
-                if (this.Detail != null)
-                    hashCode = hashCode * 59 + this.Detail.GetHashCode();
+                if (this.Description != null)
+                    hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.Code != null)
                     hashCode = hashCode * 59 + this.Code.GetHashCode();
                 return hashCode;

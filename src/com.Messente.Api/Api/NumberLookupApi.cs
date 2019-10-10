@@ -21,68 +21,68 @@ namespace com.Messente.Api.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IDeliveryReportApi : IApiAccessor
+    public interface INumberLookupApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage
+        /// Requests info about a phone number
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>DeliveryReportResponse</returns>
-        DeliveryReportResponse RetrieveDeliveryReport (string omnimessageId);
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>SyncNumberLookupSuccess</returns>
+        SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup);
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage
+        /// Requests info about a phone number
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>ApiResponse of DeliveryReportResponse</returns>
-        ApiResponse<DeliveryReportResponse> RetrieveDeliveryReportWithHttpInfo (string omnimessageId);
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>ApiResponse of SyncNumberLookupSuccess</returns>
+        ApiResponse<SyncNumberLookupSuccess> SyncNumberLookupWithHttpInfo (SyncNumberLookup syncNumberLookup);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage
+        /// Requests info about a phone number
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>Task of DeliveryReportResponse</returns>
-        System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync (string omnimessageId);
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>Task of SyncNumberLookupSuccess</returns>
+        System.Threading.Tasks.Task<SyncNumberLookupSuccess> SyncNumberLookupAsync (SyncNumberLookup syncNumberLookup);
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage
+        /// Requests info about a phone number
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>Task of ApiResponse (DeliveryReportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportAsyncWithHttpInfo (string omnimessageId);
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>Task of ApiResponse (SyncNumberLookupSuccess)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> SyncNumberLookupAsyncWithHttpInfo (SyncNumberLookup syncNumberLookup);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class DeliveryReportApi : IDeliveryReportApi
+    public partial class NumberLookupApi : INumberLookupApi
     {
         private com.Messente.Api.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryReportApi"/> class.
+        /// Initializes a new instance of the <see cref="NumberLookupApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public DeliveryReportApi(String basePath)
+        public NumberLookupApi(String basePath)
         {
             this.Configuration = new com.Messente.Api.Client.Configuration { BasePath = basePath };
 
@@ -90,10 +90,10 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryReportApi"/> class
+        /// Initializes a new instance of the <see cref="NumberLookupApi"/> class
         /// </summary>
         /// <returns></returns>
-        public DeliveryReportApi()
+        public NumberLookupApi()
         {
             this.Configuration = com.Messente.Api.Client.Configuration.Default;
 
@@ -101,12 +101,12 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeliveryReportApi"/> class
+        /// Initializes a new instance of the <see cref="NumberLookupApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public DeliveryReportApi(com.Messente.Api.Client.Configuration configuration = null)
+        public NumberLookupApi(com.Messente.Api.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = com.Messente.Api.Client.Configuration.Default;
@@ -180,30 +180,30 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage 
+        /// Requests info about a phone number 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>DeliveryReportResponse</returns>
-        public DeliveryReportResponse RetrieveDeliveryReport (string omnimessageId)
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>SyncNumberLookupSuccess</returns>
+        public SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup)
         {
-             ApiResponse<DeliveryReportResponse> localVarResponse = RetrieveDeliveryReportWithHttpInfo(omnimessageId);
+             ApiResponse<SyncNumberLookupSuccess> localVarResponse = SyncNumberLookupWithHttpInfo(syncNumberLookup);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage 
+        /// Requests info about a phone number 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>ApiResponse of DeliveryReportResponse</returns>
-        public ApiResponse< DeliveryReportResponse > RetrieveDeliveryReportWithHttpInfo (string omnimessageId)
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>ApiResponse of SyncNumberLookupSuccess</returns>
+        public ApiResponse< SyncNumberLookupSuccess > SyncNumberLookupWithHttpInfo (SyncNumberLookup syncNumberLookup)
         {
-            // verify the required parameter 'omnimessageId' is set
-            if (omnimessageId == null)
-                throw new ApiException(400, "Missing required parameter 'omnimessageId' when calling DeliveryReportApi->RetrieveDeliveryReport");
+            // verify the required parameter 'syncNumberLookup' is set
+            if (syncNumberLookup == null)
+                throw new ApiException(400, "Missing required parameter 'syncNumberLookup' when calling NumberLookupApi->SyncNumberLookup");
 
-            var localVarPath = "./omnimessage/{omnimessageId}/status";
+            var localVarPath = "./hlr/sync";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -213,6 +213,7 @@ namespace com.Messente.Api.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -224,7 +225,14 @@ namespace com.Messente.Api.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (omnimessageId != null) localVarPathParams.Add("omnimessageId", this.Configuration.ApiClient.ParameterToString(omnimessageId)); // path parameter
+            if (syncNumberLookup != null && syncNumberLookup.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(syncNumberLookup); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = syncNumberLookup; // byte array
+            }
 
             // authentication (basicAuth) required
             // http basic authentication required
@@ -235,48 +243,48 @@ namespace com.Messente.Api.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("RetrieveDeliveryReport", localVarResponse);
+                Exception exception = ExceptionFactory("SyncNumberLookup", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DeliveryReportResponse>(localVarStatusCode,
+            return new ApiResponse<SyncNumberLookupSuccess>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (DeliveryReportResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeliveryReportResponse)));
+                (SyncNumberLookupSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SyncNumberLookupSuccess)));
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage 
+        /// Requests info about a phone number 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>Task of DeliveryReportResponse</returns>
-        public async System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync (string omnimessageId)
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>Task of SyncNumberLookupSuccess</returns>
+        public async System.Threading.Tasks.Task<SyncNumberLookupSuccess> SyncNumberLookupAsync (SyncNumberLookup syncNumberLookup)
         {
-             ApiResponse<DeliveryReportResponse> localVarResponse = await RetrieveDeliveryReportAsyncWithHttpInfo(omnimessageId);
+             ApiResponse<SyncNumberLookupSuccess> localVarResponse = await SyncNumberLookupAsyncWithHttpInfo(syncNumberLookup);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Retrieves the delivery report for the Omnimessage 
+        /// Requests info about a phone number 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="omnimessageId">UUID of the omnimessage to for which the delivery report is to be retrieved</param>
-        /// <returns>Task of ApiResponse (DeliveryReportResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportAsyncWithHttpInfo (string omnimessageId)
+        /// <param name="syncNumberLookup">Numbers to lookup</param>
+        /// <returns>Task of ApiResponse (SyncNumberLookupSuccess)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> SyncNumberLookupAsyncWithHttpInfo (SyncNumberLookup syncNumberLookup)
         {
-            // verify the required parameter 'omnimessageId' is set
-            if (omnimessageId == null)
-                throw new ApiException(400, "Missing required parameter 'omnimessageId' when calling DeliveryReportApi->RetrieveDeliveryReport");
+            // verify the required parameter 'syncNumberLookup' is set
+            if (syncNumberLookup == null)
+                throw new ApiException(400, "Missing required parameter 'syncNumberLookup' when calling NumberLookupApi->SyncNumberLookup");
 
-            var localVarPath = "./omnimessage/{omnimessageId}/status";
+            var localVarPath = "./hlr/sync";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -286,6 +294,7 @@ namespace com.Messente.Api.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -297,7 +306,14 @@ namespace com.Messente.Api.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (omnimessageId != null) localVarPathParams.Add("omnimessageId", this.Configuration.ApiClient.ParameterToString(omnimessageId)); // path parameter
+            if (syncNumberLookup != null && syncNumberLookup.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(syncNumberLookup); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = syncNumberLookup; // byte array
+            }
 
             // authentication (basicAuth) required
             // http basic authentication required
@@ -308,20 +324,20 @@ namespace com.Messente.Api.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("RetrieveDeliveryReport", localVarResponse);
+                Exception exception = ExceptionFactory("SyncNumberLookup", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<DeliveryReportResponse>(localVarStatusCode,
+            return new ApiResponse<SyncNumberLookupSuccess>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (DeliveryReportResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeliveryReportResponse)));
+                (SyncNumberLookupSuccess) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SyncNumberLookupSuccess)));
         }
 
     }
