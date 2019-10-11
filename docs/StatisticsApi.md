@@ -4,14 +4,14 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateStatisticsReport**](StatisticsApi.md#createstatisticsreport) | **POST** /statistics/reports | Requests statistcs reports for each country
+[**CreateStatisticsReport**](StatisticsApi.md#createstatisticsreport) | **POST** /statistics/reports | Requests statistics reports for each country
 
 
 <a name="createstatisticsreport"></a>
 # **CreateStatisticsReport**
 > StatisticsReportSuccess CreateStatisticsReport (StatisticsReportSettings statisticsReportSettings)
 
-Requests statistcs reports for each country
+Requests statistics reports for each country
 
 ### Example
 ```csharp
@@ -36,7 +36,7 @@ namespace Example
 
             try
             {
-                // Requests statistcs reports for each country
+                // Requests statistics reports for each country
                 StatisticsReportSuccess result = apiInstance.CreateStatisticsReport(statisticsReportSettings);
                 Debug.WriteLine(result);
             }

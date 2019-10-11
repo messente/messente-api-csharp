@@ -25,7 +25,7 @@ namespace com.Messente.Api.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Requests statistcs reports for each country
+        /// Requests statistics reports for each country
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace com.Messente.Api.Api
         StatisticsReportSuccess CreateStatisticsReport (StatisticsReportSettings statisticsReportSettings);
 
         /// <summary>
-        /// Requests statistcs reports for each country
+        /// Requests statistics reports for each country
         /// </summary>
         /// <remarks>
         /// 
@@ -48,7 +48,7 @@ namespace com.Messente.Api.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Requests statistcs reports for each country
+        /// Requests statistics reports for each country
         /// </summary>
         /// <remarks>
         /// 
@@ -59,7 +59,7 @@ namespace com.Messente.Api.Api
         System.Threading.Tasks.Task<StatisticsReportSuccess> CreateStatisticsReportAsync (StatisticsReportSettings statisticsReportSettings);
 
         /// <summary>
-        /// Requests statistcs reports for each country
+        /// Requests statistics reports for each country
         /// </summary>
         /// <remarks>
         /// 
@@ -180,7 +180,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests statistcs reports for each country 
+        /// Requests statistics reports for each country 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="statisticsReportSettings">Settings for statistics report</param>
@@ -192,7 +192,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests statistcs reports for each country 
+        /// Requests statistics reports for each country 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="statisticsReportSettings">Settings for statistics report</param>
@@ -260,7 +260,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests statistcs reports for each country 
+        /// Requests statistics reports for each country 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="statisticsReportSettings">Settings for statistics report</param>
@@ -273,7 +273,7 @@ namespace com.Messente.Api.Api
         }
 
         /// <summary>
-        /// Requests statistcs reports for each country 
+        /// Requests statistics reports for each country 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="statisticsReportSettings">Settings for statistics report</param>
