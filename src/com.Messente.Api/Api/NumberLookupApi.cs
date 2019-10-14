@@ -31,9 +31,9 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>SyncNumberLookupSuccess</returns>
-        SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup);
+        SyncNumberLookupSuccess FetchInfo (NumbersToInvestigate numbersToInvestigate);
 
         /// <summary>
         /// Requests info about phone numbers
@@ -42,9 +42,9 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>ApiResponse of SyncNumberLookupSuccess</returns>
-        ApiResponse<SyncNumberLookupSuccess> SyncNumberLookupWithHttpInfo (SyncNumberLookup syncNumberLookup);
+        ApiResponse<SyncNumberLookupSuccess> FetchInfoWithHttpInfo (NumbersToInvestigate numbersToInvestigate);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -54,9 +54,9 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>Task of SyncNumberLookupSuccess</returns>
-        System.Threading.Tasks.Task<SyncNumberLookupSuccess> SyncNumberLookupAsync (SyncNumberLookup syncNumberLookup);
+        System.Threading.Tasks.Task<SyncNumberLookupSuccess> FetchInfoAsync (NumbersToInvestigate numbersToInvestigate);
 
         /// <summary>
         /// Requests info about phone numbers
@@ -65,9 +65,9 @@ namespace com.Messente.Api.Api
         /// 
         /// </remarks>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>Task of ApiResponse (SyncNumberLookupSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> SyncNumberLookupAsyncWithHttpInfo (SyncNumberLookup syncNumberLookup);
+        System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> FetchInfoAsyncWithHttpInfo (NumbersToInvestigate numbersToInvestigate);
         #endregion Asynchronous Operations
     }
 
@@ -183,11 +183,11 @@ namespace com.Messente.Api.Api
         /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>SyncNumberLookupSuccess</returns>
-        public SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup)
+        public SyncNumberLookupSuccess FetchInfo (NumbersToInvestigate numbersToInvestigate)
         {
-             ApiResponse<SyncNumberLookupSuccess> localVarResponse = SyncNumberLookupWithHttpInfo(syncNumberLookup);
+             ApiResponse<SyncNumberLookupSuccess> localVarResponse = FetchInfoWithHttpInfo(numbersToInvestigate);
              return localVarResponse.Data;
         }
 
@@ -195,13 +195,13 @@ namespace com.Messente.Api.Api
         /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>ApiResponse of SyncNumberLookupSuccess</returns>
-        public ApiResponse< SyncNumberLookupSuccess > SyncNumberLookupWithHttpInfo (SyncNumberLookup syncNumberLookup)
+        public ApiResponse< SyncNumberLookupSuccess > FetchInfoWithHttpInfo (NumbersToInvestigate numbersToInvestigate)
         {
-            // verify the required parameter 'syncNumberLookup' is set
-            if (syncNumberLookup == null)
-                throw new ApiException(400, "Missing required parameter 'syncNumberLookup' when calling NumberLookupApi->SyncNumberLookup");
+            // verify the required parameter 'numbersToInvestigate' is set
+            if (numbersToInvestigate == null)
+                throw new ApiException(400, "Missing required parameter 'numbersToInvestigate' when calling NumberLookupApi->FetchInfo");
 
             var localVarPath = "./hlr/sync";
             var localVarPathParams = new Dictionary<String, String>();
@@ -225,13 +225,13 @@ namespace com.Messente.Api.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (syncNumberLookup != null && syncNumberLookup.GetType() != typeof(byte[]))
+            if (numbersToInvestigate != null && numbersToInvestigate.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(syncNumberLookup); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(numbersToInvestigate); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = syncNumberLookup; // byte array
+                localVarPostBody = numbersToInvestigate; // byte array
             }
 
             // authentication (basicAuth) required
@@ -250,7 +250,7 @@ namespace com.Messente.Api.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("SyncNumberLookup", localVarResponse);
+                Exception exception = ExceptionFactory("FetchInfo", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -263,11 +263,11 @@ namespace com.Messente.Api.Api
         /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>Task of SyncNumberLookupSuccess</returns>
-        public async System.Threading.Tasks.Task<SyncNumberLookupSuccess> SyncNumberLookupAsync (SyncNumberLookup syncNumberLookup)
+        public async System.Threading.Tasks.Task<SyncNumberLookupSuccess> FetchInfoAsync (NumbersToInvestigate numbersToInvestigate)
         {
-             ApiResponse<SyncNumberLookupSuccess> localVarResponse = await SyncNumberLookupAsyncWithHttpInfo(syncNumberLookup);
+             ApiResponse<SyncNumberLookupSuccess> localVarResponse = await FetchInfoAsyncWithHttpInfo(numbersToInvestigate);
              return localVarResponse.Data;
 
         }
@@ -276,13 +276,13 @@ namespace com.Messente.Api.Api
         /// Requests info about phone numbers 
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="syncNumberLookup">Numbers for lookup</param>
+        /// <param name="numbersToInvestigate">Numbers for lookup</param>
         /// <returns>Task of ApiResponse (SyncNumberLookupSuccess)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> SyncNumberLookupAsyncWithHttpInfo (SyncNumberLookup syncNumberLookup)
+        public async System.Threading.Tasks.Task<ApiResponse<SyncNumberLookupSuccess>> FetchInfoAsyncWithHttpInfo (NumbersToInvestigate numbersToInvestigate)
         {
-            // verify the required parameter 'syncNumberLookup' is set
-            if (syncNumberLookup == null)
-                throw new ApiException(400, "Missing required parameter 'syncNumberLookup' when calling NumberLookupApi->SyncNumberLookup");
+            // verify the required parameter 'numbersToInvestigate' is set
+            if (numbersToInvestigate == null)
+                throw new ApiException(400, "Missing required parameter 'numbersToInvestigate' when calling NumberLookupApi->FetchInfo");
 
             var localVarPath = "./hlr/sync";
             var localVarPathParams = new Dictionary<String, String>();
@@ -306,13 +306,13 @@ namespace com.Messente.Api.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (syncNumberLookup != null && syncNumberLookup.GetType() != typeof(byte[]))
+            if (numbersToInvestigate != null && numbersToInvestigate.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(syncNumberLookup); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(numbersToInvestigate); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = syncNumberLookup; // byte array
+                localVarPostBody = numbersToInvestigate; // byte array
             }
 
             // authentication (basicAuth) required
@@ -331,7 +331,7 @@ namespace com.Messente.Api.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("SyncNumberLookup", localVarResponse);
+                Exception exception = ExceptionFactory("FetchInfo", localVarResponse);
                 if (exception != null) throw exception;
             }
 

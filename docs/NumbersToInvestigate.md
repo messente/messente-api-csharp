@@ -1,4 +1,4 @@
-# com.Messente.Api.Model.SyncNumberLookup
+# com.Messente.Api.Model.NumbersToInvestigate
 ## Properties
 
 Name | Type | Description | Notes

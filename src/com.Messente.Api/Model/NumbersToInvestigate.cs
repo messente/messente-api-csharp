@@ -26,23 +26,23 @@ namespace com.Messente.Api.Model
     /// A container for phone numbers
     /// </summary>
     [DataContract]
-    public partial class SyncNumberLookup :  IEquatable<SyncNumberLookup>
+    public partial class NumbersToInvestigate :  IEquatable<NumbersToInvestigate>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SyncNumberLookup" /> class.
+        /// Initializes a new instance of the <see cref="NumbersToInvestigate" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected SyncNumberLookup() { }
+        protected NumbersToInvestigate() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="SyncNumberLookup" /> class.
+        /// Initializes a new instance of the <see cref="NumbersToInvestigate" /> class.
         /// </summary>
         /// <param name="numbers">Array of phone numbers (required).</param>
-        public SyncNumberLookup(List<string> numbers = default(List<string>))
+        public NumbersToInvestigate(List<string> numbers = default(List<string>))
         {
             // to ensure "numbers" is required (not null)
             if (numbers == null)
             {
-                throw new InvalidDataException("numbers is a required property for SyncNumberLookup and cannot be null");
+                throw new InvalidDataException("numbers is a required property for NumbersToInvestigate and cannot be null");
             }
             else
             {
@@ -64,7 +64,7 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SyncNumberLookup {\n");
+            sb.Append("class NumbersToInvestigate {\n");
             sb.Append("  Numbers: ").Append(Numbers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -86,15 +86,15 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as SyncNumberLookup);
+            return this.Equals(input as NumbersToInvestigate);
         }
 
         /// <summary>
-        /// Returns true if SyncNumberLookup instances are equal
+        /// Returns true if NumbersToInvestigate instances are equal
         /// </summary>
-        /// <param name="input">Instance of SyncNumberLookup to be compared</param>
+        /// <param name="input">Instance of NumbersToInvestigate to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(SyncNumberLookup input)
+        public bool Equals(NumbersToInvestigate input)
         {
             if (input == null)
                 return false;

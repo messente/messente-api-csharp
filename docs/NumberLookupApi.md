@@ -4,12 +4,12 @@ All URIs are relative to *https://api.messente.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SyncNumberLookup**](NumberLookupApi.md#syncnumberlookup) | **POST** /hlr/sync | Requests info about phone numbers
+[**FetchInfo**](NumberLookupApi.md#fetchinfo) | **POST** /hlr/sync | Requests info about phone numbers
 
 
-<a name="syncnumberlookup"></a>
-# **SyncNumberLookup**
-> SyncNumberLookupSuccess SyncNumberLookup (SyncNumberLookup syncNumberLookup)
+<a name="fetchinfo"></a>
+# **FetchInfo**
+> SyncNumberLookupSuccess FetchInfo (NumbersToInvestigate numbersToInvestigate)
 
 Requests info about phone numbers
 
@@ -23,7 +23,7 @@ using com.Messente.Api.Model;
 
 namespace Example
 {
-    public class SyncNumberLookupExample
+    public class FetchInfoExample
     {
         public static void Main()
         {
@@ -32,17 +32,17 @@ namespace Example
             Configuration.Default.Password = "YOUR_PASSWORD";
 
             var apiInstance = new NumberLookupApi();
-            var syncNumberLookup = new SyncNumberLookup(); // SyncNumberLookup | Numbers for lookup
+            var numbersToInvestigate = new NumbersToInvestigate(); // NumbersToInvestigate | Numbers for lookup
 
             try
             {
                 // Requests info about phone numbers
-                SyncNumberLookupSuccess result = apiInstance.SyncNumberLookup(syncNumberLookup);
+                SyncNumberLookupSuccess result = apiInstance.FetchInfo(numbersToInvestigate);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling NumberLookupApi.SyncNumberLookup: " + e.Message );
+                Debug.Print("Exception when calling NumberLookupApi.FetchInfo: " + e.Message );
             }
         }
     }
@@ -53,7 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **syncNumberLookup** | [**SyncNumberLookup**](SyncNumberLookup.md)| Numbers for lookup | 
+ **numbersToInvestigate** | [**NumbersToInvestigate**](NumbersToInvestigate.md)| Numbers for lookup | 
 
 ### Return type
 
