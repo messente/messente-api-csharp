@@ -1,9 +1,9 @@
 # Messente API Library
 
-- Messente API version: 1.1.0
-- C# package version: 1.1.0
+- Messente API version: 1.2.0
+- C# package version: 1.2.0
 
-[Messente](https://messente.com) is a global provider of messaging and user verification services. Use Messente API library to send and receive SMS, Viber, WhatsApp and Telegram messages, blacklist phone numbers to make sure you&#39;re not sending any unwanted messages, manage contacts and groups.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
+[Messente](https://messente.com) is a global provider of messaging and user verification services.  * Send and receive SMS, Viber, WhatsApp and Telegram messages. * Manage contacts and groups. * Fetch detailed info about phone numbers. * Blacklist phone numbers to make sure you&#39;re not sending any unwanted messages.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
 
 ## Installation
 
@@ -11,11 +11,11 @@ Install Messente API library via NuGet Package Manager or .NET CLI.
 
 ### Package Manager
 
-`Install-Package com.Messente.Api -Version 1.1.0`
+`Install-Package com.Messente.Api -Version 1.2.0`
 
 ### .NET CLI
 
-`dotnet add package com.Messente.Api --version 1.1.0`
+`dotnet add package com.Messente.Api --version 1.2.0`
 
 ## Features
 
@@ -56,10 +56,18 @@ Messente API Library provides the operations described below to access the featu
 1. Returns all groups [`FetchGroups`](docs/GroupsApi.md#fetchgroups)
 1. Updates a group with the provided name [`UpdateGroup`](docs/GroupsApi.md#updategroup)
 
+### NumberLookupApi
+
+1. Requests info about phone numbers [`FetchInfo`](docs/NumberLookupApi.md#fetchinfo)
+
 ### OmnimessageApi
 
 1. Cancels a scheduled Omnimessage [`CancelScheduledMessage`](docs/OmnimessageApi.md#cancelscheduledmessage)
 1. Sends an Omnimessage [`SendOmnimessage`](docs/OmnimessageApi.md#sendomnimessage)
+
+### StatisticsApi
+
+1. Requests statistics reports for each country [`CreateStatisticsReport`](docs/StatisticsApi.md#createstatisticsreport)
 
 ## Auth
 
