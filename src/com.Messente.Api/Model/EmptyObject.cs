@@ -23,7 +23,7 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// An object containing no properties
+    /// Response object without attributes
     /// </summary>
     [DataContract]
     public partial class EmptyObject :  IEquatable<EmptyObject>

@@ -46,7 +46,8 @@ namespace com.Messente.Api.Model
         /// <param name="custom2">The second custom field.</param>
         /// <param name="custom3">The third custom field.</param>
         /// <param name="custom4">The fourth custom field.</param>
-        public ContactFields(string phoneNumber = default(string), string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string))
+        /// <param name="scheduledDeletionDate">The date on which the contact is going to be deleted.</param>
+        public ContactFields(string phoneNumber = default(string), string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string), DateTime? scheduledDeletionDate = default(DateTime?))
         {
             // to ensure "phoneNumber" is required (not null)
             if (phoneNumber == null)
@@ -66,6 +67,7 @@ namespace com.Messente.Api.Model
             this.Custom2 = custom2;
             this.Custom3 = custom3;
             this.Custom4 = custom4;
+            this.ScheduledDeletionDate = scheduledDeletionDate;
         }
         
         /// <summary>
@@ -139,6 +141,14 @@ namespace com.Messente.Api.Model
         public string Custom4 { get; set; }
 
         /// <summary>
+        /// The date on which the contact is going to be deleted
+        /// </summary>
+        /// <value>The date on which the contact is going to be deleted</value>
+        [DataMember(Name="scheduledDeletionDate", EmitDefaultValue=false)]
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime? ScheduledDeletionDate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -156,6 +166,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Custom2: ").Append(Custom2).Append("\n");
             sb.Append("  Custom3: ").Append(Custom3).Append("\n");
             sb.Append("  Custom4: ").Append(Custom4).Append("\n");
+            sb.Append("  ScheduledDeletionDate: ").Append(ScheduledDeletionDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -239,6 +250,11 @@ namespace com.Messente.Api.Model
                     this.Custom4 == input.Custom4 ||
                     (this.Custom4 != null &&
                     this.Custom4.Equals(input.Custom4))
+                ) && 
+                (
+                    this.ScheduledDeletionDate == input.ScheduledDeletionDate ||
+                    (this.ScheduledDeletionDate != null &&
+                    this.ScheduledDeletionDate.Equals(input.ScheduledDeletionDate))
                 );
         }
 
@@ -271,6 +287,8 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.Custom3.GetHashCode();
                 if (this.Custom4 != null)
                     hashCode = hashCode * 59 + this.Custom4.GetHashCode();
+                if (this.ScheduledDeletionDate != null)
+                    hashCode = hashCode * 59 + this.ScheduledDeletionDate.GetHashCode();
                 return hashCode;
             }
         }
