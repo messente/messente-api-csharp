@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Custom2** | **string** | The second custom field | [optional] 
 **Custom3** | **string** | The third custom field | [optional] 
 **Custom4** | **string** | The fourth custom field | [optional] 
-**ScheduledDeletionDate** | **DateTime?** | The date on which the contact is going to be deletedbecause it has not belonged to a group for 30 days | [optional] 
+**ScheduledDeletionDate** | **DateTime?** | The date on which the contact is going to be deleted  because it has not belonged to a group for 30 days | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
