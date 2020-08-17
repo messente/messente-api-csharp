@@ -29,7 +29,7 @@ namespace com.Messente.Api.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.2.0";
+        public const string Version = "1.3.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -110,7 +110,7 @@ namespace com.Messente.Api.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "OpenAPI-Generator/1.2.0/csharp";
+            UserAgent = "OpenAPI-Generator/1.3.0/csharp";
             BasePath = "https://api.messente.com/v1";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -183,7 +183,7 @@ namespace com.Messente.Api.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "OpenAPI-Generator/1.2.0/csharp"
+            string userAgent = "OpenAPI-Generator/1.3.0/csharp"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -415,7 +415,7 @@ namespace com.Messente.Api.Client
             String report = "C# SDK (com.Messente.Api) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: 1.2.0\n";
-            report += "    SDK Package Version: 1.2.0\n";
+            report += "    SDK Package Version: 1.3.0\n";
 
             return report;
         }
