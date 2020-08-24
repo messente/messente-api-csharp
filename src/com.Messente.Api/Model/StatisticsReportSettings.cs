@@ -38,7 +38,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="startDate">Start date for the report (required).</param>
         /// <param name="endDate">End date for the report (required).</param>
-        /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, hlr).</param>
+        /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, hlr, telegram).</param>
         public StatisticsReportSettings(DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), List<string> messageTypes = default(List<string>))
         {
             // to ensure "startDate" is required (not null)
@@ -79,9 +79,9 @@ namespace com.Messente.Api.Model
         public DateTime? EndDate { get; set; }
 
         /// <summary>
-        /// Optional list of message types (sms, viber, whatsapp, hlr)
+        /// Optional list of message types (sms, viber, whatsapp, hlr, telegram)
         /// </summary>
-        /// <value>Optional list of message types (sms, viber, whatsapp, hlr)</value>
+        /// <value>Optional list of message types (sms, viber, whatsapp, hlr, telegram)</value>
         [DataMember(Name="message_types", EmitDefaultValue=false)]
         public List<string> MessageTypes { get; set; }
 
