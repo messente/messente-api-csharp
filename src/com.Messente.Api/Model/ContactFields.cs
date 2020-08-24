@@ -46,7 +46,7 @@ namespace com.Messente.Api.Model
         /// <param name="custom2">The second custom field.</param>
         /// <param name="custom3">The third custom field.</param>
         /// <param name="custom4">The fourth custom field.</param>
-        /// <param name="scheduledDeletionDate">The date on which the contact is going to be deleted  because it has not belonged to a group for 30 days.</param>
+        /// <param name="scheduledDeletionDate">The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days.</param>
         public ContactFields(string phoneNumber = default(string), string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string), DateTime? scheduledDeletionDate = default(DateTime?))
         {
             // to ensure "phoneNumber" is required (not null)
@@ -141,9 +141,9 @@ namespace com.Messente.Api.Model
         public string Custom4 { get; set; }
 
         /// <summary>
-        /// The date on which the contact is going to be deleted  because it has not belonged to a group for 30 days
+        /// The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days
         /// </summary>
-        /// <value>The date on which the contact is going to be deleted  because it has not belonged to a group for 30 days</value>
+        /// <value>The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days</value>
         [DataMember(Name="scheduledDeletionDate", EmitDefaultValue=false)]
         [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateTime? ScheduledDeletionDate { get; set; }
