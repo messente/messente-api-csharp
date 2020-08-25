@@ -32,7 +32,7 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ContactListEnvelope" /> class.
         /// </summary>
         /// <param name="contacts">An array of contacts.</param>
-        public ContactListEnvelope(List<ContactFields> contacts = default(List<ContactFields>))
+        public ContactListEnvelope(List<ContactResponseFields> contacts = default(List<ContactResponseFields>))
         {
             this.Contacts = contacts;
         }
@@ -42,7 +42,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>An array of contacts</value>
         [DataMember(Name="contacts", EmitDefaultValue=false)]
-        public List<ContactFields> Contacts { get; set; }
+        public List<ContactResponseFields> Contacts { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
