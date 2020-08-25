@@ -23,20 +23,15 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for fields of a request body of a contact
+    /// A container for response fields of a contact
     /// </summary>
     [DataContract]
-    public partial class ContactFields :  IEquatable<ContactFields>
+    public partial class ContactResponseFields :  IEquatable<ContactResponseFields>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ContactFields" /> class.
+        /// Initializes a new instance of the <see cref="ContactResponseFields" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected ContactFields() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContactFields" /> class.
-        /// </summary>
-        /// <param name="phoneNumber">Phone number in e.164 format (required).</param>
+        /// <param name="phoneNumber">Phone number in e.164 format.</param>
         /// <param name="email">The email of the contact.</param>
         /// <param name="firstName">The first name of the contact.</param>
         /// <param name="lastName">The last name of the contact.</param>
@@ -46,17 +41,10 @@ namespace com.Messente.Api.Model
         /// <param name="custom2">The second custom field.</param>
         /// <param name="custom3">The third custom field.</param>
         /// <param name="custom4">The fourth custom field.</param>
-        public ContactFields(string phoneNumber = default(string), string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string))
+        /// <param name="scheduledDeletionDate">The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days.</param>
+        public ContactResponseFields(string phoneNumber = default(string), string email = default(string), string firstName = default(string), string lastName = default(string), string company = default(string), string title = default(string), string custom = default(string), string custom2 = default(string), string custom3 = default(string), string custom4 = default(string), DateTime? scheduledDeletionDate = default(DateTime?))
         {
-            // to ensure "phoneNumber" is required (not null)
-            if (phoneNumber == null)
-            {
-                throw new InvalidDataException("phoneNumber is a required property for ContactFields and cannot be null");
-            }
-            else
-            {
-                this.PhoneNumber = phoneNumber;
-            }
+            this.PhoneNumber = phoneNumber;
             this.Email = email;
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -66,6 +54,7 @@ namespace com.Messente.Api.Model
             this.Custom2 = custom2;
             this.Custom3 = custom3;
             this.Custom4 = custom4;
+            this.ScheduledDeletionDate = scheduledDeletionDate;
         }
         
         /// <summary>
@@ -139,13 +128,21 @@ namespace com.Messente.Api.Model
         public string Custom4 { get; set; }
 
         /// <summary>
+        /// The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days
+        /// </summary>
+        /// <value>The date in ISO 8601 format, YYYY-MM-DD,  on which the contact is going to be deleted  because it has not belonged to a group for 30 days</value>
+        [DataMember(Name="scheduledDeletionDate", EmitDefaultValue=false)]
+        [JsonConverter(typeof(OpenAPIDateConverter))]
+        public DateTime? ScheduledDeletionDate { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ContactFields {\n");
+            sb.Append("class ContactResponseFields {\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
@@ -156,6 +153,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Custom2: ").Append(Custom2).Append("\n");
             sb.Append("  Custom3: ").Append(Custom3).Append("\n");
             sb.Append("  Custom4: ").Append(Custom4).Append("\n");
+            sb.Append("  ScheduledDeletionDate: ").Append(ScheduledDeletionDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -176,15 +174,15 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ContactFields);
+            return this.Equals(input as ContactResponseFields);
         }
 
         /// <summary>
-        /// Returns true if ContactFields instances are equal
+        /// Returns true if ContactResponseFields instances are equal
         /// </summary>
-        /// <param name="input">Instance of ContactFields to be compared</param>
+        /// <param name="input">Instance of ContactResponseFields to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ContactFields input)
+        public bool Equals(ContactResponseFields input)
         {
             if (input == null)
                 return false;
@@ -239,6 +237,11 @@ namespace com.Messente.Api.Model
                     this.Custom4 == input.Custom4 ||
                     (this.Custom4 != null &&
                     this.Custom4.Equals(input.Custom4))
+                ) && 
+                (
+                    this.ScheduledDeletionDate == input.ScheduledDeletionDate ||
+                    (this.ScheduledDeletionDate != null &&
+                    this.ScheduledDeletionDate.Equals(input.ScheduledDeletionDate))
                 );
         }
 
@@ -271,6 +274,8 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.Custom3.GetHashCode();
                 if (this.Custom4 != null)
                     hashCode = hashCode * 59 + this.Custom4.GetHashCode();
+                if (this.ScheduledDeletionDate != null)
+                    hashCode = hashCode * 59 + this.ScheduledDeletionDate.GetHashCode();
                 return hashCode;
             }
         }
