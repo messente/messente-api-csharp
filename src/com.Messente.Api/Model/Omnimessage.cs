@@ -34,6 +34,11 @@ namespace com.Messente.Api.Model
         [DataMember(Name="text_store", EmitDefaultValue=false)]
         public TextStore? TextStore { get; set; }
         /// <summary>
+        /// Gets or Sets Priority
+        /// </summary>
+        [DataMember(Name="priority", EmitDefaultValue=false)]
+        public Priority? Priority { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="Omnimessage" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -46,7 +51,8 @@ namespace com.Messente.Api.Model
         /// <param name="dlrUrl">URL where the delivery report will be sent.</param>
         /// <param name="textStore">textStore.</param>
         /// <param name="timeToSend">Optional parameter for sending messages at some specific time in the future.   Time must be specified in the ISO-8601 format.   If no timezone is specified, then the timezone is assumed to be UTC    Examples:    * Time specified with timezone: 2018-06-22T09:05:07+00:00 Time specified in UTC: 2018-06-22T09:05:07Z   * Time specified without timezone: 2018-06-22T09:05 (equivalent to 2018-06-22T09:05+00:00).</param>
-        public Omnimessage(string to = default(string), List<Object> messages = default(List<Object>), string dlrUrl = default(string), TextStore? textStore = default(TextStore?), DateTime? timeToSend = default(DateTime?))
+        /// <param name="priority">priority.</param>
+        public Omnimessage(string to = default(string), List<Object> messages = default(List<Object>), string dlrUrl = default(string), TextStore? textStore = default(TextStore?), DateTime? timeToSend = default(DateTime?), Priority? priority = default(Priority?))
         {
             // to ensure "to" is required (not null)
             if (to == null)
@@ -69,6 +75,7 @@ namespace com.Messente.Api.Model
             this.DlrUrl = dlrUrl;
             this.TextStore = textStore;
             this.TimeToSend = timeToSend;
+            this.Priority = priority;
         }
         
         /// <summary>
@@ -100,6 +107,7 @@ namespace com.Messente.Api.Model
         [DataMember(Name="time_to_send", EmitDefaultValue=false)]
         public DateTime? TimeToSend { get; set; }
 
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -113,6 +121,7 @@ namespace com.Messente.Api.Model
             sb.Append("  DlrUrl: ").Append(DlrUrl).Append("\n");
             sb.Append("  TextStore: ").Append(TextStore).Append("\n");
             sb.Append("  TimeToSend: ").Append(TimeToSend).Append("\n");
+            sb.Append("  Priority: ").Append(Priority).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -171,6 +180,11 @@ namespace com.Messente.Api.Model
                     this.TimeToSend == input.TimeToSend ||
                     (this.TimeToSend != null &&
                     this.TimeToSend.Equals(input.TimeToSend))
+                ) && 
+                (
+                    this.Priority == input.Priority ||
+                    (this.Priority != null &&
+                    this.Priority.Equals(input.Priority))
                 );
         }
 
@@ -193,6 +207,8 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.TextStore.GetHashCode();
                 if (this.TimeToSend != null)
                     hashCode = hashCode * 59 + this.TimeToSend.GetHashCode();
+                if (this.Priority != null)
+                    hashCode = hashCode * 59 + this.Priority.GetHashCode();
                 return hashCode;
             }
         }
