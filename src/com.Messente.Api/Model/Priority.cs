@@ -23,49 +23,31 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Textual value which corresponds to an error code
+    /// Set the priority of the message.   Messages are processed starting with in highest priority queue first and lowest priority queue last.   This for example allows to prioritize OTP messages over marketing traffic.
     /// </summary>
-    /// <value>Textual value which corresponds to an error code</value>
+    /// <value>Set the priority of the message.   Messages are processed starting with in highest priority queue first and lowest priority queue last.   This for example allows to prioritize OTP messages over marketing traffic.</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum ErrorTitlePhonebook
+    public enum Priority
     {
         /// <summary>
-        /// Enum Invaliddata for value: Invalid data
+        /// Enum Low for value: low
         /// </summary>
-        [EnumMember(Value = "Invalid data")]
-        Invaliddata = 1,
+        [EnumMember(Value = "low")]
+        Low = 1,
 
         /// <summary>
-        /// Enum Unauthorized for value: Unauthorized
+        /// Enum Regular for value: regular
         /// </summary>
-        [EnumMember(Value = "Unauthorized")]
-        Unauthorized = 2,
+        [EnumMember(Value = "regular")]
+        Regular = 2,
 
         /// <summary>
-        /// Enum Missingresource for value: Missing resource
+        /// Enum High for value: high
         /// </summary>
-        [EnumMember(Value = "Missing resource")]
-        Missingresource = 3,
-
-        /// <summary>
-        /// Enum Conflict for value: Conflict
-        /// </summary>
-        [EnumMember(Value = "Conflict")]
-        Conflict = 4,
-
-        /// <summary>
-        /// Enum Clienterror for value: Client error
-        /// </summary>
-        [EnumMember(Value = "Client error")]
-        Clienterror = 5,
-
-        /// <summary>
-        /// Enum Generalerror for value: General error
-        /// </summary>
-        [EnumMember(Value = "General error")]
-        Generalerror = 6
+        [EnumMember(Value = "high")]
+        High = 3
 
     }
 
