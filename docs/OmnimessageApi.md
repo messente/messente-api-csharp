@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="cancelscheduledmessage"></a>
 # **CancelScheduledMessage**
-> EmptyObject CancelScheduledMessage (string omnimessageId)
+> void CancelScheduledMessage (string omnimessageId)
 
 Cancels a scheduled Omnimessage
 
@@ -38,8 +38,7 @@ namespace Example
             try
             {
                 // Cancels a scheduled Omnimessage
-                EmptyObject result = apiInstance.CancelScheduledMessage(omnimessageId);
-                Debug.WriteLine(result);
+                apiInstance.CancelScheduledMessage(omnimessageId);
             }
             catch (Exception e)
             {
@@ -58,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EmptyObject**](EmptyObject.md)
+void (empty response body)
 
 ### Authorization
 
