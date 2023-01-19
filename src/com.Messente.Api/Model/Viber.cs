@@ -53,16 +53,18 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="Viber" /> class.
         /// </summary>
         /// <param name="sender">Phone number or alphanumeric sender name.</param>
-        /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.</param>
+        /// <param name="validity">After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used..</param>
+        /// <param name="ttl">After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used..</param>
         /// <param name="text">Plaintext content for Viber.</param>
         /// <param name="imageUrl">URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text.</param>
         /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Viber).</param>
-        public Viber(string sender = default(string), int? validity = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = ChannelEnum.Viber)
+        public Viber(string sender = default(string), int? validity = default(int?), int? ttl = default(int?), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = ChannelEnum.Viber)
         {
             this.Sender = sender;
             this.Validity = validity;
+            this.Ttl = ttl;
             this.Text = text;
             this.ImageUrl = imageUrl;
             this.ButtonUrl = buttonUrl;
@@ -86,11 +88,18 @@ namespace com.Messente.Api.Model
         public string Sender { get; set; }
 
         /// <summary>
-        /// After how many minutes this channel is considered as failed and the next channel is attempted
+        /// After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
         /// </summary>
-        /// <value>After how many minutes this channel is considered as failed and the next channel is attempted</value>
+        /// <value>After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.</value>
         [DataMember(Name="validity", EmitDefaultValue=false)]
         public int? Validity { get; set; }
+
+        /// <summary>
+        /// After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
+        /// </summary>
+        /// <value>After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.</value>
+        [DataMember(Name="ttl", EmitDefaultValue=false)]
+        public int? Ttl { get; set; }
 
         /// <summary>
         /// Plaintext content for Viber
@@ -131,6 +140,7 @@ namespace com.Messente.Api.Model
             sb.Append("class Viber {\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  Validity: ").Append(Validity).Append("\n");
+            sb.Append("  Ttl: ").Append(Ttl).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("  ButtonUrl: ").Append(ButtonUrl).Append("\n");
@@ -181,6 +191,11 @@ namespace com.Messente.Api.Model
                     this.Validity.Equals(input.Validity))
                 ) && 
                 (
+                    this.Ttl == input.Ttl ||
+                    (this.Ttl != null &&
+                    this.Ttl.Equals(input.Ttl))
+                ) && 
+                (
                     this.Text == input.Text ||
                     (this.Text != null &&
                     this.Text.Equals(input.Text))
@@ -220,6 +235,8 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.Sender.GetHashCode();
                 if (this.Validity != null)
                     hashCode = hashCode * 59 + this.Validity.GetHashCode();
+                if (this.Ttl != null)
+                    hashCode = hashCode * 59 + this.Ttl.GetHashCode();
                 if (this.Text != null)
                     hashCode = hashCode * 59 + this.Text.GetHashCode();
                 if (this.ImageUrl != null)

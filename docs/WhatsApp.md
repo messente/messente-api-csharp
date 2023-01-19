@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Sender** | **string** | Phone number or alphanumeric sender name | [optional] 
 **Validity** | **int?** | After how many minutes this channel is   considered as failed and the next channel is attempted | [optional] 
+**Ttl** | **int?** | After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used. | [optional] 
 **Text** | [**WhatsAppText**](WhatsAppText.md) |  | [optional] 
 **Image** | [**WhatsAppImage**](WhatsAppImage.md) |  | [optional] 
 **Document** | [**WhatsAppDocument**](WhatsAppDocument.md) |  | [optional] 
