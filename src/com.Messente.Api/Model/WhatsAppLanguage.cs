@@ -23,56 +23,48 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A text
+    /// Whatsapp template language
     /// </summary>
     [DataContract]
-    public partial class WhatsAppText :  IEquatable<WhatsAppText>
+    public partial class WhatsAppLanguage :  IEquatable<WhatsAppLanguage>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppText" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppLanguage" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppText() { }
+        protected WhatsAppLanguage() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppText" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppLanguage" /> class.
         /// </summary>
-        /// <param name="previewUrl">Whether to display link preview if the message contains a hyperlink (default to true).</param>
-        /// <param name="body">Plaintext content for WhatsApp, can contain URLs, emojis and formatting (required).</param>
-        public WhatsAppText(bool? previewUrl = true, string body = default(string))
+        /// <param name="code">Language code (required).</param>
+        /// <param name="policy">Language policy.</param>
+        public WhatsAppLanguage(string code = default(string), string policy = default(string))
         {
-            // to ensure "body" is required (not null)
-            if (body == null)
+            // to ensure "code" is required (not null)
+            if (code == null)
             {
-                throw new InvalidDataException("body is a required property for WhatsAppText and cannot be null");
+                throw new InvalidDataException("code is a required property for WhatsAppLanguage and cannot be null");
             }
             else
             {
-                this.Body = body;
+                this.Code = code;
             }
-            // use default value if no "previewUrl" provided
-            if (previewUrl == null)
-            {
-                this.PreviewUrl = true;
-            }
-            else
-            {
-                this.PreviewUrl = previewUrl;
-            }
+            this.Policy = policy;
         }
         
         /// <summary>
-        /// Whether to display link preview if the message contains a hyperlink
+        /// Language code
         /// </summary>
-        /// <value>Whether to display link preview if the message contains a hyperlink</value>
-        [DataMember(Name="preview_url", EmitDefaultValue=false)]
-        public bool? PreviewUrl { get; set; }
+        /// <value>Language code</value>
+        [DataMember(Name="code", EmitDefaultValue=false)]
+        public string Code { get; set; }
 
         /// <summary>
-        /// Plaintext content for WhatsApp, can contain URLs, emojis and formatting
+        /// Language policy
         /// </summary>
-        /// <value>Plaintext content for WhatsApp, can contain URLs, emojis and formatting</value>
-        [DataMember(Name="body", EmitDefaultValue=false)]
-        public string Body { get; set; }
+        /// <value>Language policy</value>
+        [DataMember(Name="policy", EmitDefaultValue=false)]
+        public string Policy { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -81,9 +73,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WhatsAppText {\n");
-            sb.Append("  PreviewUrl: ").Append(PreviewUrl).Append("\n");
-            sb.Append("  Body: ").Append(Body).Append("\n");
+            sb.Append("class WhatsAppLanguage {\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Policy: ").Append(Policy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -104,29 +96,29 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WhatsAppText);
+            return this.Equals(input as WhatsAppLanguage);
         }
 
         /// <summary>
-        /// Returns true if WhatsAppText instances are equal
+        /// Returns true if WhatsAppLanguage instances are equal
         /// </summary>
-        /// <param name="input">Instance of WhatsAppText to be compared</param>
+        /// <param name="input">Instance of WhatsAppLanguage to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WhatsAppText input)
+        public bool Equals(WhatsAppLanguage input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.PreviewUrl == input.PreviewUrl ||
-                    (this.PreviewUrl != null &&
-                    this.PreviewUrl.Equals(input.PreviewUrl))
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 ) && 
                 (
-                    this.Body == input.Body ||
-                    (this.Body != null &&
-                    this.Body.Equals(input.Body))
+                    this.Policy == input.Policy ||
+                    (this.Policy != null &&
+                    this.Policy.Equals(input.Policy))
                 );
         }
 
@@ -139,10 +131,10 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.PreviewUrl != null)
-                    hashCode = hashCode * 59 + this.PreviewUrl.GetHashCode();
-                if (this.Body != null)
-                    hashCode = hashCode * 59 + this.Body.GetHashCode();
+                if (this.Code != null)
+                    hashCode = hashCode * 59 + this.Code.GetHashCode();
+                if (this.Policy != null)
+                    hashCode = hashCode * 59 + this.Policy.GetHashCode();
                 return hashCode;
             }
         }

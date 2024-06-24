@@ -1,10 +1,10 @@
-# com.Messente.Api.Model.WhatsAppText
+# com.Messente.Api.Model.WhatsAppParameter
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PreviewUrl** | **bool?** | Whether to display link preview if the message contains a hyperlink | [optional] [default to true]
-**Body** | **string** | Plaintext content for WhatsApp, can contain URLs, emojis and formatting | 
+**Type** | **string** | Type of the parameter | 
+**Text** | **string** | A text | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

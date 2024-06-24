@@ -23,39 +23,48 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A sound
+    /// Whatsapp template component
     /// </summary>
     [DataContract]
-    public partial class WhatsAppAudio :  IEquatable<WhatsAppAudio>
+    public partial class WhatsAppComponent :  IEquatable<WhatsAppComponent>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppAudio" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppAudio() { }
+        protected WhatsAppComponent() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppAudio" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
         /// </summary>
-        /// <param name="content">Base64-encoded audio (required).</param>
-        public WhatsAppAudio(string content = default(string))
+        /// <param name="type">Type of the component (required).</param>
+        /// <param name="parameters">List of parameters for the component.</param>
+        public WhatsAppComponent(string type = default(string), List<WhatsAppParameter> parameters = default(List<WhatsAppParameter>))
         {
-            // to ensure "content" is required (not null)
-            if (content == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("content is a required property for WhatsAppAudio and cannot be null");
+                throw new InvalidDataException("type is a required property for WhatsAppComponent and cannot be null");
             }
             else
             {
-                this.Content = content;
+                this.Type = type;
             }
+            this.Parameters = parameters;
         }
         
         /// <summary>
-        /// Base64-encoded audio
+        /// Type of the component
         /// </summary>
-        /// <value>Base64-encoded audio</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
-        public string Content { get; set; }
+        /// <value>Type of the component</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
+
+        /// <summary>
+        /// List of parameters for the component
+        /// </summary>
+        /// <value>List of parameters for the component</value>
+        [DataMember(Name="parameters", EmitDefaultValue=false)]
+        public List<WhatsAppParameter> Parameters { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +73,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WhatsAppAudio {\n");
-            sb.Append("  Content: ").Append(Content).Append("\n");
+            sb.Append("class WhatsAppComponent {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,24 +96,29 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WhatsAppAudio);
+            return this.Equals(input as WhatsAppComponent);
         }
 
         /// <summary>
-        /// Returns true if WhatsAppAudio instances are equal
+        /// Returns true if WhatsAppComponent instances are equal
         /// </summary>
-        /// <param name="input">Instance of WhatsAppAudio to be compared</param>
+        /// <param name="input">Instance of WhatsAppComponent to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WhatsAppAudio input)
+        public bool Equals(WhatsAppComponent input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
+                ) && 
+                (
+                    this.Parameters == input.Parameters ||
+                    this.Parameters != null &&
+                    this.Parameters.SequenceEqual(input.Parameters)
                 );
         }
 
@@ -116,8 +131,10 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Parameters != null)
+                    hashCode = hashCode * 59 + this.Parameters.GetHashCode();
                 return hashCode;
             }
         }

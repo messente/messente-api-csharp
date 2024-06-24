@@ -23,48 +23,48 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A document
+    /// Whatsapp component parameter
     /// </summary>
     [DataContract]
-    public partial class WhatsAppDocument :  IEquatable<WhatsAppDocument>
+    public partial class WhatsAppParameter :  IEquatable<WhatsAppParameter>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppDocument" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppParameter" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppDocument() { }
+        protected WhatsAppParameter() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppDocument" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppParameter" /> class.
         /// </summary>
-        /// <param name="caption">Description for the document.</param>
-        /// <param name="content">Base64-encoded image (required).</param>
-        public WhatsAppDocument(string caption = default(string), string content = default(string))
+        /// <param name="type">Type of the parameter (required).</param>
+        /// <param name="text">A text.</param>
+        public WhatsAppParameter(string type = default(string), string text = default(string))
         {
-            // to ensure "content" is required (not null)
-            if (content == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("content is a required property for WhatsAppDocument and cannot be null");
+                throw new InvalidDataException("type is a required property for WhatsAppParameter and cannot be null");
             }
             else
             {
-                this.Content = content;
+                this.Type = type;
             }
-            this.Caption = caption;
+            this.Text = text;
         }
         
         /// <summary>
-        /// Description for the document
+        /// Type of the parameter
         /// </summary>
-        /// <value>Description for the document</value>
-        [DataMember(Name="caption", EmitDefaultValue=false)]
-        public string Caption { get; set; }
+        /// <value>Type of the parameter</value>
+        [DataMember(Name="type", EmitDefaultValue=false)]
+        public string Type { get; set; }
 
         /// <summary>
-        /// Base64-encoded image
+        /// A text
         /// </summary>
-        /// <value>Base64-encoded image</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
-        public string Content { get; set; }
+        /// <value>A text</value>
+        [DataMember(Name="text", EmitDefaultValue=false)]
+        public string Text { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -73,9 +73,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WhatsAppDocument {\n");
-            sb.Append("  Caption: ").Append(Caption).Append("\n");
-            sb.Append("  Content: ").Append(Content).Append("\n");
+            sb.Append("class WhatsAppParameter {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,29 +96,29 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WhatsAppDocument);
+            return this.Equals(input as WhatsAppParameter);
         }
 
         /// <summary>
-        /// Returns true if WhatsAppDocument instances are equal
+        /// Returns true if WhatsAppParameter instances are equal
         /// </summary>
-        /// <param name="input">Instance of WhatsAppDocument to be compared</param>
+        /// <param name="input">Instance of WhatsAppParameter to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WhatsAppDocument input)
+        public bool Equals(WhatsAppParameter input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Caption == input.Caption ||
-                    (this.Caption != null &&
-                    this.Caption.Equals(input.Caption))
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.Content == input.Content ||
-                    (this.Content != null &&
-                    this.Content.Equals(input.Content))
+                    this.Text == input.Text ||
+                    (this.Text != null &&
+                    this.Text.Equals(input.Text))
                 );
         }
 
@@ -131,10 +131,10 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Caption != null)
-                    hashCode = hashCode * 59 + this.Caption.GetHashCode();
-                if (this.Content != null)
-                    hashCode = hashCode * 59 + this.Content.GetHashCode();
+                if (this.Type != null)
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Text != null)
+                    hashCode = hashCode * 59 + this.Text.GetHashCode();
                 return hashCode;
             }
         }

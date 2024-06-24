@@ -55,20 +55,14 @@ namespace com.Messente.Api.Model
         /// <param name="sender">Phone number or alphanumeric sender name.</param>
         /// <param name="validity">After how many minutes this channel is   considered as failed and the next channel is attempted.</param>
         /// <param name="ttl">After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used..</param>
-        /// <param name="text">text.</param>
-        /// <param name="image">image.</param>
-        /// <param name="document">document.</param>
-        /// <param name="audio">audio.</param>
+        /// <param name="template">template.</param>
         /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Whatsapp).</param>
-        public WhatsApp(string sender = default(string), int? validity = default(int?), int? ttl = default(int?), WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppAudio audio = default(WhatsAppAudio), ChannelEnum? channel = ChannelEnum.Whatsapp)
+        public WhatsApp(string sender = default(string), int? validity = default(int?), int? ttl = default(int?), WhatsAppTemplate template = default(WhatsAppTemplate), ChannelEnum? channel = ChannelEnum.Whatsapp)
         {
             this.Sender = sender;
             this.Validity = validity;
             this.Ttl = ttl;
-            this.Text = text;
-            this.Image = image;
-            this.Document = document;
-            this.Audio = audio;
+            this.Template = template;
             // use default value if no "channel" provided
             if (channel == null)
             {
@@ -102,28 +96,10 @@ namespace com.Messente.Api.Model
         public int? Ttl { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Gets or Sets Template
         /// </summary>
-        [DataMember(Name="text", EmitDefaultValue=false)]
-        public WhatsAppText Text { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Image
-        /// </summary>
-        [DataMember(Name="image", EmitDefaultValue=false)]
-        public WhatsAppImage Image { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Document
-        /// </summary>
-        [DataMember(Name="document", EmitDefaultValue=false)]
-        public WhatsAppDocument Document { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Audio
-        /// </summary>
-        [DataMember(Name="audio", EmitDefaultValue=false)]
-        public WhatsAppAudio Audio { get; set; }
+        [DataMember(Name="template", EmitDefaultValue=false)]
+        public WhatsAppTemplate Template { get; set; }
 
 
         /// <summary>
@@ -137,10 +113,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("  Validity: ").Append(Validity).Append("\n");
             sb.Append("  Ttl: ").Append(Ttl).Append("\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
-            sb.Append("  Image: ").Append(Image).Append("\n");
-            sb.Append("  Document: ").Append(Document).Append("\n");
-            sb.Append("  Audio: ").Append(Audio).Append("\n");
+            sb.Append("  Template: ").Append(Template).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -192,24 +165,9 @@ namespace com.Messente.Api.Model
                     this.Ttl.Equals(input.Ttl))
                 ) && 
                 (
-                    this.Text == input.Text ||
-                    (this.Text != null &&
-                    this.Text.Equals(input.Text))
-                ) && 
-                (
-                    this.Image == input.Image ||
-                    (this.Image != null &&
-                    this.Image.Equals(input.Image))
-                ) && 
-                (
-                    this.Document == input.Document ||
-                    (this.Document != null &&
-                    this.Document.Equals(input.Document))
-                ) && 
-                (
-                    this.Audio == input.Audio ||
-                    (this.Audio != null &&
-                    this.Audio.Equals(input.Audio))
+                    this.Template == input.Template ||
+                    (this.Template != null &&
+                    this.Template.Equals(input.Template))
                 ) && 
                 (
                     this.Channel == input.Channel ||
@@ -233,14 +191,8 @@ namespace com.Messente.Api.Model
                     hashCode = hashCode * 59 + this.Validity.GetHashCode();
                 if (this.Ttl != null)
                     hashCode = hashCode * 59 + this.Ttl.GetHashCode();
-                if (this.Text != null)
-                    hashCode = hashCode * 59 + this.Text.GetHashCode();
-                if (this.Image != null)
-                    hashCode = hashCode * 59 + this.Image.GetHashCode();
-                if (this.Document != null)
-                    hashCode = hashCode * 59 + this.Document.GetHashCode();
-                if (this.Audio != null)
-                    hashCode = hashCode * 59 + this.Audio.GetHashCode();
+                if (this.Template != null)
+                    hashCode = hashCode * 59 + this.Template.GetHashCode();
                 if (this.Channel != null)
                     hashCode = hashCode * 59 + this.Channel.GetHashCode();
                 return hashCode;
