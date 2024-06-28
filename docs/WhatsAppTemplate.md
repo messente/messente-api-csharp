@@ -1,4 +1,6 @@
 # com.Messente.Api.Model.WhatsAppTemplate
+Whatsapp Cloud API template
+
 ## Properties
 
 Name | Type | Description | Notes

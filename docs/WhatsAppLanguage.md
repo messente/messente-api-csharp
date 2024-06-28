@@ -1,4 +1,6 @@
 # com.Messente.Api.Model.WhatsAppLanguage
+Whatsapp template language
+
 ## Properties
 
 Name | Type | Description | Notes
