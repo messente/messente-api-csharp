@@ -1,6 +1,4 @@
 # com.Messente.Api.Model.FetchBlacklistSuccess
-A container for blacklisted numbers
-
 ## Properties
 
 Name | Type | Description | Notes

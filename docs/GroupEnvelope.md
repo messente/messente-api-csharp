@@ -1,6 +1,4 @@
 # com.Messente.Api.Model.GroupEnvelope
-A container for a group
-
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,6 +1,4 @@
 # com.Messente.Api.Model.ContactUpdateFields
-A container for fields of a contact
-
 ## Properties
 
 Name | Type | Description | Notes
