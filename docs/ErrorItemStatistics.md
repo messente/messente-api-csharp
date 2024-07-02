@@ -1,4 +1,6 @@
 # com.Messente.Api.Model.ErrorItemStatistics
+Error fields container
+
 ## Properties
 
 Name | Type | Description | Notes

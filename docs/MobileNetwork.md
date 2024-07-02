@@ -1,4 +1,6 @@
 # com.Messente.Api.Model.MobileNetwork
+Info about the network related to the phone number
+
 ## Properties
 
 Name | Type | Description | Notes

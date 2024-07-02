@@ -1,4 +1,6 @@
 # com.Messente.Api.Model.SyncNumberLookupResult
+Info about a phone number
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,10 +1,11 @@
-# com.Messente.Api.Model.WhatsAppDocument
+# com.Messente.Api.Model.WhatsAppDatetime
+Whatsapp datetime object.
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Caption** | **string** | Description for the document | [optional] 
-**Content** | **string** | Base64-encoded image | 
+**FallbackValue** | **string** | Default text. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

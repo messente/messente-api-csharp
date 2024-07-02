@@ -1,9 +1,11 @@
 # com.Messente.Api.Model.MessageResult
+A message part of an omnimessage
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MessageId** | **string** | Unique identifier for the message | 
+**MessageId** | **Guid** | Unique identifier for the message | 
 **Channel** | **Channel** |  | 
 **Sender** | **string** | Sender that was used for the message | 
 
