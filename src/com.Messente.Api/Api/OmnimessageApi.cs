@@ -48,6 +48,26 @@ namespace com.Messente.Api.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> CancelScheduledMessageWithHttpInfo(Guid omnimessageId, int operationIndex = 0);
         /// <summary>
+        /// Sends a bulk Omnimessage
+        /// </summary>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>BulkOmniMessageCreateSuccessResponse</returns>
+        BulkOmniMessageCreateSuccessResponse SendBulkOmnimessage(BulkOmnimessage bulkOmnimessage, int operationIndex = 0);
+
+        /// <summary>
+        /// Sends a bulk Omnimessage
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of BulkOmniMessageCreateSuccessResponse</returns>
+        ApiResponse<BulkOmniMessageCreateSuccessResponse> SendBulkOmnimessageWithHttpInfo(BulkOmnimessage bulkOmnimessage, int operationIndex = 0);
+        /// <summary>
         /// Sends an Omnimessage
         /// </summary>
         /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
@@ -101,6 +121,31 @@ namespace com.Messente.Api.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CancelScheduledMessageWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <summary>
+        /// Sends a bulk Omnimessage
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of BulkOmniMessageCreateSuccessResponse</returns>
+        System.Threading.Tasks.Task<BulkOmniMessageCreateSuccessResponse> SendBulkOmnimessageAsync(BulkOmnimessage bulkOmnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Sends a bulk Omnimessage
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (BulkOmniMessageCreateSuccessResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BulkOmniMessageCreateSuccessResponse>> SendBulkOmnimessageWithHttpInfoAsync(BulkOmnimessage bulkOmnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// Sends an Omnimessage
         /// </summary>
@@ -381,6 +426,164 @@ namespace com.Messente.Api.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CancelScheduledMessage", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Sends a bulk Omnimessage 
+        /// </summary>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>BulkOmniMessageCreateSuccessResponse</returns>
+        public BulkOmniMessageCreateSuccessResponse SendBulkOmnimessage(BulkOmnimessage bulkOmnimessage, int operationIndex = 0)
+        {
+            com.Messente.Api.Client.ApiResponse<BulkOmniMessageCreateSuccessResponse> localVarResponse = SendBulkOmnimessageWithHttpInfo(bulkOmnimessage);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sends a bulk Omnimessage 
+        /// </summary>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of BulkOmniMessageCreateSuccessResponse</returns>
+        public com.Messente.Api.Client.ApiResponse<BulkOmniMessageCreateSuccessResponse> SendBulkOmnimessageWithHttpInfo(BulkOmnimessage bulkOmnimessage, int operationIndex = 0)
+        {
+            // verify the required parameter 'bulkOmnimessage' is set
+            if (bulkOmnimessage == null)
+            {
+                throw new com.Messente.Api.Client.ApiException(400, "Missing required parameter 'bulkOmnimessage' when calling OmnimessageApi->SendBulkOmnimessage");
+            }
+
+            com.Messente.Api.Client.RequestOptions localVarRequestOptions = new com.Messente.Api.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = com.Messente.Api.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = bulkOmnimessage;
+
+            localVarRequestOptions.Operation = "OmnimessageApi.SendBulkOmnimessage";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + com.Messente.Api.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<BulkOmniMessageCreateSuccessResponse>("/omnimessages", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SendBulkOmnimessage", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Sends a bulk Omnimessage 
+        /// </summary>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of BulkOmniMessageCreateSuccessResponse</returns>
+        public async System.Threading.Tasks.Task<BulkOmniMessageCreateSuccessResponse> SendBulkOmnimessageAsync(BulkOmnimessage bulkOmnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            com.Messente.Api.Client.ApiResponse<BulkOmniMessageCreateSuccessResponse> localVarResponse = await SendBulkOmnimessageWithHttpInfoAsync(bulkOmnimessage, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Sends a bulk Omnimessage 
+        /// </summary>
+        /// <exception cref="com.Messente.Api.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="bulkOmnimessage">Bulk Omnimessage to be sent</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (BulkOmniMessageCreateSuccessResponse)</returns>
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<BulkOmniMessageCreateSuccessResponse>> SendBulkOmnimessageWithHttpInfoAsync(BulkOmnimessage bulkOmnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'bulkOmnimessage' is set
+            if (bulkOmnimessage == null)
+            {
+                throw new com.Messente.Api.Client.ApiException(400, "Missing required parameter 'bulkOmnimessage' when calling OmnimessageApi->SendBulkOmnimessage");
+            }
+
+
+            com.Messente.Api.Client.RequestOptions localVarRequestOptions = new com.Messente.Api.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = com.Messente.Api.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = bulkOmnimessage;
+
+            localVarRequestOptions.Operation = "OmnimessageApi.SendBulkOmnimessage";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (basicAuth) required
+            // http basic authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.Username) || !string.IsNullOrEmpty(this.Configuration.Password) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Basic " + com.Messente.Api.Client.ClientUtils.Base64Encode(this.Configuration.Username + ":" + this.Configuration.Password));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<BulkOmniMessageCreateSuccessResponse>("/omnimessages", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SendBulkOmnimessage", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
