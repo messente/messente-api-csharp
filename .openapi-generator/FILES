@@ -6,6 +6,7 @@ appveyor.yml
 com.Messente.Api.sln
 docs/BlacklistApi.md
 docs/BulkOmniMessageCreateSuccessResponse.md
+docs/BulkOmniMessageCreateSuccessResponseMessagesInner.md
 docs/BulkOmnimessage.md
 docs/Channel.md
 docs/ContactEnvelope.md
@@ -93,6 +94,7 @@ src/com.Messente.Api/Client/RequestOptions.cs
 src/com.Messente.Api/Client/RetryConfiguration.cs
 src/com.Messente.Api/Model/AbstractOpenAPISchema.cs
 src/com.Messente.Api/Model/BulkOmniMessageCreateSuccessResponse.cs
+src/com.Messente.Api/Model/BulkOmniMessageCreateSuccessResponseMessagesInner.cs
 src/com.Messente.Api/Model/BulkOmnimessage.cs
 src/com.Messente.Api/Model/Channel.cs
 src/com.Messente.Api/Model/ContactEnvelope.cs

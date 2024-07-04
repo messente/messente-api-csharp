@@ -5,7 +5,7 @@ Response received after successfully created bulk omnimessage.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Messages** | [**List&lt;OmniMessageCreateSuccessResponse&gt;**](OmniMessageCreateSuccessResponse.md) | List of responses for each Omnimessage. | 
+**Messages** | [**List&lt;BulkOmniMessageCreateSuccessResponseMessagesInner&gt;**](BulkOmniMessageCreateSuccessResponseMessagesInner.md) | List of responses for each Omnimessage. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -41,7 +41,7 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="BulkOmniMessageCreateSuccessResponse" /> class.
         /// </summary>
         /// <param name="messages">List of responses for each Omnimessage. (required).</param>
-        public BulkOmniMessageCreateSuccessResponse(List<OmniMessageCreateSuccessResponse> messages = default(List<OmniMessageCreateSuccessResponse>))
+        public BulkOmniMessageCreateSuccessResponse(List<BulkOmniMessageCreateSuccessResponseMessagesInner> messages = default(List<BulkOmniMessageCreateSuccessResponseMessagesInner>))
         {
             // to ensure "messages" is required (not null)
             if (messages == null)
@@ -56,7 +56,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>List of responses for each Omnimessage.</value>
         [DataMember(Name = "messages", IsRequired = true, EmitDefaultValue = true)]
-        public List<OmniMessageCreateSuccessResponse> Messages { get; set; }
+        public List<BulkOmniMessageCreateSuccessResponseMessagesInner> Messages { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -1960,7 +1960,7 @@ components:
         messages:
           description: List of responses for each Omnimessage.
           items:
-            $ref: '#/components/schemas/OmniMessageCreateSuccessResponse'
+            $ref: '#/components/schemas/BulkOmniMessageCreateSuccessResponse_messages_inner'
           type: array
       required:
       - messages
@@ -2628,6 +2628,10 @@ components:
       - code
       - description
       type: object
+    BulkOmniMessageCreateSuccessResponse_messages_inner:
+      oneOf:
+      - $ref: '#/components/schemas/OmniMessageCreateSuccessResponse'
+      - $ref: '#/components/schemas/ErrorOmnichannel'
     Omnimessage_messages_inner:
       oneOf:
       - $ref: '#/components/schemas/Viber'
