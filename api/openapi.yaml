@@ -72,7 +72,42 @@ tags:
   name: Number Lookup
 - description: Get total messages and price per country
   name: Statistics
+- description: Send omnimessages in bulk to a phone number with fallback options for
+    various channels
+  name: BulkMessaging
 paths:
+  /omnimessages:
+    post:
+      operationId: sendBulkOmnimessage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkOmnimessage'
+        description: Bulk Omnimessage to be sent
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BulkOmniMessageCreateSuccessResponse'
+          description: Bulk Omnimessage success response
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
+      summary: Sends a bulk Omnimessage
+      tags:
+      - BulkMessaging
   /hlr/sync:
     post:
       operationId: fetchInfo
@@ -248,38 +283,6 @@ paths:
           description: If the omnimessage has already been sent or no such message
             exists
       summary: Cancels a scheduled Omnimessage
-      tags:
-      - Omnimessage
-  /omnimessages:
-    post:
-      operationId: sendBulkOmnimessage
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BulkOmnimessage'
-        description: Bulk Omnimessage to be sent
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BulkOmniMessageCreateSuccessResponse'
-          description: Bulk Omnimessage success response
-        "400":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorOmnichannel'
-          description: Invalid input
-        "401":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorOmnichannel'
-          description: Unauthorized
-      summary: Sends a bulk Omnimessage
       tags:
       - Omnimessage
   /phonebook/blacklist:
@@ -1934,37 +1937,6 @@ components:
       - omnimessage_id
       - to
       type: object
-    BulkOmniMessageCreateSuccessResponse:
-      description: Response received after successfully created bulk omnimessage.
-      example:
-        messages:
-        - messages:
-          - sender: sender
-            channel: sms
-            message_id: message_id
-          - sender: sender
-            channel: sms
-            message_id: message_id
-          to: to
-          omnimessage_id: omnimessage_id
-        - messages:
-          - sender: sender
-            channel: sms
-            message_id: message_id
-          - sender: sender
-            channel: sms
-            message_id: message_id
-          to: to
-          omnimessage_id: omnimessage_id
-      properties:
-        messages:
-          description: List of responses for each Omnimessage.
-          items:
-            $ref: '#/components/schemas/BulkOmniMessageCreateSuccessResponse_messages_inner'
-          type: array
-      required:
-      - messages
-      type: object
     MessageResult:
       description: A message part of an omnimessage
       example:
@@ -2051,63 +2023,6 @@ components:
       required:
       - messages
       - to
-      type: object
-    BulkOmnimessage:
-      description: A bulk omnimessage.
-      example:
-        messages:
-        - text_store: nostore
-          time_to_send: 2000-01-23T04:56:07.000+00:00
-          dlr_url: http://example.com/aeiou
-          messages:
-          - sender: sender
-            image_url: image_url
-            button_url: button_url
-            channel: viber
-            validity: 360
-            text: text
-            button_text: button_text
-            ttl: 21600
-          - sender: sender
-            image_url: image_url
-            button_url: button_url
-            channel: viber
-            validity: 360
-            text: text
-            button_text: button_text
-            ttl: 21600
-          to: to
-          priority: low
-        - text_store: nostore
-          time_to_send: 2000-01-23T04:56:07.000+00:00
-          dlr_url: http://example.com/aeiou
-          messages:
-          - sender: sender
-            image_url: image_url
-            button_url: button_url
-            channel: viber
-            validity: 360
-            text: text
-            button_text: button_text
-            ttl: 21600
-          - sender: sender
-            image_url: image_url
-            button_url: button_url
-            channel: viber
-            validity: 360
-            text: text
-            button_text: button_text
-            ttl: 21600
-          to: to
-          priority: low
-      properties:
-        messages:
-          description: A list of omnimessages.
-          items:
-            $ref: '#/components/schemas/Omnimessage'
-          type: array
-      required:
-      - messages
       type: object
     TextStore:
       description: "Whether to store message content as is (plaintext), as a hashed\
@@ -2601,6 +2516,95 @@ components:
       - 10
       - 999
       type: integer
+    BulkOmnimessage:
+      description: A bulk omnimessage.
+      example:
+        messages:
+        - text_store: nostore
+          time_to_send: 2000-01-23T04:56:07.000+00:00
+          dlr_url: http://example.com/aeiou
+          messages:
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          to: to
+          priority: low
+        - text_store: nostore
+          time_to_send: 2000-01-23T04:56:07.000+00:00
+          dlr_url: http://example.com/aeiou
+          messages:
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          - sender: sender
+            image_url: image_url
+            button_url: button_url
+            channel: viber
+            validity: 360
+            text: text
+            button_text: button_text
+            ttl: 21600
+          to: to
+          priority: low
+      properties:
+        messages:
+          description: A list of omnimessages.
+          items:
+            $ref: '#/components/schemas/Omnimessage'
+          type: array
+      required:
+      - messages
+      type: object
+    BulkOmniMessageCreateSuccessResponse:
+      description: Response received after successfully created bulk omnimessage.
+      example:
+        messages:
+        - messages:
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          to: to
+          omnimessage_id: omnimessage_id
+        - messages:
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          - sender: sender
+            channel: sms
+            message_id: message_id
+          to: to
+          omnimessage_id: omnimessage_id
+      properties:
+        messages:
+          description: List of responses for each Omnimessage in the bulk. These can
+            be errors or successful responses
+          items:
+            $ref: '#/components/schemas/BulkOmniMessageCreateSuccessResponse_messages_inner'
+          type: array
+      required:
+      - messages
+      type: object
     ErrorItemNumberLookup_error:
       description: Error fields container
       example:
@@ -2628,16 +2632,16 @@ components:
       - code
       - description
       type: object
-    BulkOmniMessageCreateSuccessResponse_messages_inner:
-      oneOf:
-      - $ref: '#/components/schemas/OmniMessageCreateSuccessResponse'
-      - $ref: '#/components/schemas/ErrorOmnichannel'
     Omnimessage_messages_inner:
       oneOf:
       - $ref: '#/components/schemas/Viber'
       - $ref: '#/components/schemas/SMS'
       - $ref: '#/components/schemas/WhatsApp'
       - $ref: '#/components/schemas/Telegram'
+    BulkOmniMessageCreateSuccessResponse_messages_inner:
+      oneOf:
+      - $ref: '#/components/schemas/OmniMessageCreateSuccessResponse'
+      - $ref: '#/components/schemas/ErrorOmnichannel'
   securitySchemes:
     basicAuth:
       scheme: basic

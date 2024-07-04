@@ -5,6 +5,7 @@ api/openapi.yaml
 appveyor.yml
 com.Messente.Api.sln
 docs/BlacklistApi.md
+docs/BulkMessagingApi.md
 docs/BulkOmniMessageCreateSuccessResponse.md
 docs/BulkOmniMessageCreateSuccessResponseMessagesInner.md
 docs/BulkOmnimessage.md
@@ -70,6 +71,7 @@ docs/WhatsAppParameter.md
 docs/WhatsAppTemplate.md
 git_push.sh
 src/com.Messente.Api/Api/BlacklistApi.cs
+src/com.Messente.Api/Api/BulkMessagingApi.cs
 src/com.Messente.Api/Api/ContactsApi.cs
 src/com.Messente.Api/Api/DeliveryReportApi.cs
 src/com.Messente.Api/Api/GroupsApi.cs
