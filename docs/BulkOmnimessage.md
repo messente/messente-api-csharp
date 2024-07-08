@@ -1,10 +1,11 @@
-# com.Messente.Api.Model.WhatsAppText
+# com.Messente.Api.Model.BulkOmnimessage
+A bulk omnimessage.
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PreviewUrl** | **bool?** | Whether to display link preview if the message contains a hyperlink | [optional] [default to true]
-**Body** | **string** | Plaintext content for WhatsApp, can contain URLs, emojis and formatting | 
+**Messages** | [**List&lt;Omnimessage&gt;**](Omnimessage.md) | A list of omnimessages. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
