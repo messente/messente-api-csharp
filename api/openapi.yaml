@@ -2404,13 +2404,21 @@ components:
       description: A container for successful delivery report response
       example:
         statuses:
-        - err: 0
+        - price_info:
+            parts_count: 6
+            total_price: total_price
+            part_price: part_price
+          err: 0
           channel: sms
           message_id: message_id
           error: error
           status: ACK
           timestamp: 2000-01-23T04:56:07.000+00:00
-        - err: 0
+        - price_info:
+            parts_count: 6
+            total_price: total_price
+            part_price: part_price
+          err: 0
           channel: sms
           message_id: message_id
           error: error
@@ -2440,6 +2448,10 @@ components:
     DeliveryResult:
       description: A delivery report
       example:
+        price_info:
+          parts_count: 6
+          total_price: total_price
+          part_price: part_price
         err: 0
         channel: sms
         message_id: message_id
@@ -2466,6 +2478,30 @@ components:
           description: When this status was received by Omnichannel API
           format: date-time
           type: string
+        price_info:
+          $ref: '#/components/schemas/PriceInfo'
+      type: object
+    PriceInfo:
+      description: Contains price information for the message. This value is *null*
+        if the message is still being processed
+      example:
+        parts_count: 6
+        total_price: total_price
+        part_price: part_price
+      properties:
+        part_price:
+          description: price per message part - relevant mostly for SMS
+          type: string
+        parts_count:
+          description: the number of parts the message consists of
+          type: integer
+        total_price:
+          description: total price for the message
+          type: string
+      required:
+      - part_price
+      - parts_count
+      - total_price
       type: object
     Status:
       description: |-

@@ -49,6 +49,7 @@ docs/OmniMessageCreateSuccessResponse.md
 docs/Omnimessage.md
 docs/OmnimessageApi.md
 docs/OmnimessageMessagesInner.md
+docs/PriceInfo.md
 docs/Priority.md
 docs/SMS.md
 docs/StatisticsApi.md
@@ -133,6 +134,7 @@ src/com.Messente.Api/Model/NumbersToInvestigate.cs
 src/com.Messente.Api/Model/OmniMessageCreateSuccessResponse.cs
 src/com.Messente.Api/Model/Omnimessage.cs
 src/com.Messente.Api/Model/OmnimessageMessagesInner.cs
+src/com.Messente.Api/Model/PriceInfo.cs
 src/com.Messente.Api/Model/Priority.cs
 src/com.Messente.Api/Model/SMS.cs
 src/com.Messente.Api/Model/StatisticsReport.cs
