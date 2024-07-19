@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ErrorItemNumberLookupError" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorItemNumberLookupError() { }
+        protected ErrorItemNumberLookupError()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorItemNumberLookupError" /> class.
         /// </summary>
@@ -51,6 +54,7 @@ namespace com.Messente.Api.Model
             }
             this.Description = description;
             this.Code = code;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -68,6 +72,12 @@ namespace com.Messente.Api.Model
         public int Code { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -77,6 +87,7 @@ namespace com.Messente.Api.Model
             sb.Append("class ErrorItemNumberLookupError {\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -39,6 +39,7 @@ namespace com.Messente.Api.Model
         public ContactEnvelope(ContactResponseFields contact = default(ContactResponseFields))
         {
             this.Contact = contact;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -46,6 +47,12 @@ namespace com.Messente.Api.Model
         /// </summary>
         [DataMember(Name = "contact", EmitDefaultValue = false)]
         public ContactResponseFields Contact { get; set; }
+
+        /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,6 +63,7 @@ namespace com.Messente.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ContactEnvelope {\n");
             sb.Append("  Contact: ").Append(Contact).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

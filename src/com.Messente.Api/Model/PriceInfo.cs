@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="PriceInfo" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected PriceInfo() { }
+        protected PriceInfo()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="PriceInfo" /> class.
         /// </summary>
@@ -58,6 +61,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("totalPrice is a required property for PriceInfo and cannot be null");
             }
             this.TotalPrice = totalPrice;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -82,6 +86,12 @@ namespace com.Messente.Api.Model
         public string TotalPrice { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,6 +102,7 @@ namespace com.Messente.Api.Model
             sb.Append("  PartPrice: ").Append(PartPrice).Append("\n");
             sb.Append("  PartsCount: ").Append(PartsCount).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="StatisticsReport" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected StatisticsReport() { }
+        protected StatisticsReport()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="StatisticsReport" /> class.
         /// </summary>
@@ -58,6 +61,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("country is a required property for StatisticsReport and cannot be null");
             }
             this.Country = country;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -82,6 +86,12 @@ namespace com.Messente.Api.Model
         public string Country { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,6 +102,7 @@ namespace com.Messente.Api.Model
             sb.Append("  TotalMessages: ").Append(TotalMessages).Append("\n");
             sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

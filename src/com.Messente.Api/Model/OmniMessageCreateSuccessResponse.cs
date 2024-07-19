@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="OmniMessageCreateSuccessResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected OmniMessageCreateSuccessResponse() { }
+        protected OmniMessageCreateSuccessResponse()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="OmniMessageCreateSuccessResponse" /> class.
         /// </summary>
@@ -58,6 +61,7 @@ namespace com.Messente.Api.Model
             }
             this.To = to;
             this.OmnimessageId = omnimessageId;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -82,6 +86,12 @@ namespace com.Messente.Api.Model
         public Guid OmnimessageId { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -92,6 +102,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Messages: ").Append(Messages).Append("\n");
             sb.Append("  To: ").Append(To).Append("\n");
             sb.Append("  OmnimessageId: ").Append(OmnimessageId).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

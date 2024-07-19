@@ -42,7 +42,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="MessageResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected MessageResult() { }
+        protected MessageResult()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageResult" /> class.
         /// </summary>
@@ -59,6 +62,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("sender is a required property for MessageResult and cannot be null");
             }
             this.Sender = sender;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -76,6 +80,12 @@ namespace com.Messente.Api.Model
         public string Sender { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -86,6 +96,7 @@ namespace com.Messente.Api.Model
             sb.Append("  MessageId: ").Append(MessageId).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

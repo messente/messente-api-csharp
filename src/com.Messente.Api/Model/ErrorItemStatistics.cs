@@ -42,7 +42,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ErrorItemStatistics" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorItemStatistics() { }
+        protected ErrorItemStatistics()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorItemStatistics" /> class.
         /// </summary>
@@ -64,6 +67,7 @@ namespace com.Messente.Api.Model
             }
             this.Details = details;
             this.Code = code;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -81,6 +85,12 @@ namespace com.Messente.Api.Model
         public string Details { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -91,6 +101,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Details: ").Append(Details).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

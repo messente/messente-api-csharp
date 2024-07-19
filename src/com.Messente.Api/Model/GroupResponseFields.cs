@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="GroupResponseFields" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected GroupResponseFields() { }
+        protected GroupResponseFields()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="GroupResponseFields" /> class.
         /// </summary>
@@ -60,6 +63,7 @@ namespace com.Messente.Api.Model
             this.Name = name;
             this.ContactsCount = contactsCount;
             this.CreatedOn = createdOn;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -91,6 +95,12 @@ namespace com.Messente.Api.Model
         public int ContactsCount { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +112,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
             sb.Append("  ContactsCount: ").Append(ContactsCount).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -74,6 +74,7 @@ namespace com.Messente.Api.Model
             this.ButtonUrl = buttonUrl;
             this.ButtonText = buttonText;
             this.Channel = channel;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -128,6 +129,12 @@ namespace com.Messente.Api.Model
         public string ButtonText { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -143,6 +150,7 @@ namespace com.Messente.Api.Model
             sb.Append("  ButtonUrl: ").Append(ButtonUrl).Append("\n");
             sb.Append("  ButtonText: ").Append(ButtonText).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

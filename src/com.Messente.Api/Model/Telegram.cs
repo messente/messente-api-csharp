@@ -72,6 +72,7 @@ namespace com.Messente.Api.Model
             this.DocumentUrl = documentUrl;
             this.AudioUrl = audioUrl;
             this.Channel = channel;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -118,6 +119,12 @@ namespace com.Messente.Api.Model
         public string AudioUrl { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -132,6 +139,7 @@ namespace com.Messente.Api.Model
             sb.Append("  DocumentUrl: ").Append(DocumentUrl).Append("\n");
             sb.Append("  AudioUrl: ").Append(AudioUrl).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

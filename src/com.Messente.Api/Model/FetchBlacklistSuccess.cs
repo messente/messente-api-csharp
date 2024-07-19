@@ -39,6 +39,7 @@ namespace com.Messente.Api.Model
         public FetchBlacklistSuccess(List<string> phoneNumbers = default(List<string>))
         {
             this.PhoneNumbers = phoneNumbers;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -49,6 +50,12 @@ namespace com.Messente.Api.Model
         public List<string> PhoneNumbers { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -57,6 +64,7 @@ namespace com.Messente.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class FetchBlacklistSuccess {\n");
             sb.Append("  PhoneNumbers: ").Append(PhoneNumbers).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

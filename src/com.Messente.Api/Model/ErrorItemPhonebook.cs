@@ -48,7 +48,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ErrorItemPhonebook" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorItemPhonebook() { }
+        protected ErrorItemPhonebook()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorItemPhonebook" /> class.
         /// </summary>
@@ -65,6 +68,7 @@ namespace com.Messente.Api.Model
             }
             this.Detail = detail;
             this.Code = code;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -73,6 +77,12 @@ namespace com.Messente.Api.Model
         /// <value>Free form more detailed description of the error</value>
         [DataMember(Name = "detail", IsRequired = true, EmitDefaultValue = true)]
         public string Detail { get; set; }
+
+        /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,6 +95,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Detail: ").Append(Detail).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

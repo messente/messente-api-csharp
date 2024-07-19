@@ -39,6 +39,7 @@ namespace com.Messente.Api.Model
         public GroupEnvelope(GroupResponseFields group = default(GroupResponseFields))
         {
             this.Group = group;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -46,6 +47,12 @@ namespace com.Messente.Api.Model
         /// </summary>
         [DataMember(Name = "group", EmitDefaultValue = false)]
         public GroupResponseFields Group { get; set; }
+
+        /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,6 +63,7 @@ namespace com.Messente.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GroupEnvelope {\n");
             sb.Append("  Group: ").Append(Group).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorOmnichannel() { }
+        protected ErrorOmnichannel()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
         /// </summary>
@@ -49,6 +52,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("errors is a required property for ErrorOmnichannel and cannot be null");
             }
             this.Errors = errors;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -59,6 +63,12 @@ namespace com.Messente.Api.Model
         public List<ErrorItemOmnichannel> Errors { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -67,6 +77,7 @@ namespace com.Messente.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ErrorOmnichannel {\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

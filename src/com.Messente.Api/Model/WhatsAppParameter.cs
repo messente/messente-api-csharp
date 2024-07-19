@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="WhatsAppParameter" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppParameter() { }
+        protected WhatsAppParameter()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppParameter" /> class.
         /// </summary>
@@ -61,6 +64,7 @@ namespace com.Messente.Api.Model
             this.Image = image;
             this.Document = document;
             this.Video = video;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -108,6 +112,12 @@ namespace com.Messente.Api.Model
         public WhatsAppMedia Video { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -122,6 +132,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Image: ").Append(Image).Append("\n");
             sb.Append("  Document: ").Append(Document).Append("\n");
             sb.Append("  Video: ").Append(Video).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

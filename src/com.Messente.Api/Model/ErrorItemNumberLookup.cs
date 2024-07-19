@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="ErrorItemNumberLookup" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorItemNumberLookup() { }
+        protected ErrorItemNumberLookup()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorItemNumberLookup" /> class.
         /// </summary>
@@ -49,6 +52,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("error is a required property for ErrorItemNumberLookup and cannot be null");
             }
             this.Error = error;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -56,6 +60,12 @@ namespace com.Messente.Api.Model
         /// </summary>
         [DataMember(Name = "error", IsRequired = true, EmitDefaultValue = true)]
         public ErrorItemNumberLookupError Error { get; set; }
+
+        /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -66,6 +76,7 @@ namespace com.Messente.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ErrorItemNumberLookup {\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

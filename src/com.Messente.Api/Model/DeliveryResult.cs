@@ -71,6 +71,7 @@ namespace com.Messente.Api.Model
             this.Timestamp = timestamp;
             this.PriceInfo = priceInfo;
             this.Sender = sender;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -108,6 +109,12 @@ namespace com.Messente.Api.Model
         public string Sender { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -123,6 +130,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  PriceInfo: ").Append(PriceInfo).Append("\n");
             sb.Append("  Sender: ").Append(Sender).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
