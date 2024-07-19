@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Err** | **ErrorCodeOmnichannelMachine** |  | [optional] 
 **Timestamp** | **DateTime** | When this status was received by Omnichannel API | [optional] 
 **PriceInfo** | [**PriceInfo**](PriceInfo.md) |  | [optional] 
+**Sender** | **string** | the sender of the message | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

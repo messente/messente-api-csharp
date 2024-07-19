@@ -2409,6 +2409,7 @@ components:
             total_price: total_price
             part_price: part_price
           err: 0
+          sender: sender
           channel: sms
           message_id: message_id
           error: error
@@ -2419,6 +2420,7 @@ components:
             total_price: total_price
             part_price: part_price
           err: 0
+          sender: sender
           channel: sms
           message_id: message_id
           error: error
@@ -2453,6 +2455,7 @@ components:
           total_price: total_price
           part_price: part_price
         err: 0
+        sender: sender
         channel: sms
         message_id: message_id
         error: error
@@ -2480,6 +2483,9 @@ components:
           type: string
         price_info:
           $ref: '#/components/schemas/PriceInfo'
+        sender:
+          description: the sender of the message
+          type: string
       type: object
     PriceInfo:
       description: Contains price information for the message. This value is *null*

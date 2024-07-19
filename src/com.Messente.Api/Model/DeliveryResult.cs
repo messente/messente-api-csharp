@@ -60,7 +60,8 @@ namespace com.Messente.Api.Model
         /// <param name="err">err.</param>
         /// <param name="timestamp">When this status was received by Omnichannel API.</param>
         /// <param name="priceInfo">priceInfo.</param>
-        public DeliveryResult(Status? status = default(Status?), Channel? channel = default(Channel?), Guid messageId = default(Guid), string error = default(string), ErrorCodeOmnichannelMachine? err = default(ErrorCodeOmnichannelMachine?), DateTime timestamp = default(DateTime), PriceInfo priceInfo = default(PriceInfo))
+        /// <param name="sender">the sender of the message.</param>
+        public DeliveryResult(Status? status = default(Status?), Channel? channel = default(Channel?), Guid messageId = default(Guid), string error = default(string), ErrorCodeOmnichannelMachine? err = default(ErrorCodeOmnichannelMachine?), DateTime timestamp = default(DateTime), PriceInfo priceInfo = default(PriceInfo), string sender = default(string))
         {
             this.Status = status;
             this.Channel = channel;
@@ -69,6 +70,7 @@ namespace com.Messente.Api.Model
             this.Err = err;
             this.Timestamp = timestamp;
             this.PriceInfo = priceInfo;
+            this.Sender = sender;
         }
 
         /// <summary>
@@ -99,6 +101,13 @@ namespace com.Messente.Api.Model
         public PriceInfo PriceInfo { get; set; }
 
         /// <summary>
+        /// the sender of the message
+        /// </summary>
+        /// <value>the sender of the message</value>
+        [DataMember(Name = "sender", EmitDefaultValue = false)]
+        public string Sender { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -113,6 +122,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Err: ").Append(Err).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  PriceInfo: ").Append(PriceInfo).Append("\n");
+            sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
