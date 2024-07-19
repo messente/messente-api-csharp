@@ -59,7 +59,9 @@ namespace com.Messente.Api.Model
         /// <param name="error">Human-readable description of what went wrong, *null* in case of success or if the message has not been processed yet.</param>
         /// <param name="err">err.</param>
         /// <param name="timestamp">When this status was received by Omnichannel API.</param>
-        public DeliveryResult(Status? status = default(Status?), Channel? channel = default(Channel?), Guid messageId = default(Guid), string error = default(string), ErrorCodeOmnichannelMachine? err = default(ErrorCodeOmnichannelMachine?), DateTime timestamp = default(DateTime))
+        /// <param name="priceInfo">priceInfo.</param>
+        /// <param name="sender">the sender of the message.</param>
+        public DeliveryResult(Status? status = default(Status?), Channel? channel = default(Channel?), Guid messageId = default(Guid), string error = default(string), ErrorCodeOmnichannelMachine? err = default(ErrorCodeOmnichannelMachine?), DateTime timestamp = default(DateTime), PriceInfo priceInfo = default(PriceInfo), string sender = default(string))
         {
             this.Status = status;
             this.Channel = channel;
@@ -67,6 +69,8 @@ namespace com.Messente.Api.Model
             this.Error = error;
             this.Err = err;
             this.Timestamp = timestamp;
+            this.PriceInfo = priceInfo;
+            this.Sender = sender;
         }
 
         /// <summary>
@@ -91,6 +95,19 @@ namespace com.Messente.Api.Model
         public DateTime Timestamp { get; set; }
 
         /// <summary>
+        /// Gets or Sets PriceInfo
+        /// </summary>
+        [DataMember(Name = "price_info", EmitDefaultValue = false)]
+        public PriceInfo PriceInfo { get; set; }
+
+        /// <summary>
+        /// the sender of the message
+        /// </summary>
+        /// <value>the sender of the message</value>
+        [DataMember(Name = "sender", EmitDefaultValue = false)]
+        public string Sender { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,6 +121,8 @@ namespace com.Messente.Api.Model
             sb.Append("  Error: ").Append(Error).Append("\n");
             sb.Append("  Err: ").Append(Err).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  PriceInfo: ").Append(PriceInfo).Append("\n");
+            sb.Append("  Sender: ").Append(Sender).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
