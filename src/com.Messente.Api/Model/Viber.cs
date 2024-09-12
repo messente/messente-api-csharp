@@ -64,8 +64,7 @@ namespace com.Messente.Api.Model
         /// <param name="buttonUrl">URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="buttonText">Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional).</param>
         /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Viber).</param>
-        /// <param name="video">video.</param>
-        public Viber(string sender = default(string), int validity = default(int), int ttl = default(int), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = ChannelEnum.Viber, ViberVideo video = default(ViberVideo))
+        public Viber(string sender = default(string), int validity = default(int), int ttl = default(int), string text = default(string), string imageUrl = default(string), string buttonUrl = default(string), string buttonText = default(string), ChannelEnum? channel = ChannelEnum.Viber)
         {
             this.Sender = sender;
             this.Validity = validity;
@@ -75,7 +74,6 @@ namespace com.Messente.Api.Model
             this.ButtonUrl = buttonUrl;
             this.ButtonText = buttonText;
             this.Channel = channel;
-            this.Video = video;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -131,12 +129,6 @@ namespace com.Messente.Api.Model
         public string ButtonText { get; set; }
 
         /// <summary>
-        /// Gets or Sets Video
-        /// </summary>
-        [DataMember(Name = "video", EmitDefaultValue = false)]
-        public ViberVideo Video { get; set; }
-
-        /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
         [JsonExtensionData]
@@ -158,7 +150,6 @@ namespace com.Messente.Api.Model
             sb.Append("  ButtonUrl: ").Append(ButtonUrl).Append("\n");
             sb.Append("  ButtonText: ").Append(ButtonText).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
-            sb.Append("  Video: ").Append(Video).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

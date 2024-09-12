@@ -1980,11 +1980,6 @@ components:
           validity: 360
           text: text
           button_text: button_text
-          video:
-            duration: 6
-            thumbnail: thumbnail
-            url: url
-            file_size: 0
           ttl: 21600
         - sender: sender
           image_url: image_url
@@ -1993,11 +1988,6 @@ components:
           validity: 360
           text: text
           button_text: button_text
-          video:
-            duration: 6
-            thumbnail: thumbnail
-            url: url
-            file_size: 0
           ttl: 21600
         to: to
         priority: low
@@ -2062,11 +2052,6 @@ components:
         validity: 360
         text: text
         button_text: button_text
-        video:
-          duration: 6
-          thumbnail: thumbnail
-          url: url
-          file_size: 0
         ttl: 21600
       properties:
         sender:
@@ -2111,35 +2096,6 @@ components:
           enum:
           - viber
           type: string
-        video:
-          $ref: '#/components/schemas/ViberVideo'
-      type: object
-    ViberVideo:
-      description: Viber video object
-      example:
-        duration: 6
-        thumbnail: thumbnail
-        url: url
-        file_size: 0
-      properties:
-        url:
-          description: URL pointing to the video resource.
-          type: string
-        thumbnail:
-          description: URL pointing to the video thumbnail resource.
-          type: string
-        file_size:
-          description: Size of the video file in bytes. Cannot be larger than 200MB.
-          type: integer
-        duration:
-          description: Duration of the video in seconds. Cannot be longer than 600
-            seconds.
-          type: integer
-      required:
-      - duration
-      - file_size
-      - thumbnail
-      - url
       type: object
     WhatsApp:
       description: |-
@@ -2617,11 +2573,6 @@ components:
             validity: 360
             text: text
             button_text: button_text
-            video:
-              duration: 6
-              thumbnail: thumbnail
-              url: url
-              file_size: 0
             ttl: 21600
           - sender: sender
             image_url: image_url
@@ -2630,11 +2581,6 @@ components:
             validity: 360
             text: text
             button_text: button_text
-            video:
-              duration: 6
-              thumbnail: thumbnail
-              url: url
-              file_size: 0
             ttl: 21600
           to: to
           priority: low
@@ -2649,11 +2595,6 @@ components:
             validity: 360
             text: text
             button_text: button_text
-            video:
-              duration: 6
-              thumbnail: thumbnail
-              url: url
-              file_size: 0
             ttl: 21600
           - sender: sender
             image_url: image_url
@@ -2662,11 +2603,6 @@ components:
             validity: 360
             text: text
             button_text: button_text
-            video:
-              duration: 6
-              thumbnail: thumbnail
-              url: url
-              file_size: 0
             ttl: 21600
           to: to
           priority: low
