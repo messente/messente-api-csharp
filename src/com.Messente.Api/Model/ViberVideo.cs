@@ -47,7 +47,7 @@ namespace com.Messente.Api.Model
         /// <param name="thumbnail">URL pointing to the video thumbnail resource. (required).</param>
         /// <param name="fileSize">Size of the video file in bytes. Cannot be larger than 200MB. (required).</param>
         /// <param name="duration">Duration of the video in seconds. Cannot be longer than 600 seconds. (required).</param>
-        public ViberVideo(string url = default(string), string thumbnail = default(string), int fileSize = default(int), List<WhatsAppParameter> duration = default(List<WhatsAppParameter>))
+        public ViberVideo(string url = default(string), string thumbnail = default(string), int fileSize = default(int), int duration = default(int))
         {
             // to ensure "url" is required (not null)
             if (url == null)
@@ -62,11 +62,6 @@ namespace com.Messente.Api.Model
             }
             this.Thumbnail = thumbnail;
             this.FileSize = fileSize;
-            // to ensure "duration" is required (not null)
-            if (duration == null)
-            {
-                throw new ArgumentNullException("duration is a required property for ViberVideo and cannot be null");
-            }
             this.Duration = duration;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -97,7 +92,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>Duration of the video in seconds. Cannot be longer than 600 seconds.</value>
         [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppParameter> Duration { get; set; }
+        public int Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties

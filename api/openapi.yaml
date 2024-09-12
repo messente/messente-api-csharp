@@ -1981,53 +1981,7 @@ components:
           text: text
           button_text: button_text
           video:
-            duration:
-            - image:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              date_time:
-                fallback_value: fallback_value
-              document:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              currency:
-                fallback_value: fallback_value
-                code: code
-                amount_1000: amount_1000
-              text: text
-              video:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              type: type
-            - image:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              date_time:
-                fallback_value: fallback_value
-              document:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              currency:
-                fallback_value: fallback_value
-                code: code
-                amount_1000: amount_1000
-              text: text
-              video:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              type: type
+            duration: 6
             thumbnail: thumbnail
             url: url
             file_size: 0
@@ -2040,53 +1994,7 @@ components:
           text: text
           button_text: button_text
           video:
-            duration:
-            - image:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              date_time:
-                fallback_value: fallback_value
-              document:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              currency:
-                fallback_value: fallback_value
-                code: code
-                amount_1000: amount_1000
-              text: text
-              video:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              type: type
-            - image:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              date_time:
-                fallback_value: fallback_value
-              document:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              currency:
-                fallback_value: fallback_value
-                code: code
-                amount_1000: amount_1000
-              text: text
-              video:
-                filename: filename
-                link: link
-                caption: caption
-                id: id
-              type: type
+            duration: 6
             thumbnail: thumbnail
             url: url
             file_size: 0
@@ -2155,53 +2063,7 @@ components:
         text: text
         button_text: button_text
         video:
-          duration:
-          - image:
-              filename: filename
-              link: link
-              caption: caption
-              id: id
-            date_time:
-              fallback_value: fallback_value
-            document:
-              filename: filename
-              link: link
-              caption: caption
-              id: id
-            currency:
-              fallback_value: fallback_value
-              code: code
-              amount_1000: amount_1000
-            text: text
-            video:
-              filename: filename
-              link: link
-              caption: caption
-              id: id
-            type: type
-          - image:
-              filename: filename
-              link: link
-              caption: caption
-              id: id
-            date_time:
-              fallback_value: fallback_value
-            document:
-              filename: filename
-              link: link
-              caption: caption
-              id: id
-            currency:
-              fallback_value: fallback_value
-              code: code
-              amount_1000: amount_1000
-            text: text
-            video:
-              filename: filename
-              link: link
-              caption: caption
-              id: id
-            type: type
+          duration: 6
           thumbnail: thumbnail
           url: url
           file_size: 0
@@ -2255,53 +2117,7 @@ components:
     ViberVideo:
       description: Viber video object
       example:
-        duration:
-        - image:
-            filename: filename
-            link: link
-            caption: caption
-            id: id
-          date_time:
-            fallback_value: fallback_value
-          document:
-            filename: filename
-            link: link
-            caption: caption
-            id: id
-          currency:
-            fallback_value: fallback_value
-            code: code
-            amount_1000: amount_1000
-          text: text
-          video:
-            filename: filename
-            link: link
-            caption: caption
-            id: id
-          type: type
-        - image:
-            filename: filename
-            link: link
-            caption: caption
-            id: id
-          date_time:
-            fallback_value: fallback_value
-          document:
-            filename: filename
-            link: link
-            caption: caption
-            id: id
-          currency:
-            fallback_value: fallback_value
-            code: code
-            amount_1000: amount_1000
-          text: text
-          video:
-            filename: filename
-            link: link
-            caption: caption
-            id: id
-          type: type
+        duration: 6
         thumbnail: thumbnail
         url: url
         file_size: 0
@@ -2318,9 +2134,7 @@ components:
         duration:
           description: Duration of the video in seconds. Cannot be longer than 600
             seconds.
-          items:
-            $ref: '#/components/schemas/WhatsAppParameter'
-          type: array
+          type: integer
       required:
       - duration
       - file_size
@@ -2437,10 +2251,6 @@ components:
       type: object
     WhatsAppCurrency:
       description: Whatsapp currency object.
-      example:
-        fallback_value: fallback_value
-        code: code
-        amount_1000: amount_1000
       properties:
         fallback_value:
           description: Default text if localization fails.
@@ -2507,8 +2317,6 @@ components:
       type: object
     WhatsAppDatetime:
       description: Whatsapp datetime object.
-      example:
-        fallback_value: fallback_value
       properties:
         fallback_value:
           description: Default text.
@@ -2518,11 +2326,6 @@ components:
       type: object
     WhatsAppMedia:
       description: Whatsapp media object.
-      example:
-        filename: filename
-        link: link
-        caption: caption
-        id: id
       properties:
         id:
           description: The media object ID. Do not use this field when message type
@@ -2543,30 +2346,6 @@ components:
       type: object
     WhatsAppParameter:
       description: Whatsapp component parameter.
-      example:
-        image:
-          filename: filename
-          link: link
-          caption: caption
-          id: id
-        date_time:
-          fallback_value: fallback_value
-        document:
-          filename: filename
-          link: link
-          caption: caption
-          id: id
-        currency:
-          fallback_value: fallback_value
-          code: code
-          amount_1000: amount_1000
-        text: text
-        video:
-          filename: filename
-          link: link
-          caption: caption
-          id: id
-        type: type
       properties:
         type:
           description: Type of the parameter.
@@ -2839,53 +2618,7 @@ components:
             text: text
             button_text: button_text
             video:
-              duration:
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
+              duration: 6
               thumbnail: thumbnail
               url: url
               file_size: 0
@@ -2898,53 +2631,7 @@ components:
             text: text
             button_text: button_text
             video:
-              duration:
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
+              duration: 6
               thumbnail: thumbnail
               url: url
               file_size: 0
@@ -2963,53 +2650,7 @@ components:
             text: text
             button_text: button_text
             video:
-              duration:
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
+              duration: 6
               thumbnail: thumbnail
               url: url
               file_size: 0
@@ -3022,53 +2663,7 @@ components:
             text: text
             button_text: button_text
             video:
-              duration:
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
-              - image:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                date_time:
-                  fallback_value: fallback_value
-                document:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                currency:
-                  fallback_value: fallback_value
-                  code: code
-                  amount_1000: amount_1000
-                text: text
-                video:
-                  filename: filename
-                  link: link
-                  caption: caption
-                  id: id
-                type: type
+              duration: 6
               thumbnail: thumbnail
               url: url
               file_size: 0
