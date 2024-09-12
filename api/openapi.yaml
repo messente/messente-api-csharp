@@ -1980,6 +1980,57 @@ components:
           validity: 360
           text: text
           button_text: button_text
+          video:
+            duration:
+            - image:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              date_time:
+                fallback_value: fallback_value
+              document:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              currency:
+                fallback_value: fallback_value
+                code: code
+                amount_1000: amount_1000
+              text: text
+              video:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              type: type
+            - image:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              date_time:
+                fallback_value: fallback_value
+              document:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              currency:
+                fallback_value: fallback_value
+                code: code
+                amount_1000: amount_1000
+              text: text
+              video:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              type: type
+            thumbnail: thumbnail
+            url: url
+            file_size: 0
           ttl: 21600
         - sender: sender
           image_url: image_url
@@ -1988,6 +2039,57 @@ components:
           validity: 360
           text: text
           button_text: button_text
+          video:
+            duration:
+            - image:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              date_time:
+                fallback_value: fallback_value
+              document:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              currency:
+                fallback_value: fallback_value
+                code: code
+                amount_1000: amount_1000
+              text: text
+              video:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              type: type
+            - image:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              date_time:
+                fallback_value: fallback_value
+              document:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              currency:
+                fallback_value: fallback_value
+                code: code
+                amount_1000: amount_1000
+              text: text
+              video:
+                filename: filename
+                link: link
+                caption: caption
+                id: id
+              type: type
+            thumbnail: thumbnail
+            url: url
+            file_size: 0
           ttl: 21600
         to: to
         priority: low
@@ -2052,6 +2154,57 @@ components:
         validity: 360
         text: text
         button_text: button_text
+        video:
+          duration:
+          - image:
+              filename: filename
+              link: link
+              caption: caption
+              id: id
+            date_time:
+              fallback_value: fallback_value
+            document:
+              filename: filename
+              link: link
+              caption: caption
+              id: id
+            currency:
+              fallback_value: fallback_value
+              code: code
+              amount_1000: amount_1000
+            text: text
+            video:
+              filename: filename
+              link: link
+              caption: caption
+              id: id
+            type: type
+          - image:
+              filename: filename
+              link: link
+              caption: caption
+              id: id
+            date_time:
+              fallback_value: fallback_value
+            document:
+              filename: filename
+              link: link
+              caption: caption
+              id: id
+            currency:
+              fallback_value: fallback_value
+              code: code
+              amount_1000: amount_1000
+            text: text
+            video:
+              filename: filename
+              link: link
+              caption: caption
+              id: id
+            type: type
+          thumbnail: thumbnail
+          url: url
+          file_size: 0
         ttl: 21600
       properties:
         sender:
@@ -2096,6 +2249,83 @@ components:
           enum:
           - viber
           type: string
+        video:
+          $ref: '#/components/schemas/ViberVideo'
+      type: object
+    ViberVideo:
+      description: Viber video object
+      example:
+        duration:
+        - image:
+            filename: filename
+            link: link
+            caption: caption
+            id: id
+          date_time:
+            fallback_value: fallback_value
+          document:
+            filename: filename
+            link: link
+            caption: caption
+            id: id
+          currency:
+            fallback_value: fallback_value
+            code: code
+            amount_1000: amount_1000
+          text: text
+          video:
+            filename: filename
+            link: link
+            caption: caption
+            id: id
+          type: type
+        - image:
+            filename: filename
+            link: link
+            caption: caption
+            id: id
+          date_time:
+            fallback_value: fallback_value
+          document:
+            filename: filename
+            link: link
+            caption: caption
+            id: id
+          currency:
+            fallback_value: fallback_value
+            code: code
+            amount_1000: amount_1000
+          text: text
+          video:
+            filename: filename
+            link: link
+            caption: caption
+            id: id
+          type: type
+        thumbnail: thumbnail
+        url: url
+        file_size: 0
+      properties:
+        url:
+          description: URL pointing to the video resource.
+          type: string
+        thumbnail:
+          description: URL pointing to the video thumbnail resource.
+          type: string
+        file_size:
+          description: Size of the video file in bytes. Cannot be larger than 200MB.
+          type: integer
+        duration:
+          description: Duration of the video in seconds. Cannot be longer than 600
+            seconds.
+          items:
+            $ref: '#/components/schemas/WhatsAppParameter'
+          type: array
+      required:
+      - duration
+      - file_size
+      - thumbnail
+      - url
       type: object
     WhatsApp:
       description: |-
@@ -2207,6 +2437,10 @@ components:
       type: object
     WhatsAppCurrency:
       description: Whatsapp currency object.
+      example:
+        fallback_value: fallback_value
+        code: code
+        amount_1000: amount_1000
       properties:
         fallback_value:
           description: Default text if localization fails.
@@ -2273,6 +2507,8 @@ components:
       type: object
     WhatsAppDatetime:
       description: Whatsapp datetime object.
+      example:
+        fallback_value: fallback_value
       properties:
         fallback_value:
           description: Default text.
@@ -2282,6 +2518,11 @@ components:
       type: object
     WhatsAppMedia:
       description: Whatsapp media object.
+      example:
+        filename: filename
+        link: link
+        caption: caption
+        id: id
       properties:
         id:
           description: The media object ID. Do not use this field when message type
@@ -2302,6 +2543,30 @@ components:
       type: object
     WhatsAppParameter:
       description: Whatsapp component parameter.
+      example:
+        image:
+          filename: filename
+          link: link
+          caption: caption
+          id: id
+        date_time:
+          fallback_value: fallback_value
+        document:
+          filename: filename
+          link: link
+          caption: caption
+          id: id
+        currency:
+          fallback_value: fallback_value
+          code: code
+          amount_1000: amount_1000
+        text: text
+        video:
+          filename: filename
+          link: link
+          caption: caption
+          id: id
+        type: type
       properties:
         type:
           description: Type of the parameter.
@@ -2573,6 +2838,57 @@ components:
             validity: 360
             text: text
             button_text: button_text
+            video:
+              duration:
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              thumbnail: thumbnail
+              url: url
+              file_size: 0
             ttl: 21600
           - sender: sender
             image_url: image_url
@@ -2581,6 +2897,57 @@ components:
             validity: 360
             text: text
             button_text: button_text
+            video:
+              duration:
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              thumbnail: thumbnail
+              url: url
+              file_size: 0
             ttl: 21600
           to: to
           priority: low
@@ -2595,6 +2962,57 @@ components:
             validity: 360
             text: text
             button_text: button_text
+            video:
+              duration:
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              thumbnail: thumbnail
+              url: url
+              file_size: 0
             ttl: 21600
           - sender: sender
             image_url: image_url
@@ -2603,6 +3021,57 @@ components:
             validity: 360
             text: text
             button_text: button_text
+            video:
+              duration:
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              - image:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                date_time:
+                  fallback_value: fallback_value
+                document:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                currency:
+                  fallback_value: fallback_value
+                  code: code
+                  amount_1000: amount_1000
+                text: text
+                video:
+                  filename: filename
+                  link: link
+                  caption: caption
+                  id: id
+                type: type
+              thumbnail: thumbnail
+              url: url
+              file_size: 0
             ttl: 21600
           to: to
           priority: low
