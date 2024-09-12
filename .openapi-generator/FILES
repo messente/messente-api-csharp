@@ -62,6 +62,7 @@ docs/SyncNumberLookupSuccess.md
 docs/Telegram.md
 docs/TextStore.md
 docs/Viber.md
+docs/ViberVideo.md
 docs/WhatsApp.md
 docs/WhatsAppComponent.md
 docs/WhatsAppCurrency.md
@@ -146,6 +147,7 @@ src/com.Messente.Api/Model/SyncNumberLookupSuccess.cs
 src/com.Messente.Api/Model/Telegram.cs
 src/com.Messente.Api/Model/TextStore.cs
 src/com.Messente.Api/Model/Viber.cs
+src/com.Messente.Api/Model/ViberVideo.cs
 src/com.Messente.Api/Model/WhatsApp.cs
 src/com.Messente.Api/Model/WhatsAppComponent.cs
 src/com.Messente.Api/Model/WhatsAppCurrency.cs
