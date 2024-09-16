@@ -55,6 +55,7 @@ namespace com.Messente.Api.Model
             this.Custom2 = custom2;
             this.Custom3 = custom3;
             this.Custom4 = custom4;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -121,6 +122,12 @@ namespace com.Messente.Api.Model
         public string Custom4 { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -137,6 +144,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Custom2: ").Append(Custom2).Append("\n");
             sb.Append("  Custom3: ").Append(Custom3).Append("\n");
             sb.Append("  Custom4: ").Append(Custom4).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

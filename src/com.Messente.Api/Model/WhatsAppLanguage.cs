@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="WhatsAppLanguage" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppLanguage() { }
+        protected WhatsAppLanguage()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppLanguage" /> class.
         /// </summary>
@@ -51,6 +54,7 @@ namespace com.Messente.Api.Model
             }
             this.Code = code;
             this.Policy = policy;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -68,6 +72,12 @@ namespace com.Messente.Api.Model
         public string Policy { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -77,6 +87,7 @@ namespace com.Messente.Api.Model
             sb.Append("class WhatsAppLanguage {\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Policy: ").Append(Policy).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

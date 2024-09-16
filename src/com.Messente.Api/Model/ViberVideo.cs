@@ -27,63 +27,72 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Report for one country
+    /// Viber video object
     /// </summary>
-    [DataContract(Name = "StatisticsReport")]
-    public partial class StatisticsReport : IValidatableObject
+    [DataContract(Name = "ViberVideo")]
+    public partial class ViberVideo : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReport" /> class.
+        /// Initializes a new instance of the <see cref="ViberVideo" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected StatisticsReport()
+        protected ViberVideo()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReport" /> class.
+        /// Initializes a new instance of the <see cref="ViberVideo" /> class.
         /// </summary>
-        /// <param name="totalMessages">Sum of all messages (required).</param>
-        /// <param name="totalPrice">Price for all messages (required).</param>
-        /// <param name="country">Target country of all messages (required).</param>
-        public StatisticsReport(int totalMessages = default(int), string totalPrice = default(string), string country = default(string))
+        /// <param name="url">URL pointing to the video resource. (required).</param>
+        /// <param name="thumbnail">URL pointing to the video thumbnail resource. (required).</param>
+        /// <param name="fileSize">Size of the video file in bytes. Cannot be larger than 200MB. (required).</param>
+        /// <param name="duration">Duration of the video in seconds. Cannot be longer than 600 seconds. (required).</param>
+        public ViberVideo(string url = default(string), string thumbnail = default(string), int fileSize = default(int), int duration = default(int))
         {
-            this.TotalMessages = totalMessages;
-            // to ensure "totalPrice" is required (not null)
-            if (totalPrice == null)
+            // to ensure "url" is required (not null)
+            if (url == null)
             {
-                throw new ArgumentNullException("totalPrice is a required property for StatisticsReport and cannot be null");
+                throw new ArgumentNullException("url is a required property for ViberVideo and cannot be null");
             }
-            this.TotalPrice = totalPrice;
-            // to ensure "country" is required (not null)
-            if (country == null)
+            this.Url = url;
+            // to ensure "thumbnail" is required (not null)
+            if (thumbnail == null)
             {
-                throw new ArgumentNullException("country is a required property for StatisticsReport and cannot be null");
+                throw new ArgumentNullException("thumbnail is a required property for ViberVideo and cannot be null");
             }
-            this.Country = country;
+            this.Thumbnail = thumbnail;
+            this.FileSize = fileSize;
+            this.Duration = duration;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Sum of all messages
+        /// URL pointing to the video resource.
         /// </summary>
-        /// <value>Sum of all messages</value>
-        [DataMember(Name = "total_messages", IsRequired = true, EmitDefaultValue = true)]
-        public int TotalMessages { get; set; }
+        /// <value>URL pointing to the video resource.</value>
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
+        public string Url { get; set; }
 
         /// <summary>
-        /// Price for all messages
+        /// URL pointing to the video thumbnail resource.
         /// </summary>
-        /// <value>Price for all messages</value>
-        [DataMember(Name = "total_price", IsRequired = true, EmitDefaultValue = true)]
-        public string TotalPrice { get; set; }
+        /// <value>URL pointing to the video thumbnail resource.</value>
+        [DataMember(Name = "thumbnail", IsRequired = true, EmitDefaultValue = true)]
+        public string Thumbnail { get; set; }
 
         /// <summary>
-        /// Target country of all messages
+        /// Size of the video file in bytes. Cannot be larger than 200MB.
         /// </summary>
-        /// <value>Target country of all messages</value>
-        [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
-        public string Country { get; set; }
+        /// <value>Size of the video file in bytes. Cannot be larger than 200MB.</value>
+        [DataMember(Name = "file_size", IsRequired = true, EmitDefaultValue = true)]
+        public int FileSize { get; set; }
+
+        /// <summary>
+        /// Duration of the video in seconds. Cannot be longer than 600 seconds.
+        /// </summary>
+        /// <value>Duration of the video in seconds. Cannot be longer than 600 seconds.</value>
+        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
+        public int Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -98,10 +107,11 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class StatisticsReport {\n");
-            sb.Append("  TotalMessages: ").Append(TotalMessages).Append("\n");
-            sb.Append("  TotalPrice: ").Append(TotalPrice).Append("\n");
-            sb.Append("  Country: ").Append(Country).Append("\n");
+            sb.Append("class ViberVideo {\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Thumbnail: ").Append(Thumbnail).Append("\n");
+            sb.Append("  FileSize: ").Append(FileSize).Append("\n");
+            sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

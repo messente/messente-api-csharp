@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="WhatsAppDatetime" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppDatetime() { }
+        protected WhatsAppDatetime()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppDatetime" /> class.
         /// </summary>
@@ -49,6 +52,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("fallbackValue is a required property for WhatsAppDatetime and cannot be null");
             }
             this.FallbackValue = fallbackValue;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -59,6 +63,12 @@ namespace com.Messente.Api.Model
         public string FallbackValue { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -67,6 +77,7 @@ namespace com.Messente.Api.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class WhatsAppDatetime {\n");
             sb.Append("  FallbackValue: ").Append(FallbackValue).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

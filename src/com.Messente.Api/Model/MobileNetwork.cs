@@ -47,6 +47,7 @@ namespace com.Messente.Api.Model
             this.CountryName = countryName;
             this.CountryPrefix = countryPrefix;
             this.CountryCode = countryCode;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -85,6 +86,12 @@ namespace com.Messente.Api.Model
         public string CountryCode { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +104,7 @@ namespace com.Messente.Api.Model
             sb.Append("  CountryName: ").Append(CountryName).Append("\n");
             sb.Append("  CountryPrefix: ").Append(CountryPrefix).Append("\n");
             sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

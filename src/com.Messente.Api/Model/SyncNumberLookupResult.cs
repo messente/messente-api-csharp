@@ -75,7 +75,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="SyncNumberLookupResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected SyncNumberLookupResult() { }
+        protected SyncNumberLookupResult()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="SyncNumberLookupResult" /> class.
         /// </summary>
@@ -104,6 +107,7 @@ namespace com.Messente.Api.Model
             this.PortedNetwork = portedNetwork;
             this.Status = status;
             this.Error = error;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -159,6 +163,12 @@ namespace com.Messente.Api.Model
         public Object Error { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -175,6 +185,7 @@ namespace com.Messente.Api.Model
             sb.Append("  PortedNetwork: ").Append(PortedNetwork).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

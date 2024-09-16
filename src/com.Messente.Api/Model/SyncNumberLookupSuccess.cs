@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="SyncNumberLookupSuccess" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected SyncNumberLookupSuccess() { }
+        protected SyncNumberLookupSuccess()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="SyncNumberLookupSuccess" /> class.
         /// </summary>
@@ -56,6 +59,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("result is a required property for SyncNumberLookupSuccess and cannot be null");
             }
             this.Result = result;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -73,6 +77,12 @@ namespace com.Messente.Api.Model
         public List<SyncNumberLookupResult> Result { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -82,6 +92,7 @@ namespace com.Messente.Api.Model
             sb.Append("class SyncNumberLookupSuccess {\n");
             sb.Append("  RequestId: ").Append(RequestId).Append("\n");
             sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

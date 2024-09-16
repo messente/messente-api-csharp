@@ -90,7 +90,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="SMS" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected SMS() { }
+        protected SMS()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="SMS" /> class.
         /// </summary>
@@ -115,6 +118,7 @@ namespace com.Messente.Api.Model
             this.Autoconvert = autoconvert;
             this.Udh = udh;
             this.Channel = channel;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -156,6 +160,12 @@ namespace com.Messente.Api.Model
         public string Udh { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -170,6 +180,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Autoconvert: ").Append(Autoconvert).Append("\n");
             sb.Append("  Udh: ").Append(Udh).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

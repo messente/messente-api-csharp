@@ -48,7 +48,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="Omnimessage" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Omnimessage() { }
+        protected Omnimessage()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="Omnimessage" /> class.
         /// </summary>
@@ -76,6 +79,7 @@ namespace com.Messente.Api.Model
             this.TextStore = textStore;
             this.TimeToSend = timeToSend;
             this.Priority = priority;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -107,6 +111,12 @@ namespace com.Messente.Api.Model
         public DateTime TimeToSend { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -120,6 +130,7 @@ namespace com.Messente.Api.Model
             sb.Append("  TextStore: ").Append(TextStore).Append("\n");
             sb.Append("  TimeToSend: ").Append(TimeToSend).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

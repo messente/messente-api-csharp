@@ -68,6 +68,7 @@ namespace com.Messente.Api.Model
             this.Ttl = ttl;
             this.Template = template;
             this.Channel = channel;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -100,6 +101,12 @@ namespace com.Messente.Api.Model
         public WhatsAppTemplate Template { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -112,6 +119,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Ttl: ").Append(Ttl).Append("\n");
             sb.Append("  Template: ").Append(Template).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

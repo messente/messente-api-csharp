@@ -36,7 +36,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="WhatsAppCurrency" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppCurrency() { }
+        protected WhatsAppCurrency()
+        {
+            this.AdditionalProperties = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="WhatsAppCurrency" /> class.
         /// </summary>
@@ -63,6 +66,7 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("amount1000 is a required property for WhatsAppCurrency and cannot be null");
             }
             this.Amount1000 = amount1000;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -87,6 +91,12 @@ namespace com.Messente.Api.Model
         public string Amount1000 { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +107,7 @@ namespace com.Messente.Api.Model
             sb.Append("  FallbackValue: ").Append(FallbackValue).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Amount1000: ").Append(Amount1000).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

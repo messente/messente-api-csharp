@@ -45,6 +45,7 @@ namespace com.Messente.Api.Model
             this.Link = link;
             this.Caption = caption;
             this.Filename = filename;
+            this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
@@ -76,6 +77,12 @@ namespace com.Messente.Api.Model
         public string Filename { get; set; }
 
         /// <summary>
+        /// Gets or Sets additional properties
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalProperties { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -87,6 +94,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  Caption: ").Append(Caption).Append("\n");
             sb.Append("  Filename: ").Append(Filename).Append("\n");
+            sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
