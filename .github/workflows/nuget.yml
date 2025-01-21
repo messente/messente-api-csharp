@@ -1,0 +1,25 @@
+on:
+  push:
+#    tags:
+#      - *
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Verify commit exists in origin/main
+      run: |
+        git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+        git branch --remote --contains | grep origin/main
+    - name: Set VERSION variable from tag
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/}" >> $GITHUB_ENV
+    - name: Build
+      run: dotnet build -c Release
+    - name: Pack
+      run: dotnet pack ./src/com.Messente.Api/com.Messente.Api.csproj -o out -c Release --no-build
+    - name: Push
+      run: dotnet nuget push out/com.Messente.Api.${VERSION}.nupkg -k ${NUGET_TOKEN} -s https://api.nuget.org/v3/index.json
+      env:
+        NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
