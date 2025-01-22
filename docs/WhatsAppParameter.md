@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **Image** | [**WhatsAppMedia**](WhatsAppMedia.md) |  | [optional] 
 **Document** | [**WhatsAppMedia**](WhatsAppMedia.md) |  | [optional] 
 **Video** | [**WhatsAppMedia**](WhatsAppMedia.md) |  | [optional] 
+**CouponCode** | **string** | A coupon code. | [optional] 
+**Payload** | **string** | A payload. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

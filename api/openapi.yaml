@@ -2163,6 +2163,8 @@ components:
           type: integer
         template:
           $ref: '#/components/schemas/WhatsAppTemplate'
+        text:
+          $ref: '#/components/schemas/WhatsAppText'
         channel:
           default: whatsapp
           description: The channel used to deliver the message
@@ -2363,8 +2365,28 @@ components:
           $ref: '#/components/schemas/WhatsAppMedia'
         video:
           $ref: '#/components/schemas/WhatsAppMedia'
+        coupon_code:
+          description: A coupon code.
+          type: string
+        payload:
+          description: A payload.
+          type: string
       required:
       - type
+      type: object
+    WhatsAppText:
+      description: A text
+      properties:
+        preview_url:
+          default: true
+          description: Whether to display link preview if the message contains a hyperlink
+          type: boolean
+        body:
+          description: "Plaintext content for WhatsApp, can contain URLs, emojis and\
+            \ formatting"
+          type: string
+      required:
+      - body
       type: object
     ErrorCodeOmnichannel:
       description: |-

@@ -50,7 +50,9 @@ namespace com.Messente.Api.Model
         /// <param name="image">image.</param>
         /// <param name="document">document.</param>
         /// <param name="video">video.</param>
-        public WhatsAppParameter(string type = default(string), string text = default(string), WhatsAppCurrency currency = default(WhatsAppCurrency), WhatsAppDatetime dateTime = default(WhatsAppDatetime), WhatsAppMedia image = default(WhatsAppMedia), WhatsAppMedia document = default(WhatsAppMedia), WhatsAppMedia video = default(WhatsAppMedia))
+        /// <param name="couponCode">A coupon code..</param>
+        /// <param name="payload">A payload..</param>
+        public WhatsAppParameter(string type = default(string), string text = default(string), WhatsAppCurrency currency = default(WhatsAppCurrency), WhatsAppDatetime dateTime = default(WhatsAppDatetime), WhatsAppMedia image = default(WhatsAppMedia), WhatsAppMedia document = default(WhatsAppMedia), WhatsAppMedia video = default(WhatsAppMedia), string couponCode = default(string), string payload = default(string))
         {
             // to ensure "type" is required (not null)
             if (type == null)
@@ -64,6 +66,8 @@ namespace com.Messente.Api.Model
             this.Image = image;
             this.Document = document;
             this.Video = video;
+            this.CouponCode = couponCode;
+            this.Payload = payload;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -112,6 +116,20 @@ namespace com.Messente.Api.Model
         public WhatsAppMedia Video { get; set; }
 
         /// <summary>
+        /// A coupon code.
+        /// </summary>
+        /// <value>A coupon code.</value>
+        [DataMember(Name = "coupon_code", EmitDefaultValue = false)]
+        public string CouponCode { get; set; }
+
+        /// <summary>
+        /// A payload.
+        /// </summary>
+        /// <value>A payload.</value>
+        [DataMember(Name = "payload", EmitDefaultValue = false)]
+        public string Payload { get; set; }
+
+        /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
         [JsonExtensionData]
@@ -132,6 +150,8 @@ namespace com.Messente.Api.Model
             sb.Append("  Image: ").Append(Image).Append("\n");
             sb.Append("  Document: ").Append(Document).Append("\n");
             sb.Append("  Video: ").Append(Video).Append("\n");
+            sb.Append("  CouponCode: ").Append(CouponCode).Append("\n");
+            sb.Append("  Payload: ").Append(Payload).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

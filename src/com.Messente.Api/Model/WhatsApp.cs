@@ -60,13 +60,15 @@ namespace com.Messente.Api.Model
         /// <param name="validity">After how many minutes this channel is   considered as failed and the next channel is attempted.</param>
         /// <param name="ttl">After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used..</param>
         /// <param name="template">template.</param>
+        /// <param name="text">text.</param>
         /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Whatsapp).</param>
-        public WhatsApp(string sender = default(string), int validity = default(int), int ttl = default(int), WhatsAppTemplate template = default(WhatsAppTemplate), ChannelEnum? channel = ChannelEnum.Whatsapp)
+        public WhatsApp(string sender = default(string), int validity = default(int), int ttl = default(int), WhatsAppTemplate template = default(WhatsAppTemplate), WhatsAppText text = default(WhatsAppText), ChannelEnum? channel = ChannelEnum.Whatsapp)
         {
             this.Sender = sender;
             this.Validity = validity;
             this.Ttl = ttl;
             this.Template = template;
+            this.Text = text;
             this.Channel = channel;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -101,6 +103,12 @@ namespace com.Messente.Api.Model
         public WhatsAppTemplate Template { get; set; }
 
         /// <summary>
+        /// Gets or Sets Text
+        /// </summary>
+        [DataMember(Name = "text", EmitDefaultValue = false)]
+        public WhatsAppText Text { get; set; }
+
+        /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
         [JsonExtensionData]
@@ -118,6 +126,7 @@ namespace com.Messente.Api.Model
             sb.Append("  Validity: ").Append(Validity).Append("\n");
             sb.Append("  Ttl: ").Append(Ttl).Append("\n");
             sb.Append("  Template: ").Append(Template).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");

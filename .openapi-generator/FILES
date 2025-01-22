@@ -71,6 +71,7 @@ docs/WhatsAppLanguage.md
 docs/WhatsAppMedia.md
 docs/WhatsAppParameter.md
 docs/WhatsAppTemplate.md
+docs/WhatsAppText.md
 git_push.sh
 src/com.Messente.Api/Api/BlacklistApi.cs
 src/com.Messente.Api/Api/BulkMessagingApi.cs
@@ -156,4 +157,5 @@ src/com.Messente.Api/Model/WhatsAppLanguage.cs
 src/com.Messente.Api/Model/WhatsAppMedia.cs
 src/com.Messente.Api/Model/WhatsAppParameter.cs
 src/com.Messente.Api/Model/WhatsAppTemplate.cs
+src/com.Messente.Api/Model/WhatsAppText.cs
 src/com.Messente.Api/com.Messente.Api.csproj
