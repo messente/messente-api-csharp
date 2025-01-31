@@ -86,7 +86,9 @@ namespace com.Messente.Api.Model
         /// After how many minutes this channel is considered as failed and the next channel is attempted
         /// </summary>
         /// <value>After how many minutes this channel is considered as failed and the next channel is attempted</value>
-        /// <example>360</example>
+        /*
+        <example>360</example>
+        */
         [DataMember(Name = "validity", EmitDefaultValue = false)]
         public int Validity { get; set; }
 
@@ -158,7 +160,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

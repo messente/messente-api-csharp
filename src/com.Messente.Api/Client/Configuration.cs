@@ -34,7 +34,7 @@ namespace com.Messente.Api.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "3.3.0";
+        public const string Version = "4.0.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -114,11 +114,11 @@ namespace com.Messente.Api.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/3.3.0/csharp");
+            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/4.0.0/csharp");
             BasePath = "https://api.messente.com/v1";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -137,13 +137,13 @@ namespace com.Messente.Api.Client
             };
 
             // Setting Timeout has side effects (forces ApiClient creation).
-            Timeout = 100000;
+            Timeout = TimeSpan.FromSeconds(100);
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration(
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
@@ -221,9 +221,9 @@ namespace com.Messente.Api.Client
         public virtual IDictionary<string, string> DefaultHeaders { get; set; }
 
         /// <summary>
-        /// Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
+        /// Gets or sets the HTTP timeout of ApiClient. Defaults to 100 seconds.
         /// </summary>
-        public virtual int Timeout { get; set; }
+        public virtual TimeSpan Timeout { get; set; }
 
         /// <summary>
         /// Gets or sets the proxy
@@ -541,7 +541,7 @@ namespace com.Messente.Api.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: 2.0.0\n";
-            report += "    SDK Package Version: 3.3.0\n";
+            report += "    SDK Package Version: 4.0.0\n";
 
             return report;
         }

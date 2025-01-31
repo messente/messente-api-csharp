@@ -125,7 +125,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddToBlacklistAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AddToBlacklistAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Adds a phone number to the blacklist
@@ -138,7 +138,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddToBlacklistWithHttpInfoAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddToBlacklistWithHttpInfoAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Deletes a phone number from the blacklist
         /// </summary>
@@ -150,7 +150,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteFromBlacklistAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteFromBlacklistAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Deletes a phone number from the blacklist
@@ -163,7 +163,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFromBlacklistWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFromBlacklistWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Returns all blacklisted phone numbers
         /// </summary>
@@ -174,7 +174,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FetchBlacklistSuccess</returns>
-        System.Threading.Tasks.Task<FetchBlacklistSuccess> FetchBlacklistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FetchBlacklistSuccess> FetchBlacklistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Returns all blacklisted phone numbers
@@ -186,7 +186,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FetchBlacklistSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FetchBlacklistSuccess>> FetchBlacklistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FetchBlacklistSuccess>> FetchBlacklistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Checks if a phone number is blacklisted
         /// </summary>
@@ -198,7 +198,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task IsBlacklistedAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task IsBlacklistedAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Checks if a phone number is blacklisted
@@ -211,7 +211,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> IsBlacklistedWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> IsBlacklistedWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -371,6 +371,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -416,7 +417,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddToBlacklistAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AddToBlacklistAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await AddToBlacklistWithHttpInfoAsync(numberToBlacklist, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -429,7 +430,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> AddToBlacklistWithHttpInfoAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> AddToBlacklistWithHttpInfoAsync(NumberToBlacklist numberToBlacklist, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'numberToBlacklist' is set
             if (numberToBlacklist == null)
@@ -526,6 +527,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -571,7 +573,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteFromBlacklistAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteFromBlacklistAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteFromBlacklistWithHttpInfoAsync(phone, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -584,7 +586,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> DeleteFromBlacklistWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> DeleteFromBlacklistWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'phone' is set
             if (phone == null)
@@ -673,6 +675,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -716,7 +719,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FetchBlacklistSuccess</returns>
-        public async System.Threading.Tasks.Task<FetchBlacklistSuccess> FetchBlacklistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FetchBlacklistSuccess> FetchBlacklistAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<FetchBlacklistSuccess> localVarResponse = await FetchBlacklistWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -729,7 +732,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FetchBlacklistSuccess)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<FetchBlacklistSuccess>> FetchBlacklistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<FetchBlacklistSuccess>> FetchBlacklistWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             com.Messente.Api.Client.RequestOptions localVarRequestOptions = new com.Messente.Api.Client.RequestOptions();
@@ -818,6 +821,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -863,7 +867,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task IsBlacklistedAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task IsBlacklistedAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await IsBlacklistedWithHttpInfoAsync(phone, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -876,7 +880,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> IsBlacklistedWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> IsBlacklistedWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'phone' is set
             if (phone == null)

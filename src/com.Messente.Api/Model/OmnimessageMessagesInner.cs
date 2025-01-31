@@ -96,19 +96,19 @@ namespace com.Messente.Api.Model
             }
             set
             {
-                if (value.GetType() == typeof(SMS))
+                if (value.GetType() == typeof(SMS) || value is SMS)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(Telegram))
+                else if (value.GetType() == typeof(Telegram) || value is Telegram)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(Viber))
+                else if (value.GetType() == typeof(Viber) || value is Viber)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(WhatsApp))
+                else if (value.GetType() == typeof(WhatsApp) || value is WhatsApp)
                 {
                     this._actualInstance = value;
                 }

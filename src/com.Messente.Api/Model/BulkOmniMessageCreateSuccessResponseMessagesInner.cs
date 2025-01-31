@@ -72,11 +72,11 @@ namespace com.Messente.Api.Model
             }
             set
             {
-                if (value.GetType() == typeof(ErrorOmnichannel))
+                if (value.GetType() == typeof(ErrorOmnichannel) || value is ErrorOmnichannel)
                 {
                     this._actualInstance = value;
                 }
-                else if (value.GetType() == typeof(OmniMessageCreateSuccessResponse))
+                else if (value.GetType() == typeof(OmniMessageCreateSuccessResponse) || value is OmniMessageCreateSuccessResponse)
                 {
                     this._actualInstance = value;
                 }

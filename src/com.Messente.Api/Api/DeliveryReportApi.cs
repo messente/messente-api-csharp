@@ -67,7 +67,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeliveryReportResponse</returns>
-        System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Retrieves the delivery report for the Omnimessage
@@ -80,7 +80,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeliveryReportResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -234,6 +234,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -279,7 +280,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeliveryReportResponse</returns>
-        public async System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeliveryReportResponse> RetrieveDeliveryReportAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<DeliveryReportResponse> localVarResponse = await RetrieveDeliveryReportWithHttpInfoAsync(omnimessageId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -293,7 +294,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeliveryReportResponse)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<DeliveryReportResponse>> RetrieveDeliveryReportWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             com.Messente.Api.Client.RequestOptions localVarRequestOptions = new com.Messente.Api.Client.RequestOptions();

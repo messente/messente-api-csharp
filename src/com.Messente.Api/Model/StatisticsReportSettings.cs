@@ -48,17 +48,7 @@ namespace com.Messente.Api.Model
         /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, hlr, telegram).</param>
         public StatisticsReportSettings(DateOnly startDate = default(DateOnly), DateOnly endDate = default(DateOnly), List<string> messageTypes = default(List<string>))
         {
-            // to ensure "startDate" is required (not null)
-            if (startDate == null)
-            {
-                throw new ArgumentNullException("startDate is a required property for StatisticsReportSettings and cannot be null");
-            }
             this.StartDate = startDate;
-            // to ensure "endDate" is required (not null)
-            if (endDate == null)
-            {
-                throw new ArgumentNullException("endDate is a required property for StatisticsReportSettings and cannot be null");
-            }
             this.EndDate = endDate;
             this.MessageTypes = messageTypes;
             this.AdditionalProperties = new Dictionary<string, object>();
@@ -69,7 +59,6 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>Start date for the report</value>
         [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = true)]
-        [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateOnly StartDate { get; set; }
 
         /// <summary>
@@ -77,7 +66,6 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>End date for the report</value>
         [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = true)]
-        [JsonConverter(typeof(OpenAPIDateConverter))]
         public DateOnly EndDate { get; set; }
 
         /// <summary>
@@ -123,7 +111,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

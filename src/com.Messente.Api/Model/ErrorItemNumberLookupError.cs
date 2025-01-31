@@ -106,18 +106,18 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // Code (int) maximum
             if (this.Code > (int)106)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, must be a value less than or equal to 106.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, must be a value less than or equal to 106.", new [] { "Code" });
             }
 
             // Code (int) minimum
             if (this.Code < (int)101)
             {
-                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Code, must be a value greater than or equal to 101.", new [] { "Code" });
+                yield return new ValidationResult("Invalid value for Code, must be a value greater than or equal to 101.", new [] { "Code" });
             }
 
             yield break;
