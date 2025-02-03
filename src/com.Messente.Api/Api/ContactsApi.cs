@@ -214,7 +214,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> AddContactToGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> AddContactToGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Adds a contact to a group
@@ -228,7 +228,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddContactToGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddContactToGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Creates a new contact
         /// </summary>
@@ -240,7 +240,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactEnvelope</returns>
-        System.Threading.Tasks.Task<ContactEnvelope> CreateContactAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ContactEnvelope> CreateContactAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new contact
@@ -253,7 +253,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> CreateContactWithHttpInfoAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> CreateContactWithHttpInfoAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Deletes a contact
         /// </summary>
@@ -265,7 +265,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Deletes a contact
@@ -278,7 +278,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Lists a contact
         /// </summary>
@@ -290,7 +290,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactEnvelope</returns>
-        System.Threading.Tasks.Task<ContactEnvelope> FetchContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ContactEnvelope> FetchContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Lists a contact
@@ -303,7 +303,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> FetchContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> FetchContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Lists groups of a contact
         /// </summary>
@@ -315,7 +315,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupListEnvelope</returns>
-        System.Threading.Tasks.Task<GroupListEnvelope> FetchContactGroupsAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GroupListEnvelope> FetchContactGroupsAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Lists groups of a contact
@@ -328,7 +328,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupListEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupListEnvelope>> FetchContactGroupsWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GroupListEnvelope>> FetchContactGroupsWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Returns all contacts
         /// </summary>
@@ -340,7 +340,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactListEnvelope</returns>
-        System.Threading.Tasks.Task<ContactListEnvelope> FetchContactsAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ContactListEnvelope> FetchContactsAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Returns all contacts
@@ -353,7 +353,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactListEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContactListEnvelope>> FetchContactsWithHttpInfoAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ContactListEnvelope>> FetchContactsWithHttpInfoAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Removes a contact from a group
         /// </summary>
@@ -366,7 +366,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RemoveContactFromGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RemoveContactFromGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Removes a contact from a group
@@ -380,7 +380,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveContactFromGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveContactFromGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Updates a contact
         /// </summary>
@@ -393,7 +393,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactEnvelope</returns>
-        System.Threading.Tasks.Task<ContactEnvelope> UpdateContactAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ContactEnvelope> UpdateContactAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Updates a contact
@@ -407,7 +407,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> UpdateContactWithHttpInfoAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ContactEnvelope>> UpdateContactWithHttpInfoAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -575,6 +575,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -622,7 +623,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> AddContactToGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> AddContactToGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<Object> localVarResponse = await AddContactToGroupWithHttpInfoAsync(groupId, phone, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -637,7 +638,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> AddContactToGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> AddContactToGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'groupId' is set
             if (groupId == null)
@@ -742,6 +743,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -787,7 +789,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactEnvelope</returns>
-        public async System.Threading.Tasks.Task<ContactEnvelope> CreateContactAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ContactEnvelope> CreateContactAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<ContactEnvelope> localVarResponse = await CreateContactWithHttpInfoAsync(contactFields, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -801,7 +803,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactEnvelope>> CreateContactWithHttpInfoAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactEnvelope>> CreateContactWithHttpInfoAsync(ContactFields contactFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'contactFields' is set
             if (contactFields == null)
@@ -898,6 +900,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -943,7 +946,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteContactWithHttpInfoAsync(phone, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -956,7 +959,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> DeleteContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> DeleteContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'phone' is set
             if (phone == null)
@@ -1053,6 +1056,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1098,7 +1102,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactEnvelope</returns>
-        public async System.Threading.Tasks.Task<ContactEnvelope> FetchContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ContactEnvelope> FetchContactAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<ContactEnvelope> localVarResponse = await FetchContactWithHttpInfoAsync(phone, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1112,7 +1116,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactEnvelope>> FetchContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactEnvelope>> FetchContactWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'phone' is set
             if (phone == null)
@@ -1209,6 +1213,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1254,7 +1259,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupListEnvelope</returns>
-        public async System.Threading.Tasks.Task<GroupListEnvelope> FetchContactGroupsAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GroupListEnvelope> FetchContactGroupsAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<GroupListEnvelope> localVarResponse = await FetchContactGroupsWithHttpInfoAsync(phone, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1268,7 +1273,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupListEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupListEnvelope>> FetchContactGroupsWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupListEnvelope>> FetchContactGroupsWithHttpInfoAsync(string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'phone' is set
             if (phone == null)
@@ -1359,6 +1364,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1407,7 +1413,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactListEnvelope</returns>
-        public async System.Threading.Tasks.Task<ContactListEnvelope> FetchContactsAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ContactListEnvelope> FetchContactsAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<ContactListEnvelope> localVarResponse = await FetchContactsWithHttpInfoAsync(groupIds, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1421,7 +1427,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactListEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactListEnvelope>> FetchContactsWithHttpInfoAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactListEnvelope>> FetchContactsWithHttpInfoAsync(List<string>? groupIds = default(List<string>?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             com.Messente.Api.Client.RequestOptions localVarRequestOptions = new com.Messente.Api.Client.RequestOptions();
@@ -1522,6 +1528,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1569,7 +1576,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RemoveContactFromGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RemoveContactFromGroupAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await RemoveContactFromGroupWithHttpInfoAsync(groupId, phone, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1583,7 +1590,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> RemoveContactFromGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> RemoveContactFromGroupWithHttpInfoAsync(string groupId, string phone, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'groupId' is set
             if (groupId == null)
@@ -1696,6 +1703,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1743,7 +1751,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ContactEnvelope</returns>
-        public async System.Threading.Tasks.Task<ContactEnvelope> UpdateContactAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ContactEnvelope> UpdateContactAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<ContactEnvelope> localVarResponse = await UpdateContactWithHttpInfoAsync(phone, contactUpdateFields, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1758,7 +1766,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ContactEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactEnvelope>> UpdateContactWithHttpInfoAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<ContactEnvelope>> UpdateContactWithHttpInfoAsync(string phone, ContactUpdateFields contactUpdateFields, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'phone' is set
             if (phone == null)

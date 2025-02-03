@@ -125,7 +125,9 @@ namespace com.Messente.Api.Model
         /// Text content of the SMS
         /// </summary>
         /// <value>Text content of the SMS</value>
-        /// <example>Hello world!</example>
+        /*
+        <example>Hello world!</example>
+        */
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
@@ -140,7 +142,9 @@ namespace com.Messente.Api.Model
         /// After how many minutes this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
         /// </summary>
         /// <value>After how many minutes this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.</value>
-        /// <example>360</example>
+        /*
+        <example>360</example>
+        */
         [DataMember(Name = "validity", EmitDefaultValue = false)]
         public int Validity { get; set; }
 
@@ -148,7 +152,9 @@ namespace com.Messente.Api.Model
         /// After how many seconds this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.
         /// </summary>
         /// <value>After how many seconds this channel is considered as failed and the next channel is attempted.                     Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used.</value>
-        /// <example>21600</example>
+        /*
+        <example>21600</example>
+        */
         [DataMember(Name = "ttl", EmitDefaultValue = false)]
         public int Ttl { get; set; }
 
@@ -199,7 +205,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

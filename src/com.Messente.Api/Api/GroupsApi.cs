@@ -147,7 +147,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupEnvelope</returns>
-        System.Threading.Tasks.Task<GroupEnvelope> CreateGroupAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GroupEnvelope> CreateGroupAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Creates a new group with the provided name
@@ -160,7 +160,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> CreateGroupWithHttpInfoAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> CreateGroupWithHttpInfoAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Deletes a group
         /// </summary>
@@ -172,7 +172,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Deletes a group
@@ -185,7 +185,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Lists a group
         /// </summary>
@@ -197,7 +197,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupEnvelope</returns>
-        System.Threading.Tasks.Task<GroupEnvelope> FetchGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GroupEnvelope> FetchGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Lists a group
@@ -210,7 +210,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> FetchGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> FetchGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Returns all groups
         /// </summary>
@@ -221,7 +221,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupListEnvelope</returns>
-        System.Threading.Tasks.Task<GroupListEnvelope> FetchGroupsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GroupListEnvelope> FetchGroupsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Returns all groups
@@ -233,7 +233,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupListEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupListEnvelope>> FetchGroupsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GroupListEnvelope>> FetchGroupsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Updates a group with the provided name
         /// </summary>
@@ -246,7 +246,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupEnvelope</returns>
-        System.Threading.Tasks.Task<GroupEnvelope> UpdateGroupAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GroupEnvelope> UpdateGroupAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Updates a group with the provided name
@@ -260,7 +260,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> UpdateGroupWithHttpInfoAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GroupEnvelope>> UpdateGroupWithHttpInfoAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -421,6 +421,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -466,7 +467,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupEnvelope</returns>
-        public async System.Threading.Tasks.Task<GroupEnvelope> CreateGroupAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GroupEnvelope> CreateGroupAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<GroupEnvelope> localVarResponse = await CreateGroupWithHttpInfoAsync(groupName, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -480,7 +481,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupEnvelope>> CreateGroupWithHttpInfoAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupEnvelope>> CreateGroupWithHttpInfoAsync(GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'groupName' is set
             if (groupName == null)
@@ -577,6 +578,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -622,7 +624,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DeleteGroupWithHttpInfoAsync(groupId, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -635,7 +637,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> DeleteGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> DeleteGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'groupId' is set
             if (groupId == null)
@@ -732,6 +734,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -777,7 +780,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupEnvelope</returns>
-        public async System.Threading.Tasks.Task<GroupEnvelope> FetchGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GroupEnvelope> FetchGroupAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<GroupEnvelope> localVarResponse = await FetchGroupWithHttpInfoAsync(groupId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -791,7 +794,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupEnvelope>> FetchGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupEnvelope>> FetchGroupWithHttpInfoAsync(string groupId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'groupId' is set
             if (groupId == null)
@@ -880,6 +883,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -923,7 +927,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupListEnvelope</returns>
-        public async System.Threading.Tasks.Task<GroupListEnvelope> FetchGroupsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GroupListEnvelope> FetchGroupsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<GroupListEnvelope> localVarResponse = await FetchGroupsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -936,7 +940,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupListEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupListEnvelope>> FetchGroupsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupListEnvelope>> FetchGroupsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             com.Messente.Api.Client.RequestOptions localVarRequestOptions = new com.Messente.Api.Client.RequestOptions();
@@ -1035,6 +1039,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -1082,7 +1087,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GroupEnvelope</returns>
-        public async System.Threading.Tasks.Task<GroupEnvelope> UpdateGroupAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GroupEnvelope> UpdateGroupAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<GroupEnvelope> localVarResponse = await UpdateGroupWithHttpInfoAsync(groupId, groupName, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1097,7 +1102,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GroupEnvelope)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupEnvelope>> UpdateGroupWithHttpInfoAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<GroupEnvelope>> UpdateGroupWithHttpInfoAsync(string groupId, GroupName groupName, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'groupId' is set
             if (groupId == null)

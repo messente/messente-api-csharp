@@ -67,7 +67,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StatisticsReportSuccess</returns>
-        System.Threading.Tasks.Task<StatisticsReportSuccess> CreateStatisticsReportAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StatisticsReportSuccess> CreateStatisticsReportAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Requests statistics reports for each country
@@ -80,7 +80,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StatisticsReportSuccess)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StatisticsReportSuccess>> CreateStatisticsReportWithHttpInfoAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StatisticsReportSuccess>> CreateStatisticsReportWithHttpInfoAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -241,6 +241,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -286,7 +287,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StatisticsReportSuccess</returns>
-        public async System.Threading.Tasks.Task<StatisticsReportSuccess> CreateStatisticsReportAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StatisticsReportSuccess> CreateStatisticsReportAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<StatisticsReportSuccess> localVarResponse = await CreateStatisticsReportWithHttpInfoAsync(statisticsReportSettings, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -300,7 +301,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StatisticsReportSuccess)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<StatisticsReportSuccess>> CreateStatisticsReportWithHttpInfoAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<StatisticsReportSuccess>> CreateStatisticsReportWithHttpInfoAsync(StatisticsReportSettings statisticsReportSettings, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'statisticsReportSettings' is set
             if (statisticsReportSettings == null)

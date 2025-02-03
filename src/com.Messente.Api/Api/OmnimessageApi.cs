@@ -87,7 +87,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> CancelScheduledMessageAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Object> CancelScheduledMessageAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Cancels a scheduled Omnimessage
@@ -100,7 +100,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelScheduledMessageWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> CancelScheduledMessageWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Sends an Omnimessage
         /// </summary>
@@ -112,7 +112,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OmniMessageCreateSuccessResponse</returns>
-        System.Threading.Tasks.Task<OmniMessageCreateSuccessResponse> SendOmnimessageAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OmniMessageCreateSuccessResponse> SendOmnimessageAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Sends an Omnimessage
@@ -125,7 +125,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OmniMessageCreateSuccessResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OmniMessageCreateSuccessResponse>> SendOmnimessageWithHttpInfoAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OmniMessageCreateSuccessResponse>> SendOmnimessageWithHttpInfoAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -279,6 +279,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -324,7 +325,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> CancelScheduledMessageAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Object> CancelScheduledMessageAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<Object> localVarResponse = await CancelScheduledMessageWithHttpInfoAsync(omnimessageId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -338,7 +339,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> CancelScheduledMessageWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> CancelScheduledMessageWithHttpInfoAsync(Guid omnimessageId, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             com.Messente.Api.Client.RequestOptions localVarRequestOptions = new com.Messente.Api.Client.RequestOptions();
@@ -430,6 +431,7 @@ namespace com.Messente.Api.Api
             };
 
             var localVarContentType = com.Messente.Api.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
             if (localVarContentType != null)
             {
                 localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
@@ -475,7 +477,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OmniMessageCreateSuccessResponse</returns>
-        public async System.Threading.Tasks.Task<OmniMessageCreateSuccessResponse> SendOmnimessageAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OmniMessageCreateSuccessResponse> SendOmnimessageAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             com.Messente.Api.Client.ApiResponse<OmniMessageCreateSuccessResponse> localVarResponse = await SendOmnimessageWithHttpInfoAsync(omnimessage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -489,7 +491,7 @@ namespace com.Messente.Api.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OmniMessageCreateSuccessResponse)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<OmniMessageCreateSuccessResponse>> SendOmnimessageWithHttpInfoAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<OmniMessageCreateSuccessResponse>> SendOmnimessageWithHttpInfoAsync(Omnimessage omnimessage, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'omnimessage' is set
             if (omnimessage == null)
