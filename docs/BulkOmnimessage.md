@@ -1,9 +1,11 @@
-# com.Messente.Api.Model.WhatsAppAudio
+# com.Messente.Api.Model.BulkOmnimessage
+A bulk omnimessage.
+
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Content** | **string** | Base64-encoded audio | 
+**Messages** | [**List&lt;Omnimessage&gt;**](Omnimessage.md) | A list of omnimessages. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
