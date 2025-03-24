@@ -1,6 +1,4 @@
 # com.Messente.Api.Model.Channel
-Defines the delivery channel
-
 ## Properties
 
 Name | Type | Description | Notes

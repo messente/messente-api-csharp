@@ -1,7 +1,7 @@
 # Messente API Library
 
 - Messente API version: 2.0.0
-- C# package version: 4.0.0
+- C# package version: 2.2.0
 
 [Messente](https://messente.com) is a global provider of messaging and user verification services.  * Send and receive SMS, Viber, WhatsApp and Telegram messages. * Manage contacts and groups. * Fetch detailed info about phone numbers. * Blacklist phone numbers to make sure you&#39;re not sending any unwanted messages.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
 
@@ -11,11 +11,11 @@ Install Messente API library via NuGet Package Manager or .NET CLI.
 
 ### Package Manager
 
-`Install-Package com.Messente.Api -Version 4.0.0`
+`Install-Package com.Messente.Api -Version 2.2.0`
 
 ### .NET CLI
 
-`dotnet add package com.Messente.Api --version 4.0.0`
+`dotnet add package com.Messente.Api --version 2.2.0`
 
 ## Features
 
@@ -32,10 +32,6 @@ Messente API Library provides the operations described below to access the featu
 1. Deletes a phone number from the blacklist [`DeleteFromBlacklist`](docs/BlacklistApi.md#deletefromblacklist)
 1. Returns all blacklisted phone numbers [`FetchBlacklist`](docs/BlacklistApi.md#fetchblacklist)
 1. Checks if a phone number is blacklisted [`IsBlacklisted`](docs/BlacklistApi.md#isblacklisted)
-
-### BulkMessagingApi
-
-1. Sends a bulk Omnimessage [`SendBulkOmnimessage`](docs/BulkMessagingApi.md#sendbulkomnimessage)
 
 ### ContactsApi
 
@@ -82,9 +78,9 @@ Read the [external getting-started article](https://messente.com/documentation/g
 ## Getting started: sending an omnimessage
 
 ```cs
-// PM > Install-Package com.Messente.Api
-
 using System;
+using System.Diagnostics;
+using System.Collections.Generic;
 using com.Messente.Api.Api;
 using com.Messente.Api.Client;
 using com.Messente.Api.Model;
@@ -95,70 +91,33 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration conf = new Configuration
-            {
-                Username = "YOUR_MESSENTE_API_USERNAME",
-                Password = "YOUR_MESSENTE_API_PASSWORD"
-            };
+            // Configure HTTP basic authorization: basicAuth
+            Configuration.Default.Username = "<MESSENTE_API_USERNAME>";
+            Configuration.Default.Password = "<MESSENTE_API_PASSWORD>";
 
-            var apiInstance = new OmnimessageApi(conf);
+            List<object> messages = new List<object>();
+            var sms = new SMS(sender: "<sender number or name>", text: "Hello SMS!");
+            var viber = new Viber(text: "Hello viber!");
+            var whatsapp = new WhatsApp(text: new WhatsAppText(body: "Hello WhatsApp!"));
+            messages.Add(viber);
+            messages.Add(whatsapp);
+            messages.Add(sms);
 
-            var sms = new SMS(sender: "<sender name (optional)>", text: "Hello SMS!");
-            OmnimessageMessagesInner smsOmnimessageInner = new OmnimessageMessagesInner(sms)
-            {
-                ActualInstance = sms
-            };
-
-            var viber = new Viber(sender: "<sender name (optional)>", text: "Hello viber!");
-            OmnimessageMessagesInner viberOmnimessageInner = new OmnimessageMessagesInner(viber)
-            {
-                ActualInstance = viber
-            };
-
-            WhatsAppParameter whatsAppParameter = new WhatsAppParameter(
-                type: "text",
-                text: "hello whatsapp"
-            );
-
-            WhatsAppComponent whatsAppComponent = new WhatsAppComponent(
-                type: "body",
-                parameters: new List<WhatsAppParameter> { whatsAppParameter }
-            );
-
-            WhatsAppTemplate whatsAppTemplate = new WhatsAppTemplate(
-                name: "<template_name>",
-                language: new WhatsAppLanguage(code: "<language_code>"),
-                components: new List<WhatsAppComponent> { whatsAppComponent }
-            );
-
-            var whatsapp = new WhatsApp(
-                sender: "<sender name (optional)>",
-                template: whatsAppTemplate
-            );
-
-            OmnimessageMessagesInner whatsAppOmnimessageInner = new OmnimessageMessagesInner(whatsapp)
-            {
-                ActualInstance = whatsapp
-            };
-
-            var omnimessage = new Omnimessage(
-                to: "<recipient_phone_number>",
-                messages: new List<OmnimessageMessagesInner> {
-                    smsOmnimessageInner,
-                    viberOmnimessageInner,
-                    whatsAppOmnimessageInner
-                }
-            );
+            var apiInstance = new OmnimessageApi();
+            var omnimessage = new Omnimessage(to: "<phone_number>", messages: messages);
 
             try
             {
-                var result = apiInstance.SendOmnimessage(omnimessage);
-                Console.WriteLine(result.ToJson());
+                // Sends an Omnimessage
+                OmniMessageCreateSuccessResponse result = apiInstance.SendOmnimessage(omnimessage);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception when calling SendOmnimessage: " + e.Message);
+                Debug.Print("Exception when calling SendOmnimessage: " + e.Message);
+
             }
+
         }
     }
 }

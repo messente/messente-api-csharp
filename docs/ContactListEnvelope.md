@@ -1,6 +1,4 @@
 # com.Messente.Api.Model.ContactListEnvelope
-A container for contacts
-
 ## Properties
 
 Name | Type | Description | Notes

@@ -23,39 +23,39 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for errors
+    /// A sound
     /// </summary>
     [DataContract]
-    public partial class ErrorOmnichannel :  IEquatable<ErrorOmnichannel>
+    public partial class WhatsAppAudio :  IEquatable<WhatsAppAudio>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppAudio" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorOmnichannel() { }
+        protected WhatsAppAudio() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppAudio" /> class.
         /// </summary>
-        /// <param name="errors">An array of errors (required).</param>
-        public ErrorOmnichannel(List<ErrorItemOmnichannel> errors = default(List<ErrorItemOmnichannel>))
+        /// <param name="content">Base64-encoded audio (required).</param>
+        public WhatsAppAudio(string content = default(string))
         {
-            // to ensure "errors" is required (not null)
-            if (errors == null)
+            // to ensure "content" is required (not null)
+            if (content == null)
             {
-                throw new InvalidDataException("errors is a required property for ErrorOmnichannel and cannot be null");
+                throw new InvalidDataException("content is a required property for WhatsAppAudio and cannot be null");
             }
             else
             {
-                this.Errors = errors;
+                this.Content = content;
             }
         }
         
         /// <summary>
-        /// An array of errors
+        /// Base64-encoded audio
         /// </summary>
-        /// <value>An array of errors</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<ErrorItemOmnichannel> Errors { get; set; }
+        /// <value>Base64-encoded audio</value>
+        [DataMember(Name="content", EmitDefaultValue=false)]
+        public string Content { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +64,8 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorOmnichannel {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("class WhatsAppAudio {\n");
+            sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,24 +86,24 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorOmnichannel);
+            return this.Equals(input as WhatsAppAudio);
         }
 
         /// <summary>
-        /// Returns true if ErrorOmnichannel instances are equal
+        /// Returns true if WhatsAppAudio instances are equal
         /// </summary>
-        /// <param name="input">Instance of ErrorOmnichannel to be compared</param>
+        /// <param name="input">Instance of WhatsAppAudio to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ErrorOmnichannel input)
+        public bool Equals(WhatsAppAudio input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Errors == input.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(input.Errors)
+                    this.Content == input.Content ||
+                    (this.Content != null &&
+                    this.Content.Equals(input.Content))
                 );
         }
 
@@ -116,8 +116,8 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Errors != null)
-                    hashCode = hashCode * 59 + this.Errors.GetHashCode();
+                if (this.Content != null)
+                    hashCode = hashCode * 59 + this.Content.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,6 +1,4 @@
 # com.Messente.Api.Model.Status
-The human-readable equivalent for this field is contained in \"error\".   This value is *null* if the message is still being processed
-
 ## Properties
 
 Name | Type | Description | Notes

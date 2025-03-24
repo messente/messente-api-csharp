@@ -1,11 +1,9 @@
 # com.Messente.Api.Model.StatisticsReport
-Report for one country
-
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TotalMessages** | **int** | Sum of all messages | 
+**TotalMessages** | **int?** | Sum of all messages | 
 **TotalPrice** | **string** | Price for all messages | 
 **Country** | **string** | Target country of all messages | 
 

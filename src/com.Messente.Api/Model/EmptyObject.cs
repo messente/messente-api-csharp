@@ -23,40 +23,19 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for errors
+    /// An object containing no properties
     /// </summary>
     [DataContract]
-    public partial class ErrorOmnichannel :  IEquatable<ErrorOmnichannel>
+    public partial class EmptyObject :  IEquatable<EmptyObject>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
+        /// Initializes a new instance of the <see cref="EmptyObject" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorOmnichannel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
-        /// </summary>
-        /// <param name="errors">An array of errors (required).</param>
-        public ErrorOmnichannel(List<ErrorItemOmnichannel> errors = default(List<ErrorItemOmnichannel>))
+        public EmptyObject()
         {
-            // to ensure "errors" is required (not null)
-            if (errors == null)
-            {
-                throw new InvalidDataException("errors is a required property for ErrorOmnichannel and cannot be null");
-            }
-            else
-            {
-                this.Errors = errors;
-            }
         }
         
-        /// <summary>
-        /// An array of errors
-        /// </summary>
-        /// <value>An array of errors</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<ErrorItemOmnichannel> Errors { get; set; }
-
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -64,8 +43,7 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorOmnichannel {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("class EmptyObject {\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,25 +64,20 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorOmnichannel);
+            return this.Equals(input as EmptyObject);
         }
 
         /// <summary>
-        /// Returns true if ErrorOmnichannel instances are equal
+        /// Returns true if EmptyObject instances are equal
         /// </summary>
-        /// <param name="input">Instance of ErrorOmnichannel to be compared</param>
+        /// <param name="input">Instance of EmptyObject to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ErrorOmnichannel input)
+        public bool Equals(EmptyObject input)
         {
             if (input == null)
                 return false;
 
-            return 
-                (
-                    this.Errors == input.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(input.Errors)
-                );
+            return false;
         }
 
         /// <summary>
@@ -116,8 +89,6 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Errors != null)
-                    hashCode = hashCode * 59 + this.Errors.GetHashCode();
                 return hashCode;
             }
         }

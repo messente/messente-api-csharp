@@ -23,39 +23,48 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for errors
+    /// A document
     /// </summary>
     [DataContract]
-    public partial class ErrorOmnichannel :  IEquatable<ErrorOmnichannel>
+    public partial class WhatsAppDocument :  IEquatable<WhatsAppDocument>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppDocument" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ErrorOmnichannel() { }
+        protected WhatsAppDocument() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ErrorOmnichannel" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppDocument" /> class.
         /// </summary>
-        /// <param name="errors">An array of errors (required).</param>
-        public ErrorOmnichannel(List<ErrorItemOmnichannel> errors = default(List<ErrorItemOmnichannel>))
+        /// <param name="caption">Description for the document.</param>
+        /// <param name="content">Base64-encoded image (required).</param>
+        public WhatsAppDocument(string caption = default(string), string content = default(string))
         {
-            // to ensure "errors" is required (not null)
-            if (errors == null)
+            // to ensure "content" is required (not null)
+            if (content == null)
             {
-                throw new InvalidDataException("errors is a required property for ErrorOmnichannel and cannot be null");
+                throw new InvalidDataException("content is a required property for WhatsAppDocument and cannot be null");
             }
             else
             {
-                this.Errors = errors;
+                this.Content = content;
             }
+            this.Caption = caption;
         }
         
         /// <summary>
-        /// An array of errors
+        /// Description for the document
         /// </summary>
-        /// <value>An array of errors</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
-        public List<ErrorItemOmnichannel> Errors { get; set; }
+        /// <value>Description for the document</value>
+        [DataMember(Name="caption", EmitDefaultValue=false)]
+        public string Caption { get; set; }
+
+        /// <summary>
+        /// Base64-encoded image
+        /// </summary>
+        /// <value>Base64-encoded image</value>
+        [DataMember(Name="content", EmitDefaultValue=false)]
+        public string Content { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -64,8 +73,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ErrorOmnichannel {\n");
-            sb.Append("  Errors: ").Append(Errors).Append("\n");
+            sb.Append("class WhatsAppDocument {\n");
+            sb.Append("  Caption: ").Append(Caption).Append("\n");
+            sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -86,24 +96,29 @@ namespace com.Messente.Api.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ErrorOmnichannel);
+            return this.Equals(input as WhatsAppDocument);
         }
 
         /// <summary>
-        /// Returns true if ErrorOmnichannel instances are equal
+        /// Returns true if WhatsAppDocument instances are equal
         /// </summary>
-        /// <param name="input">Instance of ErrorOmnichannel to be compared</param>
+        /// <param name="input">Instance of WhatsAppDocument to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ErrorOmnichannel input)
+        public bool Equals(WhatsAppDocument input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Errors == input.Errors ||
-                    this.Errors != null &&
-                    this.Errors.SequenceEqual(input.Errors)
+                    this.Caption == input.Caption ||
+                    (this.Caption != null &&
+                    this.Caption.Equals(input.Caption))
+                ) && 
+                (
+                    this.Content == input.Content ||
+                    (this.Content != null &&
+                    this.Content.Equals(input.Content))
                 );
         }
 
@@ -116,8 +131,10 @@ namespace com.Messente.Api.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Errors != null)
-                    hashCode = hashCode * 59 + this.Errors.GetHashCode();
+                if (this.Caption != null)
+                    hashCode = hashCode * 59 + this.Caption.GetHashCode();
+                if (this.Content != null)
+                    hashCode = hashCode * 59 + this.Content.GetHashCode();
                 return hashCode;
             }
         }

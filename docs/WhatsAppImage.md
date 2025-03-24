@@ -1,12 +1,10 @@
-# com.Messente.Api.Model.WhatsAppLanguage
-Whatsapp template language
-
+# com.Messente.Api.Model.WhatsAppImage
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **string** | Language code | 
-**Policy** | **string** | Language policy | [optional] 
+**Caption** | **string** | Description for the image | [optional] 
+**Content** | **string** | Base64-encoded image | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
