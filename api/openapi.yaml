@@ -68,6 +68,8 @@ tags:
   name: Omnimessage
 - description: Retrieve delivery reports which indicate whether the message was delivered
   name: Delivery Report
+- description: Manage WhatsApp Cloud API templates
+  name: WhatsAppTemplates
 - description: Find out statuses and network info of phone numbers
   name: Number Lookup
 - description: Get total messages and price per country
@@ -285,6 +287,361 @@ paths:
       summary: Cancels a scheduled Omnimessage
       tags:
       - Omnimessage
+  /whatsapp/wabas/{wabaId}/templates:
+    delete:
+      operationId: deleteWhatsappTemplate
+      parameters:
+      - description: The ID of the WABA
+        explode: false
+        in: path
+        name: wabaId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The name of the template to delete
+        example: template_name
+        explode: true
+        in: query
+        name: name
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The ID of the template to delete
+        example: "1"
+        explode: true
+        in: query
+        name: hsmId
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnyJsonResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Internal Server Error
+      summary: Deletes a WhatsApp template
+      tags:
+      - WhatsAppTemplates
+    get:
+      operationId: listWhatsappTemplates
+      parameters:
+      - description: The ID of the WABA
+        explode: false
+        in: path
+        name: wabaId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "The number of templates to return in the list. Although the\
+          \ max size is 500, for large datasets it is recommended to use a lower limit\
+          \ and instead use pagination to avoid potential timeouts. Defaults to 25."
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 25
+          example: 10
+          maximum: 500
+          minimum: 1
+          type: integer
+        style: form
+      - description: A cursor point used for a paginated request to indicate the template
+          to paginate backwards from.
+        explode: true
+        in: query
+        name: before
+        required: false
+        schema:
+          example: MAZDZD
+          type: string
+        style: form
+      - description: A cursor point used for a paginated request to indicate the template
+          to paginate forwards from.
+        explode: true
+        in: query
+        name: after
+        required: false
+        schema:
+          example: MjQZD
+          type: string
+        style: form
+      - description: A filter for returning only templates matching a specific category.
+        explode: true
+        in: query
+        name: category
+        required: false
+        schema:
+          $ref: '#/components/schemas/WhatsappTemplateCategory'
+        style: form
+      - description: A search filter representing the content of a template. Only
+          matching templates will be returned in the list.
+        explode: true
+        in: query
+        name: content
+        required: false
+        schema:
+          example: special offer
+          type: string
+        style: form
+      - description: "A filter  for returning only templates matching a specific language\
+          \ code. A list of supported languages is available in the [WhatsApp documentation](https://developers.facebook.com/docs/whatsapp/api/messages/message-templates/) "
+        explode: true
+        in: query
+        name: language
+        required: false
+        schema:
+          example: en
+          type: string
+        style: form
+      - description: "A search filter representing the name, either full or partial,\
+          \ of a template. Only matching templates will be returned in the list."
+        explode: true
+        in: query
+        name: name
+        required: false
+        schema:
+          example: Sample Template
+          type: string
+        style: form
+      - description: A filter for returning only templates matching a specific status.
+        explode: true
+        in: query
+        name: status
+        required: false
+        schema:
+          $ref: '#/components/schemas/WhatsappTemplateStatus'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WhatsappListTemplatesResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Internal Server Error
+      summary: Requests a list of WhatsApp templates
+      tags:
+      - WhatsAppTemplates
+    post:
+      operationId: createWhatsappTemplate
+      parameters:
+      - description: The ID of the WABA
+        explode: false
+        in: path
+        name: wabaId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WhatsappCreateTemplateRequest'
+        description: The WhatsApp template to create
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WhatsappCreateTemplateResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Internal Server Error
+      summary: Creates a WhatsApp template
+      tags:
+      - WhatsAppTemplates
+  /whatsapp/wabas/{wabaId}/templates/{templateId}:
+    get:
+      operationId: getWhatsappTemplateById
+      parameters:
+      - description: The ID of the WABA
+        explode: false
+        in: path
+        name: wabaId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The ID of the template to retrieve
+        explode: false
+        in: path
+        name: templateId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WhatsappTemplateResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Internal Server Error
+      summary: Requests a WhatsApp template with the given ID
+      tags:
+      - WhatsAppTemplates
+    put:
+      operationId: updateWhatsappTemplate
+      parameters:
+      - description: The ID of the WABA
+        explode: false
+        in: path
+        name: wabaId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The ID of the template to update
+        explode: false
+        in: path
+        name: templateId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WhatsappUpdateTemplateRequest'
+        description: The template data to be updated
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnyJsonResponse'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Invalid input
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Forbidden
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorOmnichannel'
+          description: Internal Server Error
+      summary: Updates a WhatsApp template
+      tags:
+      - WhatsAppTemplates
   /phonebook/blacklist:
     get:
       operationId: fetchBlacklist
@@ -2282,6 +2639,7 @@ components:
             $ref: '#/components/schemas/WhatsAppComponent'
           type: array
       required:
+      - components
       - language
       - name
       type: object
@@ -2624,6 +2982,735 @@ components:
       - 10
       - 999
       type: integer
+    WhatsappListTemplatesResponse:
+      description: Whatsapp Cloud API list of templates response
+      example:
+        templates:
+        - components:
+          - buttons:
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            format: text
+            text: text
+            type: body
+            example:
+              body_text:
+              - - body_text
+                - body_text
+              - - body_text
+                - body_text
+              header_text:
+              - - header_text
+                - header_text
+              - - header_text
+                - header_text
+          - buttons:
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            format: text
+            text: text
+            type: body
+            example:
+              body_text:
+              - - body_text
+                - body_text
+              - - body_text
+                - body_text
+              header_text:
+              - - header_text
+                - header_text
+              - - header_text
+                - header_text
+          name: name
+          language: language
+          id: id
+          category: utility
+          status: approved
+        - components:
+          - buttons:
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            format: text
+            text: text
+            type: body
+            example:
+              body_text:
+              - - body_text
+                - body_text
+              - - body_text
+                - body_text
+              header_text:
+              - - header_text
+                - header_text
+              - - header_text
+                - header_text
+          - buttons:
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            - supported_apps:
+              - package_name: package_name
+                signature_hash: signature_hash
+              - package_name: package_name
+                signature_hash: signature_hash
+              autofill_text: autofill_text
+              phone_number: phone_number
+              otp_type: copy_code
+              text: text
+              type: quick_reply
+              url: url
+            format: text
+            text: text
+            type: body
+            example:
+              body_text:
+              - - body_text
+                - body_text
+              - - body_text
+                - body_text
+              header_text:
+              - - header_text
+                - header_text
+              - - header_text
+                - header_text
+          name: name
+          language: language
+          id: id
+          category: utility
+          status: approved
+        paging:
+          next: next
+          cursors:
+            before: before
+            after: after
+          previous: previous
+      properties:
+        templates:
+          description: List of templates
+          items:
+            $ref: '#/components/schemas/WhatsappTemplateResponse'
+          type: array
+        paging:
+          $ref: '#/components/schemas/WhatsappPagination'
+      required:
+      - paging
+      - templates
+      type: object
+    WhatsappTemplateResponse:
+      description: Whatsapp Cloud API template
+      example:
+        components:
+        - buttons:
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          format: text
+          text: text
+          type: body
+          example:
+            body_text:
+            - - body_text
+              - body_text
+            - - body_text
+              - body_text
+            header_text:
+            - - header_text
+              - header_text
+            - - header_text
+              - header_text
+        - buttons:
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          format: text
+          text: text
+          type: body
+          example:
+            body_text:
+            - - body_text
+              - body_text
+            - - body_text
+              - body_text
+            header_text:
+            - - header_text
+              - header_text
+            - - header_text
+              - header_text
+        name: name
+        language: language
+        id: id
+        category: utility
+        status: approved
+      properties:
+        id:
+          description: Template ID
+          type: string
+        components:
+          description: List of template components
+          items:
+            $ref: '#/components/schemas/WhatsappTemplateComponent'
+          type: array
+        language:
+          description: Language of the template
+          type: string
+        name:
+          description: Name of the template
+          type: string
+        category:
+          $ref: '#/components/schemas/WhatsappTemplateCategory'
+        status:
+          $ref: '#/components/schemas/WhatsappTemplateStatus'
+      required:
+      - category
+      - components
+      - id
+      - language
+      - name
+      - status
+      type: object
+    WhatsappPagination:
+      description: Whatsapp media object.
+      example:
+        next: next
+        cursors:
+          before: before
+          after: after
+        previous: previous
+      properties:
+        previous:
+          description: A URL to ge the previous paginated page.
+          type: string
+        next:
+          description: A URL to ge the next paginated page.
+          type: string
+        cursors:
+          $ref: '#/components/schemas/WhatsappPagingCursors'
+      required:
+      - cursors
+      type: object
+    WhatsappPagingCursors:
+      description: WhatsApp paging cursors object.
+      example:
+        before: before
+        after: after
+      properties:
+        before:
+          description: The template before the first template in the current list
+          type: string
+        after:
+          description: The template after the last template in the current list
+          type: string
+      type: object
+    WhatsappUpdateTemplateRequest:
+      anyOf: []
+      description: Request to create a WhatsApp template
+      example:
+        components:
+        - buttons:
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          format: text
+          text: text
+          type: body
+          example:
+            body_text:
+            - - body_text
+              - body_text
+            - - body_text
+              - body_text
+            header_text:
+            - - header_text
+              - header_text
+            - - header_text
+              - header_text
+        - buttons:
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          format: text
+          text: text
+          type: body
+          example:
+            body_text:
+            - - body_text
+              - body_text
+            - - body_text
+              - body_text
+            header_text:
+            - - header_text
+              - header_text
+            - - header_text
+              - header_text
+        category: utility
+      nullable: true
+      properties:
+        category:
+          $ref: '#/components/schemas/WhatsappTemplateCategory'
+        components:
+          description: List of template components
+          items:
+            $ref: '#/components/schemas/WhatsappTemplateComponent'
+          type: array
+      type: object
+    WhatsappCreateTemplateRequest:
+      description: Request to create a WhatsApp template
+      example:
+        components:
+        - buttons:
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          format: text
+          text: text
+          type: body
+          example:
+            body_text:
+            - - body_text
+              - body_text
+            - - body_text
+              - body_text
+            header_text:
+            - - header_text
+              - header_text
+            - - header_text
+              - header_text
+        - buttons:
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          - supported_apps:
+            - package_name: package_name
+              signature_hash: signature_hash
+            - package_name: package_name
+              signature_hash: signature_hash
+            autofill_text: autofill_text
+            phone_number: phone_number
+            otp_type: copy_code
+            text: text
+            type: quick_reply
+            url: url
+          format: text
+          text: text
+          type: body
+          example:
+            body_text:
+            - - body_text
+              - body_text
+            - - body_text
+              - body_text
+            header_text:
+            - - header_text
+              - header_text
+            - - header_text
+              - header_text
+        allow_category_change: false
+        name: name
+        language: language
+        category: utility
+      properties:
+        name:
+          description: Name of the template
+          type: string
+        category:
+          $ref: '#/components/schemas/WhatsappTemplateCategory'
+        allow_category_change:
+          default: false
+          description: Allow category change
+          type: boolean
+        language:
+          description: Language of the template
+          type: string
+        components:
+          description: List of template components
+          items:
+            $ref: '#/components/schemas/WhatsappTemplateComponent'
+          type: array
+      required:
+      - category
+      - components
+      - language
+      - name
+      type: object
+    WhatsappCreateTemplateResponse:
+      description: Response for creating a WhatsApp template
+      example:
+        id: id
+        category: utility
+        status: approved
+      properties:
+        id:
+          description: Template ID
+          type: string
+        status:
+          $ref: '#/components/schemas/WhatsappTemplateStatus'
+        category:
+          $ref: '#/components/schemas/WhatsappTemplateCategory'
+      required:
+      - category
+      - id
+      - status
+      type: object
+    WhatsappTemplateStatus:
+      description: Template status
+      enum:
+      - approved
+      - rejected
+      - pending
+      example: approved
+      type: string
+    WhatsappTemplateCategory:
+      description: Template category
+      enum:
+      - authentication
+      - marketing
+      - utility
+      example: utility
+      type: string
+    WhatsappTemplateComponent:
+      description: Template component object
+      example:
+        buttons:
+        - supported_apps:
+          - package_name: package_name
+            signature_hash: signature_hash
+          - package_name: package_name
+            signature_hash: signature_hash
+          autofill_text: autofill_text
+          phone_number: phone_number
+          otp_type: copy_code
+          text: text
+          type: quick_reply
+          url: url
+        - supported_apps:
+          - package_name: package_name
+            signature_hash: signature_hash
+          - package_name: package_name
+            signature_hash: signature_hash
+          autofill_text: autofill_text
+          phone_number: phone_number
+          otp_type: copy_code
+          text: text
+          type: quick_reply
+          url: url
+        format: text
+        text: text
+        type: body
+        example:
+          body_text:
+          - - body_text
+            - body_text
+          - - body_text
+            - body_text
+          header_text:
+          - - header_text
+            - header_text
+          - - header_text
+            - header_text
+      properties:
+        type:
+          $ref: '#/components/schemas/WhatsappComponentType'
+        format:
+          $ref: '#/components/schemas/WhatsappHeaderFormat'
+        text:
+          description: Text content of the component
+          type: string
+        example:
+          $ref: '#/components/schemas/WhatsappTemplateExample'
+        buttons:
+          description: List of buttons for the component
+          items:
+            $ref: '#/components/schemas/WhatsappTemplateButton'
+          type: array
+      type: object
+    WhatsappComponentType:
+      description: Type of the component
+      enum:
+      - body
+      - header
+      - footer
+      - buttons
+      type: string
+    WhatsappHeaderFormat:
+      description: Format of the header component
+      enum:
+      - text
+      type: string
+    WhatsappTemplateExample:
+      description: Example of the templated content
+      example:
+        body_text:
+        - - body_text
+          - body_text
+        - - body_text
+          - body_text
+        header_text:
+        - - header_text
+          - header_text
+        - - header_text
+          - header_text
+      properties:
+        header_text:
+          description: Example of the templated text for the header
+          items:
+            items:
+              type: string
+            type: array
+          type: array
+        body_text:
+          description: Example of the templated text for the body
+          items:
+            items:
+              type: string
+            type: array
+          type: array
+      type: object
+    WhatsappTemplateButton:
+      description: Whatsapp button object.
+      example:
+        supported_apps:
+        - package_name: package_name
+          signature_hash: signature_hash
+        - package_name: package_name
+          signature_hash: signature_hash
+        autofill_text: autofill_text
+        phone_number: phone_number
+        otp_type: copy_code
+        text: text
+        type: quick_reply
+        url: url
+      properties:
+        type:
+          $ref: '#/components/schemas/WhatsappButtonType'
+        otp_type:
+          $ref: '#/components/schemas/WhatsappOtpButtonType'
+        autofill_text:
+          description: Text to be autofilled in the OTP field
+          type: string
+        supported_apps:
+          description: List of supported apps for the button
+          items:
+            $ref: '#/components/schemas/WhatsappSupportedApp'
+          type: array
+        text:
+          description: Text content of the button
+          maxLength: 25
+          type: string
+        phone_number:
+          description: Phone number for the button
+          maxLength: 20
+          type: string
+        url:
+          description: URL for the button
+          maxLength: 2000
+          type: string
+      type: object
+    WhatsappButtonType:
+      description: Type of the button
+      enum:
+      - quick_reply
+      - phone_number
+      - otp
+      - url
+      type: string
+    WhatsappOtpButtonType:
+      description: Type of the OTP button
+      enum:
+      - copy_code
+      - one_tap
+      - zero_tap
+      type: string
+    WhatsappSupportedApp:
+      description: Supported app for the button
+      example:
+        package_name: package_name
+        signature_hash: signature_hash
+      properties:
+        package_name:
+          description: Package name
+          type: string
+        signature_hash:
+          description: Signature hash
+          type: string
+      required:
+      - package_name
+      - signature_hash
+      type: object
+    AnyJsonResponse:
+      additionalProperties: true
+      description: Any valid JSON response
+      type: object
     BulkOmnimessage:
       description: A bulk omnimessage.
       example:

@@ -27,67 +27,36 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp Cloud API template
+    /// Example of the templated content
     /// </summary>
-    [DataContract(Name = "WhatsAppTemplate")]
-    public partial class WhatsAppTemplate : IValidatableObject
+    [DataContract(Name = "WhatsappTemplateExample")]
+    public partial class WhatsappTemplateExample : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappTemplateExample" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WhatsAppTemplate()
+        /// <param name="headerText">Example of the templated text for the header.</param>
+        /// <param name="bodyText">Example of the templated text for the body.</param>
+        public WhatsappTemplateExample(List<List<string>> headerText = default(List<List<string>>), List<List<string>> bodyText = default(List<List<string>>))
         {
-            this.AdditionalProperties = new Dictionary<string, object>();
-        }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
-        /// </summary>
-        /// <param name="name">Name of the template (required).</param>
-        /// <param name="language">language (required).</param>
-        /// <param name="components">List of template components (required).</param>
-        public WhatsAppTemplate(string name = default(string), WhatsAppLanguage language = default(WhatsAppLanguage), List<WhatsAppComponent> components = default(List<WhatsAppComponent>))
-        {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Name = name;
-            // to ensure "language" is required (not null)
-            if (language == null)
-            {
-                throw new ArgumentNullException("language is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Language = language;
-            // to ensure "components" is required (not null)
-            if (components == null)
-            {
-                throw new ArgumentNullException("components is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Components = components;
+            this.HeaderText = headerText;
+            this.BodyText = bodyText;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Name of the template
+        /// Example of the templated text for the header
         /// </summary>
-        /// <value>Name of the template</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <value>Example of the templated text for the header</value>
+        [DataMember(Name = "header_text", EmitDefaultValue = false)]
+        public List<List<string>> HeaderText { get; set; }
 
         /// <summary>
-        /// Gets or Sets Language
+        /// Example of the templated text for the body
         /// </summary>
-        [DataMember(Name = "language", IsRequired = true, EmitDefaultValue = true)]
-        public WhatsAppLanguage Language { get; set; }
-
-        /// <summary>
-        /// List of template components
-        /// </summary>
-        /// <value>List of template components</value>
-        [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppComponent> Components { get; set; }
+        /// <value>Example of the templated text for the body</value>
+        [DataMember(Name = "body_text", EmitDefaultValue = false)]
+        public List<List<string>> BodyText { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,10 +71,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppTemplate {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
+            sb.Append("class WhatsappTemplateExample {\n");
+            sb.Append("  HeaderText: ").Append(HeaderText).Append("\n");
+            sb.Append("  BodyText: ").Append(BodyText).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

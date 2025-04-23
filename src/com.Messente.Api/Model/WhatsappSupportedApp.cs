@@ -27,67 +27,54 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp Cloud API template
+    /// Supported app for the button
     /// </summary>
-    [DataContract(Name = "WhatsAppTemplate")]
-    public partial class WhatsAppTemplate : IValidatableObject
+    [DataContract(Name = "WhatsappSupportedApp")]
+    public partial class WhatsappSupportedApp : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappSupportedApp" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppTemplate()
+        protected WhatsappSupportedApp()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappSupportedApp" /> class.
         /// </summary>
-        /// <param name="name">Name of the template (required).</param>
-        /// <param name="language">language (required).</param>
-        /// <param name="components">List of template components (required).</param>
-        public WhatsAppTemplate(string name = default(string), WhatsAppLanguage language = default(WhatsAppLanguage), List<WhatsAppComponent> components = default(List<WhatsAppComponent>))
+        /// <param name="packageName">Package name (required).</param>
+        /// <param name="signatureHash">Signature hash (required).</param>
+        public WhatsappSupportedApp(string packageName = default(string), string signatureHash = default(string))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
+            // to ensure "packageName" is required (not null)
+            if (packageName == null)
             {
-                throw new ArgumentNullException("name is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("packageName is a required property for WhatsappSupportedApp and cannot be null");
             }
-            this.Name = name;
-            // to ensure "language" is required (not null)
-            if (language == null)
+            this.PackageName = packageName;
+            // to ensure "signatureHash" is required (not null)
+            if (signatureHash == null)
             {
-                throw new ArgumentNullException("language is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("signatureHash is a required property for WhatsappSupportedApp and cannot be null");
             }
-            this.Language = language;
-            // to ensure "components" is required (not null)
-            if (components == null)
-            {
-                throw new ArgumentNullException("components is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Components = components;
+            this.SignatureHash = signatureHash;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Name of the template
+        /// Package name
         /// </summary>
-        /// <value>Name of the template</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <value>Package name</value>
+        [DataMember(Name = "package_name", IsRequired = true, EmitDefaultValue = true)]
+        public string PackageName { get; set; }
 
         /// <summary>
-        /// Gets or Sets Language
+        /// Signature hash
         /// </summary>
-        [DataMember(Name = "language", IsRequired = true, EmitDefaultValue = true)]
-        public WhatsAppLanguage Language { get; set; }
-
-        /// <summary>
-        /// List of template components
-        /// </summary>
-        /// <value>List of template components</value>
-        [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppComponent> Components { get; set; }
+        /// <value>Signature hash</value>
+        [DataMember(Name = "signature_hash", IsRequired = true, EmitDefaultValue = true)]
+        public string SignatureHash { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,10 +89,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppTemplate {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
+            sb.Append("class WhatsappSupportedApp {\n");
+            sb.Append("  PackageName: ").Append(PackageName).Append("\n");
+            sb.Append("  SignatureHash: ").Append(SignatureHash).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

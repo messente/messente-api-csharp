@@ -27,67 +27,57 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp Cloud API template
+    /// Whatsapp media object.
     /// </summary>
-    [DataContract(Name = "WhatsAppTemplate")]
-    public partial class WhatsAppTemplate : IValidatableObject
+    [DataContract(Name = "WhatsappPagination")]
+    public partial class WhatsappPagination : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappPagination" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppTemplate()
+        protected WhatsappPagination()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappPagination" /> class.
         /// </summary>
-        /// <param name="name">Name of the template (required).</param>
-        /// <param name="language">language (required).</param>
-        /// <param name="components">List of template components (required).</param>
-        public WhatsAppTemplate(string name = default(string), WhatsAppLanguage language = default(WhatsAppLanguage), List<WhatsAppComponent> components = default(List<WhatsAppComponent>))
+        /// <param name="previous">A URL to ge the previous paginated page..</param>
+        /// <param name="next">A URL to ge the next paginated page..</param>
+        /// <param name="cursors">cursors (required).</param>
+        public WhatsappPagination(string previous = default(string), string next = default(string), WhatsappPagingCursors cursors = default(WhatsappPagingCursors))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
+            // to ensure "cursors" is required (not null)
+            if (cursors == null)
             {
-                throw new ArgumentNullException("name is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("cursors is a required property for WhatsappPagination and cannot be null");
             }
-            this.Name = name;
-            // to ensure "language" is required (not null)
-            if (language == null)
-            {
-                throw new ArgumentNullException("language is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Language = language;
-            // to ensure "components" is required (not null)
-            if (components == null)
-            {
-                throw new ArgumentNullException("components is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Components = components;
+            this.Cursors = cursors;
+            this.Previous = previous;
+            this.Next = next;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Name of the template
+        /// A URL to ge the previous paginated page.
         /// </summary>
-        /// <value>Name of the template</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <value>A URL to ge the previous paginated page.</value>
+        [DataMember(Name = "previous", EmitDefaultValue = false)]
+        public string Previous { get; set; }
 
         /// <summary>
-        /// Gets or Sets Language
+        /// A URL to ge the next paginated page.
         /// </summary>
-        [DataMember(Name = "language", IsRequired = true, EmitDefaultValue = true)]
-        public WhatsAppLanguage Language { get; set; }
+        /// <value>A URL to ge the next paginated page.</value>
+        [DataMember(Name = "next", EmitDefaultValue = false)]
+        public string Next { get; set; }
 
         /// <summary>
-        /// List of template components
+        /// Gets or Sets Cursors
         /// </summary>
-        /// <value>List of template components</value>
-        [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppComponent> Components { get; set; }
+        [DataMember(Name = "cursors", IsRequired = true, EmitDefaultValue = true)]
+        public WhatsappPagingCursors Cursors { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,10 +92,10 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppTemplate {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
+            sb.Append("class WhatsappPagination {\n");
+            sb.Append("  Previous: ").Append(Previous).Append("\n");
+            sb.Append("  Next: ").Append(Next).Append("\n");
+            sb.Append("  Cursors: ").Append(Cursors).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

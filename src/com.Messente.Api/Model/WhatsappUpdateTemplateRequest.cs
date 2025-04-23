@@ -27,67 +27,35 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp Cloud API template
+    /// Request to create a WhatsApp template
     /// </summary>
-    [DataContract(Name = "WhatsAppTemplate")]
-    public partial class WhatsAppTemplate : IValidatableObject
+    [DataContract(Name = "WhatsappUpdateTemplateRequest")]
+    public partial class WhatsappUpdateTemplateRequest : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Gets or Sets Category
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WhatsAppTemplate()
-        {
-            this.AdditionalProperties = new Dictionary<string, object>();
-        }
+        [DataMember(Name = "category", EmitDefaultValue = false)]
+        public WhatsappTemplateCategory? Category { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappUpdateTemplateRequest" /> class.
         /// </summary>
-        /// <param name="name">Name of the template (required).</param>
-        /// <param name="language">language (required).</param>
-        /// <param name="components">List of template components (required).</param>
-        public WhatsAppTemplate(string name = default(string), WhatsAppLanguage language = default(WhatsAppLanguage), List<WhatsAppComponent> components = default(List<WhatsAppComponent>))
+        /// <param name="category">category.</param>
+        /// <param name="components">List of template components.</param>
+        public WhatsappUpdateTemplateRequest(WhatsappTemplateCategory? category = default(WhatsappTemplateCategory?), List<WhatsappTemplateComponent> components = default(List<WhatsappTemplateComponent>))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Name = name;
-            // to ensure "language" is required (not null)
-            if (language == null)
-            {
-                throw new ArgumentNullException("language is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Language = language;
-            // to ensure "components" is required (not null)
-            if (components == null)
-            {
-                throw new ArgumentNullException("components is a required property for WhatsAppTemplate and cannot be null");
-            }
+            this.Category = category;
             this.Components = components;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Name of the template
-        /// </summary>
-        /// <value>Name of the template</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Language
-        /// </summary>
-        [DataMember(Name = "language", IsRequired = true, EmitDefaultValue = true)]
-        public WhatsAppLanguage Language { get; set; }
-
-        /// <summary>
         /// List of template components
         /// </summary>
         /// <value>List of template components</value>
-        [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppComponent> Components { get; set; }
+        [DataMember(Name = "components", EmitDefaultValue = false)]
+        public List<WhatsappTemplateComponent> Components { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,9 +70,8 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppTemplate {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
+            sb.Append("class WhatsappUpdateTemplateRequest {\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  Components: ").Append(Components).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
