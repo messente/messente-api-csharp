@@ -500,7 +500,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WhatsappCreateTemplateResponse'
-          description: OK
+          description: template creation successful
         "400":
           content:
             application/json:
@@ -554,7 +554,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WhatsappTemplateResponse'
-          description: OK
+          description: template fetched successfully
         "400":
           content:
             application/json:
