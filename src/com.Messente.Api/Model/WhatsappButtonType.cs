@@ -55,7 +55,25 @@ namespace com.Messente.Api.Model
         /// Enum Url for value: url
         /// </summary>
         [EnumMember(Value = "url")]
-        Url = 4
+        Url = 4,
+
+        /// <summary>
+        /// Enum Catalog for value: catalog
+        /// </summary>
+        [EnumMember(Value = "catalog")]
+        Catalog = 5,
+
+        /// <summary>
+        /// Enum Flow for value: flow
+        /// </summary>
+        [EnumMember(Value = "flow")]
+        Flow = 6,
+
+        /// <summary>
+        /// Enum CopyCode for value: copy_code
+        /// </summary>
+        [EnumMember(Value = "copy_code")]
+        CopyCode = 7
     }
 
 }

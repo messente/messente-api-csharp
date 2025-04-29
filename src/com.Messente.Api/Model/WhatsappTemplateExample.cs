@@ -37,7 +37,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="headerText">Example of the templated text for the header.</param>
         /// <param name="bodyText">Example of the templated text for the body.</param>
-        public WhatsappTemplateExample(List<List<string>> headerText = default(List<List<string>>), List<List<string>> bodyText = default(List<List<string>>))
+        public WhatsappTemplateExample(List<string> headerText = default(List<string>), List<List<string>> bodyText = default(List<List<string>>))
         {
             this.HeaderText = headerText;
             this.BodyText = bodyText;
@@ -49,7 +49,7 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <value>Example of the templated text for the header</value>
         [DataMember(Name = "header_text", EmitDefaultValue = false)]
-        public List<List<string>> HeaderText { get; set; }
+        public List<string> HeaderText { get; set; }
 
         /// <summary>
         /// Example of the templated text for the body

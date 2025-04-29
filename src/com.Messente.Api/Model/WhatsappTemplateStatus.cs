@@ -49,7 +49,13 @@ namespace com.Messente.Api.Model
         /// Enum Pending for value: pending
         /// </summary>
         [EnumMember(Value = "pending")]
-        Pending = 3
+        Pending = 3,
+
+        /// <summary>
+        /// Enum PendingDeletion for value: pending_deletion
+        /// </summary>
+        [EnumMember(Value = "pending_deletion")]
+        PendingDeletion = 4
     }
 
 }
