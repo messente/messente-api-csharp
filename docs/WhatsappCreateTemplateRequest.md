@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of the template | 
 **Category** | **WhatsappTemplateCategory** |  | 
-**AllowCategoryChange** | **bool** | Allow category change | [optional] [default to false]
 **Language** | **string** | Language of the template | 
 **Components** | [**List&lt;WhatsappTemplateComponent&gt;**](WhatsappTemplateComponent.md) | List of template components | 
 

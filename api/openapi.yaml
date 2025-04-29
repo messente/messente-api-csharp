@@ -3455,7 +3455,6 @@ components:
             header_text:
             - header_text
             - header_text
-        allow_category_change: false
         name: name
         language: language
         category: utility
@@ -3465,10 +3464,6 @@ components:
           type: string
         category:
           $ref: '#/components/schemas/WhatsappTemplateCategory'
-        allow_category_change:
-          default: false
-          description: Allow category change
-          type: boolean
         language:
           description: Language of the template
           type: string

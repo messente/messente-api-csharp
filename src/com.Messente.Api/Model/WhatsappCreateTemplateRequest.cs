@@ -51,10 +51,9 @@ namespace com.Messente.Api.Model
         /// </summary>
         /// <param name="name">Name of the template (required).</param>
         /// <param name="category">category (required).</param>
-        /// <param name="allowCategoryChange">Allow category change (default to false).</param>
         /// <param name="language">Language of the template (required).</param>
         /// <param name="components">List of template components (required).</param>
-        public WhatsappCreateTemplateRequest(string name = default(string), WhatsappTemplateCategory category = default(WhatsappTemplateCategory), bool allowCategoryChange = false, string language = default(string), List<WhatsappTemplateComponent> components = default(List<WhatsappTemplateComponent>))
+        public WhatsappCreateTemplateRequest(string name = default(string), WhatsappTemplateCategory category = default(WhatsappTemplateCategory), string language = default(string), List<WhatsappTemplateComponent> components = default(List<WhatsappTemplateComponent>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -75,7 +74,6 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("components is a required property for WhatsappCreateTemplateRequest and cannot be null");
             }
             this.Components = components;
-            this.AllowCategoryChange = allowCategoryChange;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -85,13 +83,6 @@ namespace com.Messente.Api.Model
         /// <value>Name of the template</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Allow category change
-        /// </summary>
-        /// <value>Allow category change</value>
-        [DataMember(Name = "allow_category_change", EmitDefaultValue = true)]
-        public bool AllowCategoryChange { get; set; }
 
         /// <summary>
         /// Language of the template
@@ -123,7 +114,6 @@ namespace com.Messente.Api.Model
             sb.Append("class WhatsappCreateTemplateRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Category: ").Append(Category).Append("\n");
-            sb.Append("  AllowCategoryChange: ").Append(AllowCategoryChange).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Components: ").Append(Components).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
