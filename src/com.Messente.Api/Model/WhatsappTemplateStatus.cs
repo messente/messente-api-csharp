@@ -40,22 +40,52 @@ namespace com.Messente.Api.Model
         Approved = 1,
 
         /// <summary>
+        /// Enum InAppeal for value: in_appeal
+        /// </summary>
+        [EnumMember(Value = "in_appeal")]
+        InAppeal = 2,
+
+        /// <summary>
         /// Enum Rejected for value: rejected
         /// </summary>
         [EnumMember(Value = "rejected")]
-        Rejected = 2,
+        Rejected = 3,
 
         /// <summary>
         /// Enum Pending for value: pending
         /// </summary>
         [EnumMember(Value = "pending")]
-        Pending = 3,
+        Pending = 4,
 
         /// <summary>
         /// Enum PendingDeletion for value: pending_deletion
         /// </summary>
         [EnumMember(Value = "pending_deletion")]
-        PendingDeletion = 4
+        PendingDeletion = 5,
+
+        /// <summary>
+        /// Enum Deleted for value: deleted
+        /// </summary>
+        [EnumMember(Value = "deleted")]
+        Deleted = 6,
+
+        /// <summary>
+        /// Enum Disabled for value: disabled
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled = 7,
+
+        /// <summary>
+        /// Enum Paused for value: paused
+        /// </summary>
+        [EnumMember(Value = "paused")]
+        Paused = 8,
+
+        /// <summary>
+        /// Enum LimitExceeded for value: limit_exceeded
+        /// </summary>
+        [EnumMember(Value = "limit_exceeded")]
+        LimitExceeded = 9
     }
 
 }

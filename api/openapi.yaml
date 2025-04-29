@@ -3506,9 +3506,14 @@ components:
       description: Template status
       enum:
       - approved
+      - in_appeal
       - rejected
       - pending
       - pending_deletion
+      - deleted
+      - disabled
+      - paused
+      - limit_exceeded
       example: approved
       type: string
     WhatsappTemplateCategory:
