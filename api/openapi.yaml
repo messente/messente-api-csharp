@@ -323,7 +323,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AnyJsonResponse'
-          description: OK
+          description: template deletion successful
         "400":
           content:
             application/json:
@@ -448,7 +448,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/WhatsappListTemplatesResponse'
-          description: OK
+          description: template list fetched successfully
         "400":
           content:
             application/json:
@@ -614,7 +614,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AnyJsonResponse'
-          description: OK
+          description: template update successful
         "400":
           content:
             application/json:
