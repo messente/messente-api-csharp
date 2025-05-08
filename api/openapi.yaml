@@ -77,7 +77,97 @@ tags:
 - description: Send omnimessages in bulk to a phone number with fallback options for
     various channels
   name: BulkMessaging
+- description: Get your account balance
+  name: AccountBalance
+- description: Get pricing information
+  name: Pricing
 paths:
+  /get_balance:
+    get:
+      operationId: getAccountBalance
+      parameters:
+      - description: The API username
+        explode: true
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The API password
+        explode: true
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                description: "Syntax for successful response: OK [SMS balance in EUR]\n\
+                  Syntax for unsuccessful response: ERROR [error code]\nerror codes:\n\
+                  \  - 101: Access is restricted, wrong credentials. Check username\
+                  \ and password values. \n  - 102: Parameters are wrong or missing.\
+                  \ Check that all required parameters are present.\n  - 209: Server\
+                  \ failure, try again after a few seconds or try api3.messente.com\
+                  \ backup server.\n"
+                example: OK 10.23
+                type: string
+          description: Both errors and success responses are returned as plain text
+            with HTTP status 200.
+      security:
+      - apiUsername: []
+        apiPassword: []
+      summary: Get account balance
+      tags:
+      - AccountBalance
+    post:
+      operationId: getAccountBalanceUsingPost
+      parameters:
+      - description: The API username
+        explode: true
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The API password
+        explode: true
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                description: "Syntax for successful response: OK [SMS balance in EUR]\n\
+                  Syntax for unsuccessful response: ERROR [error code]\nerror codes:\n\
+                  \  - 101: Access is restricted, wrong credentials. Check username\
+                  \ and password values. \n  - 102: Parameters are wrong or missing.\
+                  \ Check that all required parameters are present.\n  - 209: Server\
+                  \ failure, try again after a few seconds or try api3.messente.com\
+                  \ backup server.\n"
+                example: OK 10.23
+                type: string
+          description: Both errors and success responses are returned as plain text
+            with HTTP status 200.
+      security:
+      - apiUsername: []
+        apiPassword: []
+      summary: Get account balance
+      tags:
+      - AccountBalance
+    servers:
+    - description: Override base path for account balance API
+      url: https://api2.messente.com
   /omnimessages:
     post:
       operationId: sendBulkOmnimessage
@@ -1462,6 +1552,124 @@ paths:
       summary: Creates a new group with the provided name
       tags:
       - Groups
+  /pricelist:
+    get:
+      operationId: getPricelist
+      parameters:
+      - description: The API username
+        explode: true
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The API password
+        explode: true
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                description: "Syntax for successful response: CSV with the following\
+                  \ columns:\n  - Country\n  - Code\n  - MCCMNC\n  - Network\n  -\
+                  \ Price\nSyntax for unsuccessful response: ERROR [error code]\n\
+                  error codes:\n  - 101: Access is restricted, wrong credentials.\
+                  \ Check username and password values. \n  - 102: Parameters are\
+                  \ wrong or missing. Check that all required parameters are present.\n\
+                  \  - 103: IP address not allowed.\n  - 209: Server failure, try\
+                  \ again after a few seconds.\n"
+                example: ERROR 101
+                type: string
+          description: |
+            Both errors and success responses are returned as plain text with HTTP status 200.
+            Unsuccessful responses contain the error code, while successful ones contain the pricelist in CSV format.
+      security:
+      - apiUsername: []
+        apiPassword: []
+      summary: Get pricelist for account
+      tags:
+      - Pricing
+    servers:
+    - description: Override base path for account balance API
+      url: https://api2.messente.com
+  /prices:
+    get:
+      operationId: getPrices
+      parameters:
+      - description: The API username
+        explode: true
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The API password
+        explode: true
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: "The country code, for which to get the prices"
+        explode: true
+        in: query
+        name: country
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: "The format of the response. Can be either 'json' or 'xml'. If\
+          \ not specified, defaults to 'json'."
+        explode: true
+        in: query
+        name: format
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Price'
+            text/plain; charset=utf-8:
+              schema:
+                description: "Syntax for unsuccessful response: ERROR [error code]\n\
+                  error codes:\n  - 101: Access is restricted, wrong credentials.\
+                  \ Check username and password values. \n  - 102: Parameters are\
+                  \ wrong or missing. Check that all required parameters are present.\n\
+                  \  - 103: IP address is not allowed.\n  - 104: Country was not found.\n\
+                  \  - 105: This country is not supported.\n  - 106: Invalid format\
+                  \ provided. Only json or xml is allowed.\n  - 209: Server failure,\
+                  \ try again after a few seconds or try api3.messente.com backup\
+                  \ server.\n"
+                example: ERROR 101
+                type: string
+          description: "Unsuccessful responses are returned as plain text with an\
+            \ error code, while successful ones contain either JSON or XML depending\
+            \ on the user's choice."
+      security:
+      - apiUsername: []
+        apiPassword: []
+      summary: Get pricing for a specific country
+      tags:
+      - Pricing
+    servers:
+    - description: Override base path for account balance API
+      url: https://api2.messente.com
   /statistics/reports:
     post:
       operationId: createStatisticsReport
@@ -3798,6 +4006,43 @@ components:
       required:
       - messages
       type: object
+    Price:
+      description: An object containing the pricing information for a given country
+      example:
+        country: EE
+        prefix: "372"
+        name: Estonia
+        networks:
+        - mccmnc: 24602
+          price: "0.01"
+          name: Tele2
+        - mccmnc: 24602
+          price: "0.01"
+          name: Tele2
+      properties:
+        country:
+          description: The alpha-2 code for the country
+          example: EE
+          type: string
+        name:
+          description: The name of the country
+          example: Estonia
+          type: string
+        prefix:
+          description: The country code prefix
+          example: "372"
+          type: string
+        networks:
+          description: A list of networks available in the country
+          items:
+            $ref: '#/components/schemas/Price_networks_inner'
+          type: array
+      required:
+      - country
+      - name
+      - networks
+      - prefix
+      type: object
     ErrorItemNumberLookup_error:
       description: Error fields container
       example:
@@ -3835,8 +4080,40 @@ components:
       oneOf:
       - $ref: '#/components/schemas/OmniMessageCreateSuccessResponse'
       - $ref: '#/components/schemas/ErrorOmnichannel'
+    Price_networks_inner:
+      description: An object containing the network information
+      example:
+        mccmnc: 24602
+        price: "0.01"
+        name: Tele2
+      properties:
+        name:
+          description: The name of the network
+          example: Tele2
+          type: string
+        price:
+          description: The price for sending a message to this network
+          example: "0.01"
+          type: string
+        mccmnc:
+          description: The MCCMNC code for the network
+          example: 24602
+          type: number
+      required:
+      - mccmnc
+      - name
+      - price
+      type: object
   securitySchemes:
     basicAuth:
       scheme: basic
       type: http
+    apiUsername:
+      in: query
+      name: username
+      type: apiKey
+    apiPassword:
+      in: query
+      name: password
+      type: apiKey
 

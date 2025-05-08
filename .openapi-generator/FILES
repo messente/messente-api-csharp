@@ -4,6 +4,7 @@ README.md
 api/openapi.yaml
 appveyor.yml
 com.Messente.Api.sln
+docs/AccountBalanceApi.md
 docs/BlacklistApi.md
 docs/BulkMessagingApi.md
 docs/BulkOmniMessageCreateSuccessResponse.md
@@ -49,7 +50,10 @@ docs/OmniMessageCreateSuccessResponse.md
 docs/Omnimessage.md
 docs/OmnimessageApi.md
 docs/OmnimessageMessagesInner.md
+docs/Price.md
 docs/PriceInfo.md
+docs/PriceNetworksInner.md
+docs/PricingApi.md
 docs/Priority.md
 docs/SMS.md
 docs/StatisticsApi.md
@@ -91,6 +95,7 @@ docs/WhatsappTemplateResponse.md
 docs/WhatsappTemplateStatus.md
 docs/WhatsappUpdateTemplateRequest.md
 git_push.sh
+src/com.Messente.Api/Api/AccountBalanceApi.cs
 src/com.Messente.Api/Api/BlacklistApi.cs
 src/com.Messente.Api/Api/BulkMessagingApi.cs
 src/com.Messente.Api/Api/ContactsApi.cs
@@ -98,6 +103,7 @@ src/com.Messente.Api/Api/DeliveryReportApi.cs
 src/com.Messente.Api/Api/GroupsApi.cs
 src/com.Messente.Api/Api/NumberLookupApi.cs
 src/com.Messente.Api/Api/OmnimessageApi.cs
+src/com.Messente.Api/Api/PricingApi.cs
 src/com.Messente.Api/Api/StatisticsApi.cs
 src/com.Messente.Api/Api/WhatsAppTemplatesApi.cs
 src/com.Messente.Api/Client/ApiClient.cs
@@ -155,7 +161,9 @@ src/com.Messente.Api/Model/NumbersToInvestigate.cs
 src/com.Messente.Api/Model/OmniMessageCreateSuccessResponse.cs
 src/com.Messente.Api/Model/Omnimessage.cs
 src/com.Messente.Api/Model/OmnimessageMessagesInner.cs
+src/com.Messente.Api/Model/Price.cs
 src/com.Messente.Api/Model/PriceInfo.cs
+src/com.Messente.Api/Model/PriceNetworksInner.cs
 src/com.Messente.Api/Model/Priority.cs
 src/com.Messente.Api/Model/SMS.cs
 src/com.Messente.Api/Model/StatisticsReport.cs

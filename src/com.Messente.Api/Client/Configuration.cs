@@ -134,6 +134,54 @@ namespace com.Messente.Api.Client
             };
             OperationServers = new Dictionary<string, List<IReadOnlyDictionary<string, object>>>()
             {
+                {
+                    "AccountBalanceApi.GetAccountBalance", new List<IReadOnlyDictionary<string, object>>
+                    {
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {"url", "https://api2.messente.com"},
+                                {"description", "Override base path for account balance API"}
+                            }
+                        },
+                    }
+                },
+                {
+                    "AccountBalanceApi.GetAccountBalanceUsingPost", new List<IReadOnlyDictionary<string, object>>
+                    {
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {"url", "https://api2.messente.com"},
+                                {"description", "Override base path for account balance API"}
+                            }
+                        },
+                    }
+                },
+                {
+                    "PricingApi.GetPricelist", new List<IReadOnlyDictionary<string, object>>
+                    {
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {"url", "https://api2.messente.com"},
+                                {"description", "Override base path for account balance API"}
+                            }
+                        },
+                    }
+                },
+                {
+                    "PricingApi.GetPrices", new List<IReadOnlyDictionary<string, object>>
+                    {
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {"url", "https://api2.messente.com"},
+                                {"description", "Override base path for account balance API"}
+                            }
+                        },
+                    }
+                },
             };
 
             // Setting Timeout has side effects (forces ApiClient creation).
