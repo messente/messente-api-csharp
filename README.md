@@ -69,6 +69,11 @@ Messente API Library provides the operations described below to access the featu
 
 1. Requests info about phone numbers [`FetchInfo`](docs/NumberLookupApi.md#fetchinfo)
 
+### NumberVerificationApi
+
+1. verify number [`VerifyNumber`](docs/NumberVerificationApi.md#verifynumber)
+1. verified the PIN code entered by the user. [`VerifyPin`](docs/NumberVerificationApi.md#verifypin)
+
 ### OmnimessageApi
 
 1. Cancels a scheduled Omnimessage [`CancelScheduledMessage`](docs/OmnimessageApi.md#cancelscheduledmessage)

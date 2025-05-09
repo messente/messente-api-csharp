@@ -45,6 +45,7 @@ docs/MessageResult.md
 docs/MobileNetwork.md
 docs/NumberLookupApi.md
 docs/NumberToBlacklist.md
+docs/NumberVerificationApi.md
 docs/NumbersToInvestigate.md
 docs/OmniMessageCreateSuccessResponse.md
 docs/Omnimessage.md
@@ -102,6 +103,7 @@ src/com.Messente.Api/Api/ContactsApi.cs
 src/com.Messente.Api/Api/DeliveryReportApi.cs
 src/com.Messente.Api/Api/GroupsApi.cs
 src/com.Messente.Api/Api/NumberLookupApi.cs
+src/com.Messente.Api/Api/NumberVerificationApi.cs
 src/com.Messente.Api/Api/OmnimessageApi.cs
 src/com.Messente.Api/Api/PricingApi.cs
 src/com.Messente.Api/Api/StatisticsApi.cs

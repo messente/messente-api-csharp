@@ -81,6 +81,8 @@ tags:
   name: AccountBalance
 - description: Get pricing information
   name: Pricing
+- description: Verify your phone number
+  name: NumberVerification
 paths:
   /get_balance:
     get:
@@ -271,6 +273,244 @@ paths:
       summary: Requests info about phone numbers
       tags:
       - Number Lookup
+  /verify/start:
+    post:
+      operationId: verifyNumber
+      parameters:
+      - description: The API username
+        explode: true
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The API password
+        explode: true
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Receiver's phone number with the country code
+        explode: true
+        in: query
+        name: to
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: |
+          Template of the message, including PIN code. Placeholder for PIN code is <PIN>.
+          When not set, default template is used: "Your Verification PIN code is <PIN>".
+        explode: true
+        in: query
+        name: template
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Length of the PIN code. Minumum 4 digits, maximum 16. Defaults\
+          \ to 4."
+        explode: true
+        in: query
+        name: pin_length
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Sender name. When not set, the default Sender name \"Verigator\"\
+          \ is used. This sender ID also needs to be added to your account beforehand."
+        explode: true
+        in: query
+        name: from
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Maximum number of times the PIN code is sent in total.\nDefaults\
+          \ to \"2\" - initial PIN code and one retry.\nIt is discouraged to set this\
+          \ value to \"1\" as only the initial PIN code is sent and retry is disabled.\
+          \ \n"
+        explode: true
+        in: query
+        name: max_tries
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "For how long (in seconds) to wait for next retry, if the correct\
+          \ PIN code has not been entered yet? Defaults to 30 seconds."
+        explode: true
+        in: query
+        name: retry_delay
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: For how long (in seconds) is the PIN code valid. Defaults to
+          5 minutes (300 seconds). Maximum 30 minutes (1800 seconds).
+        explode: true
+        in: query
+        name: validity
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: IP address of the client making verification request.
+        explode: true
+        in: query
+        name: ip
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "User Agent of the browser. For example \"Mozilla/5.0 (Macintosh;\
+          \ Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130\
+          \ Safari/537.36\"."
+        explode: true
+        in: query
+        name: browser
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Unique cookie assigned to this session. If a user tries logging\
+          \ in with the same cookie present, user is automatically logged in and no\
+          \ PIN code verification is needed."
+        explode: true
+        in: query
+        name: cookie
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                description: |
+                  Syntax for successful response: OK [VerificationID]
+                  Syntax for unsuccessful response: ERROR [error code] | VERIFIED
+                  error codes:
+                    - VERIFIED: User is logging in from already verified computer, no PIN code verification is required.
+                    - 101: Access is restricted, wrong credentials. Check the username and password values.
+                    - 102: Parameters are wrong or missing. Check that all the required parameters are present.
+                    - 103: Invalid IP address. The IP address you made the request from, is not in the API settings whitelist.
+                    - 109: PIN code field is missing in the template value.
+                    - 111: Sender parameter "from" is invalid. You have not activated this sender name from Messente.com
+                    - 209: Server failure, try again after a few seconds or try api3.messente.com backup server.
+                example: ERROR 101
+                type: string
+          description: Both errors and success responses are returned as plain text
+            with HTTP status 200.
+      security:
+      - apiUsername: []
+        apiPassword: []
+      summary: verify number
+      tags:
+      - NumberVerification
+    servers:
+    - description: Override base path for number verification API
+      url: https://api2.messente.com
+  /verify/pin:
+    post:
+      operationId: verifyPin
+      parameters:
+      - description: The API username
+        explode: true
+        in: query
+        name: username
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: The API password
+        explode: true
+        in: query
+        name: password
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Verification ID returned by the successful verification request.
+        explode: true
+        in: query
+        name: verification_id
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: PIN code entered by the user.
+        explode: true
+        in: query
+        name: pin
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: "IP address of the client making verification request. If the\
+          \ IP address is from another country, PIN is required even if the cookies\
+          \ match."
+        explode: true
+        in: query
+        name: ip
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "User Agent of the browser. For example \"Mozilla/5.0 (Macintosh;\
+          \ Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130\
+          \ Safari/537.36\"."
+        explode: true
+        in: query
+        name: browser
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Unique cookie assigned to this session. If a user tries logging\
+          \ in with the same cookie present, user is automatically logged in and no\
+          \ PIN code verification is needed."
+        explode: true
+        in: query
+        name: cookie
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                description: |
+                  Syntax for successful response: VERIFIED
+                  Syntax for unsuccessful response: [ERROR]
+                  error codes:
+                    - INVALID: The PIN code does not match the PIN code sent.
+                    - EXPIRED: The PIN code has expired. Please request for new PIN code.
+                    - THROTTLED: Too many verification calls made for this Verification Session. User is possibly trying to guess the password.
+                    - ERROR 101: Access is restricted, wrong credentials. Check the username and password values.
+                    - ERROR 102: Parameters are wrong or missing. Check that all the required parameters are present.
+                    - ERROR 103: Invalid IP address. The IP address you made the request from, is not in the API settings whitelist.
+                    - ERROR 110: Verification Session with following ID was not found.
+                    - ERROR 209: Server failure, try again after a few seconds or try api3.messente.com backup server.
+                example: VERIFIED
+                type: string
+          description: Both errors and success responses are returned as plain text
+            with HTTP status 200.
+      security:
+      - apiUsername: []
+        apiPassword: []
+      summary: verified the PIN code entered by the user.
+      tags:
+      - NumberVerification
+    servers:
+    - description: Override base path for number verification API
+      url: https://api2.messente.com
   /omnimessage:
     post:
       operationId: sendOmnimessage
@@ -1597,7 +1837,7 @@ paths:
       tags:
       - Pricing
     servers:
-    - description: Override base path for account balance API
+    - description: Override base path for pricing API
       url: https://api2.messente.com
   /prices:
     get:
@@ -1668,7 +1908,7 @@ paths:
       tags:
       - Pricing
     servers:
-    - description: Override base path for account balance API
+    - description: Override base path for pricing API
       url: https://api2.messente.com
   /statistics/reports:
     post:

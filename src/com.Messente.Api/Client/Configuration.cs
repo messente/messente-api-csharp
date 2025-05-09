@@ -159,13 +159,37 @@ namespace com.Messente.Api.Client
                     }
                 },
                 {
+                    "NumberVerificationApi.VerifyNumber", new List<IReadOnlyDictionary<string, object>>
+                    {
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {"url", "https://api2.messente.com"},
+                                {"description", "Override base path for number verification API"}
+                            }
+                        },
+                    }
+                },
+                {
+                    "NumberVerificationApi.VerifyPin", new List<IReadOnlyDictionary<string, object>>
+                    {
+                        {
+                            new Dictionary<string, object>
+                            {
+                                {"url", "https://api2.messente.com"},
+                                {"description", "Override base path for number verification API"}
+                            }
+                        },
+                    }
+                },
+                {
                     "PricingApi.GetPricelist", new List<IReadOnlyDictionary<string, object>>
                     {
                         {
                             new Dictionary<string, object>
                             {
                                 {"url", "https://api2.messente.com"},
-                                {"description", "Override base path for account balance API"}
+                                {"description", "Override base path for pricing API"}
                             }
                         },
                     }
@@ -177,7 +201,7 @@ namespace com.Messente.Api.Client
                             new Dictionary<string, object>
                             {
                                 {"url", "https://api2.messente.com"},
-                                {"description", "Override base path for account balance API"}
+                                {"description", "Override base path for pricing API"}
                             }
                         },
                     }
