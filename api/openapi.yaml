@@ -69,20 +69,20 @@ tags:
 - description: Retrieve delivery reports which indicate whether the message was delivered
   name: Delivery Report
 - description: Manage WhatsApp Cloud API templates
-  name: WhatsAppTemplates
+  name: WhatsApp Templates
 - description: Find out statuses and network info of phone numbers
   name: Number Lookup
 - description: Get total messages and price per country
   name: Statistics
 - description: Send omnimessages in bulk to a phone number with fallback options for
     various channels
-  name: BulkMessaging
+  name: Bulk Messaging
 - description: Get your account balance
-  name: AccountBalance
+  name: Account Balance
 - description: Get pricing information
   name: Pricing
 - description: Verify your phone number
-  name: NumberVerification
+  name: Number Verification
 paths:
   /get_balance:
     get:
@@ -125,7 +125,7 @@ paths:
         apiPassword: []
       summary: Get account balance
       tags:
-      - AccountBalance
+      - Account Balance
     post:
       operationId: getAccountBalanceUsingPost
       parameters:
@@ -166,7 +166,7 @@ paths:
         apiPassword: []
       summary: Get account balance
       tags:
-      - AccountBalance
+      - Account Balance
     servers:
     - description: Override base path for account balance API
       url: https://api2.messente.com
@@ -201,7 +201,7 @@ paths:
           description: Unauthorized
       summary: Sends a bulk Omnimessage
       tags:
-      - BulkMessaging
+      - Bulk Messaging
   /hlr/sync:
     post:
       operationId: fetchInfo
@@ -411,7 +411,7 @@ paths:
         apiPassword: []
       summary: verify number
       tags:
-      - NumberVerification
+      - Number Verification
     servers:
     - description: Override base path for number verification API
       url: https://api2.messente.com
@@ -507,7 +507,7 @@ paths:
         apiPassword: []
       summary: verified the PIN code entered by the user.
       tags:
-      - NumberVerification
+      - Number Verification
     servers:
     - description: Override base path for number verification API
       url: https://api2.messente.com
@@ -680,7 +680,7 @@ paths:
           description: Internal Server Error
       summary: Deletes a WhatsApp template
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
     get:
       operationId: listWhatsappTemplates
       parameters:
@@ -805,7 +805,7 @@ paths:
           description: Internal Server Error
       summary: Requests a list of WhatsApp templates
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
     post:
       operationId: createWhatsappTemplate
       parameters:
@@ -857,7 +857,7 @@ paths:
           description: Internal Server Error
       summary: Creates a WhatsApp template
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
   /whatsapp/wabas/{wabaId}/templates/{templateId}:
     get:
       operationId: getWhatsappTemplateById
@@ -911,7 +911,7 @@ paths:
           description: Internal Server Error
       summary: Requests a WhatsApp template with the given ID
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
     put:
       operationId: updateWhatsappTemplate
       parameters:
@@ -971,7 +971,7 @@ paths:
           description: Internal Server Error
       summary: Updates a WhatsApp template
       tags:
-      - WhatsAppTemplates
+      - WhatsApp Templates
   /phonebook/blacklist:
     get:
       operationId: fetchBlacklist
@@ -4356,4 +4356,16 @@ components:
       in: query
       name: password
       type: apiKey
+x-tagGroups:
+- name: Phonebook
+  tags:
+  - Blacklist
+  - Contacts
+  - Groups
+- name: Omnichannel
+  tags:
+  - Omnimessage
+  - Delivery Report
+  - WhatsApp Templates
+  - Bulk Messaging
 
