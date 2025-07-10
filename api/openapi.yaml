@@ -1860,6 +1860,7 @@ paths:
           type: string
         style: form
       - description: "The country code, for which to get the prices"
+        example: EE
         explode: true
         in: query
         name: country

@@ -141,7 +141,7 @@ namespace Example
             var apiInstance = new PricingApi(config);
             var username = "username_example";  // string | The API username
             var password = "password_example";  // string | The API password
-            var country = "country_example";  // string | The country code, for which to get the prices
+            var country = EE;  // string | The country code, for which to get the prices
             var format = "format_example";  // string? | The format of the response. Can be either 'json' or 'xml'. If not specified, defaults to 'json'. (optional) 
 
             try
