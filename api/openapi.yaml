@@ -2969,14 +2969,24 @@ components:
           type: integer
         template:
           $ref: '#/components/schemas/WhatsAppTemplate'
-        text:
-          $ref: '#/components/schemas/WhatsAppText'
         channel:
           default: whatsapp
           description: The channel used to deliver the message
           enum:
           - whatsapp
           type: string
+        text:
+          $ref: '#/components/schemas/WhatsAppText'
+        image:
+          $ref: '#/components/schemas/WhatsAppImage'
+        video:
+          $ref: '#/components/schemas/WhatsAppVideo'
+        audio:
+          $ref: '#/components/schemas/WhatsAppAudio'
+        document:
+          $ref: '#/components/schemas/WhatsAppDocument'
+        sticker:
+          $ref: '#/components/schemas/WhatsAppSticker'
       type: object
     Telegram:
       description: Telegram message content
@@ -3115,6 +3125,7 @@ components:
           type: string
         index:
           description: index used to position buttons
+          nullable: true
           type: integer
         parameters:
           description: List of parameters for the component
@@ -4134,8 +4145,132 @@ components:
       - package_name
       - signature_hash
       type: object
+    WhatsAppImage:
+      description: "WhatsApp image content. Either \"id\" or \"link\" must be provided,\
+        \ but not both."
+      properties:
+        id:
+          description: Unique identifier for the image file.
+          example: "12345"
+          nullable: true
+          type: string
+        caption:
+          description: Caption for the image.
+          example: Check out this image!
+          nullable: true
+          type: string
+        mime_type:
+          description: MIME type of the image file.
+          example: image/jpeg
+          nullable: true
+          type: string
+        link:
+          description: URL link to the image file.
+          example: https://example.com/image.jpg
+          nullable: true
+          type: string
+      type: object
+    WhatsAppVideo:
+      description: "WhatsApp video content. Either \"id\" or \"link\" must be provided,\
+        \ but not both."
+      properties:
+        id:
+          description: Unique identifier for the video file.
+          example: "67890"
+          nullable: true
+          type: string
+        caption:
+          description: Caption for the video.
+          example: Check out this video!
+          nullable: true
+          type: string
+        mime_type:
+          description: MIME type of the video file.
+          example: video/mp4
+          nullable: true
+          type: string
+        link:
+          description: URL link to the video file.
+          example: https://example.com/video.mp4
+          nullable: true
+          type: string
+      type: object
+    WhatsAppAudio:
+      description: "WhatsApp audio content. Either \"id\" or \"link\" must be provided,\
+        \ but not both."
+      properties:
+        id:
+          description: Unique identifier for the audio file.
+          example: "12345"
+          nullable: true
+          type: string
+        mime_type:
+          description: MIME type of the audio file.
+          example: audio/mpeg
+          nullable: true
+          type: string
+        link:
+          description: URL link to the audio file.
+          example: https://example.com/audio.mp3
+          nullable: true
+          type: string
+      type: object
+    WhatsAppDocument:
+      description: "WhatsApp document content. Either \"id\" or \"link\" must be provided,\
+        \ but not both."
+      properties:
+        id:
+          description: Unique identifier for the document file.
+          example: "98765"
+          nullable: true
+          type: string
+        caption:
+          description: Caption for the document.
+          example: Please review this document.
+          nullable: true
+          type: string
+        mime_type:
+          description: MIME type of the document file.
+          example: application/pdf
+          nullable: true
+          type: string
+        file_name:
+          description: Name of the document file.
+          example: example.pdf
+          nullable: true
+          type: string
+        link:
+          description: URL link to the document file.
+          example: https://example.com/document.pdf
+          nullable: true
+          type: string
+      type: object
+    WhatsAppSticker:
+      description: "WhatsApp sticker content. Either \"id\" or \"link\" must be provided,\
+        \ but not both."
+      properties:
+        id:
+          description: Unique identifier for the sticker file.
+          example: "54321"
+          nullable: true
+          type: string
+        mime_type:
+          description: MIME type of the sticker file.
+          example: image/webp
+          nullable: true
+          type: string
+        animated:
+          description: Indicates whether the sticker is animated.
+          example: true
+          nullable: true
+          type: boolean
+        link:
+          description: URL link to the sticker file.
+          example: https://example.com/sticker.webp
+          nullable: true
+          type: string
+      type: object
     AnyJsonResponse:
-      additionalProperties: true
       description: Any valid JSON response
       type: object
     BulkOmnimessage:

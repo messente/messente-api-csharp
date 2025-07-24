@@ -111,7 +111,7 @@ catch (ApiException e)
 
 <a id="deletewhatsapptemplate"></a>
 # **DeleteWhatsappTemplate**
-> Dictionary&lt;string, Object&gt; DeleteWhatsappTemplate (string wabaId, string name, string? hsmId = null)
+> Object DeleteWhatsappTemplate (string wabaId, string name, string? hsmId = null)
 
 Deletes a WhatsApp template
 
@@ -143,7 +143,7 @@ namespace Example
             try
             {
                 // Deletes a WhatsApp template
-                Dictionary<string, Object> result = apiInstance.DeleteWhatsappTemplate(wabaId, name, hsmId);
+                Object result = apiInstance.DeleteWhatsappTemplate(wabaId, name, hsmId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -164,7 +164,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Deletes a WhatsApp template
-    ApiResponse<Dictionary<string, Object>> response = apiInstance.DeleteWhatsappTemplateWithHttpInfo(wabaId, name, hsmId);
+    ApiResponse<Object> response = apiInstance.DeleteWhatsappTemplateWithHttpInfo(wabaId, name, hsmId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -187,7 +187,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Dictionary<string, Object>**
+**Object**
 
 ### Authorization
 
@@ -424,7 +424,7 @@ catch (ApiException e)
 
 <a id="updatewhatsapptemplate"></a>
 # **UpdateWhatsappTemplate**
-> Dictionary&lt;string, Object&gt; UpdateWhatsappTemplate (string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest)
+> Object UpdateWhatsappTemplate (string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest)
 
 Updates a WhatsApp template
 
@@ -456,7 +456,7 @@ namespace Example
             try
             {
                 // Updates a WhatsApp template
-                Dictionary<string, Object> result = apiInstance.UpdateWhatsappTemplate(wabaId, templateId, whatsappUpdateTemplateRequest);
+                Object result = apiInstance.UpdateWhatsappTemplate(wabaId, templateId, whatsappUpdateTemplateRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -477,7 +477,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Updates a WhatsApp template
-    ApiResponse<Dictionary<string, Object>> response = apiInstance.UpdateWhatsappTemplateWithHttpInfo(wabaId, templateId, whatsappUpdateTemplateRequest);
+    ApiResponse<Object> response = apiInstance.UpdateWhatsappTemplateWithHttpInfo(wabaId, templateId, whatsappUpdateTemplateRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -500,7 +500,7 @@ catch (ApiException e)
 
 ### Return type
 
-**Dictionary<string, Object>**
+**Object**
 
 ### Authorization
 

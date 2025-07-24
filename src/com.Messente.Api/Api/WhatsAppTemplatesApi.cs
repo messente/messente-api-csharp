@@ -57,8 +57,8 @@ namespace com.Messente.Api.Api
         /// <param name="name">The name of the template to delete</param>
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Object&gt;</returns>
-        Dictionary<string, Object> DeleteWhatsappTemplate(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0);
+        /// <returns>Object</returns>
+        Object DeleteWhatsappTemplate(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0);
 
         /// <summary>
         /// Deletes a WhatsApp template
@@ -71,8 +71,8 @@ namespace com.Messente.Api.Api
         /// <param name="name">The name of the template to delete</param>
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
-        ApiResponse<Dictionary<string, Object>> DeleteWhatsappTemplateWithHttpInfo(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0);
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> DeleteWhatsappTemplateWithHttpInfo(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0);
         /// <summary>
         /// Requests a WhatsApp template with the given ID
         /// </summary>
@@ -139,8 +139,8 @@ namespace com.Messente.Api.Api
         /// <param name="templateId">The ID of the template to update</param>
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Object&gt;</returns>
-        Dictionary<string, Object> UpdateWhatsappTemplate(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0);
+        /// <returns>Object</returns>
+        Object UpdateWhatsappTemplate(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0);
 
         /// <summary>
         /// Updates a WhatsApp template
@@ -153,8 +153,8 @@ namespace com.Messente.Api.Api
         /// <param name="templateId">The ID of the template to update</param>
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
-        ApiResponse<Dictionary<string, Object>> UpdateWhatsappTemplateWithHttpInfo(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> UpdateWhatsappTemplateWithHttpInfo(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -203,8 +203,8 @@ namespace com.Messente.Api.Api
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
-        System.Threading.Tasks.Task<Dictionary<string, Object>> DeleteWhatsappTemplateAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> DeleteWhatsappTemplateAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Deletes a WhatsApp template
@@ -218,8 +218,8 @@ namespace com.Messente.Api.Api
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Object>>> DeleteWhatsappTemplateWithHttpInfoAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWhatsappTemplateWithHttpInfoAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Requests a WhatsApp template with the given ID
         /// </summary>
@@ -300,8 +300,8 @@ namespace com.Messente.Api.Api
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
-        System.Threading.Tasks.Task<Dictionary<string, Object>> UpdateWhatsappTemplateAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> UpdateWhatsappTemplateAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Updates a WhatsApp template
@@ -315,8 +315,8 @@ namespace com.Messente.Api.Api
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Dictionary<string, Object>>> UpdateWhatsappTemplateWithHttpInfoAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateWhatsappTemplateWithHttpInfoAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -622,10 +622,10 @@ namespace com.Messente.Api.Api
         /// <param name="name">The name of the template to delete</param>
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Object&gt;</returns>
-        public Dictionary<string, Object> DeleteWhatsappTemplate(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0)
+        /// <returns>Object</returns>
+        public Object DeleteWhatsappTemplate(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0)
         {
-            com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = DeleteWhatsappTemplateWithHttpInfo(wabaId, name, hsmId);
+            com.Messente.Api.Client.ApiResponse<Object> localVarResponse = DeleteWhatsappTemplateWithHttpInfo(wabaId, name, hsmId);
             return localVarResponse.Data;
         }
 
@@ -637,8 +637,8 @@ namespace com.Messente.Api.Api
         /// <param name="name">The name of the template to delete</param>
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
-        public com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>> DeleteWhatsappTemplateWithHttpInfo(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0)
+        /// <returns>ApiResponse of Object</returns>
+        public com.Messente.Api.Client.ApiResponse<Object> DeleteWhatsappTemplateWithHttpInfo(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'wabaId' is set
             if (wabaId == null)
@@ -693,7 +693,7 @@ namespace com.Messente.Api.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<Dictionary<string, Object>>("/whatsapp/wabas/{wabaId}/templates", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/whatsapp/wabas/{wabaId}/templates", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWhatsappTemplate", localVarResponse);
@@ -715,10 +715,10 @@ namespace com.Messente.Api.Api
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Object>> DeleteWhatsappTemplateAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> DeleteWhatsappTemplateAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = await DeleteWhatsappTemplateWithHttpInfoAsync(wabaId, name, hsmId, operationIndex, cancellationToken).ConfigureAwait(false);
+            com.Messente.Api.Client.ApiResponse<Object> localVarResponse = await DeleteWhatsappTemplateWithHttpInfoAsync(wabaId, name, hsmId, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -731,8 +731,8 @@ namespace com.Messente.Api.Api
         /// <param name="hsmId">The ID of the template to delete (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>>> DeleteWhatsappTemplateWithHttpInfoAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> DeleteWhatsappTemplateWithHttpInfoAsync(string wabaId, string name, string? hsmId = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'wabaId' is set
             if (wabaId == null)
@@ -787,7 +787,7 @@ namespace com.Messente.Api.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Dictionary<string, Object>>("/whatsapp/wabas/{wabaId}/templates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/whatsapp/wabas/{wabaId}/templates", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1237,10 +1237,10 @@ namespace com.Messente.Api.Api
         /// <param name="templateId">The ID of the template to update</param>
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Dictionary&lt;string, Object&gt;</returns>
-        public Dictionary<string, Object> UpdateWhatsappTemplate(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0)
+        /// <returns>Object</returns>
+        public Object UpdateWhatsappTemplate(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0)
         {
-            com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = UpdateWhatsappTemplateWithHttpInfo(wabaId, templateId, whatsappUpdateTemplateRequest);
+            com.Messente.Api.Client.ApiResponse<Object> localVarResponse = UpdateWhatsappTemplateWithHttpInfo(wabaId, templateId, whatsappUpdateTemplateRequest);
             return localVarResponse.Data;
         }
 
@@ -1252,8 +1252,8 @@ namespace com.Messente.Api.Api
         /// <param name="templateId">The ID of the template to update</param>
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
-        public com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>> UpdateWhatsappTemplateWithHttpInfo(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of Object</returns>
+        public com.Messente.Api.Client.ApiResponse<Object> UpdateWhatsappTemplateWithHttpInfo(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0)
         {
             // verify the required parameter 'wabaId' is set
             if (wabaId == null)
@@ -1312,7 +1312,7 @@ namespace com.Messente.Api.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<Dictionary<string, Object>>("/whatsapp/wabas/{wabaId}/templates/{templateId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/whatsapp/wabas/{wabaId}/templates/{templateId}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateWhatsappTemplate", localVarResponse);
@@ -1334,10 +1334,10 @@ namespace com.Messente.Api.Api
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
-        public async System.Threading.Tasks.Task<Dictionary<string, Object>> UpdateWhatsappTemplateAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> UpdateWhatsappTemplateAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>> localVarResponse = await UpdateWhatsappTemplateWithHttpInfoAsync(wabaId, templateId, whatsappUpdateTemplateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            com.Messente.Api.Client.ApiResponse<Object> localVarResponse = await UpdateWhatsappTemplateWithHttpInfoAsync(wabaId, templateId, whatsappUpdateTemplateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1350,8 +1350,8 @@ namespace com.Messente.Api.Api
         /// <param name="whatsappUpdateTemplateRequest">The template data to be updated</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
-        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Dictionary<string, Object>>> UpdateWhatsappTemplateWithHttpInfoAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<com.Messente.Api.Client.ApiResponse<Object>> UpdateWhatsappTemplateWithHttpInfoAsync(string wabaId, string templateId, WhatsappUpdateTemplateRequest whatsappUpdateTemplateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'wabaId' is set
             if (wabaId == null)
@@ -1410,7 +1410,7 @@ namespace com.Messente.Api.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Dictionary<string, Object>>("/whatsapp/wabas/{wabaId}/templates/{templateId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/whatsapp/wabas/{wabaId}/templates/{templateId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
