@@ -27,67 +27,36 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp template component
+    /// WhatsApp paging cursors object.
     /// </summary>
-    [DataContract(Name = "WhatsAppComponent")]
-    public partial class WhatsAppComponent : IValidatableObject
+    [DataContract(Name = "WhatsappPagingCursors")]
+    public partial class WhatsappPagingCursors : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappPagingCursors" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WhatsAppComponent()
+        /// <param name="before">The template before the first template in the current list.</param>
+        /// <param name="after">The template after the last template in the current list.</param>
+        public WhatsappPagingCursors(string before = default(string), string after = default(string))
         {
-            this.AdditionalProperties = new Dictionary<string, object>();
-        }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
-        /// </summary>
-        /// <param name="type">Type of the component (required).</param>
-        /// <param name="subType">Sub-type of the component.</param>
-        /// <param name="index">index used to position buttons.</param>
-        /// <param name="parameters">List of parameters for the component.</param>
-        public WhatsAppComponent(string type = default(string), string subType = default(string), int? index = default(int?), List<WhatsAppParameter> parameters = default(List<WhatsAppParameter>))
-        {
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for WhatsAppComponent and cannot be null");
-            }
-            this.Type = type;
-            this.SubType = subType;
-            this.Index = index;
-            this.Parameters = parameters;
+            this.Before = before;
+            this.After = after;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Type of the component
+        /// The template before the first template in the current list
         /// </summary>
-        /// <value>Type of the component</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
+        /// <value>The template before the first template in the current list</value>
+        [DataMember(Name = "before", EmitDefaultValue = false)]
+        public string Before { get; set; }
 
         /// <summary>
-        /// Sub-type of the component
+        /// The template after the last template in the current list
         /// </summary>
-        /// <value>Sub-type of the component</value>
-        [DataMember(Name = "sub_type", EmitDefaultValue = false)]
-        public string SubType { get; set; }
-
-        /// <summary>
-        /// index used to position buttons
-        /// </summary>
-        /// <value>index used to position buttons</value>
-        [DataMember(Name = "index", EmitDefaultValue = true)]
-        public int? Index { get; set; }
-
-        /// <summary>
-        /// List of parameters for the component
-        /// </summary>
-        /// <value>List of parameters for the component</value>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public List<WhatsAppParameter> Parameters { get; set; }
+        /// <value>The template after the last template in the current list</value>
+        [DataMember(Name = "after", EmitDefaultValue = false)]
+        public string After { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,11 +71,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppComponent {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  SubType: ").Append(SubType).Append("\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("class WhatsappPagingCursors {\n");
+            sb.Append("  Before: ").Append(Before).Append("\n");
+            sb.Append("  After: ").Append(After).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

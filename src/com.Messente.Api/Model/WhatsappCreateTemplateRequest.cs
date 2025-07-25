@@ -27,43 +27,51 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp Cloud API template
+    /// Request to create a WhatsApp template
     /// </summary>
-    [DataContract(Name = "WhatsAppTemplate")]
-    public partial class WhatsAppTemplate : IValidatableObject
+    [DataContract(Name = "WhatsappCreateTemplateRequest")]
+    public partial class WhatsappCreateTemplateRequest : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Gets or Sets Category
+        /// </summary>
+        [DataMember(Name = "category", IsRequired = true, EmitDefaultValue = true)]
+        public WhatsappTemplateCategory Category { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhatsappCreateTemplateRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppTemplate()
+        protected WhatsappCreateTemplateRequest()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappCreateTemplateRequest" /> class.
         /// </summary>
         /// <param name="name">Name of the template (required).</param>
-        /// <param name="language">language (required).</param>
+        /// <param name="category">category (required).</param>
+        /// <param name="language">Language of the template (required).</param>
         /// <param name="components">List of template components (required).</param>
-        public WhatsAppTemplate(string name = default(string), WhatsAppLanguage language = default(WhatsAppLanguage), List<WhatsAppComponent> components = default(List<WhatsAppComponent>))
+        public WhatsappCreateTemplateRequest(string name = default(string), WhatsappTemplateCategory category = default(WhatsappTemplateCategory), string language = default(string), List<WhatsappTemplateComponent> components = default(List<WhatsappTemplateComponent>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("name is a required property for WhatsappCreateTemplateRequest and cannot be null");
             }
             this.Name = name;
+            this.Category = category;
             // to ensure "language" is required (not null)
             if (language == null)
             {
-                throw new ArgumentNullException("language is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("language is a required property for WhatsappCreateTemplateRequest and cannot be null");
             }
             this.Language = language;
             // to ensure "components" is required (not null)
             if (components == null)
             {
-                throw new ArgumentNullException("components is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("components is a required property for WhatsappCreateTemplateRequest and cannot be null");
             }
             this.Components = components;
             this.AdditionalProperties = new Dictionary<string, object>();
@@ -77,17 +85,18 @@ namespace com.Messente.Api.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Language
+        /// Language of the template
         /// </summary>
+        /// <value>Language of the template</value>
         [DataMember(Name = "language", IsRequired = true, EmitDefaultValue = true)]
-        public WhatsAppLanguage Language { get; set; }
+        public string Language { get; set; }
 
         /// <summary>
         /// List of template components
         /// </summary>
         /// <value>List of template components</value>
         [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppComponent> Components { get; set; }
+        public List<WhatsappTemplateComponent> Components { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,8 +111,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppTemplate {\n");
+            sb.Append("class WhatsappCreateTemplateRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("  Components: ").Append(Components).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");

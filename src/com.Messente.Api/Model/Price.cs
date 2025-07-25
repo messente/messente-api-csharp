@@ -27,67 +27,91 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp Cloud API template
+    /// An object containing the pricing information for a given country
     /// </summary>
-    [DataContract(Name = "WhatsAppTemplate")]
-    public partial class WhatsAppTemplate : IValidatableObject
+    [DataContract(Name = "Price")]
+    public partial class Price : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="Price" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppTemplate()
+        protected Price()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="Price" /> class.
         /// </summary>
-        /// <param name="name">Name of the template (required).</param>
-        /// <param name="language">language (required).</param>
-        /// <param name="components">List of template components (required).</param>
-        public WhatsAppTemplate(string name = default(string), WhatsAppLanguage language = default(WhatsAppLanguage), List<WhatsAppComponent> components = default(List<WhatsAppComponent>))
+        /// <param name="country">The alpha-2 code for the country (required).</param>
+        /// <param name="name">The name of the country (required).</param>
+        /// <param name="prefix">The country code prefix (required).</param>
+        /// <param name="networks">A list of networks available in the country (required).</param>
+        public Price(string country = default(string), string name = default(string), string prefix = default(string), List<PriceNetworksInner> networks = default(List<PriceNetworksInner>))
         {
+            // to ensure "country" is required (not null)
+            if (country == null)
+            {
+                throw new ArgumentNullException("country is a required property for Price and cannot be null");
+            }
+            this.Country = country;
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("name is a required property for Price and cannot be null");
             }
             this.Name = name;
-            // to ensure "language" is required (not null)
-            if (language == null)
+            // to ensure "prefix" is required (not null)
+            if (prefix == null)
             {
-                throw new ArgumentNullException("language is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("prefix is a required property for Price and cannot be null");
             }
-            this.Language = language;
-            // to ensure "components" is required (not null)
-            if (components == null)
+            this.Prefix = prefix;
+            // to ensure "networks" is required (not null)
+            if (networks == null)
             {
-                throw new ArgumentNullException("components is a required property for WhatsAppTemplate and cannot be null");
+                throw new ArgumentNullException("networks is a required property for Price and cannot be null");
             }
-            this.Components = components;
+            this.Networks = networks;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Name of the template
+        /// The alpha-2 code for the country
         /// </summary>
-        /// <value>Name of the template</value>
+        /// <value>The alpha-2 code for the country</value>
+        /*
+        <example>EE</example>
+        */
+        [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
+        public string Country { get; set; }
+
+        /// <summary>
+        /// The name of the country
+        /// </summary>
+        /// <value>The name of the country</value>
+        /*
+        <example>Estonia</example>
+        */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Language
+        /// The country code prefix
         /// </summary>
-        [DataMember(Name = "language", IsRequired = true, EmitDefaultValue = true)]
-        public WhatsAppLanguage Language { get; set; }
+        /// <value>The country code prefix</value>
+        /*
+        <example>372</example>
+        */
+        [DataMember(Name = "prefix", IsRequired = true, EmitDefaultValue = true)]
+        public string Prefix { get; set; }
 
         /// <summary>
-        /// List of template components
+        /// A list of networks available in the country
         /// </summary>
-        /// <value>List of template components</value>
-        [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppComponent> Components { get; set; }
+        /// <value>A list of networks available in the country</value>
+        [DataMember(Name = "networks", IsRequired = true, EmitDefaultValue = true)]
+        public List<PriceNetworksInner> Networks { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,10 +126,11 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppTemplate {\n");
+            sb.Append("class Price {\n");
+            sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
+            sb.Append("  Prefix: ").Append(Prefix).Append("\n");
+            sb.Append("  Networks: ").Append(Networks).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

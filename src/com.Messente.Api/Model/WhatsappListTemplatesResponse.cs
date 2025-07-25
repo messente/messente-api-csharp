@@ -27,67 +27,53 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp template component
+    /// Whatsapp Cloud API list of templates response
     /// </summary>
-    [DataContract(Name = "WhatsAppComponent")]
-    public partial class WhatsAppComponent : IValidatableObject
+    [DataContract(Name = "WhatsappListTemplatesResponse")]
+    public partial class WhatsappListTemplatesResponse : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappListTemplatesResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppComponent()
+        protected WhatsappListTemplatesResponse()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappListTemplatesResponse" /> class.
         /// </summary>
-        /// <param name="type">Type of the component (required).</param>
-        /// <param name="subType">Sub-type of the component.</param>
-        /// <param name="index">index used to position buttons.</param>
-        /// <param name="parameters">List of parameters for the component.</param>
-        public WhatsAppComponent(string type = default(string), string subType = default(string), int? index = default(int?), List<WhatsAppParameter> parameters = default(List<WhatsAppParameter>))
+        /// <param name="templates">List of templates (required).</param>
+        /// <param name="paging">paging (required).</param>
+        public WhatsappListTemplatesResponse(List<WhatsappTemplateResponse> templates = default(List<WhatsappTemplateResponse>), WhatsappPagination paging = default(WhatsappPagination))
         {
-            // to ensure "type" is required (not null)
-            if (type == null)
+            // to ensure "templates" is required (not null)
+            if (templates == null)
             {
-                throw new ArgumentNullException("type is a required property for WhatsAppComponent and cannot be null");
+                throw new ArgumentNullException("templates is a required property for WhatsappListTemplatesResponse and cannot be null");
             }
-            this.Type = type;
-            this.SubType = subType;
-            this.Index = index;
-            this.Parameters = parameters;
+            this.Templates = templates;
+            // to ensure "paging" is required (not null)
+            if (paging == null)
+            {
+                throw new ArgumentNullException("paging is a required property for WhatsappListTemplatesResponse and cannot be null");
+            }
+            this.Paging = paging;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Type of the component
+        /// List of templates
         /// </summary>
-        /// <value>Type of the component</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
+        /// <value>List of templates</value>
+        [DataMember(Name = "templates", IsRequired = true, EmitDefaultValue = true)]
+        public List<WhatsappTemplateResponse> Templates { get; set; }
 
         /// <summary>
-        /// Sub-type of the component
+        /// Gets or Sets Paging
         /// </summary>
-        /// <value>Sub-type of the component</value>
-        [DataMember(Name = "sub_type", EmitDefaultValue = false)]
-        public string SubType { get; set; }
-
-        /// <summary>
-        /// index used to position buttons
-        /// </summary>
-        /// <value>index used to position buttons</value>
-        [DataMember(Name = "index", EmitDefaultValue = true)]
-        public int? Index { get; set; }
-
-        /// <summary>
-        /// List of parameters for the component
-        /// </summary>
-        /// <value>List of parameters for the component</value>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public List<WhatsAppParameter> Parameters { get; set; }
+        [DataMember(Name = "paging", IsRequired = true, EmitDefaultValue = true)]
+        public WhatsappPagination Paging { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,11 +88,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppComponent {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  SubType: ").Append(SubType).Append("\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("class WhatsappListTemplatesResponse {\n");
+            sb.Append("  Templates: ").Append(Templates).Append("\n");
+            sb.Append("  Paging: ").Append(Paging).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

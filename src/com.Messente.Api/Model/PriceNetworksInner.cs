@@ -27,67 +27,72 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp template component
+    /// An object containing the network information
     /// </summary>
-    [DataContract(Name = "WhatsAppComponent")]
-    public partial class WhatsAppComponent : IValidatableObject
+    [DataContract(Name = "Price_networks_inner")]
+    public partial class PriceNetworksInner : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="PriceNetworksInner" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppComponent()
+        protected PriceNetworksInner()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="PriceNetworksInner" /> class.
         /// </summary>
-        /// <param name="type">Type of the component (required).</param>
-        /// <param name="subType">Sub-type of the component.</param>
-        /// <param name="index">index used to position buttons.</param>
-        /// <param name="parameters">List of parameters for the component.</param>
-        public WhatsAppComponent(string type = default(string), string subType = default(string), int? index = default(int?), List<WhatsAppParameter> parameters = default(List<WhatsAppParameter>))
+        /// <param name="name">The name of the network (required).</param>
+        /// <param name="price">The price for sending a message to this network (required).</param>
+        /// <param name="mccmnc">The MCCMNC code for the network (required).</param>
+        public PriceNetworksInner(string name = default(string), string price = default(string), decimal mccmnc = default(decimal))
         {
-            // to ensure "type" is required (not null)
-            if (type == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new ArgumentNullException("type is a required property for WhatsAppComponent and cannot be null");
+                throw new ArgumentNullException("name is a required property for PriceNetworksInner and cannot be null");
             }
-            this.Type = type;
-            this.SubType = subType;
-            this.Index = index;
-            this.Parameters = parameters;
+            this.Name = name;
+            // to ensure "price" is required (not null)
+            if (price == null)
+            {
+                throw new ArgumentNullException("price is a required property for PriceNetworksInner and cannot be null");
+            }
+            this.Price = price;
+            this.Mccmnc = mccmnc;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Type of the component
+        /// The name of the network
         /// </summary>
-        /// <value>Type of the component</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
+        /// <value>The name of the network</value>
+        /*
+        <example>Tele2</example>
+        */
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Sub-type of the component
+        /// The price for sending a message to this network
         /// </summary>
-        /// <value>Sub-type of the component</value>
-        [DataMember(Name = "sub_type", EmitDefaultValue = false)]
-        public string SubType { get; set; }
+        /// <value>The price for sending a message to this network</value>
+        /*
+        <example>0.01</example>
+        */
+        [DataMember(Name = "price", IsRequired = true, EmitDefaultValue = true)]
+        public string Price { get; set; }
 
         /// <summary>
-        /// index used to position buttons
+        /// The MCCMNC code for the network
         /// </summary>
-        /// <value>index used to position buttons</value>
-        [DataMember(Name = "index", EmitDefaultValue = true)]
-        public int? Index { get; set; }
-
-        /// <summary>
-        /// List of parameters for the component
-        /// </summary>
-        /// <value>List of parameters for the component</value>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public List<WhatsAppParameter> Parameters { get; set; }
+        /// <value>The MCCMNC code for the network</value>
+        /*
+        <example>24602</example>
+        */
+        [DataMember(Name = "mccmnc", IsRequired = true, EmitDefaultValue = true)]
+        public decimal Mccmnc { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,11 +107,10 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppComponent {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  SubType: ").Append(SubType).Append("\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("class PriceNetworksInner {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Price: ").Append(Price).Append("\n");
+            sb.Append("  Mccmnc: ").Append(Mccmnc).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

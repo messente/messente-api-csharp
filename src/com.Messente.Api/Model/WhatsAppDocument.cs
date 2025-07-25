@@ -27,67 +27,78 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp Cloud API template
+    /// WhatsApp document content. Either \&quot;id\&quot; or \&quot;link\&quot; must be provided, but not both.
     /// </summary>
-    [DataContract(Name = "WhatsAppTemplate")]
-    public partial class WhatsAppTemplate : IValidatableObject
+    [DataContract(Name = "WhatsAppDocument")]
+    public partial class WhatsAppDocument : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppDocument" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WhatsAppTemplate()
+        /// <param name="id">Unique identifier for the document file..</param>
+        /// <param name="caption">Caption for the document..</param>
+        /// <param name="mimeType">MIME type of the document file..</param>
+        /// <param name="fileName">Name of the document file..</param>
+        /// <param name="link">URL link to the document file..</param>
+        public WhatsAppDocument(string id = default(string), string caption = default(string), string mimeType = default(string), string fileName = default(string), string link = default(string))
         {
-            this.AdditionalProperties = new Dictionary<string, object>();
-        }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppTemplate" /> class.
-        /// </summary>
-        /// <param name="name">Name of the template (required).</param>
-        /// <param name="language">language (required).</param>
-        /// <param name="components">List of template components (required).</param>
-        public WhatsAppTemplate(string name = default(string), WhatsAppLanguage language = default(WhatsAppLanguage), List<WhatsAppComponent> components = default(List<WhatsAppComponent>))
-        {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Name = name;
-            // to ensure "language" is required (not null)
-            if (language == null)
-            {
-                throw new ArgumentNullException("language is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Language = language;
-            // to ensure "components" is required (not null)
-            if (components == null)
-            {
-                throw new ArgumentNullException("components is a required property for WhatsAppTemplate and cannot be null");
-            }
-            this.Components = components;
+            this.Id = id;
+            this.Caption = caption;
+            this.MimeType = mimeType;
+            this.FileName = fileName;
+            this.Link = link;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Name of the template
+        /// Unique identifier for the document file.
         /// </summary>
-        /// <value>Name of the template</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <value>Unique identifier for the document file.</value>
+        /*
+        <example>98765</example>
+        */
+        [DataMember(Name = "id", EmitDefaultValue = true)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Language
+        /// Caption for the document.
         /// </summary>
-        [DataMember(Name = "language", IsRequired = true, EmitDefaultValue = true)]
-        public WhatsAppLanguage Language { get; set; }
+        /// <value>Caption for the document.</value>
+        /*
+        <example>Please review this document.</example>
+        */
+        [DataMember(Name = "caption", EmitDefaultValue = true)]
+        public string Caption { get; set; }
 
         /// <summary>
-        /// List of template components
+        /// MIME type of the document file.
         /// </summary>
-        /// <value>List of template components</value>
-        [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppComponent> Components { get; set; }
+        /// <value>MIME type of the document file.</value>
+        /*
+        <example>application/pdf</example>
+        */
+        [DataMember(Name = "mime_type", EmitDefaultValue = true)]
+        public string MimeType { get; set; }
+
+        /// <summary>
+        /// Name of the document file.
+        /// </summary>
+        /// <value>Name of the document file.</value>
+        /*
+        <example>example.pdf</example>
+        */
+        [DataMember(Name = "file_name", EmitDefaultValue = true)]
+        public string FileName { get; set; }
+
+        /// <summary>
+        /// URL link to the document file.
+        /// </summary>
+        /// <value>URL link to the document file.</value>
+        /*
+        <example>https://example.com/document.pdf</example>
+        */
+        [DataMember(Name = "link", EmitDefaultValue = true)]
+        public string Link { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,10 +113,12 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppTemplate {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Language: ").Append(Language).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
+            sb.Append("class WhatsAppDocument {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Caption: ").Append(Caption).Append("\n");
+            sb.Append("  MimeType: ").Append(MimeType).Append("\n");
+            sb.Append("  FileName: ").Append(FileName).Append("\n");
+            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -60,16 +60,26 @@ namespace com.Messente.Api.Model
         /// <param name="validity">After how many minutes this channel is   considered as failed and the next channel is attempted.</param>
         /// <param name="ttl">After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used..</param>
         /// <param name="template">template.</param>
-        /// <param name="text">text.</param>
         /// <param name="channel">The channel used to deliver the message (default to ChannelEnum.Whatsapp).</param>
-        public WhatsApp(string sender = default(string), int validity = default(int), int ttl = default(int), WhatsAppTemplate template = default(WhatsAppTemplate), WhatsAppText text = default(WhatsAppText), ChannelEnum? channel = ChannelEnum.Whatsapp)
+        /// <param name="text">text.</param>
+        /// <param name="image">image.</param>
+        /// <param name="video">video.</param>
+        /// <param name="audio">audio.</param>
+        /// <param name="document">document.</param>
+        /// <param name="sticker">sticker.</param>
+        public WhatsApp(string sender = default(string), int validity = default(int), int ttl = default(int), WhatsAppTemplate template = default(WhatsAppTemplate), ChannelEnum? channel = ChannelEnum.Whatsapp, WhatsAppText text = default(WhatsAppText), WhatsAppImage image = default(WhatsAppImage), WhatsAppVideo video = default(WhatsAppVideo), WhatsAppAudio audio = default(WhatsAppAudio), WhatsAppDocument document = default(WhatsAppDocument), WhatsAppSticker sticker = default(WhatsAppSticker))
         {
             this.Sender = sender;
             this.Validity = validity;
             this.Ttl = ttl;
             this.Template = template;
-            this.Text = text;
             this.Channel = channel;
+            this.Text = text;
+            this.Image = image;
+            this.Video = video;
+            this.Audio = audio;
+            this.Document = document;
+            this.Sticker = sticker;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -113,6 +123,36 @@ namespace com.Messente.Api.Model
         public WhatsAppText Text { get; set; }
 
         /// <summary>
+        /// Gets or Sets Image
+        /// </summary>
+        [DataMember(Name = "image", EmitDefaultValue = false)]
+        public WhatsAppImage Image { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Video
+        /// </summary>
+        [DataMember(Name = "video", EmitDefaultValue = false)]
+        public WhatsAppVideo Video { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Audio
+        /// </summary>
+        [DataMember(Name = "audio", EmitDefaultValue = false)]
+        public WhatsAppAudio Audio { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Document
+        /// </summary>
+        [DataMember(Name = "document", EmitDefaultValue = false)]
+        public WhatsAppDocument Document { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Sticker
+        /// </summary>
+        [DataMember(Name = "sticker", EmitDefaultValue = false)]
+        public WhatsAppSticker Sticker { get; set; }
+
+        /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
         [JsonExtensionData]
@@ -130,8 +170,13 @@ namespace com.Messente.Api.Model
             sb.Append("  Validity: ").Append(Validity).Append("\n");
             sb.Append("  Ttl: ").Append(Ttl).Append("\n");
             sb.Append("  Template: ").Append(Template).Append("\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("  Channel: ").Append(Channel).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("  Image: ").Append(Image).Append("\n");
+            sb.Append("  Video: ").Append(Video).Append("\n");
+            sb.Append("  Audio: ").Append(Audio).Append("\n");
+            sb.Append("  Document: ").Append(Document).Append("\n");
+            sb.Append("  Sticker: ").Append(Sticker).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

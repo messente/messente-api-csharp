@@ -27,67 +27,56 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp template component
+    /// Response for creating a WhatsApp template
     /// </summary>
-    [DataContract(Name = "WhatsAppComponent")]
-    public partial class WhatsAppComponent : IValidatableObject
+    [DataContract(Name = "WhatsappCreateTemplateResponse")]
+    public partial class WhatsappCreateTemplateResponse : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Gets or Sets Status
+        /// </summary>
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        public WhatsappTemplateStatus Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Category
+        /// </summary>
+        [DataMember(Name = "category", IsRequired = true, EmitDefaultValue = true)]
+        public WhatsappTemplateCategory Category { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhatsappCreateTemplateResponse" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppComponent()
+        protected WhatsappCreateTemplateResponse()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappCreateTemplateResponse" /> class.
         /// </summary>
-        /// <param name="type">Type of the component (required).</param>
-        /// <param name="subType">Sub-type of the component.</param>
-        /// <param name="index">index used to position buttons.</param>
-        /// <param name="parameters">List of parameters for the component.</param>
-        public WhatsAppComponent(string type = default(string), string subType = default(string), int? index = default(int?), List<WhatsAppParameter> parameters = default(List<WhatsAppParameter>))
+        /// <param name="id">Template ID (required).</param>
+        /// <param name="status">status (required).</param>
+        /// <param name="category">category (required).</param>
+        public WhatsappCreateTemplateResponse(string id = default(string), WhatsappTemplateStatus status = default(WhatsappTemplateStatus), WhatsappTemplateCategory category = default(WhatsappTemplateCategory))
         {
-            // to ensure "type" is required (not null)
-            if (type == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new ArgumentNullException("type is a required property for WhatsAppComponent and cannot be null");
+                throw new ArgumentNullException("id is a required property for WhatsappCreateTemplateResponse and cannot be null");
             }
-            this.Type = type;
-            this.SubType = subType;
-            this.Index = index;
-            this.Parameters = parameters;
+            this.Id = id;
+            this.Status = status;
+            this.Category = category;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Type of the component
+        /// Template ID
         /// </summary>
-        /// <value>Type of the component</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
-
-        /// <summary>
-        /// Sub-type of the component
-        /// </summary>
-        /// <value>Sub-type of the component</value>
-        [DataMember(Name = "sub_type", EmitDefaultValue = false)]
-        public string SubType { get; set; }
-
-        /// <summary>
-        /// index used to position buttons
-        /// </summary>
-        /// <value>index used to position buttons</value>
-        [DataMember(Name = "index", EmitDefaultValue = true)]
-        public int? Index { get; set; }
-
-        /// <summary>
-        /// List of parameters for the component
-        /// </summary>
-        /// <value>List of parameters for the component</value>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public List<WhatsAppParameter> Parameters { get; set; }
+        /// <value>Template ID</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,11 +91,10 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppComponent {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  SubType: ").Append(SubType).Append("\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("class WhatsappCreateTemplateResponse {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Category: ").Append(Category).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

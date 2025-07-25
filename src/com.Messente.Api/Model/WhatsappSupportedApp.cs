@@ -27,67 +27,54 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp template component
+    /// Supported app for the button
     /// </summary>
-    [DataContract(Name = "WhatsAppComponent")]
-    public partial class WhatsAppComponent : IValidatableObject
+    [DataContract(Name = "WhatsappSupportedApp")]
+    public partial class WhatsappSupportedApp : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappSupportedApp" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WhatsAppComponent()
+        protected WhatsappSupportedApp()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="WhatsappSupportedApp" /> class.
         /// </summary>
-        /// <param name="type">Type of the component (required).</param>
-        /// <param name="subType">Sub-type of the component.</param>
-        /// <param name="index">index used to position buttons.</param>
-        /// <param name="parameters">List of parameters for the component.</param>
-        public WhatsAppComponent(string type = default(string), string subType = default(string), int? index = default(int?), List<WhatsAppParameter> parameters = default(List<WhatsAppParameter>))
+        /// <param name="packageName">Package name (required).</param>
+        /// <param name="signatureHash">Signature hash (required).</param>
+        public WhatsappSupportedApp(string packageName = default(string), string signatureHash = default(string))
         {
-            // to ensure "type" is required (not null)
-            if (type == null)
+            // to ensure "packageName" is required (not null)
+            if (packageName == null)
             {
-                throw new ArgumentNullException("type is a required property for WhatsAppComponent and cannot be null");
+                throw new ArgumentNullException("packageName is a required property for WhatsappSupportedApp and cannot be null");
             }
-            this.Type = type;
-            this.SubType = subType;
-            this.Index = index;
-            this.Parameters = parameters;
+            this.PackageName = packageName;
+            // to ensure "signatureHash" is required (not null)
+            if (signatureHash == null)
+            {
+                throw new ArgumentNullException("signatureHash is a required property for WhatsappSupportedApp and cannot be null");
+            }
+            this.SignatureHash = signatureHash;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Type of the component
+        /// Package name
         /// </summary>
-        /// <value>Type of the component</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
+        /// <value>Package name</value>
+        [DataMember(Name = "package_name", IsRequired = true, EmitDefaultValue = true)]
+        public string PackageName { get; set; }
 
         /// <summary>
-        /// Sub-type of the component
+        /// Signature hash
         /// </summary>
-        /// <value>Sub-type of the component</value>
-        [DataMember(Name = "sub_type", EmitDefaultValue = false)]
-        public string SubType { get; set; }
-
-        /// <summary>
-        /// index used to position buttons
-        /// </summary>
-        /// <value>index used to position buttons</value>
-        [DataMember(Name = "index", EmitDefaultValue = true)]
-        public int? Index { get; set; }
-
-        /// <summary>
-        /// List of parameters for the component
-        /// </summary>
-        /// <value>List of parameters for the component</value>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public List<WhatsAppParameter> Parameters { get; set; }
+        /// <value>Signature hash</value>
+        [DataMember(Name = "signature_hash", IsRequired = true, EmitDefaultValue = true)]
+        public string SignatureHash { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,11 +89,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppComponent {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  SubType: ").Append(SubType).Append("\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("class WhatsappSupportedApp {\n");
+            sb.Append("  PackageName: ").Append(PackageName).Append("\n");
+            sb.Append("  SignatureHash: ").Append(SignatureHash).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

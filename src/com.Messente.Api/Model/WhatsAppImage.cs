@@ -27,67 +27,66 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Whatsapp template component
+    /// WhatsApp image content. Either \&quot;id\&quot; or \&quot;link\&quot; must be provided, but not both.
     /// </summary>
-    [DataContract(Name = "WhatsAppComponent")]
-    public partial class WhatsAppComponent : IValidatableObject
+    [DataContract(Name = "WhatsAppImage")]
+    public partial class WhatsAppImage : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppImage" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WhatsAppComponent()
+        /// <param name="id">Unique identifier for the image file..</param>
+        /// <param name="caption">Caption for the image..</param>
+        /// <param name="mimeType">MIME type of the image file..</param>
+        /// <param name="link">URL link to the image file..</param>
+        public WhatsAppImage(string id = default(string), string caption = default(string), string mimeType = default(string), string link = default(string))
         {
-            this.AdditionalProperties = new Dictionary<string, object>();
-        }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WhatsAppComponent" /> class.
-        /// </summary>
-        /// <param name="type">Type of the component (required).</param>
-        /// <param name="subType">Sub-type of the component.</param>
-        /// <param name="index">index used to position buttons.</param>
-        /// <param name="parameters">List of parameters for the component.</param>
-        public WhatsAppComponent(string type = default(string), string subType = default(string), int? index = default(int?), List<WhatsAppParameter> parameters = default(List<WhatsAppParameter>))
-        {
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for WhatsAppComponent and cannot be null");
-            }
-            this.Type = type;
-            this.SubType = subType;
-            this.Index = index;
-            this.Parameters = parameters;
+            this.Id = id;
+            this.Caption = caption;
+            this.MimeType = mimeType;
+            this.Link = link;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Type of the component
+        /// Unique identifier for the image file.
         /// </summary>
-        /// <value>Type of the component</value>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public string Type { get; set; }
+        /// <value>Unique identifier for the image file.</value>
+        /*
+        <example>12345</example>
+        */
+        [DataMember(Name = "id", EmitDefaultValue = true)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// Sub-type of the component
+        /// Caption for the image.
         /// </summary>
-        /// <value>Sub-type of the component</value>
-        [DataMember(Name = "sub_type", EmitDefaultValue = false)]
-        public string SubType { get; set; }
+        /// <value>Caption for the image.</value>
+        /*
+        <example>Check out this image!</example>
+        */
+        [DataMember(Name = "caption", EmitDefaultValue = true)]
+        public string Caption { get; set; }
 
         /// <summary>
-        /// index used to position buttons
+        /// MIME type of the image file.
         /// </summary>
-        /// <value>index used to position buttons</value>
-        [DataMember(Name = "index", EmitDefaultValue = true)]
-        public int? Index { get; set; }
+        /// <value>MIME type of the image file.</value>
+        /*
+        <example>image/jpeg</example>
+        */
+        [DataMember(Name = "mime_type", EmitDefaultValue = true)]
+        public string MimeType { get; set; }
 
         /// <summary>
-        /// List of parameters for the component
+        /// URL link to the image file.
         /// </summary>
-        /// <value>List of parameters for the component</value>
-        [DataMember(Name = "parameters", EmitDefaultValue = false)]
-        public List<WhatsAppParameter> Parameters { get; set; }
+        /// <value>URL link to the image file.</value>
+        /*
+        <example>https://example.com/image.jpg</example>
+        */
+        [DataMember(Name = "link", EmitDefaultValue = true)]
+        public string Link { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -102,11 +101,11 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WhatsAppComponent {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  SubType: ").Append(SubType).Append("\n");
-            sb.Append("  Index: ").Append(Index).Append("\n");
-            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("class WhatsAppImage {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Caption: ").Append(Caption).Append("\n");
+            sb.Append("  MimeType: ").Append(MimeType).Append("\n");
+            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
