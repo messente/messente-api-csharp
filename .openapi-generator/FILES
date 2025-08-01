@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 api/openapi.yaml
 appveyor.yml
