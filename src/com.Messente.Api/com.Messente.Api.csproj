@@ -12,7 +12,7 @@
     <Description>Send and receive SMS, Viber, Telegram and WhatsApp messages, blacklist phone numbers to make sure you&#39;re not sending any unwanted messages, manage contacts and groups.</Description>
     <Copyright>Messente</Copyright>
     <RootNamespace>com.Messente.Api</RootNamespace>
-    <Version>4.1.1</Version>
+    <Version>4.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\com.Messente.Api.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
