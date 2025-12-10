@@ -27,35 +27,23 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// Defines the delivery channel
+    /// RCS card width
     /// </summary>
-    /// <value>Defines the delivery channel</value>
+    /// <value>RCS card width</value>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Channel
+    public enum RcsCardWidth
     {
         /// <summary>
-        /// Enum Sms for value: sms
+        /// Enum SMALL for value: SMALL
         /// </summary>
-        [EnumMember(Value = "sms")]
-        Sms = 1,
+        [EnumMember(Value = "SMALL")]
+        SMALL = 1,
 
         /// <summary>
-        /// Enum Viber for value: viber
+        /// Enum MEDIUM for value: MEDIUM
         /// </summary>
-        [EnumMember(Value = "viber")]
-        Viber = 2,
-
-        /// <summary>
-        /// Enum Whatsapp for value: whatsapp
-        /// </summary>
-        [EnumMember(Value = "whatsapp")]
-        Whatsapp = 3,
-
-        /// <summary>
-        /// Enum Rcs for value: rcs
-        /// </summary>
-        [EnumMember(Value = "rcs")]
-        Rcs = 4
+        [EnumMember(Value = "MEDIUM")]
+        MEDIUM = 2
     }
 
 }

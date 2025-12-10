@@ -1,7 +1,7 @@
 # Messente API Library
 
 - Messente API version: 2.0.0
-- C# package version: 4.1.1
+- C# package version: 4.2.0
 
 [Messente](https://messente.com) is a global provider of messaging and user verification services.  * Send and receive SMS, Viber and WhatsApp messages. * Manage contacts and groups. * Fetch detailed info about phone numbers. * Blacklist phone numbers to make sure you&#39;re not sending any unwanted messages.  Messente builds [tools](https://messente.com/documentation) to help organizations connect their services to people anywhere in the world.
 
@@ -11,11 +11,11 @@ Install Messente API library via NuGet Package Manager or .NET CLI.
 
 ### Package Manager
 
-`Install-Package com.Messente.Api -Version 4.1.1`
+`Install-Package com.Messente.Api -Version 4.2.0`
 
 ### .NET CLI
 
-`dotnet add package com.Messente.Api --version 4.1.1`
+`dotnet add package com.Messente.Api --version 4.2.0`
 
 ## Features
 
