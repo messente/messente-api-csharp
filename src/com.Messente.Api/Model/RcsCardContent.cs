@@ -27,53 +27,53 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for statistics report settings
+    /// RCS Card Content
     /// </summary>
-    [DataContract(Name = "StatisticsReportSettings")]
-    public partial class StatisticsReportSettings : IValidatableObject
+    [DataContract(Name = "RcsCardContent")]
+    public partial class RcsCardContent : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Initializes a new instance of the <see cref="RcsCardContent" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected StatisticsReportSettings()
+        /// <param name="title">Title of the card content.</param>
+        /// <param name="description">Description of the card content.</param>
+        /// <param name="media">media.</param>
+        /// <param name="suggestions">List of suggestions that the recipient can use to respond..</param>
+        public RcsCardContent(string title = default(string), string description = default(string), RcsMedia media = default(RcsMedia), List<RcsSuggestion> suggestions = default(List<RcsSuggestion>))
         {
-            this.AdditionalProperties = new Dictionary<string, object>();
-        }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
-        /// </summary>
-        /// <param name="startDate">Start date for the report (required).</param>
-        /// <param name="endDate">End date for the report (required).</param>
-        /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, rcs, hlr).</param>
-        public StatisticsReportSettings(DateOnly startDate = default(DateOnly), DateOnly endDate = default(DateOnly), List<string> messageTypes = default(List<string>))
-        {
-            this.StartDate = startDate;
-            this.EndDate = endDate;
-            this.MessageTypes = messageTypes;
+            this.Title = title;
+            this.Description = description;
+            this.Media = media;
+            this.Suggestions = suggestions;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Start date for the report
+        /// Title of the card content
         /// </summary>
-        /// <value>Start date for the report</value>
-        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly StartDate { get; set; }
+        /// <value>Title of the card content</value>
+        [DataMember(Name = "title", EmitDefaultValue = true)]
+        public string Title { get; set; }
 
         /// <summary>
-        /// End date for the report
+        /// Description of the card content
         /// </summary>
-        /// <value>End date for the report</value>
-        [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly EndDate { get; set; }
+        /// <value>Description of the card content</value>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
 
         /// <summary>
-        /// Optional list of message types (sms, viber, whatsapp, rcs, hlr)
+        /// Gets or Sets Media
         /// </summary>
-        /// <value>Optional list of message types (sms, viber, whatsapp, rcs, hlr)</value>
-        [DataMember(Name = "message_types", EmitDefaultValue = false)]
-        public List<string> MessageTypes { get; set; }
+        [DataMember(Name = "media", EmitDefaultValue = false)]
+        public RcsMedia Media { get; set; }
+
+        /// <summary>
+        /// List of suggestions that the recipient can use to respond.
+        /// </summary>
+        /// <value>List of suggestions that the recipient can use to respond.</value>
+        [DataMember(Name = "suggestions", EmitDefaultValue = false)]
+        public List<RcsSuggestion> Suggestions { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -88,10 +88,11 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class StatisticsReportSettings {\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  MessageTypes: ").Append(MessageTypes).Append("\n");
+            sb.Append("class RcsCardContent {\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Media: ").Append(Media).Append("\n");
+            sb.Append("  Suggestions: ").Append(Suggestions).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -113,6 +114,18 @@ namespace com.Messente.Api.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Title (string) maxLength
+            if (this.Title != null && this.Title.Length > 200)
+            {
+                yield return new ValidationResult("Invalid value for Title, length must be less than 200.", new [] { "Title" });
+            }
+
+            // Description (string) maxLength
+            if (this.Description != null && this.Description.Length > 2000)
+            {
+                yield return new ValidationResult("Invalid value for Description, length must be less than 2000.", new [] { "Description" });
+            }
+
             yield break;
         }
     }

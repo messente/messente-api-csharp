@@ -41,9 +41,9 @@ namespace com.Messente.Api.Model
         /// <param name="actualInstance">An instance of Viber.</param>
         public OmnimessageMessagesInner(Viber actualInstance)
         {
-            this.IsNullable = false;
-            this.SchemaType= "oneOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
         /// <summary>
@@ -53,9 +53,9 @@ namespace com.Messente.Api.Model
         /// <param name="actualInstance">An instance of SMS.</param>
         public OmnimessageMessagesInner(SMS actualInstance)
         {
-            this.IsNullable = false;
-            this.SchemaType= "oneOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
         /// <summary>
@@ -65,21 +65,21 @@ namespace com.Messente.Api.Model
         /// <param name="actualInstance">An instance of WhatsApp.</param>
         public OmnimessageMessagesInner(WhatsApp actualInstance)
         {
-            this.IsNullable = false;
-            this.SchemaType= "oneOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OmnimessageMessagesInner" /> class
-        /// with the <see cref="Telegram" /> class
+        /// with the <see cref="Rcs" /> class
         /// </summary>
-        /// <param name="actualInstance">An instance of Telegram.</param>
-        public OmnimessageMessagesInner(Telegram actualInstance)
+        /// <param name="actualInstance">An instance of Rcs.</param>
+        public OmnimessageMessagesInner(Rcs actualInstance)
         {
-            this.IsNullable = false;
-            this.SchemaType= "oneOf";
-            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+            IsNullable = false;
+            SchemaType= "anyOf";
+            ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
 
@@ -96,25 +96,25 @@ namespace com.Messente.Api.Model
             }
             set
             {
-                if (value.GetType() == typeof(SMS) || value is SMS)
+                if (value.GetType() == typeof(Rcs))
                 {
-                    this._actualInstance = value;
+                    _actualInstance = value;
                 }
-                else if (value.GetType() == typeof(Telegram) || value is Telegram)
+                else if (value.GetType() == typeof(SMS))
                 {
-                    this._actualInstance = value;
+                    _actualInstance = value;
                 }
-                else if (value.GetType() == typeof(Viber) || value is Viber)
+                else if (value.GetType() == typeof(Viber))
                 {
-                    this._actualInstance = value;
+                    _actualInstance = value;
                 }
-                else if (value.GetType() == typeof(WhatsApp) || value is WhatsApp)
+                else if (value.GetType() == typeof(WhatsApp))
                 {
-                    this._actualInstance = value;
+                    _actualInstance = value;
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: SMS, Telegram, Viber, WhatsApp");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: Rcs, SMS, Viber, WhatsApp");
                 }
             }
         }
@@ -126,7 +126,7 @@ namespace com.Messente.Api.Model
         /// <returns>An instance of Viber</returns>
         public Viber GetViber()
         {
-            return (Viber)this.ActualInstance;
+            return (Viber)ActualInstance;
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace com.Messente.Api.Model
         /// <returns>An instance of SMS</returns>
         public SMS GetSMS()
         {
-            return (SMS)this.ActualInstance;
+            return (SMS)ActualInstance;
         }
 
         /// <summary>
@@ -146,17 +146,17 @@ namespace com.Messente.Api.Model
         /// <returns>An instance of WhatsApp</returns>
         public WhatsApp GetWhatsApp()
         {
-            return (WhatsApp)this.ActualInstance;
+            return (WhatsApp)ActualInstance;
         }
 
         /// <summary>
-        /// Get the actual instance of `Telegram`. If the actual instance is not `Telegram`,
+        /// Get the actual instance of `Rcs`. If the actual instance is not `Rcs`,
         /// the InvalidClassException will be thrown
         /// </summary>
-        /// <returns>An instance of Telegram</returns>
-        public Telegram GetTelegram()
+        /// <returns>An instance of Rcs</returns>
+        public Rcs GetRcs()
         {
-            return (Telegram)this.ActualInstance;
+            return (Rcs)ActualInstance;
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace com.Messente.Api.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OmnimessageMessagesInner {\n");
-            sb.Append("  ActualInstance: ").Append(this.ActualInstance).Append("\n");
+            sb.Append("  ActualInstance: ").Append(ActualInstance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -178,7 +178,7 @@ namespace com.Messente.Api.Model
         /// <returns>JSON string presentation of the object</returns>
         public override string ToJson()
         {
-            return JsonConvert.SerializeObject(this.ActualInstance, OmnimessageMessagesInner.SerializerSettings);
+            return JsonConvert.SerializeObject(ActualInstance, OmnimessageMessagesInner.SerializerSettings);
         }
 
         /// <summary>
@@ -194,22 +194,24 @@ namespace com.Messente.Api.Model
             {
                 return newOmnimessageMessagesInner;
             }
-            int match = 0;
-            List<string> matchedTypes = new List<string>();
 
             try
             {
-                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(SMS).GetProperty("AdditionalProperties") == null)
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<SMS>(jsonString, OmnimessageMessagesInner.SerializerSettings));
-                }
-                else
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<SMS>(jsonString, OmnimessageMessagesInner.AdditionalPropertiesSerializerSettings));
-                }
-                matchedTypes.Add("SMS");
-                match++;
+                newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<Rcs>(jsonString, OmnimessageMessagesInner.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newOmnimessageMessagesInner;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into Rcs: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<SMS>(jsonString, OmnimessageMessagesInner.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newOmnimessageMessagesInner;
             }
             catch (Exception exception)
             {
@@ -219,37 +221,9 @@ namespace com.Messente.Api.Model
 
             try
             {
-                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(Telegram).GetProperty("AdditionalProperties") == null)
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<Telegram>(jsonString, OmnimessageMessagesInner.SerializerSettings));
-                }
-                else
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<Telegram>(jsonString, OmnimessageMessagesInner.AdditionalPropertiesSerializerSettings));
-                }
-                matchedTypes.Add("Telegram");
-                match++;
-            }
-            catch (Exception exception)
-            {
-                // deserialization failed, try the next one
-                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into Telegram: {1}", jsonString, exception.ToString()));
-            }
-
-            try
-            {
-                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(Viber).GetProperty("AdditionalProperties") == null)
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<Viber>(jsonString, OmnimessageMessagesInner.SerializerSettings));
-                }
-                else
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<Viber>(jsonString, OmnimessageMessagesInner.AdditionalPropertiesSerializerSettings));
-                }
-                matchedTypes.Add("Viber");
-                match++;
+                newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<Viber>(jsonString, OmnimessageMessagesInner.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newOmnimessageMessagesInner;
             }
             catch (Exception exception)
             {
@@ -259,17 +233,9 @@ namespace com.Messente.Api.Model
 
             try
             {
-                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
-                if (typeof(WhatsApp).GetProperty("AdditionalProperties") == null)
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<WhatsApp>(jsonString, OmnimessageMessagesInner.SerializerSettings));
-                }
-                else
-                {
-                    newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<WhatsApp>(jsonString, OmnimessageMessagesInner.AdditionalPropertiesSerializerSettings));
-                }
-                matchedTypes.Add("WhatsApp");
-                match++;
+                newOmnimessageMessagesInner = new OmnimessageMessagesInner(JsonConvert.DeserializeObject<WhatsApp>(jsonString, OmnimessageMessagesInner.SerializerSettings));
+                // deserialization is considered successful at this point if no exception has been thrown.
+                return newOmnimessageMessagesInner;
             }
             catch (Exception exception)
             {
@@ -277,19 +243,9 @@ namespace com.Messente.Api.Model
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into WhatsApp: {1}", jsonString, exception.ToString()));
             }
 
-            if (match == 0)
-            {
-                throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
-            }
-            else if (match > 1)
-            {
-                throw new InvalidDataException("The JSON string `" + jsonString + "` incorrectly matches more than one schema (should be exactly one match): " + String.Join(",", matchedTypes));
-            }
-
-            // deserialization is considered successful at this point if no exception has been thrown.
-            return newOmnimessageMessagesInner;
+            // no match found, throw an exception
+            throw new InvalidDataException("The JSON string `" + jsonString + "` cannot be deserialized into any schema defined.");
         }
-
 
         /// <summary>
         /// To validate all properties of the instance
