@@ -27,53 +27,44 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for statistics report settings
+    /// Latitude and longitude coordinates.
     /// </summary>
-    [DataContract(Name = "StatisticsReportSettings")]
-    public partial class StatisticsReportSettings : IValidatableObject
+    [DataContract(Name = "RcsLatLng")]
+    public partial class RcsLatLng : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Initializes a new instance of the <see cref="RcsLatLng" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected StatisticsReportSettings()
+        protected RcsLatLng()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Initializes a new instance of the <see cref="RcsLatLng" /> class.
         /// </summary>
-        /// <param name="startDate">Start date for the report (required).</param>
-        /// <param name="endDate">End date for the report (required).</param>
-        /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, rcs, hlr).</param>
-        public StatisticsReportSettings(DateOnly startDate = default(DateOnly), DateOnly endDate = default(DateOnly), List<string> messageTypes = default(List<string>))
+        /// <param name="latitude">The latitude coordinate. (required).</param>
+        /// <param name="longitude">The longitude coordinate. (required).</param>
+        public RcsLatLng(decimal latitude = default(decimal), decimal longitude = default(decimal))
         {
-            this.StartDate = startDate;
-            this.EndDate = endDate;
-            this.MessageTypes = messageTypes;
+            this.Latitude = latitude;
+            this.Longitude = longitude;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Start date for the report
+        /// The latitude coordinate.
         /// </summary>
-        /// <value>Start date for the report</value>
-        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly StartDate { get; set; }
+        /// <value>The latitude coordinate.</value>
+        [DataMember(Name = "latitude", IsRequired = true, EmitDefaultValue = true)]
+        public decimal Latitude { get; set; }
 
         /// <summary>
-        /// End date for the report
+        /// The longitude coordinate.
         /// </summary>
-        /// <value>End date for the report</value>
-        [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly EndDate { get; set; }
-
-        /// <summary>
-        /// Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-        /// </summary>
-        /// <value>Optional list of message types (sms, viber, whatsapp, rcs, hlr)</value>
-        [DataMember(Name = "message_types", EmitDefaultValue = false)]
-        public List<string> MessageTypes { get; set; }
+        /// <value>The longitude coordinate.</value>
+        [DataMember(Name = "longitude", IsRequired = true, EmitDefaultValue = true)]
+        public decimal Longitude { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -88,10 +79,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class StatisticsReportSettings {\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  MessageTypes: ").Append(MessageTypes).Append("\n");
+            sb.Append("class RcsLatLng {\n");
+            sb.Append("  Latitude: ").Append(Latitude).Append("\n");
+            sb.Append("  Longitude: ").Append(Longitude).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

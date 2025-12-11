@@ -27,53 +27,58 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for statistics report settings
+    /// RCS content info object.
     /// </summary>
-    [DataContract(Name = "StatisticsReportSettings")]
-    public partial class StatisticsReportSettings : IValidatableObject
+    [DataContract(Name = "RcsContentInfo")]
+    public partial class RcsContentInfo : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Initializes a new instance of the <see cref="RcsContentInfo" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected StatisticsReportSettings()
+        protected RcsContentInfo()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Initializes a new instance of the <see cref="RcsContentInfo" /> class.
         /// </summary>
-        /// <param name="startDate">Start date for the report (required).</param>
-        /// <param name="endDate">End date for the report (required).</param>
-        /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, rcs, hlr).</param>
-        public StatisticsReportSettings(DateOnly startDate = default(DateOnly), DateOnly endDate = default(DateOnly), List<string> messageTypes = default(List<string>))
+        /// <param name="fileUrl">Required file URL (required).</param>
+        /// <param name="thumbnailUrl">Optional thumbnail URL.</param>
+        /// <param name="forceRefresh">Force refresh the content (required).</param>
+        public RcsContentInfo(string fileUrl = default(string), string thumbnailUrl = default(string), bool forceRefresh = default(bool))
         {
-            this.StartDate = startDate;
-            this.EndDate = endDate;
-            this.MessageTypes = messageTypes;
+            // to ensure "fileUrl" is required (not null)
+            if (fileUrl == null)
+            {
+                throw new ArgumentNullException("fileUrl is a required property for RcsContentInfo and cannot be null");
+            }
+            this.FileUrl = fileUrl;
+            this.ForceRefresh = forceRefresh;
+            this.ThumbnailUrl = thumbnailUrl;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Start date for the report
+        /// Required file URL
         /// </summary>
-        /// <value>Start date for the report</value>
-        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly StartDate { get; set; }
+        /// <value>Required file URL</value>
+        [DataMember(Name = "file_url", IsRequired = true, EmitDefaultValue = true)]
+        public string FileUrl { get; set; }
 
         /// <summary>
-        /// End date for the report
+        /// Optional thumbnail URL
         /// </summary>
-        /// <value>End date for the report</value>
-        [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly EndDate { get; set; }
+        /// <value>Optional thumbnail URL</value>
+        [DataMember(Name = "thumbnail_url", EmitDefaultValue = true)]
+        public string ThumbnailUrl { get; set; }
 
         /// <summary>
-        /// Optional list of message types (sms, viber, whatsapp, rcs, hlr)
+        /// Force refresh the content
         /// </summary>
-        /// <value>Optional list of message types (sms, viber, whatsapp, rcs, hlr)</value>
-        [DataMember(Name = "message_types", EmitDefaultValue = false)]
-        public List<string> MessageTypes { get; set; }
+        /// <value>Force refresh the content</value>
+        [DataMember(Name = "force_refresh", IsRequired = true, EmitDefaultValue = true)]
+        public bool ForceRefresh { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -88,10 +93,10 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class StatisticsReportSettings {\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  MessageTypes: ").Append(MessageTypes).Append("\n");
+            sb.Append("class RcsContentInfo {\n");
+            sb.Append("  FileUrl: ").Append(FileUrl).Append("\n");
+            sb.Append("  ThumbnailUrl: ").Append(ThumbnailUrl).Append("\n");
+            sb.Append("  ForceRefresh: ").Append(ForceRefresh).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
