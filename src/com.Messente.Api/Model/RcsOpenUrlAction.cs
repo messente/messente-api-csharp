@@ -42,8 +42,8 @@ namespace com.Messente.Api.Model
         /// <summary>
         /// Gets or Sets WebviewViewMode
         /// </summary>
-        [DataMember(Name = "webview_view_mode", IsRequired = true, EmitDefaultValue = true)]
-        public RcsWebviewViewMode WebviewViewMode { get; set; }
+        [DataMember(Name = "webview_view_mode", EmitDefaultValue = false)]
+        public RcsWebviewViewMode? WebviewViewMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="RcsOpenUrlAction" /> class.
         /// </summary>
@@ -56,10 +56,10 @@ namespace com.Messente.Api.Model
         /// Initializes a new instance of the <see cref="RcsOpenUrlAction" /> class.
         /// </summary>
         /// <param name="url">The URL to open. (required).</param>
-        /// <param name="description">A description of the URL being opened. (required).</param>
+        /// <param name="description">A description of the URL being opened..</param>
         /// <param name="application">application (required).</param>
-        /// <param name="webviewViewMode">webviewViewMode (required).</param>
-        public RcsOpenUrlAction(string url = default(string), string description = default(string), RcsOpenUrlApplication application = default(RcsOpenUrlApplication), RcsWebviewViewMode webviewViewMode = default(RcsWebviewViewMode))
+        /// <param name="webviewViewMode">webviewViewMode.</param>
+        public RcsOpenUrlAction(string url = default(string), string description = default(string), RcsOpenUrlApplication application = default(RcsOpenUrlApplication), RcsWebviewViewMode? webviewViewMode = default(RcsWebviewViewMode?))
         {
             // to ensure "url" is required (not null)
             if (url == null)
@@ -67,13 +67,8 @@ namespace com.Messente.Api.Model
                 throw new ArgumentNullException("url is a required property for RcsOpenUrlAction and cannot be null");
             }
             this.Url = url;
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for RcsOpenUrlAction and cannot be null");
-            }
-            this.Description = description;
             this.Application = application;
+            this.Description = description;
             this.WebviewViewMode = webviewViewMode;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
@@ -89,7 +84,7 @@ namespace com.Messente.Api.Model
         /// A description of the URL being opened.
         /// </summary>
         /// <value>A description of the URL being opened.</value>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>

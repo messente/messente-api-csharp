@@ -4490,9 +4490,7 @@ components:
           $ref: '#/components/schemas/RcsWebviewViewMode'
       required:
       - application
-      - description
       - url
-      - webview_view_mode
       type: object
     RcsShareLocationAction:
       description: This action does not have any properties. It simply triggers the

@@ -6,9 +6,9 @@ Action to open a URL in a browser.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Url** | **string** | The URL to open. | 
-**Description** | **string** | A description of the URL being opened. | 
+**Description** | **string** | A description of the URL being opened. | [optional] 
 **Application** | **RcsOpenUrlApplication** |  | 
-**WebviewViewMode** | **RcsWebviewViewMode** |  | 
+**WebviewViewMode** | **RcsWebviewViewMode** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
