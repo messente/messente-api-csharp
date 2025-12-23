@@ -27,53 +27,47 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for statistics report settings
+    /// RCS media object.
     /// </summary>
-    [DataContract(Name = "StatisticsReportSettings")]
-    public partial class StatisticsReportSettings : IValidatableObject
+    [DataContract(Name = "RcsMedia")]
+    public partial class RcsMedia : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Gets or Sets Height
+        /// </summary>
+        [DataMember(Name = "height", IsRequired = true, EmitDefaultValue = true)]
+        public RcsMediaHeight Height { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RcsMedia" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected StatisticsReportSettings()
+        protected RcsMedia()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Initializes a new instance of the <see cref="RcsMedia" /> class.
         /// </summary>
-        /// <param name="startDate">Start date for the report (required).</param>
-        /// <param name="endDate">End date for the report (required).</param>
-        /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, rcs, hlr).</param>
-        public StatisticsReportSettings(DateOnly startDate = default(DateOnly), DateOnly endDate = default(DateOnly), List<string> messageTypes = default(List<string>))
+        /// <param name="height">height (required).</param>
+        /// <param name="contentInfo">contentInfo (required).</param>
+        public RcsMedia(RcsMediaHeight height = default(RcsMediaHeight), RcsContentInfo contentInfo = default(RcsContentInfo))
         {
-            this.StartDate = startDate;
-            this.EndDate = endDate;
-            this.MessageTypes = messageTypes;
+            this.Height = height;
+            // to ensure "contentInfo" is required (not null)
+            if (contentInfo == null)
+            {
+                throw new ArgumentNullException("contentInfo is a required property for RcsMedia and cannot be null");
+            }
+            this.ContentInfo = contentInfo;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Start date for the report
+        /// Gets or Sets ContentInfo
         /// </summary>
-        /// <value>Start date for the report</value>
-        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly StartDate { get; set; }
-
-        /// <summary>
-        /// End date for the report
-        /// </summary>
-        /// <value>End date for the report</value>
-        [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly EndDate { get; set; }
-
-        /// <summary>
-        /// Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-        /// </summary>
-        /// <value>Optional list of message types (sms, viber, whatsapp, rcs, hlr)</value>
-        [DataMember(Name = "message_types", EmitDefaultValue = false)]
-        public List<string> MessageTypes { get; set; }
+        [DataMember(Name = "content_info", IsRequired = true, EmitDefaultValue = true)]
+        public RcsContentInfo ContentInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -88,10 +82,9 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class StatisticsReportSettings {\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  MessageTypes: ").Append(MessageTypes).Append("\n");
+            sb.Append("class RcsMedia {\n");
+            sb.Append("  Height: ").Append(Height).Append("\n");
+            sb.Append("  ContentInfo: ").Append(ContentInfo).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
