@@ -27,53 +27,65 @@ using OpenAPIDateConverter = com.Messente.Api.Client.OpenAPIDateConverter;
 namespace com.Messente.Api.Model
 {
     /// <summary>
-    /// A container for statistics report settings
+    /// Action to open a URL in a browser.
     /// </summary>
-    [DataContract(Name = "StatisticsReportSettings")]
-    public partial class StatisticsReportSettings : IValidatableObject
+    [DataContract(Name = "RcsOpenUrlAction")]
+    public partial class RcsOpenUrlAction : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Gets or Sets Application
+        /// </summary>
+        [DataMember(Name = "application", IsRequired = true, EmitDefaultValue = true)]
+        public RcsOpenUrlApplication Application { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WebviewViewMode
+        /// </summary>
+        [DataMember(Name = "webview_view_mode", EmitDefaultValue = false)]
+        public RcsWebviewViewMode? WebviewViewMode { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RcsOpenUrlAction" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected StatisticsReportSettings()
+        protected RcsOpenUrlAction()
         {
             this.AdditionalProperties = new Dictionary<string, object>();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="StatisticsReportSettings" /> class.
+        /// Initializes a new instance of the <see cref="RcsOpenUrlAction" /> class.
         /// </summary>
-        /// <param name="startDate">Start date for the report (required).</param>
-        /// <param name="endDate">End date for the report (required).</param>
-        /// <param name="messageTypes">Optional list of message types (sms, viber, whatsapp, rcs, hlr).</param>
-        public StatisticsReportSettings(DateOnly startDate = default(DateOnly), DateOnly endDate = default(DateOnly), List<string> messageTypes = default(List<string>))
+        /// <param name="url">The URL to open. (required).</param>
+        /// <param name="description">A description of the URL being opened..</param>
+        /// <param name="application">application (required).</param>
+        /// <param name="webviewViewMode">webviewViewMode.</param>
+        public RcsOpenUrlAction(string url = default(string), string description = default(string), RcsOpenUrlApplication application = default(RcsOpenUrlApplication), RcsWebviewViewMode? webviewViewMode = default(RcsWebviewViewMode?))
         {
-            this.StartDate = startDate;
-            this.EndDate = endDate;
-            this.MessageTypes = messageTypes;
+            // to ensure "url" is required (not null)
+            if (url == null)
+            {
+                throw new ArgumentNullException("url is a required property for RcsOpenUrlAction and cannot be null");
+            }
+            this.Url = url;
+            this.Application = application;
+            this.Description = description;
+            this.WebviewViewMode = webviewViewMode;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
         /// <summary>
-        /// Start date for the report
+        /// The URL to open.
         /// </summary>
-        /// <value>Start date for the report</value>
-        [DataMember(Name = "start_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly StartDate { get; set; }
+        /// <value>The URL to open.</value>
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
+        public string Url { get; set; }
 
         /// <summary>
-        /// End date for the report
+        /// A description of the URL being opened.
         /// </summary>
-        /// <value>End date for the report</value>
-        [DataMember(Name = "end_date", IsRequired = true, EmitDefaultValue = true)]
-        public DateOnly EndDate { get; set; }
-
-        /// <summary>
-        /// Optional list of message types (sms, viber, whatsapp, rcs, hlr)
-        /// </summary>
-        /// <value>Optional list of message types (sms, viber, whatsapp, rcs, hlr)</value>
-        [DataMember(Name = "message_types", EmitDefaultValue = false)]
-        public List<string> MessageTypes { get; set; }
+        /// <value>A description of the URL being opened.</value>
+        [DataMember(Name = "description", EmitDefaultValue = false)]
+        public string Description { get; set; }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -88,10 +100,11 @@ namespace com.Messente.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class StatisticsReportSettings {\n");
-            sb.Append("  StartDate: ").Append(StartDate).Append("\n");
-            sb.Append("  EndDate: ").Append(EndDate).Append("\n");
-            sb.Append("  MessageTypes: ").Append(MessageTypes).Append("\n");
+            sb.Append("class RcsOpenUrlAction {\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Application: ").Append(Application).Append("\n");
+            sb.Append("  WebviewViewMode: ").Append(WebviewViewMode).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -113,6 +126,12 @@ namespace com.Messente.Api.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Url (string) maxLength
+            if (this.Url != null && this.Url.Length > 2048)
+            {
+                yield return new ValidationResult("Invalid value for Url, length must be less than 2048.", new [] { "Url" });
+            }
+
             yield break;
         }
     }
