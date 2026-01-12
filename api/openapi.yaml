@@ -2031,8 +2031,8 @@ components:
           format: date
           type: string
         message_types:
-          description: "Optional list of message types (sms, viber, whatsapp, hlr,\
-            \ telegram)"
+          description: "Optional list of message types (sms, viber, whatsapp, rcs,\
+            \ hlr)"
           items:
             type: string
           type: array
@@ -2770,7 +2770,7 @@ components:
       - sms
       - viber
       - whatsapp
-      - telegram
+      - rcs
       type: string
     Omnimessage:
       description: An omnimessage
@@ -2987,39 +2987,6 @@ components:
           $ref: '#/components/schemas/WhatsAppDocument'
         sticker:
           $ref: '#/components/schemas/WhatsAppSticker'
-      type: object
-    Telegram:
-      description: Telegram message content
-      properties:
-        sender:
-          description: Phone number or alphanumeric sender name
-          type: string
-        validity:
-          description: After how many minutes this channel is considered as failed
-            and the next channel is attempted
-          example: 360
-          type: integer
-        text:
-          description: Plaintext content for Telegram
-          type: string
-        image_url:
-          description: URL for the embedded image. Mutually exclusive with "document_url"
-            and "audio_url"
-          type: string
-        document_url:
-          description: URL for the embedded image. Mutually exclusive with "audio_url"
-            and "image_url"
-          type: string
-        audio_url:
-          description: URL for the embedded image. Mutually exclusive with "document_url"
-            and "image_url"
-          type: string
-        channel:
-          default: telegram
-          description: The channel used to deliver the message
-          enum:
-          - telegram
-          type: string
       type: object
     SMS:
       description: SMS message content
@@ -4273,6 +4240,324 @@ components:
     AnyJsonResponse:
       description: Any valid JSON response
       type: object
+    Rcs:
+      description: "RCS message object. Exactly one of 'text', 'content_info' or 'rich_card'\
+        \ must be provided."
+      properties:
+        channel:
+          default: rcs
+          description: The channel used to deliver the message
+          enum:
+          - rcs
+          type: string
+        sender:
+          description: Phone number or alphanumeric sender name
+          type: string
+        validity:
+          description: After how many minutes this channel is considered as failed
+            and the next channel is attempted.Only one of "ttl" and "validity" can
+            be used.
+          example: 360
+          type: integer
+        ttl:
+          description: After how many seconds this channel is considered as failed
+            and the next channel is attempted. Only one of "ttl" and "validity" can
+            be used.
+          example: 21600
+          type: integer
+        text:
+          description: Text content of the RCS message
+          maxLength: 3072
+          type: string
+        suggestions:
+          description: List of suggestions to include with the message
+          items:
+            $ref: '#/components/schemas/RcsSuggestion'
+          maxItems: 11
+          type: array
+        rich_card:
+          $ref: '#/components/schemas/RcsRichCard'
+        content_info:
+          $ref: '#/components/schemas/RcsContentInfo'
+      required:
+      - sender
+      type: object
+    RcsCardContent:
+      description: RCS Card Content
+      properties:
+        title:
+          description: Title of the card content
+          maxLength: 200
+          nullable: true
+          type: string
+        description:
+          description: Description of the card content
+          maxLength: 2000
+          nullable: true
+          type: string
+        media:
+          $ref: '#/components/schemas/RcsMedia'
+        suggestions:
+          description: List of suggestions that the recipient can use to respond.
+          items:
+            $ref: '#/components/schemas/RcsSuggestion'
+          maxItems: 4
+          type: array
+      type: object
+    RcsCarouselCard:
+      description: RCS Carousel Card.
+      properties:
+        card_width:
+          $ref: '#/components/schemas/RcsCardWidth'
+        card_contents:
+          description: The contents of the carousel card.
+          items:
+            $ref: '#/components/schemas/RcsCardContent'
+          maxItems: 10
+          minItems: 2
+          type: array
+      required:
+      - card_contents
+      - card_width
+      type: object
+    RcsContentInfo:
+      description: RCS content info object.
+      properties:
+        file_url:
+          description: Required file URL
+          type: string
+        thumbnail_url:
+          description: Optional thumbnail URL
+          nullable: true
+          type: string
+        force_refresh:
+          description: Force refresh the content
+          type: boolean
+      required:
+      - file_url
+      - force_refresh
+      type: object
+    RcsLatLng:
+      description: Latitude and longitude coordinates.
+      properties:
+        latitude:
+          description: The latitude coordinate.
+          type: number
+        longitude:
+          description: The longitude coordinate.
+          type: number
+      required:
+      - latitude
+      - longitude
+      type: object
+    RcsMedia:
+      description: RCS media object.
+      properties:
+        height:
+          $ref: '#/components/schemas/RcsMediaHeight'
+        content_info:
+          $ref: '#/components/schemas/RcsContentInfo'
+      required:
+      - content_info
+      - height
+      type: object
+    RcsRichCard:
+      description: RCS rich card object. Exactly one of "standalone_card" and "carousel_card"
+        must be provided
+      properties:
+        standalone_card:
+          $ref: '#/components/schemas/RcsStandaloneCard'
+        carousel_card:
+          $ref: '#/components/schemas/RcsCarouselCard'
+      type: object
+    RcsStandaloneCard:
+      description: RCS standalone card object.
+      properties:
+        card_orientation:
+          $ref: '#/components/schemas/RcsCardOrientation'
+        thumbnail_image_alignment:
+          $ref: '#/components/schemas/RcsImageAlignment'
+        card_content:
+          $ref: '#/components/schemas/RcsCardContent'
+      required:
+      - card_content
+      - card_orientation
+      - thumbnail_image_alignment
+      type: object
+    RcsSuggestedAction:
+      description: RCS suggested action.
+      properties:
+        text:
+          description: The text of the suggested action. Exactly one of the action
+            fields (types) must be provided.
+          maxLength: 25
+          type: string
+        postback_data:
+          description: The postback data associated with the suggested action. This
+            is sent back to the sender when the user selects the suggested action.
+          maxLength: 2048
+          type: string
+        fallback_url:
+          description: The fallback URL to open if the suggested action is not supported.
+          maxLength: 2048
+          nullable: true
+          type: string
+        dial_action:
+          $ref: '#/components/schemas/RcsDialAction'
+        view_location_action:
+          $ref: '#/components/schemas/RcsViewLocationAction'
+        create_calendar_event_action:
+          $ref: '#/components/schemas/RcsCreateCalendarEventAction'
+        open_url_action:
+          $ref: '#/components/schemas/RcsOpenUrlAction'
+        share_location_action:
+          description: This action does not have any properties. It simply triggers
+            the share location action.
+          type: object
+      required:
+      - postback_data
+      - text
+      type: object
+    RcsDialAction:
+      description: Action to dial a phone number.
+      properties:
+        phone_number:
+          description: The phone number to dial in E.164 format.
+          example: "+442071838750"
+          type: string
+      required:
+      - phone_number
+      type: object
+    RcsViewLocationAction:
+      description: Action to view a location on a map.
+      properties:
+        lat_long:
+          $ref: '#/components/schemas/RcsLatLng'
+        label:
+          description: The label of the pin dropped at latLong.
+          nullable: true
+          type: string
+        query:
+          description: "(Optional, only supported on Android Messages clients) Instead\
+            \ of specifying a latLong (and optionally, a label), the agent can specify\
+            \ a query string. For default map apps that support search functionality\
+            \ (including Google Maps), tapping this suggested action results in a\
+            \ location search centered around the user's current location.\n     \
+            \ \n      For instance, setting the query string to \"Growing Tree Bank\"\
+            \ will show all Growing Tree Bank locations in the user's vicinity. Setting\
+            \ the query string to \"1600 Amphitheater Parkway, Mountain View, CA 94043\"\
+            \ will select that specific address, regardless of the user's location.\n\
+            \      "
+          nullable: true
+          type: string
+      type: object
+    RcsCreateCalendarEventAction:
+      description: Action to create a calendar event.
+      properties:
+        start_time:
+          description: The start time of the event.
+          type: string
+        end_time:
+          description: The end time of the event.
+          type: string
+        title:
+          description: The title of the event.
+          maxLength: 100
+          type: string
+        description:
+          description: The description of the event.
+          maxLength: 500
+          type: string
+      required:
+      - description
+      - end_time
+      - start_time
+      - title
+      type: object
+    RcsOpenUrlAction:
+      description: Action to open a URL in a browser.
+      properties:
+        url:
+          description: The URL to open.
+          maxLength: 2048
+          type: string
+        description:
+          description: A description of the URL being opened.
+          type: string
+        application:
+          $ref: '#/components/schemas/RcsOpenUrlApplication'
+        webview_view_mode:
+          $ref: '#/components/schemas/RcsWebviewViewMode'
+      required:
+      - application
+      - url
+      type: object
+    RcsShareLocationAction:
+      description: This action does not have any properties. It simply triggers the
+        share location action.
+      type: object
+    RcsSuggestedReply:
+      description: RCS suggested reply.
+      properties:
+        text:
+          description: The text of the suggested reply.
+          maxLength: 25
+          type: string
+        postback_data:
+          description: The postback data associated with the suggested reply. This
+            is sent back to the sender when the user selects the suggested reply.
+          maxLength: 2048
+          type: string
+      required:
+      - postback_data
+      - text
+      type: object
+    RcsSuggestion:
+      description: Exactly one of reply or action must be provided
+      properties:
+        reply:
+          $ref: '#/components/schemas/RcsSuggestedReply'
+        action:
+          $ref: '#/components/schemas/RcsSuggestedAction'
+      type: object
+    RcsCardOrientation:
+      description: RCS card orientation
+      enum:
+      - VERTICAL
+      - HORIZONTAL
+      type: string
+    RcsCardWidth:
+      description: RCS card width
+      enum:
+      - SMALL
+      - MEDIUM
+      type: string
+    RcsImageAlignment:
+      description: RCS image alignment
+      enum:
+      - LEFT
+      - RIGHT
+      type: string
+    RcsMediaHeight:
+      description: RCS media height
+      enum:
+      - SHORT
+      - MEDIUM
+      - TALL
+      type: string
+    RcsOpenUrlApplication:
+      description: RCS open URL application
+      enum:
+      - BROWSER
+      - WEBVIEW
+      type: string
+    RcsWebviewViewMode:
+      description: RCS webview view mode
+      enum:
+      - FULL
+      - HALF
+      - TALL
+      type: string
     BulkOmnimessage:
       description: A bulk omnimessage.
       example:
@@ -4447,11 +4732,11 @@ components:
       - description
       type: object
     Omnimessage_messages_inner:
-      oneOf:
+      anyOf:
       - $ref: '#/components/schemas/Viber'
       - $ref: '#/components/schemas/SMS'
       - $ref: '#/components/schemas/WhatsApp'
-      - $ref: '#/components/schemas/Telegram'
+      - $ref: '#/components/schemas/Rcs'
     BulkOmniMessageCreateSuccessResponse_messages_inner:
       oneOf:
       - $ref: '#/components/schemas/OmniMessageCreateSuccessResponse'
