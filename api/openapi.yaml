@@ -248,7 +248,7 @@ paths:
                     mccmnc: "11111"
                   portedNetwork: null
                   ported: false
-                  status: "ON"
+                  status: true
               schema:
                 $ref: '#/components/schemas/SyncNumberLookupSuccess'
           description: Info about phone numbers returned
@@ -2150,7 +2150,7 @@ components:
           countryCode: countryCode
           networkName: networkName
           countryName: countryName
-        status: "ON"
+        status: "true"
       properties:
         number:
           description: Phone number in e.164 format
@@ -2174,8 +2174,8 @@ components:
         status:
           description: Status of the phone number
           enum:
-          - "ON"
-          - "OFF"
+          - "true"
+          - "false"
           - INVALID
           - UNKNOWN
           type: string
@@ -2216,7 +2216,7 @@ components:
             countryCode: countryCode
             networkName: networkName
             countryName: countryName
-          status: "ON"
+          status: "true"
         - ported: true
           number: number
           roaming: true
@@ -2245,7 +2245,7 @@ components:
             countryCode: countryCode
             networkName: networkName
             countryName: countryName
-          status: "ON"
+          status: "true"
         request_id: request_id
       properties:
         request_id:
@@ -3019,8 +3019,8 @@ components:
               - "off" Message content is not modified in any way
           enum:
           - full
-          - "on"
-          - "off"
+          - "true"
+          - "false"
           type: string
         udh:
           description: hex-encoded string containing SMS UDH
