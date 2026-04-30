@@ -46,16 +46,16 @@ namespace com.Messente.Api.Model
             Full = 1,
 
             /// <summary>
-            /// Enum On for value: on
+            /// Enum True for value: true
             /// </summary>
-            [EnumMember(Value = "on")]
-            On = 2,
+            [EnumMember(Value = "true")]
+            True = 2,
 
             /// <summary>
-            /// Enum Off for value: off
+            /// Enum False for value: false
             /// </summary>
-            [EnumMember(Value = "off")]
-            Off = 3
+            [EnumMember(Value = "false")]
+            False = 3
         }
 
 

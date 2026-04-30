@@ -40,16 +40,16 @@ namespace com.Messente.Api.Model
         public enum StatusEnum
         {
             /// <summary>
-            /// Enum ON for value: ON
+            /// Enum True for value: true
             /// </summary>
-            [EnumMember(Value = "ON")]
-            ON = 1,
+            [EnumMember(Value = "true")]
+            True = 1,
 
             /// <summary>
-            /// Enum OFF for value: OFF
+            /// Enum False for value: false
             /// </summary>
-            [EnumMember(Value = "OFF")]
-            OFF = 2,
+            [EnumMember(Value = "false")]
+            False = 2,
 
             /// <summary>
             /// Enum INVALID for value: INVALID
