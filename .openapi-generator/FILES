@@ -87,6 +87,10 @@ docs/SyncNumberLookupResult.md
 docs/SyncNumberLookupSuccess.md
 docs/TextStore.md
 docs/Viber.md
+docs/ViberCarousel.md
+docs/ViberCarouselButton.md
+docs/ViberCarouselItem.md
+docs/ViberTemplate.md
 docs/ViberVideo.md
 docs/WhatsApp.md
 docs/WhatsAppAudio.md
@@ -222,6 +226,10 @@ src/com.Messente.Api/Model/SyncNumberLookupResult.cs
 src/com.Messente.Api/Model/SyncNumberLookupSuccess.cs
 src/com.Messente.Api/Model/TextStore.cs
 src/com.Messente.Api/Model/Viber.cs
+src/com.Messente.Api/Model/ViberCarousel.cs
+src/com.Messente.Api/Model/ViberCarouselButton.cs
+src/com.Messente.Api/Model/ViberCarouselItem.cs
+src/com.Messente.Api/Model/ViberTemplate.cs
 src/com.Messente.Api/Model/ViberVideo.cs
 src/com.Messente.Api/Model/WhatsApp.cs
 src/com.Messente.Api/Model/WhatsAppAudio.cs
