@@ -1,5 +1,5 @@
 # com.Messente.Api.Model.Viber
-Viber message content
+Viber message content. You must provide one of these combinations:  * image_url  * text  * text, button_text and button_url  * text, image_url, button_text and button_url  * video  * video, text  * video, text, button_text  * video, text, button_text and button_url  * carousel and text
 
 ## Properties
 
@@ -9,11 +9,13 @@ Name | Type | Description | Notes
 **Validity** | **int** | After how many minutes this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used. | [optional] 
 **Ttl** | **int** | After how many seconds this channel is considered as failed and the next channel is attempted.       Only one of \&quot;ttl\&quot; and \&quot;validity\&quot; can be used. | [optional] 
 **Text** | **string** | Plaintext content for Viber | [optional] 
-**ImageUrl** | **string** | URL for the embedded image    Valid combinations:    1) image_url,    2) text, image_url, button_url, button_text | [optional] 
+**ImageUrl** | **string** | URL for the embedded image. | [optional] 
 **ButtonUrl** | **string** | URL of the button, must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_text&#39;&#39; and &#39;&#39;image_url&#39;&#39; (optional) | [optional] 
 **ButtonText** | **string** | Must be specified along with &#39;&#39;text&#39;&#39;, &#39;&#39;button_url&#39;&#39;, &#39;&#39;button_text&#39;&#39;, &#39;&#39;image_url&#39;&#39; (optional) | [optional] 
 **Channel** | **string** | The channel used to deliver the message | [optional] [default to ChannelEnum.Viber]
 **Video** | [**ViberVideo**](ViberVideo.md) |  | [optional] 
+**Template** | [**ViberTemplate**](ViberTemplate.md) |  | [optional] 
+**Carousel** | [**ViberCarousel**](ViberCarousel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
